@@ -6,7 +6,7 @@ Welcome to the **Shopkit** REST API documentation.
 
 For now there are only a few available methods. We will add more over time.
 
-If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/API)**.
+If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/API-Docs)**.
 
 ### Authentication
 You must first create a new API key from your store administration area:
