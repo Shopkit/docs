@@ -8,6 +8,13 @@ For now there are only a few available methods. We will add more over time.
 
 If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/API-Docs)**.
 
+### API Status
+
+<div class="api-status" style="display:none;">
+    <h6>-</h6>
+    <div class="metrics">Response time: <strong><span class="response_time">-</span>ms</strong></div>
+</div>
+
 ### Authentication
 You must first create a new API key from your store administration area:
 
