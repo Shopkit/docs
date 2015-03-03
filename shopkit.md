@@ -113,6 +113,8 @@ Response: `200 OK`
     "total": 158.81,
     "total_tax": 17.78,
     "shipping": 7.25,
+    "discount": 14.86,
+    "cupon_code": "bajevolp",
     "created_at": "2014-11-19T00:44:19+00:00",
     "sent_at": "2014-11-25T15:00:20+00:00",
     "paid_at": "2014-11-25T25:00:20+00:00",
@@ -127,6 +129,8 @@ Response: `200 OK`
     "status": 3,
     "status_alias": "sent",
     "paid": true,
+    "is_new": false,
+    "invoice_id": null,
     "weight": 0,
     "observations": "",
     "shipment_method": "Transportadora",
@@ -157,21 +161,21 @@ Response: `200 OK`
 }
 ```
 
+
 ### Resources
 
 # Group Store
 
-
 ## Get Store [/]
-Get store info
+
+### Get Store [GET]
+Get Store info. **No parameters**
 
 ```bash
 curl -i -X GET \
 -H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
 https://api.shopk.it/v1/
 ```
-
-### GET
 
 + Response 200
 
@@ -234,8 +238,9 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-
 ## Get Product [/product/{id|handle}]
+
+### Get Product [GET]
 Get a product by id or handle. **Only one parameter is required.**
 
 ```bash
@@ -246,10 +251,8 @@ https://api.shopk.it/v1/product/1337
 
 + Parameters
 
-    + id (required, integer, `1337`) ... Product id
+    + id (required, integer, `1337`) ... Product identifier
     + handle (required, string, `rustic-bowl`) ... Product handle
-
-### GET
 
 + Response 200
 
@@ -286,7 +289,7 @@ https://api.shopk.it/v1/product/1337
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                "add_cart_url": "https://api.shopk.it/cart/add/rustic-spice-bowl-set",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
                 "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "sales": 0,
@@ -392,7 +395,10 @@ https://api.shopk.it/v1/product/1337
                 "message":"Not found."
             }
 
+
 ## Get Products [/product{?category,status,status_alias,reference,featured,new,page,limit}]
+
+### Get Products [GET]
 Get a list of products
 
 ```bash
@@ -403,7 +409,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
 + Parameters
 
-    + category (optional, integer, `1337`) ... Product category id
+    + category (optional, integer, `1337`) ... Product category identifier
     + status (optional, integer, `0`) ... Product status as an integer
         + Values
             + `0`
@@ -433,8 +439,6 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
     
     + page (optional, integer, `1`) ... page number
     + limit = `25` (optional, integer, `10`) ... products per page
-
-### GET
 
 + Response 200
 
@@ -472,7 +476,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                     "promo": false,
                     "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                    "add_cart_url": "https://api.shopk.it/cart/add/rustic-spice-bowl-set",
+                    "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
                     "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                     "video_embed_url": false,
                     "sales": 0,
@@ -590,7 +594,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "description_short": "Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white&#8230;",
                     "promo": false,
                     "url": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
-                    "add_cart_url": "https://api.shopk.it/cart/add/let-s-cook-cutting-board",
+                    "add_cart_url": "https://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
                     "permalink": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
                     "video_embed_url": false,
                     "sales": 0,
@@ -660,8 +664,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
 # Group Categories
 
-
 ## Get Category [/category/{id|handle}]
+
+### Get Category [GET]
 Get products categories by id or handle. **Only one parameter is required.**
 
 ```bash
@@ -672,10 +677,10 @@ https://api.shopk.it/v1/category/1337
 
 + Parameters
 
-    + id (required, integer, `1337`) ... Category id
+    + id (required, integer, `1337`) ... Category identifier
     + handle (required, string, `rustic-bowl`) ... Category handle
 
-## GET
+
 
 + Response 200
 
@@ -715,11 +720,10 @@ https://api.shopk.it/v1/category/1337
 
 # Group Orders
 
-
 ## Order [/order/{id}]
 
-## Get Order [GET]
-Get a order
+### Get Order [GET]
+Get an order
 
 ```bash
 curl -i -X GET \
@@ -729,7 +733,7 @@ https://api.shopk.it/v1/order/1337
 
 + Parameters
 
-    + id (optional, integer, `1337`) ... Order id
+    + id (optional, integer, `1337`) ... Order identifier
 
 + Response 200
 
@@ -745,6 +749,8 @@ https://api.shopk.it/v1/order/1337
                 "total": 158.81,
                 "total_tax": 17.78,
                 "shipping": 7.25,
+                "discount": 14.86,
+                "cupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "sent_at": null,
                 "paid_at": null,
@@ -759,6 +765,8 @@ https://api.shopk.it/v1/order/1337
                 "status": 5,
                 "status_alias": "waiting_confirmation",
                 "paid": false,
+                "is_new": false,
+                "invoice_id": null,
                 "weight": 0,
                 "observations": "",
                 "shipment_method": "Transportadora",
@@ -780,7 +788,7 @@ https://api.shopk.it/v1/order/1337
                         "price": 77.32,
                         "tax": 23,
                         "quantity": 1,
-                        "subtotal": 77.32,
+                        "subtotal": 95.1036,
                         "weight": 0,
                         "url": false,
                         "description_short": "<p>This is a tree decal that is created to work with standard 24\" wall shelves that you can find at your local Target, Walmart, Ikea etc.. (shelving NOT INCLUDED) There are three locations where you can fit the shelves. This tree looks great on its own as well!<br /><br /><br />Tree Size (approx): 55&rdquo;w x 94&rdquo;h<br /><br />51\"w x 88\"h version is available upon request (they fit the same 24\" shelves). The price is the same. Please leave a note in the \"message to seller\" box during checkout if you would like the 88\"h version.<br /><br />At what heights would the shelf locations be at?<br />Standard Size Tree - (approx)<br />43\", 53\", 64\"<br /><br />For the 88\" Tree - (approx)<br />40\", 50\", 60\"</p>"
@@ -814,7 +822,7 @@ https://api.shopk.it/v1/order/1337
             }
 
 
-## Put Order [PUT]
+### Put Order [PUT]
 Update an order
 
 ```bash
@@ -837,7 +845,7 @@ Attributes | Type | Choices | Description
 
 + Parameters
 
-    + id (optional, integer, `25`) ... Order id
+    + id (optional, integer, `25`) ... Order identifier
 
 + Request
 
@@ -866,6 +874,8 @@ Attributes | Type | Choices | Description
                 "total": 158.81,
                 "total_tax": 17.78,
                 "shipping": 7.25,
+                "discount": 14.86,
+                "cupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "sent_at": "2014-11-25T15:00:20+00:00",
                 "paid_at": "2014-11-25T25:00:20+00:00",
@@ -880,6 +890,8 @@ Attributes | Type | Choices | Description
                 "status": 3,
                 "status_alias": "sent",
                 "paid": true,
+                "is_new": false,
+                "invoice_id": null,
                 "weight": 0,
                 "observations": "",
                 "shipment_method": "Transportadora",
@@ -948,7 +960,7 @@ Attributes | Type | Choices | Description
             }
 
 
-## Delete Order [DELETE]
+### Delete Order [DELETE]
 Delete an order
 
 ```bash
@@ -959,7 +971,7 @@ https://api.shopk.it/v1/order/1337
 
 + Parameters
 
-    + id (required, integer, `1337`) ... Order id
+    + id (required, integer, `1337`) ... Order identifier
 
 + Response 204
 
@@ -991,6 +1003,8 @@ https://api.shopk.it/v1/order/1337
 
 
 ## Get Orders [/order{?status,status_alias,paid,date_filter,date_from,date_to,page,limit}]
+
+## Get Orders [GET]
 Get a list of orders
 
 ```bash
@@ -1037,7 +1051,6 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
     + page (optional, integer, `1`) ... Page number
     + limit = `25` (optional, integer, `10`) ... Orders per page
 
-## GET
 
 + Response 200
 
@@ -1050,27 +1063,31 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
             {
                 "0": {
-                    "id": 1337
-                    "total": 10.76,
-                    "total_tax": 0,
-                    "shipping": 6.76,
-                    "created_at": "2014-11-26T20:24:05+00:00",
-                    "sent_at": "2015-02-08T15:59:54+00:00",
-                    "paid_at": "2015-02-08T15:59:54+00:00",
+                    "id": 1337,
+                    "total": 158.81,
+                    "total_tax": 17.78,
+                    "shipping": 7.25,
+                    "discount": 14.86,
+                    "cupon_code": "bajevolp",
+                    "created_at": "2014-11-19T00:44:19+00:00",
+                    "sent_at": null,
+                    "paid_at": null,
                     "payment": {
                         "type": "Multibanco",
                         "data": {
                             "entity": 88888,
                             "reference": 888888888,
-                            "value": 10.76
+                            "value": 158.81
                         }
                     },
-                    "status": 3,
-                    "status_alias": "sent",
-                    "paid": true,
+                    "status": 5,
+                    "status_alias": "waiting_confirmation",
+                    "paid": false,
+                    "is_new": false,
+                    "invoice_id": null,
                     "weight": 0,
                     "observations": "",
-                    "shipment_method": "CTT",
+                    "shipment_method": "Transportadora",
                     "client": {
                         "name": "Shopkit",
                         "email": "info@shopk.it",
@@ -1080,10 +1097,136 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "country": "Portugal - Continental",
                         "phone": "969057993",
                         "fiscal_id": ""
-                    }
+                    },
+                    "products": [
+                        {
+                            "id": 44753,
+                            "title": "Shelving Tree with Birds",
+                            "reference": "STHFBF7574",
+                            "price": 77.32,
+                            "tax": 23,
+                            "quantity": 1,
+                            "subtotal": 95.1036,
+                            "weight": 0,
+                            "url": false,
+                            "description_short": "<p>This is a tree decal that is created to work with standard 24\" wall shelves that you can find at your local Target, Walmart, Ikea etc.. (shelving NOT INCLUDED) There are three locations where you can fit the shelves. This tree looks great on its own as well!<br /><br /><br />Tree Size (approx): 55&rdquo;w x 94&rdquo;h<br /><br />51\"w x 88\"h version is available upon request (they fit the same 24\" shelves). The price is the same. Please leave a note in the \"message to seller\" box during checkout if you would like the 88\"h version.<br /><br />At what heights would the shelf locations be at?<br />Standard Size Tree - (approx)<br />43\", 53\", 64\"<br /><br />For the 88\" Tree - (approx)<br />40\", 50\", 60\"</p>"
+                        },
+                        {
+                            "id": 44752,
+                            "title": "Hanging Succulent Planter",
+                            "reference": "",
+                            "price": 71.32,
+                            "tax": 0,
+                            "quantity": 1,
+                            "subtotal": 71.32,
+                            "weight": 0,
+                            "url": false,
+                            "description_short": "<p>This stoneware planter/pot has been hand made by me from earthy textured, speckled clay using the traditional methods of pinching and coiling. It has been decorated with a white glaze and high fired giving it strength and durability. Perfect for succulents and cactus plants, it has a drain hole in the base. The hanger twine is made from natural jute fibre.<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece. As they are completely hand built, each piece is totally unique and may vary slightly from the image shown.&nbsp;<br /><br />This pot is approx 6cm (2.2\") tall and is 10cm (4\") across at the opening.</p>"
+                        }
+                    ]
                 },
                 "paging": null
             }
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404
+
+    + Headers
+
+            Content-Length: 24
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Webhooks
+Webhooks enable to post data to your server whenever an event has happened. Webhooks can be thought of as event listeners of push notifications. For more information on webhooks visit https://shopk.it/developers/webhook
+
+## Post Webhook [/webhook/]
+
+### Post Webhook [POST]
+Create a webhook
+
+```bash
+curl -i -X POST \
+-H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
+-H 'Content-Type:application/json' \
+-d '{"url":"https://www.mysite.com/mywebhook_url", "event":"order_created"}' \
+'http://api.shopk.it/v1/webhook'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**url** | string | | Webhook url
+**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_state` | Available webhooks
+
+</div>
+
+
++ Response 201
+
+    + Headers
+
+            Content-Length: 96
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "id": 1337,
+                "event": "order_created",
+                "url": "https://www.mysite.com/mywebhook_url",
+                "active": true
+            }
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
+
+## Delete Webhook [/webhook/{id}]
+
+### Delete Webhook [DELETE]
+Delete a webhook
+
+```bash
+curl -i -X DELETE \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/webhook/1337
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Webhook identifier
+
++ Response 204
 
 + Response 400
 
