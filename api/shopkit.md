@@ -1168,7 +1168,7 @@ curl -i -X POST \
 -H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
 -H 'Content-Type:application/json' \
 -d '{"url":"https://www.mysite.com/mywebhook_url", "event":"order_created"}' \
-'http://api.shopk.it/v1/webhook'
+'https://api.shopk.it/v1/webhook'
 ```
 
 <div class="well">
