@@ -1156,7 +1156,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
 
 # Group Webhooks
-Webhooks enable to post data to your server whenever an event has happened. Webhooks can be thought of as event listeners of push notifications. For more information on webhooks visit https://shopk.it/developers/webhook
+Webhooks enable to post data to your server whenever an event has happened. Webhooks can be thought of as event listeners of push notifications. For more information visit the [webhooks documentation](https://shopk.it/developers/webhooks) page.
 
 ## Post Webhook [/webhook/]
 
