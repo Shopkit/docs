@@ -6,7 +6,7 @@ Welcome to the **Shopkit** REST API documentation.
 
 For now there are only a few available methods. We will add more over time.
 
-If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/API-Docs)**.
+If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
 ### API Status
 
@@ -1156,7 +1156,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
 
 # Group Webhooks
-Webhooks enable to post data to your server whenever an event has happened. For more information on webhooks visit https://shopk.it/developers/webhook
+Webhooks enable to post data to your server whenever an event has happened. For more information visit the [webhooks documentation](https://shopk.it/developers/webhooks) page.
 
 ## Post Webhook [/webhook/]
 
@@ -1168,7 +1168,7 @@ curl -i -X POST \
 -H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
 -H 'Content-Type:application/json' \
 -d '{"url":"https://www.mysite.com/mywebhook_url", "event":"order_created"}' \
-'http://api.shopk.it/v1/webhook'
+'https://api.shopk.it/v1/webhook'
 ```
 
 <div class="well">
