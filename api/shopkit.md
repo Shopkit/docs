@@ -119,7 +119,7 @@ Response: `200 OK`
     "sent_at": "2014-11-25T15:00:20+00:00",
     "paid_at": "2014-11-25T25:00:20+00:00",
     "payment": {
-        "type": "Multibanco",
+        "type": "multibanco",
         "data": {
             "entity": 88888,
             "reference": 888888888,
@@ -755,7 +755,7 @@ https://api.shopk.it/v1/order/1337
                 "sent_at": null,
                 "paid_at": null,
                 "payment": {
-                    "type": "Multibanco",
+                    "type": "multibanco",
                     "data": {
                         "entity": 88888,
                         "reference": 888888888,
@@ -880,7 +880,7 @@ Attributes | Type | Choices | Description
                 "sent_at": "2014-11-25T15:00:20+00:00",
                 "paid_at": "2014-11-25T25:00:20+00:00",
                 "payment": {
-                    "type": "Multibanco",
+                    "type": "multibanco",
                     "data": {
                         "entity": 88888,
                         "reference": 888888888,
@@ -1073,7 +1073,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "sent_at": null,
                     "paid_at": null,
                     "payment": {
-                        "type": "Multibanco",
+                        "type": "multibanco",
                         "data": {
                             "entity": 88888,
                             "reference": 888888888,
@@ -1156,7 +1156,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
 
 # Group Webhooks
-Webhooks enable to post data to your server whenever an event has happened. Webhooks can be thought of as event listeners of push notifications. For more information on webhooks visit https://shopk.it/developers/webhook
+Webhooks enable to post data to your server whenever an event has happened. For more information on webhooks visit https://shopk.it/developers/webhook
 
 ## Post Webhook [/webhook/]
 
