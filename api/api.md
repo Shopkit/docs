@@ -1156,7 +1156,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
 
 # Group Webhooks
-Webhooks enable to post data to your server whenever an event has happened. For more information on webhooks visit https://shopk.it/developers/webhook
+Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores. For more information visit [webhooks documentation](https://shopk.it/developers/webhooks).
 
 ## Post Webhook [/webhook/]
 
