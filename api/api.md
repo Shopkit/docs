@@ -6,7 +6,9 @@ Welcome to the **Shopkit** REST API documentation.
 
 For now there are only a few available methods. We will add more over time.
 
-If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/API-Docs)**.
+If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
+
+<small class="last-modified">Last Modified 12/03/2015 17:05:47 UTC</small>
 
 ### API Status
 
