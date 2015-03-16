@@ -840,6 +840,7 @@ Attributes | Type | Choices | Description
 **status** | integer | `1` `2` `3` `4` `5` `6` `7` | Order status as an integer
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
+**invoice_id** | integer | | Invoice identifier
 
 </div>
 
