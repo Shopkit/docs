@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 12/03/2015 17:05:47 UTC</small>
+<small class="last-modified">Last Modified 2015-03-30T15:51:39+01:00</small>
 
 ### API Status
 
@@ -21,7 +21,7 @@ If you have a suggestion, find a bug or something worth fixing, create an issue 
 You must first create a new API key from your store administration area:
 
 1. Login into your store.
-2. Navigate to the API section under the Account settings menu tab.
+2. Navigate to the API section under the Account settings > Developers.
 3. Create a new API key
 
 **Do not share your API keys with other users or store them in insecure places.**
@@ -118,6 +118,7 @@ Response: `200 OK`
     "discount": 14.86,
     "cupon_code": "bajevolp",
     "created_at": "2014-11-19T00:44:19+00:00",
+    "update_at": "2014-11-26T15:30:00+00:00",
     "sent_at": "2014-11-25T15:00:20+00:00",
     "paid_at": "2014-11-25T25:00:20+00:00",
     "payment": {
@@ -157,7 +158,7 @@ Response: `200 OK`
             "subtotal": 71.32,
             "weight": 0,
             "url": false,
-            "description_short": "<p>This stoneware planter/pot has been hand made by me from earthy textured, speckled clay using the traditional methods of pinching and coiling. It has been decorated with a white glaze and high fired giving it strength and durability. Perfect for succulents and cactus plants, it has a drain hole in the base. The hanger twine is made from natural jute fibre.<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece. As they are completely hand built, each piece is totally unique and may vary slightly from the image shown.&nbsp;<br /><br />This pot is approx 6cm (2.2\") tall and is 10cm (4\") across at the opening.</p>"
+            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
         }
     ]
 }
@@ -218,6 +219,7 @@ https://api.shopk.it/v1/
                 "currency": "EUR",
                 "custom_css": null,
                 "custom_js": null,
+                "custom_html": null,
                 "footer_info": "Os produtos listados são apenas de apresentação e não se encontram á venda.",
                 "page_title": "Parallax",
                 "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simples e rápido. Em 5 minutos estás pronto para começar a vender os teus produtos on-line.",
@@ -290,9 +292,9 @@ https://api.shopk.it/v1/product/1337
                 "hits": 104,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
-                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
-                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "add_cart_url": "http://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                "permalink": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "sales": 0,
                 "images": {
@@ -345,7 +347,7 @@ https://api.shopk.it/v1/product/1337
                         "parent": 0,
                         "title": "Cozinha",
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                        "url": "https://parallax.shopk.it/category/cozinha"
+                        "url": "http://parallax.shopk.it/category/cozinha"
                     }
                 ],
                 "option_groups": [
@@ -477,9 +479,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "hits": 104,
                     "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                     "promo": false,
-                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                    "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
-                    "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                    "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
+                    "add_cart_url": "http://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                    "permalink": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
                     "video_embed_url": false,
                     "sales": 0,
                     "images": {
@@ -532,7 +534,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "parent": 0,
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                            "url": "https://parallax.shopk.it/category/cozinha"
+                            "url": "http://parallax.shopk.it/category/cozinha"
                         }
                     ],
                     "option_groups": [
@@ -595,9 +597,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "hits": 93,
                     "description_short": "Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white&#8230;",
                     "promo": false,
-                    "url": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
-                    "add_cart_url": "https://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
-                    "permalink": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
+                    "url": "http://parallax.shopk.it/product/let-s-cook-cutting-board",
+                    "add_cart_url": "http://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
+                    "permalink": "http://parallax.shopk.it/product/let-s-cook-cutting-board",
                     "video_embed_url": false,
                     "sales": 0,
                     "images": {
@@ -625,7 +627,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "parent": 0,
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                            "url": "https://parallax.shopk.it/category/cozinha"
+                            "url": "http://parallax.shopk.it/category/cozinha"
                         }
                     ],
                     "option_groups": [
@@ -702,7 +704,7 @@ https://api.shopk.it/v1/category/1337
                 "page_title": "Cozinha",
                 "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                 "meta_tags": "",
-                "url": "https://parallax.shopk.it/category/cozinha",
+                "url": "http://parallax.shopk.it/category/cozinha",
                 "total_products": 2
             }
 
@@ -754,6 +756,7 @@ https://api.shopk.it/v1/order/1337
                 "discount": 14.86,
                 "cupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
+                "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": null,
                 "paid_at": null,
                 "payment": {
@@ -793,7 +796,7 @@ https://api.shopk.it/v1/order/1337
                         "subtotal": 95.1036,
                         "weight": 0,
                         "url": false,
-                        "description_short": "<p>This is a tree decal that is created to work with standard 24\" wall shelves that you can find at your local Target, Walmart, Ikea etc.. (shelving NOT INCLUDED) There are three locations where you can fit the shelves. This tree looks great on its own as well!<br /><br /><br />Tree Size (approx): 55&rdquo;w x 94&rdquo;h<br /><br />51\"w x 88\"h version is available upon request (they fit the same 24\" shelves). The price is the same. Please leave a note in the \"message to seller\" box during checkout if you would like the 88\"h version.<br /><br />At what heights would the shelf locations be at?<br />Standard Size Tree - (approx)<br />43\", 53\", 64\"<br /><br />For the 88\" Tree - (approx)<br />40\", 50\", 60\"</p>"
+                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
                     },
                     {
                         "id": 44752,
@@ -805,7 +808,7 @@ https://api.shopk.it/v1/order/1337
                         "subtotal": 71.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "<p>This stoneware planter/pot has been hand made by me from earthy textured, speckled clay using the traditional methods of pinching and coiling. It has been decorated with a white glaze and high fired giving it strength and durability. Perfect for succulents and cactus plants, it has a drain hole in the base. The hanger twine is made from natural jute fibre.<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece. As they are completely hand built, each piece is totally unique and may vary slightly from the image shown.&nbsp;<br /><br />This pot is approx 6cm (2.2\") tall and is 10cm (4\") across at the opening.</p>"
+                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
                     }
                 ]
             }
@@ -880,6 +883,7 @@ Attributes | Type | Choices | Description
                 "discount": 14.86,
                 "cupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
+                "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": "2014-11-25T15:00:20+00:00",
                 "paid_at": "2014-11-25T25:00:20+00:00",
                 "payment": {
@@ -919,7 +923,7 @@ Attributes | Type | Choices | Description
                         "subtotal": 77.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "<p>This is a tree decal that is created to work with standard 24\" wall shelves that you can find at your local Target, Walmart, Ikea etc.. (shelving NOT INCLUDED) There are three locations where you can fit the shelves. This tree looks great on its own as well!<br /><br /><br />Tree Size (approx): 55&rdquo;w x 94&rdquo;h<br /><br />51\"w x 88\"h version is available upon request (they fit the same 24\" shelves). The price is the same. Please leave a note in the \"message to seller\" box during checkout if you would like the 88\"h version.<br /><br />At what heights would the shelf locations be at?<br />Standard Size Tree - (approx)<br />43\", 53\", 64\"<br /><br />For the 88\" Tree - (approx)<br />40\", 50\", 60\"</p>"
+                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
                     },
                     {
                         "id": 44752,
@@ -931,7 +935,7 @@ Attributes | Type | Choices | Description
                         "subtotal": 71.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "<p>This stoneware planter/pot has been hand made by me from earthy textured, speckled clay using the traditional methods of pinching and coiling. It has been decorated with a white glaze and high fired giving it strength and durability. Perfect for succulents and cactus plants, it has a drain hole in the base. The hanger twine is made from natural jute fibre.<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece. As they are completely hand built, each piece is totally unique and may vary slightly from the image shown.&nbsp;<br /><br />This pot is approx 6cm (2.2\") tall and is 10cm (4\") across at the opening.</p>"
+                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
                     }
                 ]
             }
@@ -1073,6 +1077,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "discount": 14.86,
                     "cupon_code": "bajevolp",
                     "created_at": "2014-11-19T00:44:19+00:00",
+                    "update_at": "2014-11-26T15:30:00+00:00",
                     "sent_at": null,
                     "paid_at": null,
                     "payment": {
@@ -1112,7 +1117,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "subtotal": 95.1036,
                             "weight": 0,
                             "url": false,
-                            "description_short": "<p>This is a tree decal that is created to work with standard 24\" wall shelves that you can find at your local Target, Walmart, Ikea etc.. (shelving NOT INCLUDED) There are three locations where you can fit the shelves. This tree looks great on its own as well!<br /><br /><br />Tree Size (approx): 55&rdquo;w x 94&rdquo;h<br /><br />51\"w x 88\"h version is available upon request (they fit the same 24\" shelves). The price is the same. Please leave a note in the \"message to seller\" box during checkout if you would like the 88\"h version.<br /><br />At what heights would the shelf locations be at?<br />Standard Size Tree - (approx)<br />43\", 53\", 64\"<br /><br />For the 88\" Tree - (approx)<br />40\", 50\", 60\"</p>"
+                            "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
                         },
                         {
                             "id": 44752,
@@ -1124,7 +1129,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "subtotal": 71.32,
                             "weight": 0,
                             "url": false,
-                            "description_short": "<p>This stoneware planter/pot has been hand made by me from earthy textured, speckled clay using the traditional methods of pinching and coiling. It has been decorated with a white glaze and high fired giving it strength and durability. Perfect for succulents and cactus plants, it has a drain hole in the base. The hanger twine is made from natural jute fibre.<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece. As they are completely hand built, each piece is totally unique and may vary slightly from the image shown.&nbsp;<br /><br />This pot is approx 6cm (2.2\") tall and is 10cm (4\") across at the opening.</p>"
+                            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
                         }
                     ]
                 },
@@ -1179,7 +1184,7 @@ curl -i -X POST \
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **url** | string | | Webhook url
-**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_state` | Available webhooks
+**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` | Available webhooks
 
 </div>
 
