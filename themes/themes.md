@@ -261,7 +261,7 @@ You can list products from different pools:
 ```
 
 ```twig
-{% for product in products("order:#{get.order_by} category:#{category.id} limit:25") %}
+{% for product in products('order:#{get.order_by} category:#{category.id} limit:25') %}
 {# Returns products from the current category, ordered by a get parameter (?order_by) with a limit of 25 items per page #}
 ```
 
@@ -296,7 +296,7 @@ Returns the category and all children categories, a category identifier is manda
 Returns a list of blog posts. Optionally you can limit the number of posts. Default: `9`
 
 ```twig
-{% for post in blog_posts("limit:9") %}
+{% for post in blog_posts('limit:9') %}
 ```
 
 ###### `pagination` 
@@ -306,7 +306,7 @@ Pagination auto detects the template and outputs the according pagination with d
 ###### Examples:
 
 ```twig
-{{ pagination("limit:9") }}
+{{ pagination('limit:9') }}
 {# outputs a pagination with a limit of 9 items per page #}
 ```
 
@@ -314,11 +314,11 @@ Pagination auto detects the template and outputs the according pagination with d
 {% set products_per_page = 9 %}
 {% set products_category = category.id %}
 
-{% for product in products("category:#{products_category} limit:#{products_per_page}") %}
+{% for product in products('category:#{products_category} limit:#{products_per_page}') %}
   <h1>{{ product.title }}</h1>
 {% endfor %}  
 
-{{ pagination("category:#{products_category} limit:#{products_per_page}", "my-css-class") }}
+{{ pagination('category:#{products_category} limit:#{products_per_page}', 'my-css-class') }}
 
 {# outputs a pagination with a limit of 9 items and passes an extra class #}
 ```
@@ -820,4 +820,4 @@ Every time an action occurs, an event is available for the current request. If t
 
 Coming soon. In the meanwhile check [these](https://www.youtube.com/user/chefsteps).
 
-<small class="last-modified">Last Modified 2015-04-11T17:22:39+00:00</small>
+<small class="last-modified">Last Modified 2015-04-13T17:20:29+00:00</small>
