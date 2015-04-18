@@ -6,4 +6,6 @@ Welcome to the Shopkit documentation
 
 **Webhooks** Full documentation at https://shopk.it/developers/webhooks
 
+**Themes** Full documentation at https://shopk.it/developers/themes
+
 If you find a bug or something worth fixing, create an issue or a pull request.
