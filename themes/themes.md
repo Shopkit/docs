@@ -50,6 +50,7 @@ This is a stripped down HTML template:
   <head>
    <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ store.assets.css }}">
+    {{ head_content }}
   </head>
   <body>
     {% block content %}{% endblock %} 
@@ -65,6 +66,10 @@ This is a stripped down HTML template:
   <div>{{ page.content }}</div>
 {% endblock %}
 ```
+
+<div class="callout callout-info">
+  The <code>{{ head_content }}</code> is required to assure the theme works properly.
+</div>
 
 ### Syntax
 
