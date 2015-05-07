@@ -655,7 +655,7 @@ This data is only available on the `product.tpl` template
 | `product.image`                             | Product featured image array in 3 sizes: `thumb`, `square`, `full`         |
 | `product.categories`                        | Array with  categories associated with the product                         |
 | `product.option_groups`                     | Array with product option groups (variants)                                |
-| `product.options`                           | Lists all option groups (variants) combined. Example: `XL / Blue / Cotton` |                                          |
+| `product.options`                           | Lists all option groups (variants) combined. Example: `XL / Blue / Cotton` |
 | `product.stock`                             | Array with stock settings                                                  |
 | `product.meta_description`                  | Product meta description                                                   |
 | `product.meta_tags`                         | Product meta tags                                                          |
@@ -730,6 +730,7 @@ This data is only available on the `payment.tpl`, `data.tpl`, `confirm.tpl` and 
 | `user.zip_code`                             | Zip code of the client                                              |
 | `user.city`                                 | City of the client                                                  |
 | `user.country`                              | Country of the client                                               |
+| `user.country_code`                         | Country alpha-3 code of the client                                  |
 | `user.phone`                                | Phone number of the client                                          |
 | `user.tax_id`                               | Fiscal id of the client                                             |
 | `user.notes`                                | Observations/notes that client added in the checkout                |
@@ -804,7 +805,7 @@ Every time an action occurs, an event is available for the current request. If t
 | Name                                        | Description                                                                                    |
 |---------------------------------------------|------------------------------------------------------------------------------------------------|
 | `notices.cart.add`                          | A product was added to the shopping cart                                                       |
-| `notices.cart.error`                        | An error occurred while performing an action to the shopping cart                               |
+| `notices.cart.error`                        | An error occurred while performing an action to the shopping cart                              |
 | `notices.cart.updated`                      | A product in the shopping cart was updated                                                     |
 | `notices.cart.deleted`                      | A product was removed from the shopping cart                                                   |
 | `notices.cart.stock_sold_single`            | Fires when client is trying to purchase more than 1 unit and the product does not allow it     |
@@ -819,10 +820,10 @@ Every time an action occurs, an event is available for the current request. If t
 |---------------------------------------------|------------------------------------------------------------------------------------------------|
 | `notices.paypal_success`                    | A payment through Paypal was successful                                                        |
 | `notices.contact_form_success`              | The contact form was sent with success                                                         |
-| `notices.contact_form_errors`               | Contains erros if the contact form was not sent                                                |                                              |
+| `notices.contact_form_errors`               | Contains erros if the contact form was not sent                                                |
 
 ### Recipes
 
 Coming soon. In the meanwhile check [these](https://www.youtube.com/user/chefsteps).
 
-<small class="last-modified">Last Modified 2015-04-13T17:20:29+00:00</small>
+<small class="last-modified">Last Modified 2015-05-07T15:24:48+01:00</small>

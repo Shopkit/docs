@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+#### 2015-05-07
+* Add `user.country_code`
+
 #### 2015-04-29
 * Add `{{ head_content }}` special variable
 
