@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-05-12T17:35:01+01:00</small>
+<small class="last-modified">Last Modified 2015-05-12T17:51:34+01:00</small>
 
 ### API Status
 
@@ -159,7 +159,12 @@ Response: `200 OK`
             "subtotal": 71.32,
             "weight": 0,
             "url": false,
-            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
+            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+            "image":{
+                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
+                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
+                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+            }
         }
     ]
 }
@@ -798,7 +803,12 @@ https://api.shopk.it/v1/order/1337
                         "subtotal": 95.1036,
                         "weight": 0,
                         "url": false,
-                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
+                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
+                        "image":{
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                        }
                     },
                     {
                         "id": 44752,
@@ -811,7 +821,12 @@ https://api.shopk.it/v1/order/1337
                         "subtotal": 71.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
+                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+                        "image":{
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                        }
                     }
                 ]
             }
@@ -927,7 +942,12 @@ Attributes | Type | Choices | Description
                         "subtotal": 77.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
+                        "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
+                        "image":{
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                        }
                     },
                     {
                         "id": 44752,
@@ -940,7 +960,12 @@ Attributes | Type | Choices | Description
                         "subtotal": 71.32,
                         "weight": 0,
                         "url": false,
-                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
+                        "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+                        "image":{
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                        }
                     }
                 ]
             }
@@ -1123,7 +1148,12 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "subtotal": 95.1036,
                             "weight": 0,
                             "url": false,
-                            "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
+                            "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
+                            "image":{
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                            }
                         },
                         {
                             "id": 44752,
@@ -1136,7 +1166,12 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "subtotal": 71.32,
                             "weight": 0,
                             "url": false,
-                            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;"
+                            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+                            "image":{
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                            }
                         }
                     ]
                 },
