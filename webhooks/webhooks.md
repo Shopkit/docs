@@ -105,7 +105,7 @@ X-Shopkit-Event: order_created
             {
                 "id": 44753,
                 "title": "Shelving Tree with Birds",
-                "option": "",
+                "option": "Azul / Small",
                 "reference": "STHFBF7574",
                 "price": 77.32,
                 "tax": 23,
@@ -113,7 +113,12 @@ X-Shopkit-Event: order_created
                 "subtotal": 95.1036,
                 "weight": 0,
                 "url": false,
-                "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;"
+                "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
+                "image":{
+                    "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                }
             }
         ]
     }
@@ -127,4 +132,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-05-12T17:41:33+01:00</small>
+<small class="last-modified">Last Modified 2015-05-12T17:46:24+01:00</small>

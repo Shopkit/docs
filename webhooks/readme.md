@@ -16,6 +16,7 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 #### 2015-05-12
 * Add `order.products.option`
+* Add `order.products.image`
 
 #### 2015-03-11
 * Initial release
