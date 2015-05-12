@@ -105,6 +105,7 @@ X-Shopkit-Event: order_created
             {
                 "id": 44753,
                 "title": "Shelving Tree with Birds",
+                "option": "",
                 "reference": "STHFBF7574",
                 "price": 77.32,
                 "tax": 23,
@@ -126,4 +127,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-03-30T16:33:04+01:00</small>
+<small class="last-modified">Last Modified 2015-05-12T17:41:33+01:00</small>
