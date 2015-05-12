@@ -543,16 +543,17 @@ Used for retrieving store payments options information.
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `payment.paypal`                            | Payment Paypal option is enabled                                    |
-| `payment.paypal_email`                      | Payment Paypal email                                                |
 | `payment.paypal_msg`                        | Payment Paypal message                                              |
+| `payment.paypal_email`                      | Payment Paypal email                                                |
 | `payment.bank_transfer`                     | Payment bank_transfer option is enabled                             |
 | `payment.bank_transfer_msg`                 | Payment bank transfer message                                       |
 | `payment.multibanco`                        | Payment multibanco option is enabled                                |
 | `payment.multibanco_msg`                    | Payment Multibanco message                                          |
 | `payment.on_delivery`                       | Payment on_delivery option is enabled                               |
+| `payment.on_delivery_msg`                   | Payment on delivery message                                         |
 | `payment.on_delivery_value`                 | Payment on delivery value                                           |
 | `payment.pick_up`                           | Payment pick_up option is enabled                                   |
-| `payment.on_delivery_msg`                   | Payment on delivery message                                         |
+| `payment.pick_up_msg`                       | Payment pick up message                                          |
 
 ##### Pages
 
@@ -826,4 +827,4 @@ Every time an action occurs, an event is available for the current request. If t
 
 Coming soon. In the meanwhile check [these](https://www.youtube.com/user/chefsteps).
 
-<small class="last-modified">Last Modified 2015-05-07T15:24:48+01:00</small>
+<small class="last-modified">Last Modified 2015-05-12T17:25:51+01:00</small>
