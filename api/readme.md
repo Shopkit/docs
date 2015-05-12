@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+#### 2015-05-12
+* Add `order.products.option`
+
 #### 2015-03-29
 * Changed `order_state` to `order_change_status`
 

@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-03-30T15:51:39+01:00</small>
+<small class="last-modified">Last Modified 2015-05-12T17:35:01+01:00</small>
 
 ### API Status
 
@@ -151,6 +151,7 @@ Response: `200 OK`
         {
             "id": 44752,
             "title": "Hanging Succulent Planter",
+            "option": "",
             "reference": "",
             "price": 71.32,
             "tax": 0,
@@ -789,6 +790,7 @@ https://api.shopk.it/v1/order/1337
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
+                        "option": "Azul / Small",
                         "reference": "STHFBF7574",
                         "price": 77.32,
                         "tax": 23,
@@ -801,6 +803,7 @@ https://api.shopk.it/v1/order/1337
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
+                        "option": "",
                         "reference": "",
                         "price": 71.32,
                         "tax": 0,
@@ -916,6 +919,7 @@ Attributes | Type | Choices | Description
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
+                        "option": "Azul / Small",
                         "reference": "STHFBF7574",
                         "price": 77.32,
                         "tax": 23,
@@ -928,6 +932,7 @@ Attributes | Type | Choices | Description
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
+                        "option": "",
                         "reference": "",
                         "price": 71.32,
                         "tax": 0,
@@ -1110,6 +1115,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         {
                             "id": 44753,
                             "title": "Shelving Tree with Birds",
+                            "option": "Azul / Small",
                             "reference": "STHFBF7574",
                             "price": 77.32,
                             "tax": 23,
@@ -1122,6 +1128,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         {
                             "id": 44752,
                             "title": "Hanging Succulent Planter",
+                            "option": "",
                             "reference": "",
                             "price": 71.32,
                             "tax": 0,
