@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-05-12T17:51:34+01:00</small>
+<small class="last-modified">Last Modified 2015-05-13T15:41:12+01:00</small>
 
 ### API Status
 
@@ -121,6 +121,7 @@ Response: `200 OK`
     "update_at": "2014-11-26T15:30:00+00:00",
     "sent_at": "2014-11-25T15:00:20+00:00",
     "paid_at": "2014-11-25T25:00:20+00:00",
+    "currency": "EUR",
     "payment": {
         "type": "multibanco",
         "data": {
@@ -190,7 +191,7 @@ https://api.shopk.it/v1/
 
     + Headers
 
-            Content-Length: 961
+            Content-Length: 2314
             Content-Type: application/json
 
     + Body
@@ -268,7 +269,7 @@ https://api.shopk.it/v1/product/1337
 
     + Headers
 
-            Content-Length: 1435
+            Content-Length: 4154
             Content-Type: application/json
 
     + Body
@@ -454,7 +455,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 1915
+            Content-Length: 6988
             Content-Type: application/json
 
     + Body
@@ -696,7 +697,7 @@ https://api.shopk.it/v1/category/1337
 
     + Headers
 
-            Content-Length: 265
+            Content-Length: 543
             Content-Type: application/json
 
     + Body
@@ -749,7 +750,7 @@ https://api.shopk.it/v1/order/1337
 
     + Headers
 
-            Content-Length: 1394
+            Content-Length: 1898
             Content-Type: application/json
 
     + Body
@@ -765,6 +766,7 @@ https://api.shopk.it/v1/order/1337
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": null,
                 "paid_at": null,
+                "currency": "EUR",
                 "payment": {
                     "type": "multibanco",
                     "data": {
@@ -888,7 +890,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 1414
+            Content-Length: 1925
             Content-Type: application/json
 
     + Body
@@ -904,6 +906,7 @@ Attributes | Type | Choices | Description
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": "2014-11-25T15:00:20+00:00",
                 "paid_at": "2014-11-25T25:00:20+00:00",
+                "currency": "EUR",
                 "payment": {
                     "type": "multibanco",
                     "data": {
@@ -1093,7 +1096,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
    + Headers
 
-            Content-Length: 422
+            Content-Length: 1918
             Content-Type: application/json
 
     + Body
@@ -1110,6 +1113,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "update_at": "2014-11-26T15:30:00+00:00",
                     "sent_at": null,
                     "paid_at": null,
+                    "currency": "EUR",
                     "payment": {
                         "type": "multibanco",
                         "data": {
@@ -1235,7 +1239,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 96
+            Content-Length: 94
             Content-Type: application/json
 
     + Body

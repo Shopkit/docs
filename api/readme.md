@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+#### 2015-05-13
+* Add `order.currency`
+* Fix Content-Length values
+
 #### 2015-05-12
 * Add `order.products.option`
 * Add `order.products.image`
