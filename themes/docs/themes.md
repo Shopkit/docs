@@ -825,6 +825,39 @@ Every time an action occurs, an event is available for the current request. If t
 
 ### Recipes
 
-Coming soon. In the meanwhile check [these](https://www.youtube.com/user/chefsteps).
+##### Allow categories to sort products by criteria
+
+```twig
+{#  Setup order #}
+{% set order_options = { 'position' : 'Relevance', 'title' : 'Title', 'newest' : 'New', 'sales' : 'Popular', 'price_asc' : 'Price: low to high', 'price_desc' : 'Price: high to low' } %}
+
+{% if not get.order_by in order_options|keys %}
+  {% set get = {'order_by': 'position'} %}
+{% endif %}
+
+<div class="order-options">
+  Sort by
+
+  <div class="btn-group">
+
+    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+      {% if get.order_by and order_options[get.order_by] %}
+        {{ order_options[get.order_by] }} 
+      {% else %}
+        {{ order_options['position'] }}
+      {% endif %}
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu">
+      {% for order_option, order_title in order_options %}
+        {% if order_option != get.order_by %}
+          <li><a href="{{ category.url }}?order_by={{ order_option }}">{{ order_title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+```
 
 <small class="last-modified">Last Modified 2015-05-12T17:25:51+01:00</small>
