@@ -769,6 +769,7 @@ This data is only available on the `complete.tpl` template
 | `order.shipment_method`                     | Order shipment method                                               |
 | `order.client`                              | Array with order client data                                        |
 | `order.products`                            | Array with order products data                                      |
+| `order.msg_payment`                         | Order payment message                                               |
 
 `order.payment`
 

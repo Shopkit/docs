@@ -16,7 +16,7 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 #### 2015-05-12
 * Add `payment.pick_up_msg`
-* Fix complete.tpl order data
+* Fix `complete.tpl` order data
 
 #### 2015-05-07
 * Add `user.country_code`
