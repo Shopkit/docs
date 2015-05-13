@@ -748,18 +748,70 @@ This data is only available on the `complete.tpl` template
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
-| `order.id`                                  | Order number                                                        |
-| `order.hash`                                | Order unique md5 hash                                               |
-| `order.total`                               | Order total                                                         |
-| `order.subtotal`                            | Order subtotal (sum of the products)                                |
-| `order.total_shipping`                      | Order total shipping                                                |
-| `order.taxes`                               | Order total taxes                                                   |
-| `order.payment`                             | Order payment type                                                  |
-| `order.msg_payment`                         | Payment message                                                     |
-| `order.discount`                            | Order discount value                                                |
-| `order.shipping_method`                     | The shipping method chosen by the customer                          |
-| `order.multibanco`                          | Order number                                                        |
-| `order.products`                            | Same as `cart.items`                                                |
+| `order.id`                                  | Order identifier                                                    |
+| `order.total`                               | Order total value                                                   |
+| `order.total_tax`                           | Order total taxes value                                             |
+| `order.shipping`                            | Order shipping cost value                                           |
+| `order.discount`                            | Order total shipping value                                          |
+| `order.cupon_code`                          | Order total taxes value                                             |
+| `order.created_at`                          | Order creation date                                                 |
+| `order.update_at`                           | Order last update date                                              |
+| `order.sent_at`                             | Order sent date                                                     |
+| `order.paid_at`                             | Order paid date                                                     |
+| `order.payment`                             | Array with order payment data                                       |
+| `order.status`                              | Order status as an integer                                          |
+| `order.status_alias`                        | Order status as an string                                           |
+| `order.paid`                                | Order paid status boolean                                           |
+| `order.is_new`                              | New order boolean                                                   |
+| `order.invoice_id`                          | Order invoice identifier                                            |
+| `order.weight`                              | Order weight value                                                  |
+| `order.observations`                        | Order customer observations                                         |
+| `order.shipment_method`                     | Order shipment method                                               |
+| `order.client`                              | Array with order client data                                        |
+| `order.products`                            | Array with order products data                                      |
+
+`order.payment`
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `order.payment.type`                        | Order identifier                                                    |
+| `order.payment.data`                        | Order data as the Paypal link if type=`multibanco`                  |
+| `order.payment.data.entity`                 | Order Multibanco entity *only available if type=`multibanco`*       |
+| `order.payment.data.reference`              | Order Multibanco reference *only available if type=`multibanco`*    |
+| `order.payment.data.value`                  | Order Multibanco value *only available if type=`multibanco`*        |
+
+`order.client`
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `order.client.name`                         | Order client name                                                   |
+| `order.client.email`                        | Order client email                                                  |
+| `order.client.address`                      | Order client address                                                |
+| `order.client.postcode`                     | Order client postal code                                            |
+| `order.client.town`                         | Order client town                                                   |
+| `order.client.country`                      | Order client country                                                |
+| `order.client.phone`                        | Order client phone number                                           |
+| `order.client.fiscal_id`                    | Order client fiscal identifier                                      |
+
+`order.products`
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `order.products.id`                         | Order products identifier                                           |
+| `order.products.title`                      | Order products option                                               |
+| `order.products.option`                     | Order products reference                                            |
+| `order.products.reference`                  | Order products price value                                          |
+| `order.products.price`                      | Order products tax value                                            |
+| `order.products.tax`                        | Order products quantity                                             |
+| `order.products.quantity`                   | Order products phone number                                         |
+| `order.products.subtotal`                   | Order products subtotal                                             |
+| `order.products.weight`                     | Order products weight                                               |
+| `order.products.url`                        | Order products url                                                  |
+| `order.products.description_short`          | Order products short description                                    |
+| `order.products.image.thumb`                | Order products image format thumb                                   |
+| `order.products.image.square`               | Order products image format square                                  |
+| `order.products.image.full`                 | Order products image format full                                    |
+
 
 #### GET & POST
 
@@ -860,4 +912,4 @@ Every time an action occurs, an event is available for the current request. If t
 </div>
 ```
 
-<small class="last-modified">Last Modified 2015-05-12T17:25:51+01:00</small>
+<small class="last-modified">Last Modified 2015-05-13T18:04:15+01:00</small>
