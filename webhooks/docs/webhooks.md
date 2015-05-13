@@ -58,7 +58,7 @@ POST /payload HTTP/1.1
 Host: localhost
 User-Agent: Shopkit-Webhook
 Content-Type: application/json
-Content-Length: 3335
+Content-Length: 1335
 X-Shopkit-Event: order_created
 ```
 
@@ -75,6 +75,7 @@ X-Shopkit-Event: order_created
         "update_at": "2014-11-26T15:30:00+00:00",
         "sent_at": null,
         "paid_at": null,
+        "currency": "EUR",
         "payment": {
             "type": "Multibanco",
             "data": {
@@ -132,4 +133,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-05-12T17:46:24+01:00</small>
+<small class="last-modified">Last Modified 2015-05-13T15:46:37+01:00</small>

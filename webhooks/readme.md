@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+#### 2015-05-13
+* Add `order.currency`
+
 #### 2015-05-12
 * Add `order.products.option`
 * Add `order.products.image`
