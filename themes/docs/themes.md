@@ -758,7 +758,8 @@ This data is only available on the `complete.tpl` template
 | `order.update_at`                           | Order last update date                                              |
 | `order.sent_at`                             | Order sent date                                                     |
 | `order.paid_at`                             | Order paid date                                                     |
-| `order.payment`                             | Array with order payment data                                       |
+| `order.payment`                             | Order payment type                                                  |
+| `order.msg_payment`                         | Order payment message                                               |
 | `order.status`                              | Order status as an integer                                          |
 | `order.status_alias`                        | Order status as an string                                           |
 | `order.paid`                                | Order paid status boolean                                           |
@@ -766,20 +767,18 @@ This data is only available on the `complete.tpl` template
 | `order.invoice_id`                          | Order invoice identifier                                            |
 | `order.weight`                              | Order weight value                                                  |
 | `order.observations`                        | Order customer observations                                         |
-| `order.shipment_method`                     | Order shipment method                                               |
+| `order.shipment_method`                     | Order shipment method chosen by the customer                        |
+| `order.multibanco`                          | Array with order Multibanco data                                    |
 | `order.client`                              | Array with order client data                                        |
 | `order.products`                            | Array with order products data                                      |
-| `order.msg_payment`                         | Order payment message                                               |
 
-`order.payment`
+`order.multibanco`
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
-| `order.payment.type`                        | Order identifier                                                    |
-| `order.payment.data`                        | Order data as the Paypal link if type=`multibanco`                  |
-| `order.payment.data.entity`                 | Order Multibanco entity *only available if type=`multibanco`*       |
-| `order.payment.data.reference`              | Order Multibanco reference *only available if type=`multibanco`*    |
-| `order.payment.data.value`                  | Order Multibanco value *only available if type=`multibanco`*        |
+| `order.multibanco.entity`                   | Order Multibanco entity                                             |
+| `order.multibanco.reference`                | Order Multibanco reference                                          |
+| `order.multibanco.value`                    | Order Multibanco value                                              |
 
 `order.client`
 
