@@ -269,7 +269,7 @@ https://api.shopk.it/v1/product/1337
 
     + Headers
 
-            Content-Length: 4154
+            Content-Length: 4275
             Content-Type: application/json
 
     + Body
@@ -280,6 +280,7 @@ https://api.shopk.it/v1/product/1337
                 "reference": "",
                 "price": 40.73,
                 "price_promo": 0,
+                "price_on_request": false,
                 "created_at": "2014-11-30T01:04:40+00:00",
                 "status": 1,
                 "status_alias": "active",
@@ -333,6 +334,7 @@ https://api.shopk.it/v1/product/1337
                         "price": 40.73,
                         "promo": false,
                         "price_promo": 0,
+                        "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
                         "weight": 0
@@ -343,6 +345,7 @@ https://api.shopk.it/v1/product/1337
                         "price": 45.73,
                         "promo": false,
                         "price_promo": 0,
+                        "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
                         "weight": 0
@@ -367,6 +370,7 @@ https://api.shopk.it/v1/product/1337
                                 "price": 40.73,
                                 "promo": false,
                                 "price_promo": 0,
+                                "price_on_request": false,
                                 "stock": 100,
                                 "shipping": 0,
                                 "weight": 0
@@ -377,6 +381,7 @@ https://api.shopk.it/v1/product/1337
                                 "price": 45.73,
                                 "promo": false,
                                 "price_promo": 0,
+                                "price_on_request": false,
                                 "stock": 100,
                                 "shipping": 0,
                                 "weight": 0
@@ -455,7 +460,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 6988
+            Content-Length: 7129
             Content-Type: application/json
 
     + Body
@@ -467,6 +472,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "reference": "",
                     "price": 40.73,
                     "price_promo": 0,
+                    "price_on_request": false,
                     "created_at": "2014-11-30T01:04:40+00:00",
                     "status": 1,
                     "status_alias": "active",
@@ -520,6 +526,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "price": 40.73,
                             "promo": false,
                             "price_promo": 0,
+                            "price_on_request": false,
                             "stock": 100,
                             "shipping": 0,
                             "weight": 0
@@ -530,6 +537,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "price": 45.73,
                             "promo": false,
                             "price_promo": 0,
+                            "price_on_request": false,
                             "stock": 100,
                             "shipping": 0,
                             "weight": 0
@@ -554,6 +562,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                                     "price": 40.73,
                                     "promo": false,
                                     "price_promo": 0,
+                                    "price_on_request": false,
                                     "stock": 100,
                                     "shipping": 0,
                                     "weight": 0
@@ -564,6 +573,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                                     "price": 45.73,
                                     "promo": false,
                                     "price_promo": 0,
+                                    "price_on_request": false,
                                     "stock": 100,
                                     "shipping": 0,
                                     "weight": 0
@@ -585,6 +595,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "reference": "",
                     "price": 29.72,
                     "price_promo": 0,
+                    "price_on_request": false,
                     "created_at": "2014-11-30T00:59:27+00:00",
                     "status": 1,
                     "status_alias": "active",
