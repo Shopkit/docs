@@ -1,4 +1,4 @@
-# Shopkit Docs
+![Shopkit](https://drwfxyu78e9uq.cloudfront.net/assets/frontend/img/logo-shopkit-black-xs.png)
 
 Welcome to the Shopkit documentation
 
