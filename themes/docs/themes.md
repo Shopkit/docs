@@ -632,6 +632,7 @@ This data is only available on the `product.tpl` template
 | `product.reference`                         | Product reference                                                          |
 | `product.price`                             | Product price                                                              |
 | `product.price_promo`                       | Product promotion price                                                    |
+| `product.price_on_request`                  | Product has price on request                                               |
 | `product.created_at`                        | Product creation date                                                      |
 | `product.status`                            | Product status as an integer                                               |
 | `product.status_alias`                      | Product status as a string                                                 |
@@ -692,6 +693,7 @@ This data is only available on the `product.tpl` template
 | `product.options.price`                     | Product option price                                                |
 | `product.options.promo`                     | Product option is promotion                                         |
 | `product.options.price_promo`               | Product option promotion price                                      |
+| `product.options.price_on_request`          | Product option has price on request                                 |
 | `product.options.stock`                     | Product option stock quantity                                       |
 | `product.options.shipping`                  | Product option shipping cost                                        |
 | `product.options.weight`                    | Product option weight                                               |
@@ -706,6 +708,7 @@ This data is only available on the `product.tpl` template
 | `product.option_groups.options.price`       | Product option price                                                |
 | `product.option_groups.options.promo`       | Product option is promotion                                         |
 | `product.option_groups.options.price_promo` | Product option promotion price                                      |
+| `product.option_groups.price_on_request`    | Product option has price on request                                 |
 | `product.option_groups.options.stock`       | Product option stock value                                          |
 | `product.option_groups.options.shipping`    | Product option shipping cost                                        |
 | `product.option_groups.options.weight`      | Product option weight                                               |

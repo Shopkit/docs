@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+#### 2015-06-15
+* Add `price_on_request`
+
 #### 2015-05-18
 * Fix order payment data
 
