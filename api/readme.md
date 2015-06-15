@@ -18,6 +18,7 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 #### 2015-06-15
 * Add `price_on_request`
+* Update `product` example
 
 #### 2015-05-13
 * Add `order.currency`

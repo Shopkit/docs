@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-05-13T15:41:12+01:00</small>
+<small class="last-modified">Last Modified 2015-06-15T17:05:03+01:00</small>
 
 ### API Status
 
@@ -269,7 +269,7 @@ https://api.shopk.it/v1/product/1337
 
     + Headers
 
-            Content-Length: 4275
+            Content-Length: 4576
             Content-Type: application/json
 
     + Body
@@ -329,26 +329,52 @@ https://api.shopk.it/v1/product/1337
                 },
                 "options": [
                     {
-                        "id": 96201,
-                        "title": "Small bowl",
-                        "price": 40.73,
-                        "promo": false,
-                        "price_promo": 0,
-                        "price_on_request": false,
-                        "stock": 100,
-                        "shipping": 0,
-                        "weight": 0
+                        "id": "192867",
+                        "title": "Small bowl / White",
+                        "price": "40.73",
+                        "promo": "",
+                        "price_promo": "0",
+                        "price_on_request": "",
+                        "stock": "99",
+                        "shipping": "0",
+                        "weight": "0",
+                        "active": "1"
                     },
                     {
-                        "id": 96202,
-                        "title": "Big bowl",
-                        "price": 45.73,
-                        "promo": false,
-                        "price_promo": 0,
-                        "price_on_request": false,
-                        "stock": 100,
-                        "shipping": 0,
-                        "weight": 0
+                        "id": "192868",
+                        "title": "Small bowl / Dark turquoise",
+                        "price": "40.73",
+                        "promo": "",
+                        "price_promo": "0",
+                        "price_on_request": "",
+                        "stock": "95",
+                        "shipping": "0",
+                        "weight": "0",
+                        "active": "1"
+                    },
+                    {
+                        "id": "192869",
+                        "title": "Big bowl / White",
+                        "price": "45.73",
+                        "promo": "",
+                        "price_promo": "0",
+                        "price_on_request": "",
+                        "stock": "100",
+                        "shipping": "0",
+                        "weight": "0",
+                        "active": "1"
+                    },
+                    {
+                        "id": "192870",
+                        "title": "Big bowl / Dark turquoise",
+                        "price": "45.73",
+                        "promo": "",
+                        "price_promo": "0",
+                        "price_on_request": "",
+                        "stock": "100",
+                        "shipping": "0",
+                        "weight": "0",
+                        "active": "1"
                     }
                 ],
                 "categories": [
@@ -365,26 +391,25 @@ https://api.shopk.it/v1/product/1337
                         "title": "Size",
                         "options": [
                             {
-                                "id": 45896,
-                                "title": "Small bowl",
-                                "price": 40.73,
-                                "promo": false,
-                                "price_promo": 0,
-                                "price_on_request": false,
-                                "stock": 100,
-                                "shipping": 0,
-                                "weight": 0
+                                "id": "45896",
+                                "title": "Small bowl"
                             },
                             {
-                                "id": 45897,
-                                "title": "Big bowl",
-                                "price": 45.73,
-                                "promo": false,
-                                "price_promo": 0,
-                                "price_on_request": false,
-                                "stock": 100,
-                                "shipping": 0,
-                                "weight": 0
+                                "id": "45897",
+                                "title": "Big bowl"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Color",
+                        "options": [
+                            {
+                                "id": "90261",
+                                "title": "White"
+                            },
+                            {
+                                "id": "90262",
+                                "title": "Dark turquoise"
                             }
                         ]
                     }
@@ -460,7 +485,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 7129
+            Content-Length: 7433
             Content-Type: application/json
 
     + Body
@@ -521,26 +546,52 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     },
                     "options": [
                         {
-                            "id": 96201,
-                            "title": "Small bowl",
-                            "price": 40.73,
-                            "promo": false,
-                            "price_promo": 0,
-                            "price_on_request": false,
-                            "stock": 100,
-                            "shipping": 0,
-                            "weight": 0
+                            "id": "192867",
+                            "title": "Small bowl / White",
+                            "price": "40.73",
+                            "promo": "",
+                            "price_promo": "0",
+                            "price_on_request": "",
+                            "stock": "99",
+                            "shipping": "0",
+                            "weight": "0",
+                            "active": "1"
                         },
                         {
-                            "id": 96202,
-                            "title": "Big bowl",
-                            "price": 45.73,
-                            "promo": false,
-                            "price_promo": 0,
-                            "price_on_request": false,
-                            "stock": 100,
-                            "shipping": 0,
-                            "weight": 0
+                            "id": "192868",
+                            "title": "Small bowl / Dark turquoise",
+                            "price": "40.73",
+                            "promo": "",
+                            "price_promo": "0",
+                            "price_on_request": "",
+                            "stock": "95",
+                            "shipping": "0",
+                            "weight": "0",
+                            "active": "1"
+                        },
+                        {
+                            "id": "192869",
+                            "title": "Big bowl / White",
+                            "price": "45.73",
+                            "promo": "",
+                            "price_promo": "0",
+                            "price_on_request": "",
+                            "stock": "100",
+                            "shipping": "0",
+                            "weight": "0",
+                            "active": "1"
+                        },
+                        {
+                            "id": "192870",
+                            "title": "Big bowl / Dark turquoise",
+                            "price": "45.73",
+                            "promo": "",
+                            "price_promo": "0",
+                            "price_on_request": "",
+                            "stock": "100",
+                            "shipping": "0",
+                            "weight": "0",
+                            "active": "1"
                         }
                     ],
                     "categories": [
@@ -557,26 +608,25 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "title": "Size",
                             "options": [
                                 {
-                                    "id": 45896,
-                                    "title": "Small bowl",
-                                    "price": 40.73,
-                                    "promo": false,
-                                    "price_promo": 0,
-                                    "price_on_request": false,
-                                    "stock": 100,
-                                    "shipping": 0,
-                                    "weight": 0
+                                    "id": "45896",
+                                    "title": "Small bowl"
                                 },
                                 {
-                                    "id": 45897,
-                                    "title": "Big bowl",
-                                    "price": 45.73,
-                                    "promo": false,
-                                    "price_promo": 0,
-                                    "price_on_request": false,
-                                    "stock": 100,
-                                    "shipping": 0,
-                                    "weight": 0
+                                    "id": "45897",
+                                    "title": "Big bowl"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Color",
+                            "options": [
+                                {
+                                    "id": "90261",
+                                    "title": "White"
+                                },
+                                {
+                                    "id": "90262",
+                                    "title": "Dark turquoise"
                                 }
                             ]
                         }
@@ -589,7 +639,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock_sold_single": true
                     }
                 },
-                "0": {
+                "1": {
                     "id": 1338,
                     "title": "Let's Cook cutting board",
                     "reference": "",
