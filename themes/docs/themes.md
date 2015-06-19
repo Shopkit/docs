@@ -396,6 +396,7 @@ These are variables available in all templates.
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `css_class`                                 | CSS helper class(es) injected in the body tag related to the current page. Example: `<body class="page-product product-id-16644">` |
 | `current_page`                              | Global variable to help you identifying the current template. Example: `cart`                                                      |
+| `countries`                                 | Global array with the list of store available countries. Used in `data.tpl`                                                        |
 
 ##### Store
 
@@ -915,4 +916,4 @@ Every time an action occurs, an event is available for the current request. If t
 </div>
 ```
 
-<small class="last-modified">Last Modified 2015-05-13T18:04:15+01:00</small>
+<small class="last-modified">Last Modified 2015-06-19T17:25:48+01:00</small>
