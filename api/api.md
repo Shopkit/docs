@@ -8,10 +8,9 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-06-15T17:05:03+01:00</small>
+<small class="last-modified">Last Modified 2015-06-22T16:30:00+01:00</small>
 
 ### API Status
-
 <div class="api-status" style="display:none;">
     <h6>-</h6>
     <div class="metrics">Response time: <strong><span class="response_time">-</span>ms</strong></div>
@@ -28,16 +27,16 @@ You must first create a new API key from your store administration area:
 
 All requests to the API must be authenticated with an API key in one of two ways:
 
-1. In the URL as the `X-KEY-API` parameter:
+1. In the URL as the `X-API-KEY` parameter:
 
 ```http
-https://api.shopk.it/v1/?X-KEY-API=0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
+https://api.shopk.it/v1/?X-API-KEY=0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
 ```
 
 2. In the HTTP Authorization header:
 
 ```http
-X-KEY-API: 0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
+X-API-KEY: 0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
 ```
 
 ### Endpoints
