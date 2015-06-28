@@ -417,7 +417,7 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.cellphone`                           | Store cellphone                                                     |
 | `store.address`                             | Store address                                                       |
 | `store.currency`                            | Store currency                                                      |
-| `store.taxes_included`                      | Store taxes included option                                         |
+| `store.taxes_included`                      | Option that checks if products have taxes include in the price      |
 | `store.facebook`                            | Store Facebook URL                                                  |
 | `store.twitter`                             | Store Twitter URL                                                   |
 | `store.instagram`                           | Store Instagram URL                                                 |
@@ -493,7 +493,7 @@ Used for retrieving shopping cart data.
 | `cart.total`                                | Cart total                                                          |
 | `cart.shipping_methods`                     | Cart shipping methods *(see below for a full propriety list)*       |
 | `cart.discount`                             | Cart discount                                                       |
-| `cart.total_shipping`                       | Cart total number of products                                       |
+| `cart.total_shipping`                       | Cart total shipping costs                                       |
 | `cart.item_count`                           | Cart total number of unique products                                |
 | `cart.taxes`                                | Cart total taxes                                                    |
 | `cart.weight`                               | Cart total weight                                                   |
@@ -757,7 +757,7 @@ This data is only available on the `complete.tpl` template
 | `order.total_tax`                           | Order total taxes value                                             |
 | `order.shipping`                            | Order shipping cost value                                           |
 | `order.discount`                            | Order total shipping value                                          |
-| `order.cupon_code`                          | Order total taxes value                                             |
+| `order.cupon_code`                          | Coupon code used in checkout                                        |
 | `order.created_at`                          | Order creation date                                                 |
 | `order.update_at`                           | Order last update date                                              |
 | `order.sent_at`                             | Order sent date                                                     |
