@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+#### 2015-06-29
+* Fixed typo `cupon_code`
+
 #### 2015-06-22
 * Fix typo on the `X-API-KEY` param
 

@@ -7,12 +7,12 @@ If you find a bug or something worth fixing, create an issue or a pull request o
 
 ### Workflow
 
-When one of the events is triggered, we'll send a HTTP POST payload to the webhook's configured URL. 
+When one of the events is triggered, we'll send a HTTP POST payload to the webhook's configured URL.
 
 We expect a `2xx` status code when requesting your URL.
 
 <div class="callout callout-warning">
-    Failed requests will be retried <strong>5 times</strong> in <strong>1 hour</strong> intervals. 
+    Failed requests will be retried <strong>5 times</strong> in <strong>1 hour</strong> intervals.
     After 5 retries, the webhook will be suspended.
 </div>
 
@@ -70,7 +70,7 @@ X-Shopkit-Event: order_created
         "total_tax": 17.78,
         "shipping": 7.25,
         "discount": 14.86,
-        "cupon_code": "bajevolp",
+        "coupon_code": "bajevolp",
         "created_at": "2014-11-19T00:44:19+00:00",
         "update_at": "2014-11-26T15:30:00+00:00",
         "sent_at": null,
@@ -133,4 +133,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-05-13T15:46:37+01:00</small>
+<small class="last-modified">Last Modified 2015-06-29T12:06:55</small>
