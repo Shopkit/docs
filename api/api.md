@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-06-22T16:30:00+01:00</small>
+<small class="last-modified">Last Modified 2015-06-29T12:06:52</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -115,7 +115,7 @@ Response: `200 OK`
     "total_tax": 17.78,
     "shipping": 7.25,
     "discount": 14.86,
-    "cupon_code": "bajevolp",
+    "coupon_code": "bajevolp",
     "created_at": "2014-11-19T00:44:19+00:00",
     "update_at": "2014-11-26T15:30:00+00:00",
     "sent_at": "2014-11-25T15:00:20+00:00",
@@ -471,12 +471,12 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
         + Values
             + `true`
             + `false`
-    
+
     + new (optional, string, `true`) ... Product new field
         + Values
             + `true`
             + `false`
-    
+
     + page (optional, integer, `1`) ... page number
     + limit = `25` (optional, integer, `10`) ... products per page
 
@@ -821,7 +821,7 @@ https://api.shopk.it/v1/order/1337
                 "total_tax": 17.78,
                 "shipping": 7.25,
                 "discount": 14.86,
-                "cupon_code": "bajevolp",
+                "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": null,
@@ -961,7 +961,7 @@ Attributes | Type | Choices | Description
                 "total_tax": 17.78,
                 "shipping": 7.25,
                 "discount": 14.86,
-                "cupon_code": "bajevolp",
+                "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": "2014-11-25T15:00:20+00:00",
@@ -1139,7 +1139,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
         + Values
             + `true`
             + `false`
-    
+
     + date_filter (optional, string, `yesterday`) ... Date filter
         + Values
             + `today`
@@ -1168,7 +1168,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "total_tax": 17.78,
                     "shipping": 7.25,
                     "discount": 14.86,
-                    "cupon_code": "bajevolp",
+                    "coupon_code": "bajevolp",
                     "created_at": "2014-11-19T00:44:19+00:00",
                     "update_at": "2014-11-26T15:30:00+00:00",
                     "sent_at": null,

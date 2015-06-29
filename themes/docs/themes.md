@@ -39,7 +39,7 @@ A Shopkit theme consists of 17 pages:
 | Recent     | `recent.tpl`     | Recent products template                            |
 | Search     | `search.tpl`     | Search Results template                             |
 
-The base template is the most important, where all other templates are included. 
+The base template is the most important, where all other templates are included.
 Header, footer and other components that are always displayed, must be set in base template.
 It's required that this is included in every template with this code `{% extends 'base.tpl' %}`
 
@@ -53,7 +53,7 @@ This is a stripped down HTML template:
     {{ head_content }}
   </head>
   <body>
-    {% block content %}{% endblock %} 
+    {% block content %}{% endblock %}
   </body>
 </html>
 ```
@@ -61,8 +61,8 @@ This is a stripped down HTML template:
 ```twig
 {% extends 'base.tpl' %}
 
-{% block content %}	
-  <h1>{{ page.title }}</h1>	
+{% block content %}
+  <h1>{{ page.title }}</h1>
   <div>{{ page.content }}</div>
 {% endblock %}
 ```
@@ -152,7 +152,7 @@ For a comprehensive list of tags refer to the [twig website](http://twig.sensiol
 
 ##### Tests
 
-Tests can be used to test a variable against a common expression. 
+Tests can be used to test a variable against a common expression.
 
 | Test                                                                      | Description                                                                                                                                                  |
 |---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -185,7 +185,7 @@ These are our proprietary functions, filters and tags.
 
 ##### Filters
 
-###### `money_with_sign` 
+###### `money_with_sign`
 
 Returns a value formatted with the currency set in user account settings.
 
@@ -193,7 +193,7 @@ Returns a value formatted with the currency set in user account settings.
 {{ item.price|money_with_sign }}
 ```
 
-Prints <samp>122,95 €</samp> 
+Prints <samp>122,95 €</samp>
 
 ##### Functions
 
@@ -232,7 +232,7 @@ This is different from `form_open` because you pass the product id, instead of t
 {{ form_open_cart(product.id, {'class':'my-css-class'}) }}
 ```
 
-###### `form_close` 
+###### `form_close`
 
 Produces a closing `</form>` tag.
 
@@ -240,11 +240,11 @@ Produces a closing `</form>` tag.
 {{ form_close() }}
 ```
 
-###### `products` 
+###### `products`
 
 Returns a list of products with defined parameters.
 
-You can list products from different pools: 
+You can list products from different pools:
 
 * `featured` List products marked as featured
 * `new` List products marked as new/recent
@@ -304,7 +304,7 @@ Returns a list of blog posts. Optionally you can limit the number of posts. 
 {% for post in blog_posts('limit:9') %}
 ```
 
-###### `pagination` 
+###### `pagination`
 
 Pagination auto detects the template and outputs the according pagination with defined parameters, an extra class parameter can also be set.
 
@@ -332,7 +332,7 @@ Pagination auto detects the template and outputs the according pagination with d
 	The <code>pagination()</code> parameters must match the loop function <code>products()</code>.
 </div>
 
-###### `file_size` 
+###### `file_size`
 
 Returns de size of a file, formats it based on size, and adds the appropriate suffix
 
@@ -340,9 +340,9 @@ Returns de size of a file, formats it based on size, and adds the appropriate su
 {{ file_size(product.file) }}
 ```
 
-Prints <samp>447.8 KB</samp> 
+Prints <samp>447.8 KB</samp>
 
-###### `site_url` 
+###### `site_url`
 
 Returns your site URL, segments can be passed to the function as a string.
 
@@ -350,9 +350,9 @@ Returns your site URL, segments can be passed to the function as a string.
 {{ site_url('blog') }}
 ```
 
-Prints <samp>http:/example.com/blog</samp> 
+Prints <samp>http:/example.com/blog</samp>
 
-###### `current_url` 
+###### `current_url`
 
 Returns the full URL (including segments) of the page being currently viewed.
 
@@ -360,7 +360,7 @@ Returns the full URL (including segments) of the page being currently viewed.
 {{ current_url() }}
 ```
 
-###### `safe_mailto` 
+###### `safe_mailto`
 
 Creates a standard HTML email link. It writes an obfuscated version of the mailto tag using ordinal numbers written with JavaScript to help prevent the email address from being harvested by spam bots.
 
@@ -368,7 +368,7 @@ Creates a standard HTML email link. It writes an obfuscated version of the mailt
 {{ safe_mailto('email@example.com') }}
 ```
 
-###### `word_limiter` 
+###### `word_limiter`
 
 Truncates a string to the number of words specified
 
@@ -376,9 +376,9 @@ Truncates a string to the number of words specified
 {{ word_limiter(text, 250) }}
 ```
 
-###### `character_limiter` 
+###### `character_limiter`
 
-Truncates a string to the number of characters specified. It maintains the integrity of words so the character count may be slightly more or less then what you specify. 
+Truncates a string to the number of characters specified. It maintains the integrity of words so the character count may be slightly more or less then what you specify.
 
 ```twig
 {{ character_limiter(text, 100) }}
@@ -757,7 +757,7 @@ This data is only available on the `complete.tpl` template
 | `order.total_tax`                           | Order total taxes value                                             |
 | `order.shipping`                            | Order shipping cost value                                           |
 | `order.discount`                            | Order total shipping value                                          |
-| `order.cupon_code`                          | Order total taxes value                                             |
+| `order.coupon_code`                          | Order total taxes value                                             |
 | `order.created_at`                          | Order creation date                                                 |
 | `order.update_at`                           | Order last update date                                              |
 | `order.sent_at`                             | Order sent date                                                     |
@@ -826,7 +826,7 @@ To retrieve the parameter from the URL `http:/example.com/?foo=bar`
 ```twig
 {{ get.foo }}
 ```
-Prints <samp>bar</samp> 
+Prints <samp>bar</samp>
 
 ### Assets
 
@@ -898,7 +898,7 @@ Every time an action occurs, an event is available for the current request. If t
 
     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
       {% if get.order_by and order_options[get.order_by] %}
-        {{ order_options[get.order_by] }} 
+        {{ order_options[get.order_by] }}
       {% else %}
         {{ order_options['position'] }}
       {% endif %}
@@ -916,4 +916,4 @@ Every time an action occurs, an event is available for the current request. If t
 </div>
 ```
 
-<small class="last-modified">Last Modified 2015-06-19T17:25:48+01:00</small>
+<small class="last-modified">Last Modified 2015-06-29T12:06:27</small>
