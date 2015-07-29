@@ -95,8 +95,8 @@ X-Shopkit-Event: order_created
         "client": {
             "name": "Shopkit",
             "email": "info@shopk.it",
-            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n","
-            postcode": "6000-767 ",
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
+            "postcode": "6000-767",
             "town": "Castelo Branco",
             "country": "Portugal - Continental",
             "phone": "969057993",
@@ -133,4 +133,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-06-29T12:06:55</small>
+<small class="last-modified">Last Modified 2015-07-29T14:37:43+01:00</small>

@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+#### 2015-07-29
+* Fixed misplaced quote
+
 #### 2015-06-29
 * Fixed typo `cupon_code`
 
