@@ -756,8 +756,8 @@ This data is only available on the `complete.tpl` template
 | `order.total`                               | Order total value                                                   |
 | `order.total_tax`                           | Order total taxes value                                             |
 | `order.shipping`                            | Order shipping cost value                                           |
-| `order.discount`                            | Order total shipping value                                          |
-| `order.coupon_code`                          | Order total taxes value                                             |
+| `order.discount`                            | Order discount value                                                |
+| `order.coupon_code`                         | Order coupon code                                                   |
 | `order.created_at`                          | Order creation date                                                 |
 | `order.update_at`                           | Order last update date                                              |
 | `order.sent_at`                             | Order sent date                                                     |
@@ -802,12 +802,12 @@ This data is only available on the `complete.tpl` template
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `order.products.id`                         | Order products identifier                                           |
-| `order.products.title`                      | Order products option                                               |
-| `order.products.option`                     | Order products reference                                            |
-| `order.products.reference`                  | Order products price value                                          |
-| `order.products.price`                      | Order products tax value                                            |
-| `order.products.tax`                        | Order products quantity                                             |
-| `order.products.quantity`                   | Order products phone number                                         |
+| `order.products.title`                      | Order products title                                                |
+| `order.products.option`                     | Order products option                                               |
+| `order.products.reference`                  | Order products reference                                            |
+| `order.products.price`                      | Order products price value                                          |
+| `order.products.tax`                        | Order products tax value                                            |
+| `order.products.quantity`                   | Order products quantity                                             |
 | `order.products.subtotal`                   | Order products subtotal                                             |
 | `order.products.weight`                     | Order products weight                                               |
 | `order.products.url`                        | Order products url                                                  |
