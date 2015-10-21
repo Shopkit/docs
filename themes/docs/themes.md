@@ -861,15 +861,13 @@ Every time an action occurs, an event is available for the current request. If t
 
 | Name                                        | Description                                                                                    |
 |---------------------------------------------|------------------------------------------------------------------------------------------------|
-| `notices.cart.add`                          | A product was added to the shopping cart                                                       |
+| `notices.cart.added`                        | A product was added to the shopping cart                                                       |
 | `notices.cart.error`                        | An error occurred while performing an action to the shopping cart                              |
 | `notices.cart.updated`                      | A product in the shopping cart was updated                                                     |
 | `notices.cart.deleted`                      | A product was removed from the shopping cart                                                   |
 | `notices.cart.stock_sold_single`            | Fires when client is trying to purchase more than 1 unit and the product does not allow it     |
 | `notices.cart.stock_qty`                    | Fires if the product added to the cart does not have enough stock                              |
 | `notices.cart.no_stock`                     | Contains all products that were not updated/added to cart because of not having enough stock   |
-| `notices.cart.deleted`                      | A product was removed from the shopping cart                                                   |
-| `notices.cart.deleted`                      | A product was removed from the shopping cart                                                   |
 
 #### Misc events
 
@@ -916,4 +914,4 @@ Every time an action occurs, an event is available for the current request. If t
 </div>
 ```
 
-<small class="last-modified">Last Modified 2015-06-29T12:06:27</small>
+<small class="last-modified">Last Modified 2015-10-21T12:33:24+01:00</small>

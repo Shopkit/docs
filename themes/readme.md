@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+#### 2015-10-21
+* Fixed cart events
+
 #### 2015-08-17
 * Fixed some descriptions
 
