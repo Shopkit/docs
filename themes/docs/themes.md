@@ -332,16 +332,6 @@ Pagination auto detects the template and outputs the according pagination with d
   The <code>pagination()</code> parameters must match the loop function <code>products()</code>.
 </div>
 
-###### `file_size`
-
-Returns de size of a file, formats it based on size, and adds the appropriate suffix
-
-```twig
-{{ file_size(product.file) }}
-```
-
-Prints <samp>447.8 KB</samp>
-
 ###### `site_url`
 
 Returns your site URL, segments can be passed to the function as a string.
