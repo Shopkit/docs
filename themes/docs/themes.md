@@ -904,4 +904,17 @@ Every time an action occurs, an event is available for the current request. If t
 </div>
 ```
 
-<small class="last-modified">Last Modified 2015-10-21T12:33:24+01:00</small>
+##### Show random products from a list of products
+
+Because of aggressive Shopkit caching, you might not be able to achieve randomness in every page request, so you want to random in the runtime instead of querying random products. ie: `products('featured order:random limit:3')`
+
+```twig
+{% set products = products('featured limit:25') %}
+{% set products_to_show = 3 %}
+
+{% for product in products|slice(random(products|length - products_to_show), products_to_show) %}
+  <h1>{{ product.title }}</h1>
+{% endfor %}
+```
+
+<small class="last-modified">Last Modified 2016-01-15T16:05:24+01:00</small>
