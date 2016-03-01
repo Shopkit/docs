@@ -16,6 +16,12 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+#### 2016-03-01
+* Add `order.note`
+* Add `order.client_note`
+* Replace `order.invoice_id` to `order.invoice_url`
+* Hard limit lowered to 50
+
 #### 2015-06-29
 * Fixed typo `cupon_code`
 

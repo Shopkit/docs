@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2015-06-29T12:06:52</small>
+<small class="last-modified">Last Modified 2016-03-01T12:59:03+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
