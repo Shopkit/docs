@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-03-01T12:59:03+00:00</small>
+<small class="last-modified">Last Modified 2016-03-01T15:16:44+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -1300,7 +1300,7 @@ curl -i -X POST \
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **url** | string | | Webhook url
-**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` | Available webhooks
+**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` | Available webhooks
 
 </div>
 

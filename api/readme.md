@@ -19,6 +19,7 @@ To generate documentation use: `aglio -i api.md -o index.html`
 #### 2016-03-01
 * Add `order.note`
 * Add `order.client_note`
+* Add `webhook.event` choice `order_invoice`
 * Replace `order.invoice_id` to `order.invoice_url`
 * Hard limit lowered to 50
 
