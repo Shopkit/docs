@@ -52,12 +52,12 @@ Where possible, the API strives to use appropriate HTTP verbs for each action.
 
 <div class="well">
 
-Verb  | Description
-------------- | -------------
-`GET`  | Used for retrieving resources.
-`POST`  | Used for creating resources.
-`PUT`  | Used for updating resources, or performing custom actions.
-`DELETE`  | Used for deleting resources.
+Verb | Description
+---- | -----------
+`GET` | Used for retrieving resources.
+`POST` | Used for creating resources.
+`PUT` | Used for updating resources, or performing custom actions.
+`DELETE` | Used for deleting resources.
 
 </div>
 
@@ -67,11 +67,11 @@ You can make up to **3600** requests per hour.
 ### Pagination
 Requests that return multiple items will be paginated to **25** items by default.
 
-You can specify further pages with the `page` parameter. For some resources, you can also set a custom page size up to **100** with the `limit` parameter.
+You can specify further pages with the `page` parameter. For some resources, you can also set a custom page size up to **50** with the `limit` parameter.
 
 ```json
-{  
-   "paging" : {  
+{
+   "paging" : {
       "previous" : "https://api.shopk.it/v1/product?limit=50&page=1",
       "next" : "https://api.shopk.it/v1/product?limit=50&page=3"
    }
@@ -136,6 +136,8 @@ Response: `200 OK`
     "invoice_id": null,
     "weight": 0,
     "observations": "",
+    "note": "",
+    "client_note": "",
     "shipment_method": "Transportadora",
     "client": {
         "name": "Shopkit",
@@ -842,6 +844,8 @@ https://api.shopk.it/v1/order/1337
                 "invoice_id": null,
                 "weight": 0,
                 "observations": "",
+                "note": "",
+                "client_note": "",
                 "shipment_method": "Transportadora",
                 "client": {
                     "name": "Shopkit",
@@ -926,12 +930,14 @@ Attributes | Type | Choices | Description
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
 **invoice_id** | integer | | Invoice identifier
+**note** | string | | Order note
+**client_note** | string | | Order note from client
 
 </div>
 
 + Parameters
 
-    + id (optional, integer, `25`) ... Order identifier
+    + id (optional, integer, `1337`) ... Order identifier
 
 + Request
 
@@ -982,6 +988,8 @@ Attributes | Type | Choices | Description
                 "invoice_id": null,
                 "weight": 0,
                 "observations": "",
+                "note": "",
+                "client_note": "",
                 "shipment_method": "Transportadora",
                 "client": {
                     "name": "Shopkit",
@@ -1189,6 +1197,8 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "invoice_id": null,
                     "weight": 0,
                     "observations": "",
+                    "note": "",
+                    "client_note": "",
                     "shipment_method": "Transportadora",
                     "client": {
                         "name": "Shopkit",
