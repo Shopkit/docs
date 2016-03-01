@@ -39,6 +39,7 @@ When configuring a webhook, you can choose which events you would like to receiv
 | `order_paid`          | When an order is set to `paid`                              |
 | `order_sent`          | When an order status is changed to `sent`                   |
 | `order_change_status` | When an order status is changed                             |
+| `order_invoice`       | When an order invoice is generated                          |
 
 ### Payloads
 
@@ -88,9 +89,11 @@ X-Shopkit-Event: order_created
         "status_alias": "waiting_confirmation",
         "paid": false,
         "is_new": true,
-        "invoice_id": null,
+        "invoice_url": null,
         "weight": 0,
         "observations": "",
+        "note": "",
+        "client_note": "",
         "shipment_method": "Transportadora",
         "client": {
             "name": "Shopkit",
@@ -133,4 +136,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2015-07-29T14:37:43+01:00</small>
+<small class="last-modified">Last Modified 2016-03-01T15:57:47+00:00</small>

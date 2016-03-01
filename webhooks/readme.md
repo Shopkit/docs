@@ -14,18 +14,21 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
-#### 2015-07-29
+##### 2016-03-01
+* Add `order_invoice` event
+
+##### 2015-07-29
 * Fixed misplaced quote
 
-#### 2015-06-29
+##### 2015-06-29
 * Fixed typo `cupon_code`
 
-#### 2015-05-13
+##### 2015-05-13
 * Add `order.currency`
 
-#### 2015-05-12
+##### 2015-05-12
 * Add `order.products.option`
 * Add `order.products.image`
 
-#### 2015-03-11
+##### 2015-03-11
 * Initial release
