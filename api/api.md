@@ -133,7 +133,7 @@ Response: `200 OK`
     "status_alias": "sent",
     "paid": true,
     "is_new": false,
-    "invoice_id": null,
+    "invoice_url": null,
     "weight": 0,
     "observations": "",
     "note": "",
@@ -841,7 +841,7 @@ https://api.shopk.it/v1/order/1337
                 "status_alias": "waiting_confirmation",
                 "paid": false,
                 "is_new": false,
-                "invoice_id": null,
+                "invoice_url": null,
                 "weight": 0,
                 "observations": "",
                 "note": "",
@@ -929,7 +929,7 @@ Attributes | Type | Choices | Description
 **status** | integer | `1` `2` `3` `4` `5` `6` `7` | Order status as an integer
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
-**invoice_id** | integer | | Invoice identifier
+**invoice_url** | integer | | Invoice permalink
 **note** | string | | Order note
 **client_note** | string | | Order note from client
 
@@ -985,7 +985,7 @@ Attributes | Type | Choices | Description
                 "status_alias": "sent",
                 "paid": true,
                 "is_new": false,
-                "invoice_id": null,
+                "invoice_url": null,
                 "weight": 0,
                 "observations": "",
                 "note": "",
@@ -1194,7 +1194,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "status_alias": "waiting_confirmation",
                     "paid": false,
                     "is_new": false,
-                    "invoice_id": null,
+                    "invoice_url": null,
                     "weight": 0,
                     "observations": "",
                     "note": "",
