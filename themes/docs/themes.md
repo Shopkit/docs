@@ -321,7 +321,7 @@ Pagination auto detects the template and outputs the according pagination with d
 
 {% for product in products('category:#{products_category} limit:#{products_per_page}') %}
   <h1>{{ product.title }}</h1>
-{% endfor %}  
+{% endfor %}
 
 {{ pagination('category:#{products_category} limit:#{products_per_page}', 'my-css-class') }}
 
@@ -397,61 +397,113 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.username`                            | Store username                                                      |
 | `store.name`                                | Store name                                                          |
 | `store logo`                                | Store logo URL                                                      |
-| `store.favicon`                             | Store favicon URl                                                   |
-| `store.basecolor`                           | Store basecolor                                                     |
 | `store description`                         | Store description                                                   |
 | `store.notice`                              | Store notice                                                        |
-| `store.footer_info`                         | Store footer info                                                   |
-| `store.email`                               | Store email                                                         |
-| `store.phone`                               | Store phone                                                         |
-| `store.cellphone`                           | Store cellphone                                                     |
-| `store.address`                             | Store address                                                       |
-| `store.currency`                            | Store currency                                                      |
-| `store.taxes_included`                      | Store taxes included option                                         |
 | `store.facebook`                            | Store Facebook URL                                                  |
 | `store.twitter`                             | Store Twitter URL                                                   |
 | `store.instagram`                           | Store Instagram URL                                                 |
 | `store.pinterest`                           | Store Pinterest URL                                                 |
-| `store.facebook_comments_product`           | Show Facebook comments in products page                             |
-| `store.facebook_comments_blog`              | Show Facebook comments in blog page                                 |
-| `store.facebook_likebox`                    | Show Facebook likebox                                               |
-| `store.facebook_username`                   | Store Facebook username                                             |
+| `store.show_email`                          | Show email in contacts page                                         |
+| `store.show_branding`                       | Show Shopkit love                                                   |
+| `store.email`                               | Store email                                                         |
+| `store.phone`                               | Store phone                                                         |
+| `store.cellphone`                           | Store cellphone                                                     |
+| `store.address`                             | Store address                                                       |
 | `store.paypal_email`                        | Store Paypal email                                                  |
-| `store.google_analytics`                    | Store google analytics tracking code                                |
+| `store.basecolor`                           | Store basecolor                                                     |
+| `store.favicon`                             | Store favicon URl                                                   |
 | `store.latitude`                            | Store latitude                                                      |
 | `store.longitude`                           | Store longitude                                                     |
-| `store.translate_languages`                 | Store Google Translate languages                                    |
-| `store.translate_meta`                      | Store Google Translate meta tag                                     |
-| `store.show_email`                          | Show email in contacts page                                         |
+| `store.currency`                            | Store currency                                                      |
 | `store.custom_css`                          | Store custom CSS                                                    |
 | `store.custom_js`                           | Store custom JavaScript                                             |
 | `store.custom_html`                         | Store custom HTML                                                   |
+| `store.footer_info`                         | Store footer info                                                   |
 | `store.page_title`                          | Store page title                                                    |
 | `store.meta_description`                    | Store meta description                                              |
 | `store.meta_tags`                           | Store meta tags                                                     |
-| `store.images_header`                       | Store header images in an array                                     |
+| `store.navigation`                          | Store navigation array                                              |
+| `store.category_default_order`              | Store category default order                                        |
+| `store.domain`                              | Store current domain                                                |
+| `store.assets`                              | Store assets array                                                  |
+| `store.taxes_included`                      | Store taxes included option                                         |
+| `store.images_header`                       | Store header images array                                           |
 
 
 ##### Special pages
 
 These pages are automatically created and cannot be deleted, also have a particular template file. Although the content of these pages are available globally and can be used anywhere.
 
-| Name                                        | Description                                                   |
-|---------------------------------------------|---------------------------------------------------------------|
-| `store.page.about.title`                    | Page about title                                              |
-| `store.page.about.content`                  | Page about content                                            |
-| `store.page.about.url`                      | Page about url                                                |
-| `store.page.about.meta_description`         | Page about meta description                                   |
-| `store.page.about.meta_tags`                | Page about meta tags                                          |
-| `store.page.about.handle`                   | Page about handle                                             |
-| `store.page.about.page_title`               | Page about title                                              |
-| `store.page.contact.title`                  | Page contact title                                            |
-| `store.page.contact.content`                | Page contact content                                          |
-| `store.page.contact.url`                    | Page contact url                                              |
-| `store.page.contact.meta_description`       | Page contact meta description                                 |
-| `store.page.contact.meta_tags`              | Page contact meta tags                                        |
-| `store.page.contact.handle`                 | Page contact handle                                           |
-| `store.page.contact.page_title`             | Page contact title                                            |
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `store.page.about.title`                    | Page about title                                                    |
+| `store.page.about.content`                  | Page about content                                                  |
+| `store.page.about.url`                      | Page about url                                                      |
+| `store.page.about.meta_description`         | Page about meta description                                         |
+| `store.page.about.meta_tags`                | Page about meta tags                                                |
+| `store.page.about.handle`                   | Page about handle                                                   |
+| `store.page.about.page_title`               | Page about title                                                    |
+| `store.page.contact.title`                  | Page contact title                                                  |
+| `store.page.contact.content`                | Page contact content                                                |
+| `store.page.contact.url`                    | Page contact url                                                    |
+| `store.page.contact.meta_description`       | Page contact meta description                                       |
+| `store.page.contact.meta_tags`              | Page contact meta tags                                              |
+| `store.page.contact.handle`                 | Page contact handle                                                 |
+| `store.page.contact.page_title`             | Page contact title                                                  |
+
+
+##### Navigation
+
+Contains data about store navigation
+
+| Name                                        | Description                                                                         |
+|---------------------------------------------|-------------------------------------------------------------------------------------|
+| `store.navigation.primary.menu_text`        | Primary navigation text to display                                                  |
+| `store.navigation.primary.menu_type`        | Primary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page`   |
+| `store.navigation.primary.menu_url`         | Primary navigation url                                                              |
+| `store.navigation.primary.menu_item`        | Primary navigation item                                                             |
+| `store.navigation.primary.target_blank`     | Primary navigation option open link in new window. `true`, `false`                  |
+| `store.navigation.secondary.menu_text`      | Secondary navigation text to display                                                |
+| `store.navigation.secondary.menu_type`      | Secondary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page` |
+| `store.navigation.secondary.menu_url`       | Secondary navigation url                                                            |
+| `store.navigation.secondary.menu_item`      | Secondary navigation item                                                           |
+| `store.navigation.secondary.target_blank`   | Secondary navigation option open link in new window. `true`, `false`                |
+
+
+##### Apps
+
+Used for retrieving data about enabled apps. The global `apps` object is available globally.
+
+| Name                                            | Description                                                                 |
+|-------------------------------------------------|-----------------------------------------------------------------------------|
+| `apps.bablic.embed`                             | App Bablic embed code                                                       |
+| `apps.cookies.text`                             | App Cookies bar text                                                        |
+| `apps.cookies.link`                             | App Cookies bar url                                                         |
+| `apps.cookies.bg_color`                         | App Cookies bar background color code                                       |
+| `apps.cookies.text_color`                       | App Cookies bar text color code                                             |
+| `apps.facebook_comments.username`               | App Facebookk Comments username                                             |
+| `apps.facebook_comments.comments_products`      | App Facebookk Comments on products is enabled. `true` or `false`            |
+| `apps.facebook_comments.comments_blog`          | App Facebookk Comments on blog is enabled. `true` or `false`                |
+| `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                             |
+| `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                               |
+| `apps.facebook_store`                           | App Facebook Store is enabled. `true` or `false`                            |
+| `apps.followprice.store_key`                    | App Followprice Store key                                                   |
+| `apps.getsocial.id`                             | App GetSocial id                                                            |
+| `apps.google_analytics.tracking_id`             | App Google Analytics tracking id                                            |
+| `apps.google_analytics_ec`                      | App Google Analytics Ecommerce is enabled. `true` or `false`                |
+| `apps.google_recaptcha.sitekey`                 | App Google reCAPTCHA Site Key                                               |
+| `apps.google_translate.languages`               | App Google Translate languages, list of languages comma separated. `en, es` |
+| `apps.google_webmaster_tools.site_verification` | App Google Webmasters HTML tag                                              |
+| `apps.hello_bar.embed`                          | App Hello Bar embed code                                                    |
+| `apps.invoicexpress`                            | App InvoiceXpress is enabled. `true` or `false`                             |
+| `apps.kuantokusta.trackk`                       | App KuantoKusta tracking code                                               |
+| `apps.localizejs.project_key`                   | App Localize project key                                                    |
+| `apps.mailchimp`                                | App Newsletter is enabled. `true` or `false`                                |
+| `apps.newsletter`                               | App Newsletter is enabled. `true` or `false`                                |
+| `apps.tawk.embed`                               | App Tawk embed code                                                         |
+| `apps.uservoice.embed`                          | App UserVoice embed code                                                    |
+| `apps.zopim.embed`                              | App Zopim embed code                                                        |
+
 
 ##### Categories
 
@@ -498,6 +550,7 @@ Contains data about each product in the shopping cart.
 |---------------------------------------------|---------------------------------------------------------------------|
 | `cart.items.item_id`                        | Cart item identifier                                                |
 | `cart.items.product_id`                     | Cart product identifier                                             |
+| `cart.items.product_title`                  | Cart product title                                                  |
 | `cart.items.product_url`                    | Cart product URL                                                    |
 | `cart.items.remove_link`                    | Cart remove product URL                                             |
 | `cart.items.qty`                            | Cart product quantity                                               |
@@ -509,6 +562,7 @@ Contains data about each product in the shopping cart.
 | `cart.items.title`                          | Cart product title                                                  |
 | `cart.items.reference`                      | Cart product reference                                              |
 | `cart.items.stock_sold_single`              | Cart stock sold single option                                       |
+| `cart.items.stock_qty`                      | Cart product stock quantity                                         |
 | `cart.items.image`                          | Cart product image URL                                              |
 | `cart.items.shipping_alone`                 | Cart shipping alone option                                          |
 | `cart.items.shipping`                       | Cart shipping                                                       |
@@ -516,7 +570,7 @@ Contains data about each product in the shopping cart.
 | `cart.items.total`                          | Cart product total                                                  |
 
 
-`cart.shipping_methods`  
+`cart.shipping_methods`
 
 Contains data about available shipping methods
 
@@ -544,7 +598,7 @@ Used for retrieving store payments options information.
 | `payment.on_delivery_msg`                   | Payment on delivery message                                         |
 | `payment.on_delivery_value`                 | Payment on delivery value                                           |
 | `payment.pick_up`                           | Payment pick_up option is enabled                                   |
-| `payment.pick_up_msg`                       | Payment pick up message                                          |
+| `payment.pick_up_msg`                       | Payment pick up message                                             |
 
 ##### Pages
 
@@ -858,6 +912,8 @@ Every time an action occurs, an event is available for the current request. If t
 | `notices.cart.stock_sold_single`            | Fires when client is trying to purchase more than 1 unit and the product does not allow it     |
 | `notices.cart.stock_qty`                    | Fires if the product added to the cart does not have enough stock                              |
 | `notices.cart.no_stock`                     | Contains all products that were not updated/added to cart because of not having enough stock   |
+| `notices.cart.product_data`                 | Contains information about the product added, updated or deleted to the shopping cart          |
+| `notices.cart.qty`                          | Contains the quantity added to the shopping cart, fires when add or update                     |
 
 #### Misc events
 
@@ -917,4 +973,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-01-15T16:05:24+01:00</small>
+<small class="last-modified">Last Modified 2016-03-02T12:58:01+00:00</small>

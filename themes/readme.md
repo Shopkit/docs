@@ -14,33 +14,42 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
-#### 2015-10-21
+##### 2016-03-02
+* Added `apps`
+* Added `store.navigation`
+* Added `store.category_default_order`
+* Added `cart.item.product_title`
+* Added `cart.item.stock_qty`
+* Added `notices.cart.product_data`
+* Clean up deprecated properties
+
+##### 2015-10-21
 * Fixed cart events
 
-#### 2015-08-17
+##### 2015-08-17
 * Fixed some descriptions
 
-#### 2015-06-29
+##### 2015-06-29
 * Fixed typo `cupon_code`
 
-#### 2015-06-19
+##### 2015-06-19
 * Add `countries` global
 
-#### 2015-06-15
+##### 2015-06-15
 * Add `price_on_request`
 
-#### 2015-05-18
+##### 2015-05-18
 * Fix order payment data
 
-#### 2015-05-12
+##### 2015-05-12
 * Add `payment.pick_up_msg`
 * Fix `complete.tpl` order data
 
-#### 2015-05-07
+##### 2015-05-07
 * Add `user.country_code`
 
-#### 2015-04-29
+##### 2015-04-29
 * Add `{{ head_content }}` special variable
 
-#### 2015-03-12
+##### 2015-03-12
 * Initial release
