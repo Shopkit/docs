@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-03-01T15:16:44+00:00</small>
+<small class="last-modified">Last Modified 2016-03-09T11:04:07+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -223,7 +223,6 @@ https://api.shopk.it/v1/
                 "latitude": "39.818466068593935",
                 "longitude": "-7.491968556808545",
                 "translate_languages": null,
-                "translate_meta": null,
                 "currency": "EUR",
                 "custom_css": null,
                 "custom_js": null,
