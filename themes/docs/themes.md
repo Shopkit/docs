@@ -481,9 +481,9 @@ Used for retrieving data about enabled apps. The global `apps` object is availab
 | `apps.cookies.link`                             | App Cookies bar url                                                         |
 | `apps.cookies.bg_color`                         | App Cookies bar background color code                                       |
 | `apps.cookies.text_color`                       | App Cookies bar text color code                                             |
-| `apps.facebook_comments.username`               | App Facebookk Comments username                                             |
-| `apps.facebook_comments.comments_products`      | App Facebookk Comments on products is enabled. `true` or `false`            |
-| `apps.facebook_comments.comments_blog`          | App Facebookk Comments on blog is enabled. `true` or `false`                |
+| `apps.facebook_comments.username`               | App Facebook Comments username                                             |
+| `apps.facebook_comments.comments_products`      | App Facebook Comments on products is enabled. `true` or `false`            |
+| `apps.facebook_comments.comments_blog`          | App Facebook Comments on blog is enabled. `true` or `false`                |
 | `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                             |
 | `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                               |
 | `apps.facebook_store`                           | App Facebook Store is enabled. `true` or `false`                            |
@@ -812,7 +812,7 @@ This data is only available on the `complete.tpl` template
 | `order.status_alias`                        | Order status as an string                                           |
 | `order.paid`                                | Order paid status boolean                                           |
 | `order.is_new`                              | New order boolean                                                   |
-| `order.invoice_id`                          | Order invoice identifier                                            |
+| `order.invoice_url`                         | Order invoice permalink                                             |
 | `order.weight`                              | Order weight value                                                  |
 | `order.observations`                        | Order customer observations                                         |
 | `order.shipment_method`                     | Order shipment method chosen by the customer                        |
@@ -973,4 +973,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-03-02T12:58:01+00:00</small>
+<small class="last-modified">Last Modified 2016-03-10T11:29:41+00:00</small>
