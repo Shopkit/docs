@@ -788,7 +788,33 @@ This data is only available on the `payment.tpl`, `data.tpl`, `confirm.tpl` and 
 | `user.shipping_method`                      | Array with shipping method data selected by the client              |
 | `user.shipping_method.id`                   | Identifier of the shipping method                                   |
 | `user.shipping_method.title`                | Title of the shipping method                                        |
+| `user.custom_field`                         | Data from custom fields                                             |
 
+`user.custom_field`
+
+You can create custom fields with custom data in the checkout process. This data will be passed to the order.
+`custom_field` is an array field containing a json, with the following structure:
+
+```json
+{"title":"The title of your custom field","key":"the key","value":"the value"}
+```
+
+You can have as many custom fields as you want/need.
+Usually you register the custom field with an html input:
+
+```twig
+<input type="text" name="custom_field[field_name_1]" value='{{ user.custom_field.field_name_1 }}'>
+```
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `user.custom_field.field_name_1.title`     | Title of the custom field named `field_name_1`                      |
+| `user.custom_field.field_name_1.key`       | Key of the custom field named `field_name_1`                      |
+| `user.custom_field.field_name_1.value`     | Value of the custom field named `field_name_1`                      |
+
+<div class="callout callout-info">
+  You can use our helper function to generate the json strucuture: <code>custom_field_encode('Your title', 'your_key', 'Your value')</code>
+</div>
 
 #### Order
 
@@ -819,6 +845,7 @@ This data is only available on the `complete.tpl` template
 | `order.multibanco`                          | Array with order Multibanco data                                    |
 | `order.client`                              | Array with order client data                                        |
 | `order.products`                            | Array with order products data                                      |
+| `order.custom_field`                        | Array with data from custom field                                   |
 
 `order.multibanco`
 
@@ -859,7 +886,6 @@ This data is only available on the `complete.tpl` template
 | `order.products.image.thumb`                | Order products image format thumb                                   |
 | `order.products.image.square`               | Order products image format square                                  |
 | `order.products.image.full`                 | Order products image format full                                    |
-
 
 #### GET & POST
 

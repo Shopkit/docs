@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-05-11
+* Added `user.custom_field` and `order.custom_field`
+
 ##### 2016-03-02
 * Added `apps`
 * Added `store.navigation`
