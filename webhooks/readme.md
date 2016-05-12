@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-05-12
+* Add `order.custom_field`
+
 ##### 2016-03-01
 * Add `order_invoice` event
 

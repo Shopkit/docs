@@ -92,6 +92,7 @@ X-Shopkit-Event: order_created
         "invoice_url": null,
         "weight": 0,
         "observations": "",
+        "custom_field": "",
         "note": "",
         "client_note": "",
         "shipment_method": "Transportadora",
@@ -136,4 +137,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2016-03-10T11:47:41+00:00</small>
+<small class="last-modified">Last Modified 2016-05-12T12:19:28+01:00</small>
