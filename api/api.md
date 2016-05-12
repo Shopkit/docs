@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-03-09T11:04:07+00:00</small>
+<small class="last-modified">Last Modified 2016-05-12T12:09:20+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -136,6 +136,7 @@ Response: `200 OK`
     "invoice_url": null,
     "weight": 0,
     "observations": "",
+    "custom_field": "",
     "note": "",
     "client_note": "",
     "shipment_method": "Transportadora",
@@ -843,6 +844,7 @@ https://api.shopk.it/v1/order/1337
                 "invoice_url": null,
                 "weight": 0,
                 "observations": "",
+                "custom_field": "",
                 "note": "",
                 "client_note": "",
                 "shipment_method": "Transportadora",
@@ -987,6 +989,7 @@ Attributes | Type | Choices | Description
                 "invoice_url": null,
                 "weight": 0,
                 "observations": "",
+                "custom_field": "",
                 "note": "",
                 "client_note": "",
                 "shipment_method": "Transportadora",
@@ -1196,6 +1199,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "invoice_url": null,
                     "weight": 0,
                     "observations": "",
+                    "custom_field": "",
                     "note": "",
                     "client_note": "",
                     "shipment_method": "Transportadora",

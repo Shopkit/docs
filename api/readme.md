@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2016-05-12
+* Add `order.custom_field`
+
 ##### 2016-03-09
 * Remove `store.translate_meta`
 
