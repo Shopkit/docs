@@ -14,6 +14,11 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-09-28
+* Added `product.options.reference`
+* Added `product.options.image`
+* Clean up
+
 ##### 2016-05-12
 * Added `user.custom_field` and `order.custom_field`
 

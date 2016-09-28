@@ -686,7 +686,7 @@ This data is only available on the `product.tpl` template
 | `product.shipping`                          | Product shipping cost                                                      |
 | `product.featured`                          | Product is featured                                                        |
 | `product.new`                               | Product is new                                                             |
-| `product.promo`                             | Product is promotion                                                       |
+| `product.is_promotion`                      | Product is promotion                                                       |
 | `product.description`                       | Product description                                                        |
 | `product.description_short`                 | Product short description                                                  |
 | `product.video_url`                         | Product video URL                                                          |
@@ -717,6 +717,7 @@ This data is only available on the `product.tpl` template
 | `product.categories.parent`                 | Product category parent identifier                                  |
 | `product.categories.title`                  | Product category title                                              |
 | `product.categories.description`            | Product category description                                        |
+| `product.categories.handle`                 | Product category handle                                        |
 | `product.categories.url`                    | Product category URL                                                |
 
 `product.stock`
@@ -742,6 +743,8 @@ This data is only available on the `product.tpl` template
 | `product.options.stock`                     | Product option stock quantity                                       |
 | `product.options.shipping`                  | Product option shipping cost                                        |
 | `product.options.weight`                    | Product option weight                                               |
+| `product.options.reference`                 | Product option reference                                            |
+| `product.options.image`                     | Product option image array in 3 sizes: `thumb`, `square`, `full`    |
 
 `product.option_groups`
 
@@ -750,13 +753,6 @@ This data is only available on the `product.tpl` template
 | `product.option_groups.title`               | Product option group title                                          |
 | `product.option_groups.options.id`          | Product option identifier                                           |
 | `product.option_groups.options.title`       | Product option title                                                |
-| `product.option_groups.options.price`       | Product option price                                                |
-| `product.option_groups.options.promo`       | Product option is promotion                                         |
-| `product.option_groups.options.price_promo` | Product option promotion price                                      |
-| `product.option_groups.price_on_request`    | Product option has price on request                                 |
-| `product.option_groups.options.stock`       | Product option stock value                                          |
-| `product.option_groups.options.shipping`    | Product option shipping cost                                        |
-| `product.option_groups.options.weight`      | Product option weight                                               |
 
 
 #### Search
@@ -999,4 +995,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-05-12T14:08:00+00:00</small>
+<small class="last-modified">Last Modified 2016-09-28T17:09:11+01:00</small>
