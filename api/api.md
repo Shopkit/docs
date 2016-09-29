@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-05-12T12:09:20+01:00</small>
+<small class="last-modified">Last Modified 2016-09-28T18:39:06+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -270,7 +270,7 @@ https://api.shopk.it/v1/product/1337
 
     + Headers
 
-            Content-Length: 4576
+            Content-Length: 6045
             Content-Type: application/json
 
     + Body
@@ -339,7 +339,13 @@ https://api.shopk.it/v1/product/1337
                         "stock": "99",
                         "shipping": "0",
                         "weight": "0",
-                        "active": "1"
+                        "active": "1",
+                        "reference": "RSBS001",
+                        "image": {
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        }
                     },
                     {
                         "id": "192868",
@@ -351,7 +357,13 @@ https://api.shopk.it/v1/product/1337
                         "stock": "95",
                         "shipping": "0",
                         "weight": "0",
-                        "active": "1"
+                        "active": "1",
+                        "reference": "RSBS002",
+                        "image": {
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        }
                     },
                     {
                         "id": "192869",
@@ -363,7 +375,13 @@ https://api.shopk.it/v1/product/1337
                         "stock": "100",
                         "shipping": "0",
                         "weight": "0",
-                        "active": "1"
+                        "active": "1",
+                        "reference": "RSBS003",
+                        "image": {
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        }
                     },
                     {
                         "id": "192870",
@@ -375,7 +393,13 @@ https://api.shopk.it/v1/product/1337
                         "stock": "100",
                         "shipping": "0",
                         "weight": "0",
-                        "active": "1"
+                        "active": "1",
+                        "reference": "RSBS004",
+                        "image": {
+                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        }
                     }
                 ],
                 "categories": [
@@ -384,6 +408,7 @@ https://api.shopk.it/v1/product/1337
                         "parent": 0,
                         "title": "Cozinha",
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
+                        "handle": "cozinha",
                         "url": "http://parallax.shopk.it/category/cozinha"
                     }
                 ],
@@ -420,7 +445,8 @@ https://api.shopk.it/v1/product/1337
                     "stock_qty": 100,
                     "stock_backorder": true,
                     "stock_show": true,
-                    "stock_sold_single": true
+                    "stock_sold_single": true,
+                    "stock_notify": "5"
                 }
             }
 
@@ -486,7 +512,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 7433
+            Content-Length: 8978
             Content-Type: application/json
 
     + Body
@@ -556,7 +582,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "stock": "99",
                             "shipping": "0",
                             "weight": "0",
-                            "active": "1"
+                            "active": "1",
+                            "reference": "RSBS001",
+                            "image": {
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            }
                         },
                         {
                             "id": "192868",
@@ -568,7 +600,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "stock": "95",
                             "shipping": "0",
                             "weight": "0",
-                            "active": "1"
+                            "active": "1",
+                            "reference": "RSBS002",
+                            "image": {
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            }
                         },
                         {
                             "id": "192869",
@@ -580,7 +618,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "stock": "100",
                             "shipping": "0",
                             "weight": "0",
-                            "active": "1"
+                            "active": "1",
+                            "reference": "RSBS003",
+                            "image": {
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            }
                         },
                         {
                             "id": "192870",
@@ -592,7 +636,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "stock": "100",
                             "shipping": "0",
                             "weight": "0",
-                            "active": "1"
+                            "active": "1",
+                            "reference": "RSBS004",
+                            "image": {
+                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            }
                         }
                     ],
                     "categories": [
@@ -601,6 +651,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "parent": 0,
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
+                            "handle": "cozinha",
                             "url": "http://parallax.shopk.it/category/cozinha"
                         }
                     ],
@@ -637,7 +688,8 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock_qty": 100,
                         "stock_backorder": true,
                         "stock_show": true,
-                        "stock_sold_single": true
+                        "stock_sold_single": true,
+                        "stock_notify": "5"
                     }
                 },
                 "1": {
@@ -696,6 +748,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "parent": 0,
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
+                            "handle": "cozinha",
                             "url": "http://parallax.shopk.it/category/cozinha"
                         }
                     ],

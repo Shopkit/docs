@@ -16,6 +16,12 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2016-09-28
+* Add `product.options.reference`
+* Add `product.options.image.thumb`, `product.options.image.square`, `product.options.image.full`
+* Add `product.categories.handle`
+* Add `product.stock.stock_notify`
+
 ##### 2016-05-12
 * Add `order.custom_field`
 
