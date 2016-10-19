@@ -396,8 +396,8 @@ Used for retrieving store information, set on the Account Settings page of your 
 |---------------------------------------------|---------------------------------------------------------------------|
 | `store.username`                            | Store username                                                      |
 | `store.name`                                | Store name                                                          |
-| `store logo`                                | Store logo URL                                                      |
-| `store description`                         | Store description                                                   |
+| `store.logo`                                | Store logo URL                                                      |
+| `store.description`                         | Store description                                                   |
 | `store.notice`                              | Store notice                                                        |
 | `store.facebook`                            | Store Facebook URL                                                  |
 | `store.twitter`                             | Store Twitter URL                                                   |
@@ -995,4 +995,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-09-28T17:09:11+01:00</small>
+<small class="last-modified">Last Modified 2016-10-19T16:48:23+01:00</small>

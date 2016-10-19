@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-10-19
+* Fixed typo
+
 ##### 2016-09-28
 * Added `product.options.reference`
 * Added `product.options.image`
