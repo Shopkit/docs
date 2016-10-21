@@ -331,6 +331,9 @@ https://api.shopk.it/v1/product/1337
                 "options": [
                     {
                         "id": "192867",
+                        "id_variant_1": "45896",
+                        "id_variant_2": "90261",
+                        "id_variant_3": "",
                         "title": "Small bowl / White",
                         "price": "40.73",
                         "promo": "",
@@ -341,6 +344,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS001",
+                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                         "image": {
                             "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -349,6 +353,9 @@ https://api.shopk.it/v1/product/1337
                     },
                     {
                         "id": "192868",
+                        "id_variant_1": "45896",
+                        "id_variant_2": "90262",
+                        "id_variant_3": "",
                         "title": "Small bowl / Dark turquoise",
                         "price": "40.73",
                         "promo": "",
@@ -359,6 +366,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS002",
+                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                         "image": {
                             "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -367,6 +375,9 @@ https://api.shopk.it/v1/product/1337
                     },
                     {
                         "id": "192869",
+                        "id_variant_1": "45897",
+                        "id_variant_2": "90261",
+                        "id_variant_3": "",
                         "title": "Big bowl / White",
                         "price": "45.73",
                         "promo": "",
@@ -377,6 +388,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS003",
+                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                         "image": {
                             "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -385,6 +397,9 @@ https://api.shopk.it/v1/product/1337
                     },
                     {
                         "id": "192870",
+                        "id_variant_1": "45897",
+                        "id_variant_2": "90262",
+                        "id_variant_3": "",
                         "title": "Big bowl / Dark turquoise",
                         "price": "45.73",
                         "promo": "",
@@ -395,6 +410,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS004",
+                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                         "image": {
                             "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -574,6 +590,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "options": [
                         {
                             "id": "192867",
+                            "id_variant_1": "45896",
+                            "id_variant_2": "90261",
+                            "id_variant_3": "",
                             "title": "Small bowl / White",
                             "price": "40.73",
                             "promo": "",
@@ -584,6 +603,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS001",
+                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                             "image": {
                                 "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -592,6 +612,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         },
                         {
                             "id": "192868",
+                            "id_variant_1": "45896",
+                            "id_variant_2": "90262",
+                            "id_variant_3": "",
                             "title": "Small bowl / Dark turquoise",
                             "price": "40.73",
                             "promo": "",
@@ -602,6 +625,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS002",
+                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                             "image": {
                                 "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -610,6 +634,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         },
                         {
                             "id": "192869",
+                            "id_variant_1": "45897",
+                            "id_variant_2": "90261",
+                            "id_variant_3": "",
                             "title": "Big bowl / White",
                             "price": "45.73",
                             "promo": "",
@@ -620,6 +647,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS003",
+                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                             "image": {
                                 "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -628,6 +656,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         },
                         {
                             "id": "192870",
+                            "id_variant_1": "45897",
+                            "id_variant_2": "90262",
+                            "id_variant_3": "",
                             "title": "Big bowl / Dark turquoise",
                             "price": "45.73",
                             "promo": "",
@@ -638,6 +669,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS004",
+                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                             "image": {
                                 "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",

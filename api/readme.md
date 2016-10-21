@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2016-10-20
+* Add `product.options.url`
+* Add `product.options.id_variant_1`, `product.options.id_variant_2`, `product.options.id_variant_3`
+
 ##### 2016-09-28
 * Add `product.options.reference`
 * Add `product.options.image.thumb`, `product.options.image.square`, `product.options.image.full`
