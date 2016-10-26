@@ -16,6 +16,15 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2016-10-26
+* Add `coupon` object
+* Add `order.subtotal`, `order.product_tax`
+* Add `order.coupon` (`order.coupon.code`, `order.coupon.type`, `order.coupon.value`)
+* Add to `order.product` (`order.product.discount`, `order.product.discount_percent`)
+* Update `shipping` is now an object (`order.shipping.value`, `order.shipping.tax`, `order.shipping.tax_percent`, `order.shipping.discount`, `order.shipping.discount_percent`)
+* Update `order.total_tax`
+* Update payload
+
 ##### 2016-10-20
 * Add `product.options.url`
 * Add `product.options.id_variant_1`, `product.options.id_variant_2`, `product.options.id_variant_3`

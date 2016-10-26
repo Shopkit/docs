@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-09-28T18:39:06+01:00</small>
+<small class="last-modified">Last Modified 2016-10-26T17:04:42+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -111,10 +111,18 @@ Response: `200 OK`
 ```json
 {
     "id": 1337,
-    "total": 158.81,
-    "total_tax": 17.78,
-    "shipping": 7.25,
-    "discount": 14.86,
+    "total": 92.84,
+    "subtotal": 77.32,
+    "product_tax": 16.01,
+    "total_tax": 16.01,
+    "discount": 7.73,
+    "shipping": {
+        "value": 7.25,
+        "tax": 0,
+        "tax_percent": 0,
+        "discount": 0,
+        "discount_percent": 0
+    },
     "coupon_code": "bajevolp",
     "created_at": "2014-11-19T00:44:19+00:00",
     "update_at": "2014-11-26T15:30:00+00:00",
@@ -122,11 +130,11 @@ Response: `200 OK`
     "paid_at": "2014-11-25T25:00:20+00:00",
     "currency": "EUR",
     "payment": {
-        "type": "multibanco",
+        "type": "Multibanco",
         "data": {
             "entity": 88888,
             "reference": 888888888,
-            "value": 158.81
+            "value": 92.84
         }
     },
     "status": 3,
@@ -137,6 +145,11 @@ Response: `200 OK`
     "weight": 0,
     "observations": "",
     "custom_field": "",
+    "coupon": {
+        "code": "bajevolp",
+        "type": "percent",
+        "value": 10
+    },
     "note": "",
     "client_note": "",
     "shipment_method": "Transportadora",
@@ -144,29 +157,32 @@ Response: `200 OK`
         "name": "Shopkit",
         "email": "info@shopk.it",
         "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
-        "postcode": "6000-767 ",
+        "postcode": "6000-767",
         "town": "Castelo Branco",
         "country": "Portugal - Continental",
+        "country_code": "PRT",
         "phone": "969057993",
         "fiscal_id": ""
     },
     "products": [
         {
-            "id": 44752,
-            "title": "Hanging Succulent Planter",
-            "option": "",
-            "reference": "",
-            "price": 71.32,
-            "tax": 0,
+            "id": 44753,
+            "title": "Shelving Tree with Birds",
+            "option": "Azul / Small",
+            "reference": "STHFBF7574",
+            "price": 77.32,
+            "tax": 23,
             "quantity": 1,
-            "subtotal": 71.32,
+            "discount": 7.732,
+            "subtotal": 85.59324,
+            "discount_percent": 10,
             "weight": 0,
-            "url": false,
-            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+            "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
+            "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
             "image":{
-                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
-                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
-                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
             }
         }
     ]
@@ -270,7 +286,7 @@ https://api.shopk.it/v1/product/1337
 
     + Headers
 
-            Content-Length: 6045
+            Content-Length: 6625
             Content-Type: application/json
 
     + Body
@@ -528,7 +544,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 8978
+            Content-Length: 9558
             Content-Type: application/json
 
     + Body
@@ -897,17 +913,25 @@ https://api.shopk.it/v1/order/1337
 
     + Headers
 
-            Content-Length: 1898
+            Content-Length: 2552
             Content-Type: application/json
 
     + Body
 
             {
                 "id": 1337,
-                "total": 158.81,
-                "total_tax": 17.78,
-                "shipping": 7.25,
+                "total": 157.03,
+                "subtotal": 148.64,
+                "product_tax": 16.01,
+                "total_tax": 16.01,
                 "discount": 14.86,
+                "shipping": {
+                    "value": 7.25,
+                    "tax": 0,
+                    "tax_percent": 0,
+                    "discount": 0,
+                    "discount_percent": 0
+                },
                 "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
@@ -919,7 +943,7 @@ https://api.shopk.it/v1/order/1337
                     "data": {
                         "entity": 88888,
                         "reference": 888888888,
-                        "value": 158.81
+                        "value": 157.03
                     }
                 },
                 "status": 5,
@@ -930,6 +954,11 @@ https://api.shopk.it/v1/order/1337
                 "weight": 0,
                 "observations": "",
                 "custom_field": "",
+                "coupon": {
+                    "code": "bajevolp",
+                    "type": "percent",
+                    "value": 10
+                },
                 "note": "",
                 "client_note": "",
                 "shipment_method": "Transportadora",
@@ -940,6 +969,7 @@ https://api.shopk.it/v1/order/1337
                     "postcode": "6000-767 ",
                     "town": "Castelo Branco",
                     "country": "Portugal - Continental",
+                    "country_code": "PRT",
                     "phone": "969057993",
                     "fiscal_id": ""
                 },
@@ -952,14 +982,16 @@ https://api.shopk.it/v1/order/1337
                         "price": 77.32,
                         "tax": 23,
                         "quantity": 1,
-                        "subtotal": 95.1036,
+                        "discount": 7.732,
+                        "subtotal": 85.59324,
+                        "discount_percent": 10,
                         "weight": 0,
-                        "url": false,
+                        "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
                     },
                     {
@@ -970,14 +1002,16 @@ https://api.shopk.it/v1/order/1337
                         "price": 71.32,
                         "tax": 0,
                         "quantity": 1,
-                        "subtotal": 71.32,
+                        "discount": 7.132,
+                        "subtotal": 64.188,
+                        "discount_percent": 10,
                         "weight": 0,
-                        "url": false,
+                        "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
                     }
                 ]
@@ -1042,17 +1076,25 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 1925
+            Content-Length: 2581
             Content-Type: application/json
 
     + Body
 
             {
                 "id": 1337,
-                "total": 158.81,
-                "total_tax": 17.78,
-                "shipping": 7.25,
+                "total": 157.03,
+                "subtotal": 148.64,
+                "product_tax": 16.01,
+                "total_tax": 16.01,
                 "discount": 14.86,
+                "shipping": {
+                    "value": 7.25,
+                    "tax": 0,
+                    "tax_percent": 0,
+                    "discount": 0,
+                    "discount_percent": 0
+                },
                 "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
@@ -1064,7 +1106,7 @@ Attributes | Type | Choices | Description
                     "data": {
                         "entity": 88888,
                         "reference": 888888888,
-                        "value": 158.81
+                        "value": 157.03
                     }
                 },
                 "status": 3,
@@ -1075,6 +1117,11 @@ Attributes | Type | Choices | Description
                 "weight": 0,
                 "observations": "",
                 "custom_field": "",
+                "coupon": {
+                    "code": "bajevolp",
+                    "type": "percent",
+                    "value": 10
+                },
                 "note": "",
                 "client_note": "",
                 "shipment_method": "Transportadora",
@@ -1085,6 +1132,7 @@ Attributes | Type | Choices | Description
                     "postcode": "6000-767 ",
                     "town": "Castelo Branco",
                     "country": "Portugal - Continental",
+                    "country_code": "PRT",
                     "phone": "969057993",
                     "fiscal_id": ""
                 },
@@ -1097,14 +1145,16 @@ Attributes | Type | Choices | Description
                         "price": 77.32,
                         "tax": 23,
                         "quantity": 1,
-                        "subtotal": 77.32,
+                        "discount": 7.732,
+                        "subtotal": 85.59324,
+                        "discount_percent": 10,
                         "weight": 0,
-                        "url": false,
+                        "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
                     },
                     {
@@ -1115,14 +1165,16 @@ Attributes | Type | Choices | Description
                         "price": 71.32,
                         "tax": 0,
                         "quantity": 1,
-                        "subtotal": 71.32,
+                        "discount": 7.132,
+                        "subtotal": 64.188,
+                        "discount_percent": 10,
                         "weight": 0,
-                        "url": false,
+                        "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
                     }
                 ]
@@ -1251,7 +1303,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
    + Headers
 
-            Content-Length: 1918
+            Content-Length: 2574
             Content-Type: application/json
 
     + Body
@@ -1259,10 +1311,18 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             {
                 "0": {
                     "id": 1337,
-                    "total": 158.81,
-                    "total_tax": 17.78,
-                    "shipping": 7.25,
+                    "total": 157.03,
+                    "subtotal": 148.64,
+                    "product_tax": 16.01,
+                    "total_tax": 16.01,
                     "discount": 14.86,
+                    "shipping": {
+                        "value": 7.25,
+                        "tax": 0,
+                        "tax_percent": 0,
+                        "discount": 0,
+                        "discount_percent": 0
+                    },
                     "coupon_code": "bajevolp",
                     "created_at": "2014-11-19T00:44:19+00:00",
                     "update_at": "2014-11-26T15:30:00+00:00",
@@ -1274,7 +1334,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "data": {
                             "entity": 88888,
                             "reference": 888888888,
-                            "value": 158.81
+                            "value": 157.03
                         }
                     },
                     "status": 5,
@@ -1285,6 +1345,11 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "weight": 0,
                     "observations": "",
                     "custom_field": "",
+                    "coupon": {
+                        "code": "bajevolp",
+                        "type": "percent",
+                        "value": 10
+                    },
                     "note": "",
                     "client_note": "",
                     "shipment_method": "Transportadora",
@@ -1295,6 +1360,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "postcode": "6000-767 ",
                         "town": "Castelo Branco",
                         "country": "Portugal - Continental",
+                        "country_code": "PRT",
                         "phone": "969057993",
                         "fiscal_id": ""
                     },
@@ -1307,14 +1373,16 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "price": 77.32,
                             "tax": 23,
                             "quantity": 1,
-                            "subtotal": 95.1036,
+                            "discount": 7.732,
+                            "subtotal": 85.59324,
+                            "discount_percent": 10,
                             "weight": 0,
-                            "url": false,
+                            "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                             "image":{
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                             }
                         },
                         {
@@ -1325,14 +1393,16 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "price": 71.32,
                             "tax": 0,
                             "quantity": 1,
-                            "subtotal": 71.32,
+                            "discount": 7.132,
+                            "subtotal": 64.188,
+                            "discount_percent": 10,
                             "weight": 0,
-                            "url": false,
+                            "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                             "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                             "image":{
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/eacc633fe509af083776db911a5f02b9.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/eacc633fe509af083776db911a5f02b9.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/eacc633fe509af083776db911a5f02b9.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                             }
                         }
                     ]
