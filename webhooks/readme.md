@@ -14,6 +14,15 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-10-26
+* Add `coupon` object
+* Add `order.subtotal`, `order.product_tax`
+* Add `order.coupon` (`order.coupon.code`, `order.coupon.type`, `order.coupon.value`)
+* Add to `order.product` (`order.product.discount`, `order.product.discount_percent`)
+* Update `shipping` is now an object (`order.shipping.value`, `order.shipping.tax`, `order.shipping.tax_percent`, `order.shipping.discount`, `order.shipping.discount_percent`)
+* Update `order.total_tax`
+* Update payload
+
 ##### 2016-05-12
 * Add `order.custom_field`
 

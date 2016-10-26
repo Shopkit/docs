@@ -59,7 +59,7 @@ POST /payload HTTP/1.1
 Host: localhost
 User-Agent: Shopkit-Webhook
 Content-Type: application/json
-Content-Length: 1335
+Content-Length: 1800
 X-Shopkit-Event: order_created
 ```
 
@@ -67,10 +67,18 @@ X-Shopkit-Event: order_created
 {
     "order": {
         "id": 1337,
-        "total": 87.49,
-        "total_tax": 17.78,
-        "shipping": 7.25,
-        "discount": 14.86,
+        "total": 92.84,
+        "subtotal": 77.32,
+        "product_tax": 16.01,
+        "total_tax": 16.01,
+        "discount": 7.73,
+        "shipping": {
+            "value": 7.25,
+            "tax": 0,
+            "tax_percent": 0,
+            "discount": 0,
+            "discount_percent": 0
+        },
         "coupon_code": "bajevolp",
         "created_at": "2014-11-19T00:44:19+00:00",
         "update_at": "2014-11-26T15:30:00+00:00",
@@ -82,7 +90,7 @@ X-Shopkit-Event: order_created
             "data": {
                 "entity": 88888,
                 "reference": 888888888,
-                "value": 87.49
+                "value": 92.84
             }
         },
         "status": 5,
@@ -93,6 +101,11 @@ X-Shopkit-Event: order_created
         "weight": 0,
         "observations": "",
         "custom_field": "",
+        "coupon": {
+            "code": "bajevolp",
+            "type": "percent",
+            "value": 10
+        },
         "note": "",
         "client_note": "",
         "shipment_method": "Transportadora",
@@ -103,6 +116,7 @@ X-Shopkit-Event: order_created
             "postcode": "6000-767",
             "town": "Castelo Branco",
             "country": "Portugal - Continental",
+            "country_code": "PRT",
             "phone": "969057993",
             "fiscal_id": ""
         },
@@ -115,14 +129,16 @@ X-Shopkit-Event: order_created
                 "price": 77.32,
                 "tax": 23,
                 "quantity": 1,
-                "subtotal": 95.1036,
+                "discount": 7.732,
+                "subtotal": 85.59324,
+                "discount_percent": 10,
                 "weight": 0,
-                "url": false,
+                "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                 "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                 "image":{
-                    "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/4778681bb73229d7d038c077c741b7bd.jpg"
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                 }
             }
         ]
@@ -137,4 +153,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2016-05-12T12:19:28+01:00</small>
+<small class="last-modified">Last Modified 2016-10-26T17:04:59+01:00</small>
