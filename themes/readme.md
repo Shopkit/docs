@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-12-08
+* Remove `cart.free_shipping`
+
 ##### 2016-10-19
 * Fixed typo
 

@@ -531,7 +531,6 @@ Used for retrieving shopping cart data.
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `cart.items`                                | Cart items *(see below for a full propriety list)*                  |
-| `cart.free_shipping`                        | Cart free shipping                                                  |
 | `cart.total`                                | Cart total                                                          |
 | `cart.shipping_methods`                     | Cart shipping methods *(see below for a full propriety list)*       |
 | `cart.discount`                             | Cart discount                                                       |
@@ -995,4 +994,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-10-19T16:48:23+01:00</small>
+<small class="last-modified">Last Modified 2016-11-08T18:43:36+00:00</small>
