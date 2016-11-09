@@ -14,7 +14,10 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
-##### 2016-12-08
+##### 2016-11-09
+* Add `store.navigation.primary.menu_item_handle`, `store.navigation.secondary.menu_item_handle`
+
+##### 2016-11-08
 * Remove `cart.free_shipping`
 
 ##### 2016-10-19

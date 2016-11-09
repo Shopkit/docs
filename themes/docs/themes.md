@@ -456,18 +456,20 @@ These pages are automatically created and cannot be deleted, also have a particu
 
 Contains data about store navigation
 
-| Name                                        | Description                                                                         |
-|---------------------------------------------|-------------------------------------------------------------------------------------|
-| `store.navigation.primary.menu_text`        | Primary navigation text to display                                                  |
-| `store.navigation.primary.menu_type`        | Primary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page`   |
-| `store.navigation.primary.menu_url`         | Primary navigation url                                                              |
-| `store.navigation.primary.menu_item`        | Primary navigation item                                                             |
-| `store.navigation.primary.target_blank`     | Primary navigation option open link in new window. `true`, `false`                  |
-| `store.navigation.secondary.menu_text`      | Secondary navigation text to display                                                |
-| `store.navigation.secondary.menu_type`      | Secondary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page` |
-| `store.navigation.secondary.menu_url`       | Secondary navigation url                                                            |
-| `store.navigation.secondary.menu_item`      | Secondary navigation item                                                           |
-| `store.navigation.secondary.target_blank`   | Secondary navigation option open link in new window. `true`, `false`                |
+| Name                                          | Description                                                                         |
+|-----------------------------------------------|-------------------------------------------------------------------------------------|
+| `store.navigation.primary.menu_text`          | Primary navigation text to display                                                  |
+| `store.navigation.primary.menu_type`          | Primary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page`   |
+| `store.navigation.primary.menu_url`           | Primary navigation url                                                              |
+| `store.navigation.primary.menu_item`          | Primary navigation item                                                             |
+| `store.navigation.primary.menu_item_handle`   | Primary navigation item handle                                                      |
+| `store.navigation.primary.target_blank`       | Primary navigation option open link in new window. `true`, `false`                  |
+| `store.navigation.secondary.menu_text`        | Secondary navigation text to display                                                |
+| `store.navigation.secondary.menu_type`        | Secondary navigation type. `menu_url`, `menu_product`, `menu_category`, `menu_page` |
+| `store.navigation.secondary.menu_url`         | Secondary navigation url                                                            |
+| `store.navigation.secondary.menu_item`        | Secondary navigation item                                                           |
+| `store.navigation.secondary.menu_item_handle` | Secondary navigation item handle                                                    |
+| `store.navigation.secondary.target_blank`     | Secondary navigation option open link in new window. `true`, `false`                |
 
 
 ##### Apps
@@ -481,9 +483,9 @@ Used for retrieving data about enabled apps. The global `apps` object is availab
 | `apps.cookies.link`                             | App Cookies bar url                                                         |
 | `apps.cookies.bg_color`                         | App Cookies bar background color code                                       |
 | `apps.cookies.text_color`                       | App Cookies bar text color code                                             |
-| `apps.facebook_comments.username`               | App Facebook Comments username                                             |
-| `apps.facebook_comments.comments_products`      | App Facebook Comments on products is enabled. `true` or `false`            |
-| `apps.facebook_comments.comments_blog`          | App Facebook Comments on blog is enabled. `true` or `false`                |
+| `apps.facebook_comments.username`               | App Facebook Comments username                                              |
+| `apps.facebook_comments.comments_products`      | App Facebook Comments on products is enabled. `true` or `false`             |
+| `apps.facebook_comments.comments_blog`          | App Facebook Comments on blog is enabled. `true` or `false`                 |
 | `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                             |
 | `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                               |
 | `apps.facebook_store`                           | App Facebook Store is enabled. `true` or `false`                            |
@@ -716,7 +718,7 @@ This data is only available on the `product.tpl` template
 | `product.categories.parent`                 | Product category parent identifier                                  |
 | `product.categories.title`                  | Product category title                                              |
 | `product.categories.description`            | Product category description                                        |
-| `product.categories.handle`                 | Product category handle                                        |
+| `product.categories.handle`                 | Product category handle                                             |
 | `product.categories.url`                    | Product category URL                                                |
 
 `product.stock`
@@ -803,9 +805,9 @@ Usually you register the custom field with an html input:
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
-| `user.custom_field.field_name_1.title`     | Title of the custom field named `field_name_1`                      |
-| `user.custom_field.field_name_1.key`       | Key of the custom field named `field_name_1`                      |
-| `user.custom_field.field_name_1.value`     | Value of the custom field named `field_name_1`                      |
+| `user.custom_field.field_name_1.title`      | Title of the custom field named `field_name_1`                      |
+| `user.custom_field.field_name_1.key`        | Key of the custom field named `field_name_1`                        |
+| `user.custom_field.field_name_1.value`      | Value of the custom field named `field_name_1`                      |
 
 <div class="callout callout-info">
   You can use our helper function to generate the json strucuture: <code>custom_field_encode('Your title', 'your_key', 'Your value')</code>
@@ -994,4 +996,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-11-08T18:43:36+00:00</small>
+<small class="last-modified">Last Modified 2016-11-09T18:26:16+00:00</small>
