@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-10-26T17:04:42+01:00</small>
+<small class="last-modified">Last Modified 2016-11-28T17:48:37+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -180,7 +180,7 @@ Response: `200 OK`
             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
             "image":{
-                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
             }
@@ -209,7 +209,7 @@ https://api.shopk.it/v1/
 
     + Headers
 
-            Content-Length: 2314
+            Content-Length: 4284
             Content-Type: application/json
 
     + Body
@@ -222,24 +222,17 @@ https://api.shopk.it/v1/
                 "notice": "Portes grátis para encomendas superiores a 59€",
                 "facebook": "https://www.facebook.com/shopkit",
                 "twitter": "https://twitter.com/shopkit_pt",
-                "instagram": null,
+                "instagram": "https://www.instagram.com/shopk.it/",
                 "pinterest": null,
-                "facebook_comments_product": true,
-                "facebook_comments_blog": true,
-                "facebook_likebox": true,
                 "show_email": false,
                 "email": "info@shopk.it",
                 "phone": null,
                 "cellphone": "(+351) 969 057 993",
                 "address": "Avª do Empresário, 1, S1.08\n6000-767 Castelo Branco",
-                "facebook_username": null,
-                "paypal_email": "info@shopk.it",
                 "basecolor": "#db0a5b",
                 "favicon": null,
-                "google_analytics": "UA-88888888-8",
                 "latitude": "39.818466068593935",
                 "longitude": "-7.491968556808545",
-                "translate_languages": null,
                 "currency": "EUR",
                 "custom_css": null,
                 "custom_js": null,
@@ -248,19 +241,119 @@ https://api.shopk.it/v1/
                 "page_title": "Parallax",
                 "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simples e rápido. Em 5 minutos estás pronto para começar a vender os teus produtos on-line.",
                 "meta_tags": null,
+                "navigation": {
+                    "primary": [
+                        {
+                            "menu_text": "Home",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it",
+                            "menu_item": "/",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Sobre nós",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/sobre-nos",
+                            "menu_item": "sobre-nos",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Blog",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/blog",
+                            "menu_item": "blog",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Promoções",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/promocoes",
+                            "menu_item": "promocoes",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Novidades",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/novidades",
+                            "menu_item": "novidades",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Contactos",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/contatos",
+                            "menu_item": "contatos",
+                            "target_blank": false
+                        }
+                    ],
+                    "secondary": [
+                        {
+                            "menu_text": "Termos e condições",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/page/termos-e-condicoes",
+                            "menu_item": "10713",
+                            "target_blank": false
+                        },
+                        {
+                            "menu_text": "Politica de Privacidade",
+                            "menu_type": "menu_page",
+                            "menu_url": "https://parallax.shopk.it/page/politica-de-privacidade",
+                            "menu_item": "10714",
+                            "target_blank": false
+                        }
+                    ]
+                },
+                "payments": {
+                    "paypal": {
+                        "active": true,
+                        "email": "email@example.com",
+                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "min_value": null,
+                        "max_value": null
+                    },
+                    "multibanco": {
+                        "active": true,
+                        "entity": 88888,
+                        "user": "USER88888",
+                        "cin": 888,
+                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "min_value": 1,
+                        "max_value": null
+                    },
+                    "bank_transfer": {
+                        "active": true,
+                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "min_value": null,
+                        "max_value": null
+                    },
+                    "on_delivery": {
+                        "active": false,
+                        "value": 0,
+                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "min_value": null,
+                        "max_value": null
+                    },
+                    "pick_up": {
+                        "active": true,
+                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "min_value": null,
+                        "max_value": null
+                    }
+                },
+                "category_default_order": null,
                 "assets": {
-                    "url": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/store/parallax",
-                    "images": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/store/parallax/img",
-                    "css": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/store/parallax/css/style.css?template=store/parallax&amp;last_modified=1419706838",
-                    "plugins": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/store/parallax/js/plugins.js?template=store/parallax&amp;last_modified=1419706838",
-                    "scripts": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/store/parallax/js/script.js?template=store/parallax&amp;last_modified=1419706838"
+                    "url": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax",
+                    "images": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/img",
+                    "css": "https://drwfxyu78e9uq.cloudfront.net/css/store/parallax/style.css?template=shopkit/parallax&amp;last_modified=1479844384",
+                    "plugins": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/plugins.js?template=shopkit/parallax&amp;last_modified=1479844384",
+                    "scripts": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/script.js?template=shopkit/parallax&amp;last_modified=1479844384"
                 },
                 "images_header": [
-                    "https://d38oac8e57zmkl.cloudfront.net/header/ef1a329cffb7ddcd33cc860863d60522.jpg",
-                    "https://d38oac8e57zmkl.cloudfront.net/header/fd7516a5fc9c490a624c9d2ce152da2b.jpg",
-                    "https://d38oac8e57zmkl.cloudfront.net/header/a68f777e6912cd917c0797fc47776f29.jpg"
+                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/14bb24a112fafccdd36680be2b03f4ce.jpg",
+                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/c788681a62eff02c640765d3c215c920.jpg",
+                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/f669d550743b2e27a81c22812b270101.jpg"
                 ],
-                "taxes_included": false
+                "taxes_included": true
             }
 
 
@@ -324,25 +417,25 @@ https://api.shopk.it/v1/product/1337
                 "sales": 0,
                 "images": {
                     "1": {
-                        "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/17d23f7b534bf365580989363da328d2.jpg",
-                        "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/17d23f7b534bf365580989363da328d2.jpg",
-                        "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/17d23f7b534bf365580989363da328d2.jpg"
+                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
+                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/17d23f7b534bf365580989363da328d2.jpg",
+                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/17d23f7b534bf365580989363da328d2.jpg"
                     },
                     "2": {
-                        "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/7d2fe8d66dd9925ac72a3112d691f352.jpg"
+                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/7d2fe8d66dd9925ac72a3112d691f352.jpg"
                     },
                     "3": {
-                        "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/ff2216454ebbf8ca2727335ecacbc472.jpg"
+                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
                     }
                 },
                 "image": {
-                    "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                 },
                 "options": [
                     {
@@ -362,9 +455,9 @@ https://api.shopk.it/v1/product/1337
                         "reference": "RSBS001",
                         "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                         "image": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                         }
                     },
                     {
@@ -384,9 +477,9 @@ https://api.shopk.it/v1/product/1337
                         "reference": "RSBS002",
                         "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                         "image": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                         }
                     },
                     {
@@ -406,9 +499,9 @@ https://api.shopk.it/v1/product/1337
                         "reference": "RSBS003",
                         "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                         "image": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                         }
                     },
                     {
@@ -428,9 +521,9 @@ https://api.shopk.it/v1/product/1337
                         "reference": "RSBS004",
                         "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                         "image": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                         }
                     }
                 ],
@@ -583,25 +676,25 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "sales": 0,
                     "images": {
                         "1": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/17d23f7b534bf365580989363da328d2.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/17d23f7b534bf365580989363da328d2.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/17d23f7b534bf365580989363da328d2.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/17d23f7b534bf365580989363da328d2.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/17d23f7b534bf365580989363da328d2.jpg"
                         },
                         "2": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/7d2fe8d66dd9925ac72a3112d691f352.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/7d2fe8d66dd9925ac72a3112d691f352.jpg"
                         },
                         "3": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/ff2216454ebbf8ca2727335ecacbc472.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/ff2216454ebbf8ca2727335ecacbc472.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
                         }
                     },
                     "image": {
-                        "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                     },
                     "options": [
                         {
@@ -621,9 +714,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "reference": "RSBS001",
                             "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                             "image": {
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                             }
                         },
                         {
@@ -643,9 +736,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "reference": "RSBS002",
                             "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                             "image": {
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                             }
                         },
                         {
@@ -665,9 +758,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "reference": "RSBS003",
                             "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                             "image": {
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                             }
                         },
                         {
@@ -687,9 +780,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "reference": "RSBS004",
                             "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                             "image": {
-                                "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                             }
                         }
                     ],
@@ -773,20 +866,20 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "sales": 0,
                     "images": {
                         "1": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/697610aa34185dfefa326724ea867818.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/697610aa34185dfefa326724ea867818.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/697610aa34185dfefa326724ea867818.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/697610aa34185dfefa326724ea867818.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/697610aa34185dfefa326724ea867818.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/697610aa34185dfefa326724ea867818.jpg"
                         },
                         "2": {
-                            "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
-                            "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
-                            "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/5d6f7ac0314930ef1c756da68c60cbb3.jpg"
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/5d6f7ac0314930ef1c756da68c60cbb3.jpg"
                         }
                     },
                     "image": {
-                        "thumb": "https://d38oac8e57zmkl.cloudfront.net/produtos/th/1609f7f3d86847eba5a5cc184577deea.jpg",
-                        "square": "https://d38oac8e57zmkl.cloudfront.net/produtos/square/1609f7f3d86847eba5a5cc184577deea.jpg",
-                        "full": "https://d38oac8e57zmkl.cloudfront.net/produtos/1609f7f3d86847eba5a5cc184577deea.jpg"
+                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/1609f7f3d86847eba5a5cc184577deea.jpg",
+                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/1609f7f3d86847eba5a5cc184577deea.jpg",
+                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/1609f7f3d86847eba5a5cc184577deea.jpg"
                     },
                     "options": [
                     ],
@@ -989,7 +1082,7 @@ https://api.shopk.it/v1/order/1337
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
@@ -1009,7 +1102,7 @@ https://api.shopk.it/v1/order/1337
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
@@ -1152,7 +1245,7 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
@@ -1172,7 +1265,7 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
@@ -1380,7 +1473,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                             "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                             }
@@ -1400,7 +1493,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                             "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                             "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                             }

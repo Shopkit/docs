@@ -16,6 +16,11 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2016-11-28
+* Add `store.navigation`
+* Add `store.payments`
+* update payload
+
 ##### 2016-10-26
 * Add `coupon` object
 * Add `order.subtotal`, `order.product_tax`
