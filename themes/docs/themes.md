@@ -409,7 +409,6 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.phone`                               | Store phone                                                         |
 | `store.cellphone`                           | Store cellphone                                                     |
 | `store.address`                             | Store address                                                       |
-| `store.paypal_email`                        | Store Paypal email                                                  |
 | `store.basecolor`                           | Store basecolor                                                     |
 | `store.favicon`                             | Store favicon URl                                                   |
 | `store.latitude`                            | Store latitude                                                      |
@@ -423,6 +422,7 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.meta_description`                    | Store meta description                                              |
 | `store.meta_tags`                           | Store meta tags                                                     |
 | `store.navigation`                          | Store navigation array                                              |
+| `store.payments`                            | Store payments array                                                |
 | `store.category_default_order`              | Store category default order                                        |
 | `store.domain`                              | Store current domain                                                |
 | `store.assets`                              | Store assets array                                                  |
@@ -470,6 +470,39 @@ Contains data about store navigation
 | `store.navigation.secondary.menu_item`        | Secondary navigation item                                                           |
 | `store.navigation.secondary.menu_item_handle` | Secondary navigation item handle                                                    |
 | `store.navigation.secondary.target_blank`     | Secondary navigation option open link in new window. `true`, `false`                |
+
+
+##### Payments
+
+Used for retrieving store payments options information.
+
+| Name                                          | Description                                                         |
+|-----------------------------------------------|---------------------------------------------------------------------|
+| `store.payments.paypal.active`                | Payment Paypal option is enabled                                    |
+| `store.payments.paypal.email`                 | Payment Paypal email                                                |
+| `store.payments.paypal.message`               | Payment Paypal message                                              |
+| `store.payments.paypal.min_value`             | Payment Paypal order minimum value                                  |
+| `store.payments.paypal.max_value`             | Payment Paypal order maximum value                                  |
+| `store.payments.multibanco.active`            | Payment multibanco option is enabled                                |
+| `store.payments.multibanco.entity`            | Payment multibanco entity                                           |
+| `store.payments.multibanco.user`              | Payment multibanco user                                             |
+| `store.payments.multibanco.cin`               | Payment multibanco cin                                              |
+| `store.payments.multibanco.message`           | Payment multibanco message                                          |
+| `store.payments.multibanco.min_value`         | Payment multibanco order minimum value                              |
+| `store.payments.multibanco.max_value`         | Payment multibanco order maximum value                              |
+| `store.payments.bank_transfer.active`         | Payment bank transfer option is enabled                             |
+| `store.payments.bank_transfer.message`        | Payment bank transfer message                                       |
+| `store.payments.bank_transfer.min_value`      | Payment bank transfer minimum value                                 |
+| `store.payments.bank_transfer.max_value`      | Payment bank transfer maximum value                                 |
+| `store.payments.on_delivery.active`           | Payment on delivery option is enabled                               |
+| `store.payments.on_delivery.value`            | Payment on delivery value                                           |
+| `store.payments.on_delivery.message`          | Payment on delivery message                                         |
+| `store.payments.on_delivery.min_value`        | Payment on delivery minimum value                                   |
+| `store.payments.on_delivery.max_value`        | Payment on delivery maximum value                                   |
+| `store.payments.pick_up.active`               | Payment facilities pick up option is enabled                        |
+| `store.payments.pick_up.message`              | Payment facilities pick up message                                  |
+| `store.payments.pick_up.min_value`            | Payment facilities pick up minimum value                            |
+| `store.payments.pick_up.max_value`            | Payment facilities pick up maximum value                            |
 
 
 ##### Apps
@@ -581,25 +614,6 @@ Contains data about available shipping methods
 | `cart.shipping_methods.title`               | Cart shipping method title                                          |
 | `cart.shipping_methods.description`         | Cart shipping method description                                    |
 | `cart.shipping_methods.price`               | Cart shipping method price                                          |
-
-##### Payment
-
-Used for retrieving store payments options information.
-
-| Name                                        | Description                                                         |
-|---------------------------------------------|---------------------------------------------------------------------|
-| `payment.paypal`                            | Payment Paypal option is enabled                                    |
-| `payment.paypal_msg`                        | Payment Paypal message                                              |
-| `payment.paypal_email`                      | Payment Paypal email                                                |
-| `payment.bank_transfer`                     | Payment bank_transfer option is enabled                             |
-| `payment.bank_transfer_msg`                 | Payment bank transfer message                                       |
-| `payment.multibanco`                        | Payment multibanco option is enabled                                |
-| `payment.multibanco_msg`                    | Payment Multibanco message                                          |
-| `payment.on_delivery`                       | Payment on_delivery option is enabled                               |
-| `payment.on_delivery_msg`                   | Payment on delivery message                                         |
-| `payment.on_delivery_value`                 | Payment on delivery value                                           |
-| `payment.pick_up`                           | Payment pick_up option is enabled                                   |
-| `payment.pick_up_msg`                       | Payment pick up message                                             |
 
 ##### Pages
 
@@ -996,4 +1010,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-11-09T18:26:16+00:00</small>
+<small class="last-modified">Last Modified 2016-11-28T15:32:19+00:00</small>

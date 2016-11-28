@@ -14,6 +14,10 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-11-28
+* Move `payment` object into `store.payments`
+* Remove `store.paypal_email`
+
 ##### 2016-11-09
 * Add `store.navigation.primary.menu_item_handle`, `store.navigation.secondary.menu_item_handle`
 
@@ -21,33 +25,33 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 * Remove `cart.free_shipping`
 
 ##### 2016-10-19
-* Fixed typo
+* Fix typo
 
 ##### 2016-09-28
-* Added `product.options.reference`
-* Added `product.options.image`
+* Add `product.options.reference`
+* Add `product.options.image`
 * Clean up
 
 ##### 2016-05-12
-* Added `user.custom_field` and `order.custom_field`
+* Add `user.custom_field` and `order.custom_field`
 
 ##### 2016-03-02
-* Added `apps`
-* Added `store.navigation`
-* Added `store.category_default_order`
-* Added `cart.item.product_title`
-* Added `cart.item.stock_qty`
-* Added `notices.cart.product_data`
+* Add `apps`
+* Add `store.navigation`
+* Add `store.category_default_order`
+* Add `cart.item.product_title`
+* Add `cart.item.stock_qty`
+* Add `notices.cart.product_data`
 * Clean up deprecated properties
 
 ##### 2015-10-21
-* Fixed cart events
+* Fix cart events
 
 ##### 2015-08-17
-* Fixed some descriptions
+* Fix some descriptions
 
 ##### 2015-06-29
-* Fixed typo `cupon_code`
+* Fix typo `cupon_code`
 
 ##### 2015-06-19
 * Add `countries` global
