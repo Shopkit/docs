@@ -509,35 +509,45 @@ Used for retrieving store payments options information.
 
 Used for retrieving data about enabled apps. The global `apps` object is available globally.
 
-| Name                                            | Description                                                                 |
-|-------------------------------------------------|-----------------------------------------------------------------------------|
-| `apps.bablic.embed`                             | App Bablic embed code                                                       |
-| `apps.cookies.text`                             | App Cookies bar text                                                        |
-| `apps.cookies.link`                             | App Cookies bar url                                                         |
-| `apps.cookies.bg_color`                         | App Cookies bar background color code                                       |
-| `apps.cookies.text_color`                       | App Cookies bar text color code                                             |
-| `apps.facebook_comments.username`               | App Facebook Comments username                                              |
-| `apps.facebook_comments.comments_products`      | App Facebook Comments on products is enabled. `true` or `false`             |
-| `apps.facebook_comments.comments_blog`          | App Facebook Comments on blog is enabled. `true` or `false`                 |
-| `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                             |
-| `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                               |
-| `apps.facebook_store`                           | App Facebook Store is enabled. `true` or `false`                            |
-| `apps.followprice.store_key`                    | App Followprice Store key                                                   |
-| `apps.getsocial.id`                             | App GetSocial id                                                            |
-| `apps.google_analytics.tracking_id`             | App Google Analytics tracking id                                            |
-| `apps.google_analytics_ec`                      | App Google Analytics Ecommerce is enabled. `true` or `false`                |
-| `apps.google_recaptcha.sitekey`                 | App Google reCAPTCHA Site Key                                               |
-| `apps.google_translate.languages`               | App Google Translate languages, list of languages comma separated. `en, es` |
-| `apps.google_webmaster_tools.site_verification` | App Google Webmasters HTML tag                                              |
-| `apps.hello_bar.embed`                          | App Hello Bar embed code                                                    |
-| `apps.invoicexpress`                            | App InvoiceXpress is enabled. `true` or `false`                             |
-| `apps.kuantokusta.trackk`                       | App KuantoKusta tracking code                                               |
-| `apps.localizejs.project_key`                   | App Localize project key                                                    |
-| `apps.mailchimp`                                | App Newsletter is enabled. `true` or `false`                                |
-| `apps.newsletter`                               | App Newsletter is enabled. `true` or `false`                                |
-| `apps.tawk.embed`                               | App Tawk embed code                                                         |
-| `apps.uservoice.embed`                          | App UserVoice embed code                                                    |
-| `apps.zopim.embed`                              | App Zopim embed code                                                        |
+| Name                                            | Description                                                                      |
+|-------------------------------------------------|----------------------------------------------------------------------------------|
+| `apps.adult_content.title`                      | App Adult Content title                                                          |
+| `apps.adult_content.url`                        | App Adult Content url                                                            |
+| `apps.adult_content.description`                | App Adult Content description                                                    |
+| `apps.adult_content.text_color`                 | App Adult Content title                                                          |
+| `apps.adult_content.bg_color`                   | App Adult Content text color code                                                |
+| `apps.adult_content.bg_color`                   | App Adult Content background color code                                          |
+| `apps.bablic.embed`                             | App Bablic embed code                                                            |
+| `apps.cookies.text`                             | App Cookies bar text                                                             |
+| `apps.cookies.link`                             | App Cookies bar url                                                              |
+| `apps.cookies.bg_color`                         | App Cookies bar background color code                                            |
+| `apps.cookies.text_color`                       | App Cookies bar text color code                                                  |
+| `apps.delivery_date.title`                      | App Delivery Date title                                                          |
+| `apps.delivery_date.description`                | App Delivery Date description                                                    |
+| `apps.delivery_date.field_label`                | App Delivery field label                                                         |
+| `apps.facebook_comments.username`               | App Facebook Comments username                                                   |
+| `apps.facebook_comments.comments_products`      | App Facebook Comments on products is enabled. `true` or `false`                  |
+| `apps.facebook_comments.comments_blog`          | App Facebook Comments on blog is enabled. `true` or `false`                      |
+| `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                                  |
+| `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                                    |
+| `apps.facebook_store`                           | App Facebook Store is enabled. `true`                                            |
+| `apps.followprice.store_key`                    | App Followprice Store key                                                        |
+| `apps.getsocial.id`                             | App GetSocial id                                                                 |
+| `apps.google_analytics.tracking_id`             | App Google Analytics tracking id                                                 |
+| `apps.google_analytics_ec`                      | App Google Analytics Ecommerce is enabled. `true`                                |
+| `apps.google_recaptcha.sitekey`                 | App Google reCAPTCHA Site Key                                                    |
+| `apps.google_translate.languages`               | App Google Translate languages, list of languages comma separated. e.g. `en, es` |
+| `apps.google_webmaster_tools.site_verification` | App Google Webmasters HTML tag                                                   |
+| `apps.hello_bar.embed`                          | App Hello Bar embed code                                                         |
+| `apps.invoicexpress`                            | App InvoiceXpress is enabled. `true`                                             |
+| `apps.kuantokusta.trackk`                       | App KuantoKusta tracking code                                                    |
+| `apps.localizejs.project_key`                   | App Localize project key                                                         |
+| `apps.mailchimp`                                | App Newsletter is enabled. `true`                                                |
+| `apps.moloni`                                   | App Moloni is enabled. `true`                                                    |
+| `apps.newsletter`                               | App Newsletter is enabled. `true`                                                |
+| `apps.tawk.embed`                               | App Tawk embed code                                                              |
+| `apps.uservoice.embed`                          | App UserVoice embed code                                                         |
+| `apps.zopim.embed`                              | App Zopim embed code                                                             |
 
 
 ##### Categories
@@ -565,9 +575,10 @@ Used for retrieving shopping cart data.
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
-| `cart.items`                                | Cart items *(see below for a full propriety list)*                  |
+| `cart.items`                                | Cart items *(see below the object attributes)*                      |
 | `cart.total`                                | Cart total                                                          |
-| `cart.shipping_methods`                     | Cart shipping methods *(see below for a full propriety list)*       |
+| `cart.shipping_methods`                     | Cart shipping methods *(see below the object attributes)*           |
+| `cart.payments`                             | Cart payments methods *(see below the object attributes)*           |
 | `cart.discount`                             | Cart discount                                                       |
 | `cart.total_shipping`                       | Cart total number of products                                       |
 | `cart.item_count`                           | Cart total number of unique products                                |
@@ -606,7 +617,7 @@ Contains data about each product in the shopping cart.
 
 `cart.shipping_methods`
 
-Contains data about available shipping methods
+Contains data about available shipping methods.
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
@@ -614,6 +625,40 @@ Contains data about available shipping methods
 | `cart.shipping_methods.title`               | Cart shipping method title                                          |
 | `cart.shipping_methods.description`         | Cart shipping method description                                    |
 | `cart.shipping_methods.price`               | Cart shipping method price                                          |
+
+
+`cart.payments`
+
+Contains data about available payments methods.
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `cart.payments.paypal.active`               | Payment Paypal option is enabled                                    |
+| `cart.payments.paypal.email`                | Payment Paypal email                                                |
+| `cart.payments.paypal.message`              | Payment Paypal message                                              |
+| `cart.payments.paypal.min_value`            | Payment Paypal order minimum value                                  |
+| `cart.payments.paypal.max_value`            | Payment Paypal order maximum value                                  |
+| `cart.payments.multibanco.active`           | Payment multibanco option is enabled                                |
+| `cart.payments.multibanco.entity`           | Payment multibanco entity                                           |
+| `cart.payments.multibanco.user`             | Payment multibanco user                                             |
+| `cart.payments.multibanco.cin`              | Payment multibanco cin                                              |
+| `cart.payments.multibanco.message`          | Payment multibanco message                                          |
+| `cart.payments.multibanco.min_value`        | Payment multibanco order minimum value                              |
+| `cart.payments.multibanco.max_value`        | Payment multibanco order maximum value                              |
+| `cart.payments.bank_transfer.active`        | Payment bank transfer option is enabled                             |
+| `cart.payments.bank_transfer.message`       | Payment bank transfer message                                       |
+| `cart.payments.bank_transfer.min_value`     | Payment bank transfer minimum value                                 |
+| `cart.payments.bank_transfer.max_value`     | Payment bank transfer maximum value                                 |
+| `cart.payments.on_delivery.active`          | Payment on delivery option is enabled                               |
+| `cart.payments.on_delivery.value`           | Payment on delivery value                                           |
+| `cart.payments.on_delivery.message`         | Payment on delivery message                                         |
+| `cart.payments.on_delivery.min_value`       | Payment on delivery minimum value                                   |
+| `cart.payments.on_delivery.max_value`       | Payment on delivery maximum value                                   |
+| `cart.payments.pick_up.active`              | Payment facilities pick up option is enabled                        |
+| `cart.payments.pick_up.message`             | Payment facilities pick up message                                  |
+| `cart.payments.pick_up.min_value`           | Payment facilities pick up minimum value                            |
+| `cart.payments.pick_up.max_value`           | Payment facilities pick up maximum value                            |
+
 
 ##### Pages
 
@@ -1010,4 +1055,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-11-28T15:32:19+00:00</small>
+<small class="last-modified">Last Modified 2016-12-02T16:13:08+00:00</small>

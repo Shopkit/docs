@@ -14,12 +14,17 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2016-12-02
+* Add `cart.payments` object
+* Update `apps` object
+
 ##### 2016-11-28
 * Move `payment` object into `store.payments`
 * Remove `store.paypal_email`
 
 ##### 2016-11-09
-* Add `store.navigation.primary.menu_item_handle`, `store.navigation.secondary.menu_item_handle`
+* Add `store.navigation.primary.menu_item_handle`
+* Add `store.navigation.secondary.menu_item_handle`
 
 ##### 2016-11-08
 * Remove `cart.free_shipping`
@@ -33,7 +38,8 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 * Clean up
 
 ##### 2016-05-12
-* Add `user.custom_field` and `order.custom_field`
+* Add `user.custom_field`
+* Add `order.custom_field`
 
 ##### 2016-03-02
 * Add `apps`
