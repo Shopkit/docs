@@ -744,6 +744,7 @@ This data is only available on the `product.tpl` template
 | `product.position`                          | Product order position                                                     |
 | `product.sales`                             | Product number of sales                                                    |
 | `product.shipping`                          | Product shipping cost                                                      |
+| `product.shipping_alone`                    | Product ships alone                                                        |
 | `product.featured`                          | Product is featured                                                        |
 | `product.new`                               | Product is new                                                             |
 | `product.is_promotion`                      | Product is promotion                                                       |
@@ -879,6 +880,7 @@ This data is only available on the `complete.tpl` template
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `order.id`                                  | Order identifier                                                    |
+| `order.hash`                                | Order identifier hash                                               |
 | `order.total`                               | Order total value                                                   |
 | `order.total_tax`                           | Order total taxes value                                             |
 | `order.shipping`                            | Order shipping cost value                                           |
@@ -1055,4 +1057,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-12-02T16:13:08+00:00</small>
+<small class="last-modified">Last Modified 2016-12-07T15:32:28+00:00</small>
