@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-11-28T17:48:37+00:00</small>
+<small class="last-modified">Last Modified 2016-12-07T15:31:48+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -150,8 +150,6 @@ Response: `200 OK`
         "type": "percent",
         "value": 10
     },
-    "note": "",
-    "client_note": "",
     "shipment_method": "Transportadora",
     "client": {
         "name": "Shopkit",
@@ -396,8 +394,10 @@ https://api.shopk.it/v1/product/1337
                 "status_alias": "active",
                 "position": 0,
                 "shipping": 0,
+                "shipping_alone" : false,
                 "featured": false,
                 "new": true,
+                "is_promotion": false,
                 "description": "<p>This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln and were high fired, giving them strength and durability. These bowls are ideal for spices, dukkah, oil, chopped chilli or garlic.&nbsp;<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece.<br /><br />Larger size (x2) - 8cm (3\") across, 5cm (2\") deep<br />Mid size - 7cm (2.5\") across, 5cm (2\") deep<br />Small size - 5cm (2\") across, 4cm (1.5\") deep<br /><br />Please Note : These items are MADE TO ORDER and may vary slightly from the image shown. Current make time is 2-3 weeks.&nbsp;<br /><br />*food, oven and dishwasher safe<br />*not suitable for microwave</p>",
                 "video_url": "",
                 "file": null,
@@ -445,7 +445,7 @@ https://api.shopk.it/v1/product/1337
                         "id_variant_3": "",
                         "title": "Small bowl / White",
                         "price": "40.73",
-                        "promo": "",
+                        "promo": false,
                         "price_promo": "0",
                         "price_on_request": "",
                         "stock": "99",
@@ -467,7 +467,7 @@ https://api.shopk.it/v1/product/1337
                         "id_variant_3": "",
                         "title": "Small bowl / Dark turquoise",
                         "price": "40.73",
-                        "promo": "",
+                        "promo": false,
                         "price_promo": "0",
                         "price_on_request": "",
                         "stock": "95",
@@ -489,7 +489,7 @@ https://api.shopk.it/v1/product/1337
                         "id_variant_3": "",
                         "title": "Big bowl / White",
                         "price": "45.73",
-                        "promo": "",
+                        "promo": false,
                         "price_promo": "0",
                         "price_on_request": "",
                         "stock": "100",
@@ -511,7 +511,7 @@ https://api.shopk.it/v1/product/1337
                         "id_variant_3": "",
                         "title": "Big bowl / Dark turquoise",
                         "price": "45.73",
-                        "promo": "",
+                        "promo": false,
                         "price_promo": "0",
                         "price_on_request": "",
                         "stock": "100",
@@ -657,6 +657,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "shipping": 0,
                     "featured": false,
                     "new": true,
+                    "is_promotion": false,
                     "description": "<p>This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln and were high fired, giving them strength and durability. These bowls are ideal for spices, dukkah, oil, chopped chilli or garlic.&nbsp;<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece.<br /><br />Larger size (x2) - 8cm (3\") across, 5cm (2\") deep<br />Mid size - 7cm (2.5\") across, 5cm (2\") deep<br />Small size - 5cm (2\") across, 4cm (1.5\") deep<br /><br />Please Note : These items are MADE TO ORDER and may vary slightly from the image shown. Current make time is 2-3 weeks.&nbsp;<br /><br />*food, oven and dishwasher safe<br />*not suitable for microwave</p>",
                     "video_url": "",
                     "file": null,
@@ -704,7 +705,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "id_variant_3": "",
                             "title": "Small bowl / White",
                             "price": "40.73",
-                            "promo": "",
+                            "promo": false,
                             "price_promo": "0",
                             "price_on_request": "",
                             "stock": "99",
@@ -726,7 +727,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "id_variant_3": "",
                             "title": "Small bowl / Dark turquoise",
                             "price": "40.73",
-                            "promo": "",
+                            "promo": false,
                             "price_promo": "0",
                             "price_on_request": "",
                             "stock": "95",
@@ -748,7 +749,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "id_variant_3": "",
                             "title": "Big bowl / White",
                             "price": "45.73",
-                            "promo": "",
+                            "promo": false,
                             "price_promo": "0",
                             "price_on_request": "",
                             "stock": "100",
@@ -770,7 +771,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "id_variant_3": "",
                             "title": "Big bowl / Dark turquoise",
                             "price": "45.73",
-                            "promo": "",
+                            "promo": false,
                             "price_promo": "0",
                             "price_on_request": "",
                             "stock": "100",
@@ -847,6 +848,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "shipping": 0,
                     "featured": false,
                     "new": true,
+                    "is_promotion": false,
                     "description": "<p>Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white cutting board.<br /><br />We make and ship these boards daily, so the turnaround time is really quick.<br /><br />In honor of the brilliance that is breaking bad, we decided to make a cutting board for all the loyal fans! This beautifully engraved cutting board is the perfect gift for any fan that wants to reminisce Heisenberg every time they cook a meal.&nbsp;<br /><br />Wood type: bamboo<br />Size: 14 x 11</p>",
                     "video_url": "",
                     "file": null,
@@ -1013,6 +1015,7 @@ https://api.shopk.it/v1/order/1337
 
             {
                 "id": 1337,
+                "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
                 "total": 157.03,
                 "subtotal": 148.64,
                 "product_tax": 16.01,
@@ -1052,8 +1055,6 @@ https://api.shopk.it/v1/order/1337
                     "type": "percent",
                     "value": 10
                 },
-                "note": "",
-                "client_note": "",
                 "shipment_method": "Transportadora",
                 "client": {
                     "name": "Shopkit",
@@ -1176,6 +1177,7 @@ Attributes | Type | Choices | Description
 
             {
                 "id": 1337,
+                "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
                 "total": 157.03,
                 "subtotal": 148.64,
                 "product_tax": 16.01,
@@ -1215,8 +1217,6 @@ Attributes | Type | Choices | Description
                     "type": "percent",
                     "value": 10
                 },
-                "note": "",
-                "client_note": "",
                 "shipment_method": "Transportadora",
                 "client": {
                     "name": "Shopkit",
@@ -1404,6 +1404,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             {
                 "0": {
                     "id": 1337,
+                    "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
                     "total": 157.03,
                     "subtotal": 148.64,
                     "product_tax": 16.01,
@@ -1443,8 +1444,6 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "type": "percent",
                         "value": 10
                     },
-                    "note": "",
-                    "client_note": "",
                     "shipment_method": "Transportadora",
                     "client": {
                         "name": "Shopkit",
