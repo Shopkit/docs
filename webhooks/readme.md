@@ -8,11 +8,14 @@ If you find a bug or something worth fixing, create an issue or a pull request.
 
 ### How to compile documentation
 
-Install [MkDocs](https://github.com/tomchristie/mkdocs), requires [Python](https://www.python.org/) and [pip](https://pip.readthedocs.org/en/stable/installing/) (Python package manager).
+Install [MkDocs](https://github.com/tomchristie/mkdocs), requires [Python](https://www.python.org/) and [pip](https://pip.readthedocs.io/en/stable/installing/) (Python package manager).
 
 To generate documentation use: `mkdocs build --clean`, this creates a new directory, named `site` with the generated documentation inside.
 
 ### Changelog
+
+##### 2016-12-07
+* Add `order.hash`
 
 ##### 2016-10-26
 * Add `coupon` object

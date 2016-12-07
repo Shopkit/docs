@@ -67,6 +67,7 @@ X-Shopkit-Event: order_created
 {
     "order": {
         "id": 1337,
+        "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
         "total": 92.84,
         "subtotal": 77.32,
         "product_tax": 16.01,
@@ -106,8 +107,6 @@ X-Shopkit-Event: order_created
             "type": "percent",
             "value": 10
         },
-        "note": "",
-        "client_note": "",
         "shipment_method": "Transportadora",
         "client": {
             "name": "Shopkit",
@@ -153,4 +152,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2016-10-26T17:04:59+01:00</small>
+<small class="last-modified">Last Modified 2016-12-07T15:33:04+00:00</small>
