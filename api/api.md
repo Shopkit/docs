@@ -111,6 +111,7 @@ Response: `200 OK`
 ```json
 {
     "id": 1337,
+    "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
     "total": 92.84,
     "subtotal": 77.32,
     "product_tax": 16.01,
@@ -178,7 +179,7 @@ Response: `200 OK`
             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
             "image":{
-                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
             }
@@ -655,6 +656,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "status_alias": "active",
                     "position": 0,
                     "shipping": 0,
+                    "shipping_alone" : false,
                     "featured": false,
                     "new": true,
                     "is_promotion": false,
@@ -846,6 +848,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "status_alias": "active",
                     "position": 0,
                     "shipping": 0,
+                    "shipping_alone" : false,
                     "featured": false,
                     "new": true,
                     "is_promotion": false,
@@ -1083,7 +1086,7 @@ https://api.shopk.it/v1/order/1337
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
@@ -1103,7 +1106,7 @@ https://api.shopk.it/v1/order/1337
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
@@ -1245,7 +1248,7 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
@@ -1265,7 +1268,7 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image":{
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
@@ -1472,7 +1475,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                             "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                             }
@@ -1492,7 +1495,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                             "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                             "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                             "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumbumb/eacc633fe509af083776db911a5f02b9.jpg",
+                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                             }
