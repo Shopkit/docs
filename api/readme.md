@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-01-06
+* Add shipping endpoint
+
 ##### 2016-12-07
 * Add `order.hash`
 * update payloads
@@ -76,15 +79,15 @@ To generate documentation use: `aglio -i api.md -o index.html`
 * Add `order.products.image`
 
 ##### 2015-03-29
-* Changed `order_state` to `order_change_status`
+* Change `order_state` to `order_change_status`
 
 ##### 2015-03-12
-* Added order_put > invoice_id
-* Fixed texts and typos
+* Add order_put > invoice_id
+* Fix texts and typos
 
 ##### 2015-03-05
-* Added webhooks post and delete
-* Fixed orders responses
+* Add webhooks post and delete
+* Fix orders responses
 * Uniform methods syntax
 
 ##### 2015-02-10

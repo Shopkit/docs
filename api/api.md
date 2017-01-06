@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2016-12-07T15:31:48+00:00</small>
+<small class="last-modified">Last Modified 2017-01-06T12:20:12+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -1503,6 +1503,76 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     ]
                 },
                 "paging": null
+            }
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404
+
+    + Headers
+
+            Content-Length: 24
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+# Group Shipping
+
+## Get Shipping [/shipping{?country_code,weight,value}]
+
+## Get Shipping [GET]
+Get a list of shipping methods available for a country
+
+```bash
+curl -i -X GET \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/shipping?country_code=prt
+```
+
++ Parameters
+
+    + country_code (required, string, `prt`) ... three-letter country codes (ISO 3166-1 Alfa-3)
+    + weight (optional, integer, `100`) ... Order weight
+    + value (optional, integer, `10`) ... Orders value
+
+
++ Response 200
+
+   + Headers
+
+            Content-Length: 180
+            Content-Type: application/json
+
+    + Body
+
+            {
+                [
+                    {
+                        "title": "CTT",
+                        "description": "Via CTT Expresso. Entrega em 24 horas.",
+                        "price": 6.76
+                    },
+                    {
+                        "title": "Transportadora",
+                        "description": "Envio via Nacex no próprio dia",
+                        "price": 7.25
+                    }
+                ]
             }
 
 + Response 400
