@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-01-06T12:20:12+00:00</small>
+<small class="last-modified">Last Modified 2017-01-13T18:24:04+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -411,9 +411,9 @@ https://api.shopk.it/v1/product/1337
                 "hits": 104,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
-                "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
-                "add_cart_url": "http://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
-                "permalink": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "sales": 0,
                 "images": {
@@ -454,7 +454,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS001",
-                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -476,7 +476,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS002",
-                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -498,7 +498,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS003",
-                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -520,7 +520,7 @@ https://api.shopk.it/v1/product/1337
                         "weight": "0",
                         "active": "1",
                         "reference": "RSBS004",
-                        "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -535,7 +535,7 @@ https://api.shopk.it/v1/product/1337
                         "title": "Cozinha",
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                         "handle": "cozinha",
-                        "url": "http://parallax.shopk.it/category/cozinha"
+                        "url": "https://parallax.shopk.it/category/cozinha"
                     }
                 ],
                 "option_groups": [
@@ -672,9 +672,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "hits": 104,
                     "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                     "promo": false,
-                    "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
-                    "add_cart_url": "http://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
-                    "permalink": "http://parallax.shopk.it/product/rustic-spice-bowl-set",
+                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                    "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                    "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                     "video_embed_url": false,
                     "sales": 0,
                     "images": {
@@ -715,7 +715,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS001",
-                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
+                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                             "image": {
                                 "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -737,7 +737,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS002",
-                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
+                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                             "image": {
                                 "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -759,7 +759,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS003",
-                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
+                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                             "image": {
                                 "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -781,7 +781,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "weight": "0",
                             "active": "1",
                             "reference": "RSBS004",
-                            "url": "http://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
+                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                             "image": {
                                 "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -796,7 +796,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                             "handle": "cozinha",
-                            "url": "http://parallax.shopk.it/category/cozinha"
+                            "url": "https://parallax.shopk.it/category/cozinha"
                         }
                     ],
                     "option_groups": [
@@ -864,9 +864,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "hits": 93,
                     "description_short": "Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white&#8230;",
                     "promo": false,
-                    "url": "http://parallax.shopk.it/product/let-s-cook-cutting-board",
-                    "add_cart_url": "http://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
-                    "permalink": "http://parallax.shopk.it/product/let-s-cook-cutting-board",
+                    "url": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
+                    "add_cart_url": "https://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
+                    "permalink": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
                     "video_embed_url": false,
                     "sales": 0,
                     "images": {
@@ -895,7 +895,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "title": "Cozinha",
                             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                             "handle": "cozinha",
-                            "url": "http://parallax.shopk.it/category/cozinha"
+                            "url": "https://parallax.shopk.it/category/cozinha"
                         }
                     ],
                     "option_groups": [
@@ -972,7 +972,7 @@ https://api.shopk.it/v1/category/1337
                 "page_title": "Cozinha",
                 "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                 "meta_tags": "",
-                "url": "http://parallax.shopk.it/category/cozinha",
+                "url": "https://parallax.shopk.it/category/cozinha",
                 "total_products": 2
             }
 

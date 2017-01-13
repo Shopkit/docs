@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-01-18
+* Fix links protocol
+
 ##### 2017-01-06
 * Add shipping endpoint
 
