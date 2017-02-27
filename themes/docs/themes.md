@@ -875,7 +875,7 @@ Usually you register the custom field with an html input:
 
 #### Order
 
-This data is only available on the `complete.tpl` template
+This data is only available on the `complete.tpl` and `mailorder.tpl` templates
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
