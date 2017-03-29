@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-03-09T17:12:00+00:00</small>
+<small class="last-modified">Last Modified 2017-03-29T18:44:31+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -357,21 +357,55 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-## Get Product [/product/{id}]
+## Get Product [/product{?id,handle,category,status,status_alias,reference,featured,new,page,limit}]
 
 ### Get Product [GET]
-Get a product by id or handle. **Only one parameter is required.**
+Get a list of products or single product by id or handle
 
 ```bash
 curl -i -X GET \
 -H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
 https://api.shopk.it/v1/product/1337
+
+curl -i -X GET \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/product/?category=1337&limit=5
 ```
 
 + Parameters
 
-    + id (required, integer, `1337`) ... Product identifier
-    + handle (required, string, `rustic-bowl`) ... Product handle
+    + id (optional, integer, `1337`) ... Product identifier
+    + handle (optional, string, `rustic-bowl`) ... Product handle
+    + category (optional, integer, `1337`) ... Product category identifier
+    + status (optional, integer, `0`) ... Product status as an integer
+        + Values
+            + `0`
+            + `1`
+            + `2`
+            + `3`
+            + `4`
+
+    + status_alias (optional, string, `all`) ... Product status as a string
+        + Values
+            + `all`
+            + `active`
+            + `hidden`
+            + `out_of_stock`
+            + `soon`
+
+    + reference (optional, string, `bowl-001`) ... Product reference
+    + featured (optional, string, `true`) ... Product featured field
+        + Values
+            + `true`
+            + `false`
+
+    + new (optional, string, `true`) ... Product new field
+        + Values
+            + `true`
+            + `false`
+
+    + page (optional, integer, `1`) ... page number
+    + limit = `25` (optional, integer, `10`) ... products per page
 
 + Response 200
 
@@ -575,337 +609,6 @@ https://api.shopk.it/v1/product/1337
                 }
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
-
-    + Body
-
-            {
-                "message":"Not found."
-            }
-
-
-## Get Products [/product{?category,status,status_alias,reference,featured,new,page,limit}]
-
-### Get Products [GET]
-Get a list of products
-
-```bash
-curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
-https://api.shopk.it/v1/product/?category=1337&limit=5
-```
-
-+ Parameters
-
-    + category (optional, integer, `1337`) ... Product category identifier
-    + status (optional, integer, `0`) ... Product status as an integer
-        + Values
-            + `0`
-            + `1`
-            + `2`
-            + `3`
-            + `4`
-
-    + status_alias (optional, string, `all`) ... Product status as a string
-        + Values
-            + `all`
-            + `active`
-            + `hidden`
-            + `out_of_stock`
-            + `soon`
-
-    + reference (optional, string, `bowl-001`) ... Product reference
-    + featured (optional, string, `true`) ... Product featured field
-        + Values
-            + `true`
-            + `false`
-
-    + new (optional, string, `true`) ... Product new field
-        + Values
-            + `true`
-            + `false`
-
-    + page (optional, integer, `1`) ... page number
-    + limit = `25` (optional, integer, `10`) ... products per page
-
-+ Response 200
-
-    + Headers
-
-            Content-Length: 9558
-            Content-Type: application/json
-
-    + Body
-
-            {
-                "0": {
-                    "id": 1337,
-                    "title": "Rustic Spice Bowl Set",
-                    "reference": "",
-                    "price": 40.73,
-                    "price_promo": 0,
-                    "price_on_request": false,
-                    "created_at": "2014-11-30T01:04:40+00:00",
-                    "status": 1,
-                    "status_alias": "active",
-                    "position": 0,
-                    "shipping": 0,
-                    "shipping_alone" : false,
-                    "featured": false,
-                    "new": true,
-                    "is_promotion": false,
-                    "description": "<p>This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln and were high fired, giving them strength and durability. These bowls are ideal for spices, dukkah, oil, chopped chilli or garlic.&nbsp;<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece.<br /><br />Larger size (x2) - 8cm (3\") across, 5cm (2\") deep<br />Mid size - 7cm (2.5\") across, 5cm (2\") deep<br />Small size - 5cm (2\") across, 4cm (1.5\") deep<br /><br />Please Note : These items are MADE TO ORDER and may vary slightly from the image shown. Current make time is 2-3 weeks.&nbsp;<br /><br />*food, oven and dishwasher safe<br />*not suitable for microwave</p>",
-                    "video_url": "",
-                    "file": null,
-                    "tax": 0,
-                    "meta_description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln",
-                    "meta_tags": "",
-                    "handle": "rustic-spice-bowl-set",
-                    "page_title": "Rustic Spice Bowl Set",
-                    "weight": 0,
-                    "hits": 104,
-                    "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
-                    "promo": false,
-                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                    "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
-                    "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
-                    "video_embed_url": false,
-                    "sales": 0,
-                    "images": {
-                        "1": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/17d23f7b534bf365580989363da328d2.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/17d23f7b534bf365580989363da328d2.jpg"
-                        },
-                        "2": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/7d2fe8d66dd9925ac72a3112d691f352.jpg"
-                        },
-                        "3": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
-                        }
-                    },
-                    "image": {
-                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                    },
-                    "options": [
-                        {
-                            "id": "192867",
-                            "id_variant_1": "45896",
-                            "id_variant_2": "90261",
-                            "id_variant_3": "",
-                            "title": "Small bowl / White",
-                            "price": "40.73",
-                            "promo": false,
-                            "price_promo": "0",
-                            "price_on_request": "",
-                            "stock": "99",
-                            "shipping": "0",
-                            "weight": "0",
-                            "active": "1",
-                            "reference": "RSBS001",
-                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
-                            "image": {
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                            }
-                        },
-                        {
-                            "id": "192868",
-                            "id_variant_1": "45896",
-                            "id_variant_2": "90262",
-                            "id_variant_3": "",
-                            "title": "Small bowl / Dark turquoise",
-                            "price": "40.73",
-                            "promo": false,
-                            "price_promo": "0",
-                            "price_on_request": "",
-                            "stock": "95",
-                            "shipping": "0",
-                            "weight": "0",
-                            "active": "1",
-                            "reference": "RSBS002",
-                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
-                            "image": {
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                            }
-                        },
-                        {
-                            "id": "192869",
-                            "id_variant_1": "45897",
-                            "id_variant_2": "90261",
-                            "id_variant_3": "",
-                            "title": "Big bowl / White",
-                            "price": "45.73",
-                            "promo": false,
-                            "price_promo": "0",
-                            "price_on_request": "",
-                            "stock": "100",
-                            "shipping": "0",
-                            "weight": "0",
-                            "active": "1",
-                            "reference": "RSBS003",
-                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
-                            "image": {
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                            }
-                        },
-                        {
-                            "id": "192870",
-                            "id_variant_1": "45897",
-                            "id_variant_2": "90262",
-                            "id_variant_3": "",
-                            "title": "Big bowl / Dark turquoise",
-                            "price": "45.73",
-                            "promo": false,
-                            "price_promo": "0",
-                            "price_on_request": "",
-                            "stock": "100",
-                            "shipping": "0",
-                            "weight": "0",
-                            "active": "1",
-                            "reference": "RSBS004",
-                            "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
-                            "image": {
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                            }
-                        }
-                    ],
-                    "categories": [
-                        {
-                            "id": 1337,
-                            "parent": 0,
-                            "title": "Cozinha",
-                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                            "handle": "cozinha",
-                            "url": "https://parallax.shopk.it/category/cozinha"
-                        }
-                    ],
-                    "option_groups": [
-                        {
-                            "title": "Size",
-                            "options": [
-                                {
-                                    "id": "45896",
-                                    "title": "Small bowl"
-                                },
-                                {
-                                    "id": "45897",
-                                    "title": "Big bowl"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Color",
-                            "options": [
-                                {
-                                    "id": "90261",
-                                    "title": "White"
-                                },
-                                {
-                                    "id": "90262",
-                                    "title": "Dark turquoise"
-                                }
-                            ]
-                        }
-                    ],
-                    "stock": {
-                        "stock_enabled": true,
-                        "stock_qty": 100,
-                        "stock_backorder": true,
-                        "stock_show": true,
-                        "stock_sold_single": true,
-                        "stock_notify": "5"
-                    }
-                },
-                "1": {
-                    "id": 1338,
-                    "title": "Let's Cook cutting board",
-                    "reference": "",
-                    "price": 29.72,
-                    "price_promo": 0,
-                    "price_on_request": false,
-                    "created_at": "2014-11-30T00:59:27+00:00",
-                    "status": 1,
-                    "status_alias": "active",
-                    "position": 0,
-                    "shipping": 0,
-                    "shipping_alone" : false,
-                    "featured": false,
-                    "new": true,
-                    "is_promotion": false,
-                    "description": "<p>Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white cutting board.<br /><br />We make and ship these boards daily, so the turnaround time is really quick.<br /><br />In honor of the brilliance that is breaking bad, we decided to make a cutting board for all the loyal fans! This beautifully engraved cutting board is the perfect gift for any fan that wants to reminisce Heisenberg every time they cook a meal.&nbsp;<br /><br />Wood type: bamboo<br />Size: 14 x 11</p>",
-                    "video_url": "",
-                    "file": null,
-                    "tax": 0,
-                    "meta_description": "Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white cutting board.We make and ship these boards daily, so the turnaround time is really quick.In honor of the brilliance that is breaking bad, we decided to make a cutting",
-                    "meta_tags": "",
-                    "handle": "let-s-cook-cutting-board",
-                    "page_title": "Let's Cook cutting board",
-                    "weight": 0,
-                    "hits": 93,
-                    "description_short": "Heisenberg, Let's Cook, personalized engraved cutting board, breaking bad. Walter white&#8230;",
-                    "promo": false,
-                    "url": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
-                    "add_cart_url": "https://parallax.shopk.it/cart/add/let-s-cook-cutting-board",
-                    "permalink": "https://parallax.shopk.it/product/let-s-cook-cutting-board",
-                    "video_embed_url": false,
-                    "sales": 0,
-                    "images": {
-                        "1": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/697610aa34185dfefa326724ea867818.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/697610aa34185dfefa326724ea867818.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/697610aa34185dfefa326724ea867818.jpg"
-                        },
-                        "2": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/5d6f7ac0314930ef1c756da68c60cbb3.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/5d6f7ac0314930ef1c756da68c60cbb3.jpg"
-                        }
-                    },
-                    "image": {
-                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/1609f7f3d86847eba5a5cc184577deea.jpg",
-                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/1609f7f3d86847eba5a5cc184577deea.jpg",
-                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/1609f7f3d86847eba5a5cc184577deea.jpg"
-                    },
-                    "options": [
-                    ],
-                    "categories": [
-                        {
-                            "id": 1337,
-                            "parent": 0,
-                            "title": "Cozinha",
-                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                            "handle": "cozinha",
-                            "url": "https://parallax.shopk.it/category/cozinha"
-                        }
-                    ],
-                    "option_groups": [
-                    ],
-                    "stock": {
-                        "stock_enabled": false
-                    }
-                },
-                "paging": null
-            }
-
 + Response 400
 
     + Headers
@@ -935,7 +638,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
 # Group Categories
 
-## Get Category [/category/{id}]
+## Get Category [/category/{id,handle}]
 
 ### Get Category [GET]
 Get products categories by id or handle. **Only one parameter is required.**
@@ -991,20 +694,60 @@ https://api.shopk.it/v1/category/1337
 
 # Group Orders
 
-## Order [/order/{id}]
+## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,page,limit,coupon_code}]
 
 ### Get Order [GET]
-Get an order
+Get a list of orders or single order by id
 
 ```bash
 curl -i -X GET \
 -H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
 https://api.shopk.it/v1/order/1337
+
+curl -i -X GET \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/order?status=3&date_filter=last_month
 ```
 
 + Parameters
 
     + id (optional, integer, `1337`) ... Order identifier
+    + status (optional, integer, `0`) ... Order status as an integer
+        + Values
+            + `0`
+            + `1`
+            + `2`
+            + `3`
+            + `4`
+            + `5`
+            + `6`
+            + `7`
+    + status_alias (optional, string, `all`) ... Order status as a string
+        + Values
+            + `all`
+            + `pending`
+            + `processing`
+            + `sent`
+            + `canceled`
+            + `waiting_confirmation`
+            + `waiting_payment`
+            + `waiting_stock`
+    + paid (optional, string, `true`) ... Order paid field
+        + Values
+            + `true`
+            + `false`
+
+    + date_filter (optional, string, `yesterday`) ... Date filter
+        + Values
+            + `today`
+            + `yesterday`
+            + `last_week`
+            + `last_month`
+    + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `10`) ... Orders per page
+    + coupon_code (optional, integer, `1337`) ... Coupon code
 
 + Response 200
 
@@ -1110,6 +853,19 @@ https://api.shopk.it/v1/order/1337
                         }
                     }
                 ]
+            }
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
             }
 
 + Response 404
@@ -1343,193 +1099,6 @@ https://api.shopk.it/v1/order/1337
                 "message":"Not found."
             }
 
-
-## Get Orders [/order{?status,status_alias,paid,date_filter,date_from,date_to,page,limit}]
-
-### Get Orders [GET]
-Get a list of orders
-
-```bash
-curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
-https://api.shopk.it/v1/order?status=3&date_filter=last_month
-```
-
-+ Parameters
-
-    + status (optional, integer, `0`) ... Order status as an integer
-        + Values
-            + `0`
-            + `1`
-            + `2`
-            + `3`
-            + `4`
-            + `5`
-            + `6`
-            + `7`
-    + status_alias (optional, string, `all`) ... Order status as a string
-        + Values
-            + `all`
-            + `pending`
-            + `processing`
-            + `sent`
-            + `canceled`
-            + `waiting_confirmation`
-            + `waiting_payment`
-            + `waiting_stock`
-    + paid (optional, string, `true`) ... Order paid field
-        + Values
-            + `true`
-            + `false`
-
-    + date_filter (optional, string, `yesterday`) ... Date filter
-        + Values
-            + `today`
-            + `yesterday`
-            + `last_week`
-            + `last_month`
-    + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
-    + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
-    + page (optional, integer, `1`) ... Page number
-    + limit = `25` (optional, integer, `10`) ... Orders per page
-    + coupon_code (optional, integer, `1337`) ... Coupon code
-
-
-+ Response 200
-
-   + Headers
-
-            Content-Length: 2574
-            Content-Type: application/json
-
-    + Body
-
-            {
-                "0": {
-                    "id": 1337,
-                    "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
-                    "total": 157.03,
-                    "subtotal": 148.64,
-                    "product_tax": 16.01,
-                    "total_tax": 16.01,
-                    "discount": 14.86,
-                    "shipping": {
-                        "value": 7.25,
-                        "tax": 0,
-                        "tax_percent": 0,
-                        "discount": 0,
-                        "discount_percent": 0
-                    },
-                    "created_at": "2014-11-19T00:44:19+00:00",
-                    "update_at": "2014-11-26T15:30:00+00:00",
-                    "sent_at": null,
-                    "paid_at": null,
-                    "currency": "EUR",
-                    "payment": {
-                        "type": "multibanco",
-                        "data": {
-                            "entity": 88888,
-                            "reference": 888888888,
-                            "value": 157.03
-                        }
-                    },
-                    "status": 5,
-                    "status_alias": "waiting_confirmation",
-                    "paid": false,
-                    "is_new": false,
-                    "invoice_url": null,
-                    "weight": 0,
-                    "observations": "",
-                    "custom_field": "",
-                    "coupon": {
-                        "code": "bajevolp",
-                        "type": "percent",
-                        "value": 10
-                    },
-                    "shipment_method": "Transportadora",
-                    "client": {
-                        "name": "Shopkit",
-                        "email": "info@shopk.it",
-                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
-                        "postcode": "6000-767 ",
-                        "town": "Castelo Branco",
-                        "country": "Portugal - Continental",
-                        "country_code": "PRT",
-                        "phone": "969057993",
-                        "fiscal_id": ""
-                    },
-                    "products": [
-                        {
-                            "id": 44753,
-                            "title": "Shelving Tree with Birds",
-                            "option": "Azul / Small",
-                            "reference": "STHFBF7574",
-                            "price": 77.32,
-                            "tax": 23,
-                            "quantity": 1,
-                            "discount": 7.732,
-                            "subtotal": 85.59324,
-                            "discount_percent": 10,
-                            "weight": 0,
-                            "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
-                            "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
-                            "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
-                            }
-                        },
-                        {
-                            "id": 44752,
-                            "title": "Hanging Succulent Planter",
-                            "option": "",
-                            "reference": "",
-                            "price": 71.32,
-                            "tax": 0,
-                            "quantity": 1,
-                            "discount": 7.132,
-                            "subtotal": 64.188,
-                            "discount_percent": 10,
-                            "weight": 0,
-                            "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
-                            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
-                            "image":{
-                                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
-                                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
-                                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
-                            }
-                        }
-                    ]
-                },
-                "paging": null
-            }
-
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
-
-    + Body
-
-            {
-                "message": "Bad request."
-            }
-
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
-
-    + Body
-
-            {
-                "message":"Not found."
-            }
-
 # Group Shipping
 
 ## Get Shipping [/shipping{?country_code,weight,value}]
@@ -1604,7 +1173,7 @@ https://api.shopk.it/v1/shipping?country_code=prt
 
 # Group Coupon
 
-## Get Coupon [/coupon/{code}]
+## Get Coupon [/coupon{?id,code}]
 
 ### Get Coupon [GET]
 Get a coupon by id or code. **Only one parameter is required.**
