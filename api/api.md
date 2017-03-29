@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-01-13T18:24:04+00:00</small>
+<small class="last-modified">Last Modified 2017-03-09T17:12:00+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -124,7 +124,6 @@ Response: `200 OK`
         "discount": 0,
         "discount_percent": 0
     },
-    "coupon_code": "bajevolp",
     "created_at": "2014-11-19T00:44:19+00:00",
     "update_at": "2014-11-26T15:30:00+00:00",
     "sent_at": "2014-11-25T15:00:20+00:00",
@@ -358,7 +357,7 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-## Get Product [/product/{id|handle}]
+## Get Product [/product/{id}]
 
 ### Get Product [GET]
 Get a product by id or handle. **Only one parameter is required.**
@@ -936,7 +935,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
 # Group Categories
 
-## Get Category [/category/{id|handle}]
+## Get Category [/category/{id}]
 
 ### Get Category [GET]
 Get products categories by id or handle. **Only one parameter is required.**
@@ -1031,7 +1030,6 @@ https://api.shopk.it/v1/order/1337
                     "discount": 0,
                     "discount_percent": 0
                 },
-                "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": null,
@@ -1127,6 +1125,7 @@ https://api.shopk.it/v1/order/1337
                 "message":"Not found."
             }
 
+## Put Order [/order/{id}]
 
 ### Put Order [PUT]
 Update an order
@@ -1193,7 +1192,6 @@ Attributes | Type | Choices | Description
                     "discount": 0,
                     "discount_percent": 0
                 },
-                "coupon_code": "bajevolp",
                 "created_at": "2014-11-19T00:44:19+00:00",
                 "update_at": "2014-11-26T15:30:00+00:00",
                 "sent_at": "2014-11-25T15:00:20+00:00",
@@ -1302,6 +1300,7 @@ Attributes | Type | Choices | Description
                 "message":"Not found."
             }
 
+## Delete Order [/order/{id}]
 
 ### Delete Order [DELETE]
 Delete an order
@@ -1347,7 +1346,7 @@ https://api.shopk.it/v1/order/1337
 
 ## Get Orders [/order{?status,status_alias,paid,date_filter,date_from,date_to,page,limit}]
 
-## Get Orders [GET]
+### Get Orders [GET]
 Get a list of orders
 
 ```bash
@@ -1393,6 +1392,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
     + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
     + page (optional, integer, `1`) ... Page number
     + limit = `25` (optional, integer, `10`) ... Orders per page
+    + coupon_code (optional, integer, `1337`) ... Coupon code
 
 
 + Response 200
@@ -1420,7 +1420,6 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "discount": 0,
                         "discount_percent": 0
                     },
-                    "coupon_code": "bajevolp",
                     "created_at": "2014-11-19T00:44:19+00:00",
                     "update_at": "2014-11-26T15:30:00+00:00",
                     "sent_at": null,
@@ -1535,7 +1534,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
 ## Get Shipping [/shipping{?country_code,weight,value}]
 
-## Get Shipping [GET]
+### Get Shipping [GET]
 Get a list of shipping methods available for a country
 
 ```bash
@@ -1549,7 +1548,6 @@ https://api.shopk.it/v1/shipping?country_code=prt
     + country_code (required, string, `prt`) ... three-letter country codes (ISO 3166-1 Alfa-3)
     + weight (optional, integer, `100`) ... Order weight
     + value (optional, integer, `10`) ... Orders value
-
 
 + Response 200
 
@@ -1565,15 +1563,195 @@ https://api.shopk.it/v1/shipping?country_code=prt
                     {
                         "title": "CTT",
                         "description": "Via CTT Expresso. Entrega em 24 horas.",
-                        "price": 6.76
+                        "price": 6.76,
+                        "price_formatted": "6,76 €"
                     },
                     {
                         "title": "Transportadora",
                         "description": "Envio via Nacex no próprio dia",
-                        "price": 7.25
+                        "price": 7.25,
+                        "price_formatted": "7,25 €"
                     }
                 ]
             }
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404
+
+    + Headers
+
+            Content-Length: 24
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Coupon
+
+## Get Coupon [/coupon/{code}]
+
+### Get Coupon [GET]
+Get a coupon by id or code. **Only one parameter is required.**
+
+```bash
+curl -i -X GET \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/coupon/bajevolp
+```
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Coupon identifier
+    + code (optional, string, `bajevolp`) ... Coupon code
+
++ Response 200
+
+   + Headers
+
+            Content-Length: 239
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "id": 1337,
+                "code": "bajevolp",
+                "limit": 5,
+                "used": 1,
+                "value": 10,
+                "type": "percent",
+                "applies_to": "all_orders",
+                "orders_over": null,
+                "category": null,
+                "product": null,
+                "date_from": null,
+                "date_to": null,
+                "created_at": "2014-07-18T23:41:43+00:00",
+                "orders_total": 158.81,
+                "orders_discount": 14.86
+            }
+
++ Response 404
+
+    + Headers
+
+            Content-Length: 24
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+## Post Coupon [/coupon/]
+
+### Post Coupon [POST]
+Create a coupon
+
+```bash
+curl -i -X POST \
+-H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
+-H 'Content-Type:application/json' \
+-d '{"code":"bajevolp", "limit":"5", "value":"10", "type":"percent", "applies_to":"all_orders"}' \
+'https://api.shopk.it/v1/coupon'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**code** (required) | string | | Coupon code
+**limit** (required) | int | | Coupon usage limit. Set `0` for unlimited
+**value** (required) | float | | Coupon discount value
+**type** (required) | string | `money` `percent` `shipping` | Coupon allowed types
+**applies_to** (required) | string |  `all_orders` `orders_over` `category` `product` | Coupon applies to...
+**orders_over** | float | | Order minimum value to apply discount.<br>**Required** when `applies_to` is `orders_over`
+**category** | mixed | | Category to apply discount.<br>**Required** when `applies_to` is `category`, valid category `id` or `handle`
+**product** | mixed | | Product to apply discount.<br>**Required** when `applies_to` is `product`, valid product `id` or `handle`
+**date_from** | string | | Coupon start date. Date format yyyy-mm-dd
+**date_to** | string | | Coupon expire date. Date format yyyy-mm-dd
+
+</div>
+
++ Response 201
+
+    + Headers
+
+            Content-Length: 221
+            Content-Type: application/json
+
+    + Body
+
+            [
+                {
+                    "id": 1337,
+                    "code": "bajevolp",
+                    "limit": 5,
+                    "used": 0,
+                    "value": 10,
+                    "type": "percent",
+                    "applies_to": "all_orders",
+                    "orders_over": null,
+                    "category": null,
+                    "product": null,
+                    "date_from": null,
+                    "date_to": null,
+                    "created_at": "2017-03-09T17:18:03+00:00",
+                    "orders_total": 0,
+                    "orders_discount": 0
+                }
+            ]
+
++ Response 400
+
+    + Headers
+
+            Content-Length: 26
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 409
+
+
+## Delete Coupon [/coupon/{id}]
+
+### Delete Coupon [DELETE]
+Delete a coupon
+
+```bash
+curl -i -X DELETE \
+-H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+https://api.shopk.it/v1/coupon/1337
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Coupon identifier
+
++ Response 204
 
 + Response 400
 
@@ -1632,7 +1810,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 94
+            Content-Length: 98
             Content-Type: application/json
 
     + Body
@@ -1656,6 +1834,8 @@ Attributes | Type | Choices | Description
             {
                 "message": "Bad request."
             }
+
++ Response 409
 
 
 ## Delete Webhook [/webhook/{id}]

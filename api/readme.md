@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-03-09
+* Add `coupon` `GET`, `POST`, `DELETE`
+* Add `order` `GET` by `coupon_code`
+
 ##### 2017-01-18
 * Fix links protocol
 
