@@ -54,6 +54,7 @@ This is a stripped down HTML template:
   </head>
   <body>
     {% block content %}{% endblock %}
+    {{ footer_content }}
   </body>
 </html>
 ```
@@ -68,7 +69,7 @@ This is a stripped down HTML template:
 ```
 
 <div class="callout callout-info">
-  The <code>{{ head_content }}</code> is required to assure the theme works properly.
+  The <code>{{ head_content }}</code> and <code>{{ footer_content }}</code> are required to assure the theme works properly.
 </div>
 
 ### Syntax
@@ -416,7 +417,6 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.currency`                            | Store currency                                                      |
 | `store.custom_css`                          | Store custom CSS                                                    |
 | `store.custom_js`                           | Store custom JavaScript                                             |
-| `store.custom_html`                         | Store custom HTML                                                   |
 | `store.footer_info`                         | Store footer info                                                   |
 | `store.page_title`                          | Store page title                                                    |
 | `store.meta_description`                    | Store meta description                                              |
@@ -1057,4 +1057,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2016-12-07T15:32:28+00:00</small>
+<small class="last-modified">Last Modified 2017-03-31T11:42:22+01:00</small>

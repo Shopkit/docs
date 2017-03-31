@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2017-03-31
+* Remove `custom_html`
+
 ##### 2016-12-07
 * Add `order.hash`
 
