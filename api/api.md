@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-03-29T18:44:31+01:00</small>
+<small class="last-modified">Last Modified 2017-04-10T16:38:20+01:000</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -144,6 +144,8 @@ Response: `200 OK`
     "invoice_url": null,
     "weight": 0,
     "observations": "",
+    "note": "",
+    "client_note": "",
     "custom_field": "",
     "coupon": {
         "code": "bajevolp",
@@ -753,7 +755,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
     + Headers
 
-            Content-Length: 2552
+            Content-Length: 2577
             Content-Type: application/json
 
     + Body
@@ -793,6 +795,8 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                 "invoice_url": null,
                 "weight": 0,
                 "observations": "",
+                "note": "",
+                "client_note": "",
                 "custom_field": "",
                 "coupon": {
                     "code": "bajevolp",
@@ -928,7 +932,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 2581
+            Content-Length: 2606
             Content-Type: application/json
 
     + Body
@@ -968,6 +972,8 @@ Attributes | Type | Choices | Description
                 "invoice_url": null,
                 "weight": 0,
                 "observations": "",
+                "note": "",
+                "client_note": "",
                 "custom_field": "",
                 "coupon": {
                     "code": "bajevolp",
