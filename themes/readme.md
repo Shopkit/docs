@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2017-04-10
+* Update `blog_post.image` to array
+
 ##### 2017-03-31
 * Remove `custom_html`
 

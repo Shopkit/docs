@@ -720,7 +720,7 @@ This data is only available on the `post.tpl` template
 | `blog_post.meta_tags`                       | Post meta tags                                                      |
 | `blog_post.handle`                          | Post handle                                                         |
 | `blog_post.page_title`                      | Post page title                                                     |
-| `blog_post.image`                           | Post image URL                                                      |
+| `blog_post.image`                           | Post array with images in 3 sizes: thumb, square, full              |
 | `blog_post.title`                           | Post title                                                          |
 | `blog_post.text`                            | Post text content                                                   |
 | `blog_post.date`                            | Post date                                                           |
@@ -1057,4 +1057,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2017-03-31T11:42:22+01:00</small>
+<small class="last-modified">Last Modified 2017-04-10T18:01:21+01:00</small>
