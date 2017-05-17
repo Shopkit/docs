@@ -15,6 +15,11 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 ### Changelog
 
 ##### 2016-12-07
+* Add `order.client.delivery`
+* Add `order.client.billing`
+* Update payload
+
+##### 2016-12-07
 * Add `order.hash`
 
 ##### 2016-10-26

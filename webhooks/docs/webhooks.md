@@ -59,7 +59,7 @@ POST /payload HTTP/1.1
 Host: localhost
 User-Agent: Shopkit-Webhook
 Content-Type: application/json
-Content-Length: 1800
+Content-Length: 3330
 X-Shopkit-Event: order_created
 ```
 
@@ -67,57 +67,84 @@ X-Shopkit-Event: order_created
 {
     "order": {
         "id": 1337,
-        "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
-        "total": 92.84,
-        "subtotal": 77.32,
-        "product_tax": 16.01,
-        "total_tax": 16.01,
-        "discount": 7.73,
+        "hash": "a77e38d0b16ba62f32361331774324904278edcf",
+        "total": 157.03,
+        "subtotal": 148.64,
+        "product_tax": 16.0052,
+        "total_tax": 16.0052,
+        "discount": 14.864,
         "shipping": {
             "value": 7.25,
             "tax": 0,
-            "tax_percent": 0,
+            "tax_percent": null,
             "discount": 0,
             "discount_percent": 0
         },
-        "coupon_code": "bajevolp",
-        "created_at": "2014-11-19T00:44:19+00:00",
-        "update_at": "2014-11-26T15:30:00+00:00",
+        "created_at": "2017-05-17T10:45:05+01:00",
+        "update_at": "2017-05-17T10:54:38+01:00",
         "sent_at": null,
         "paid_at": null,
         "currency": "EUR",
         "payment": {
-            "type": "Multibanco",
+            "type": "multibanco",
             "data": {
                 "entity": 88888,
                 "reference": 888888888,
-                "value": 92.84
-            }
+                "value": 157.03
+            },
+            "description": "Multibanco"
         },
         "status": 5,
         "status_alias": "waiting_confirmation",
+        "status_description": "Waiting Confirmation",
         "paid": false,
-        "is_new": true,
+        "is_new": false,
         "invoice_url": null,
         "weight": 0,
-        "observations": "",
-        "custom_field": "",
+        "observations": null,
+        "note": null,
+        "client_note": null,
+        "custom_field": null,
         "coupon": {
             "code": "bajevolp",
             "type": "percent",
             "value": 10
         },
         "shipment_method": "Transportadora",
+        "tracking_url": null,
+        "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
         "client": {
             "name": "Shopkit",
             "email": "info@shopk.it",
-            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
+            "fiscal_id": null,
+            "company": null,
+            "is_registered": false,
+            "delivery": {
+                "name": "Shopkit",
+                "phone": "969057993",
+                "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                "address_extra": "",
+                "country": "Portugal - Continental",
+                "country_code": "PRT",
+                "zip_code": "6000-767",
+                "city": "Castelo Branco"
+            },
+            "billing": {
+                "name": "Shopkit",
+                "phone": "969057993",
+                "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                "address_extra": "",
+                "country": "Portugal - Continental",
+                "country_code": "PRT",
+                "zip_code": "6000-767",
+                "city": "Castelo Branco"
+            },
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
             "postcode": "6000-767",
             "town": "Castelo Branco",
             "country": "Portugal - Continental",
             "country_code": "PRT",
-            "phone": "969057993",
-            "fiscal_id": ""
+            "phone": "969057993"
         },
         "products": [
             {
@@ -134,10 +161,30 @@ X-Shopkit-Event: order_created
                 "weight": 0,
                 "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                 "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
-                "image":{
+                "image": {
                     "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                     "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                     "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                }
+            },
+            {
+                "id": 44752,
+                "title": "Hanging Succulent Planter",
+                "option": null,
+                "reference": "",
+                "price": 71.32,
+                "tax": 0,
+                "quantity": 1,
+                "discount": 7.132,
+                "subtotal": 64.188,
+                "discount_percent": 10,
+                "weight": 0,
+                "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
+                "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+                "image": {
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                 }
             }
         ]
@@ -152,4 +199,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2016-12-07T15:33:04+00:00</small>
+<small class="last-modified">Last Modified 2017-05-17T12:19:05+01:00</small>
