@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-04-10T16:38:20+01:000</small>
+<small class="last-modified">Last Modified 2017-05-17T12:15:31+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -111,58 +111,84 @@ Response: `200 OK`
 ```json
 {
     "id": 1337,
-    "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
-    "total": 92.84,
-    "subtotal": 77.32,
-    "product_tax": 16.01,
-    "total_tax": 16.01,
-    "discount": 7.73,
+    "hash": "a77e38d0b16ba62f32361331774324904278edcf",
+    "total": 157.03,
+    "subtotal": 148.64,
+    "product_tax": 16.0052,
+    "total_tax": 16.0052,
+    "discount": 14.864,
     "shipping": {
         "value": 7.25,
         "tax": 0,
-        "tax_percent": 0,
+        "tax_percent": null,
         "discount": 0,
         "discount_percent": 0
     },
-    "created_at": "2014-11-19T00:44:19+00:00",
-    "update_at": "2014-11-26T15:30:00+00:00",
-    "sent_at": "2014-11-25T15:00:20+00:00",
-    "paid_at": "2014-11-25T25:00:20+00:00",
+    "created_at": "2017-05-17T10:45:05+01:00",
+    "update_at": "2017-05-17T10:54:38+01:00",
+    "sent_at": "2017-05-17T11:00:49+01:00",
+    "paid_at": "2017-05-17T11:16:35+01:00",
     "currency": "EUR",
     "payment": {
-        "type": "Multibanco",
+        "type": "multibanco",
         "data": {
             "entity": 88888,
             "reference": 888888888,
-            "value": 92.84
-        }
+            "value": 157.03
+        },
+        "description": "Multibanco"
     },
     "status": 3,
     "status_alias": "sent",
+    "status_description": "Sent",
     "paid": true,
     "is_new": false,
     "invoice_url": null,
     "weight": 0,
-    "observations": "",
-    "note": "",
-    "client_note": "",
-    "custom_field": "",
+    "observations": null,
+    "note": null,
+    "client_note": null,
+    "custom_field": null,
     "coupon": {
         "code": "bajevolp",
         "type": "percent",
         "value": 10
     },
     "shipment_method": "Transportadora",
+    "tracking_url": null,
+    "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
     "client": {
         "name": "Shopkit",
         "email": "info@shopk.it",
-        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
+        "fiscal_id": null,
+        "company": null,
+        "is_registered": false,
+        "delivery": {
+            "name": "Shopkit",
+            "phone": "969057993",
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+            "address_extra": "",
+            "country": "Portugal - Continental",
+            "country_code": "PRT",
+            "zip_code": "6000-767",
+            "city": "Castelo Branco"
+        },
+        "billing": {
+            "name": "Shopkit",
+            "phone": "969057993",
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+            "address_extra": "",
+            "country": "Portugal - Continental",
+            "country_code": "PRT",
+            "zip_code": "6000-767",
+            "city": "Castelo Branco"
+        },
+        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
         "postcode": "6000-767",
         "town": "Castelo Branco",
         "country": "Portugal - Continental",
         "country_code": "PRT",
-        "phone": "969057993",
-        "fiscal_id": ""
+        "phone": "969057993"
     },
     "products": [
         {
@@ -179,10 +205,30 @@ Response: `200 OK`
             "weight": 0,
             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
-            "image":{
+            "image": {
                 "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                 "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                 "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+            }
+        },
+        {
+            "id": 44752,
+            "title": "Hanging Succulent Planter",
+            "option": null,
+            "reference": "",
+            "price": 71.32,
+            "tax": 0,
+            "quantity": 1,
+            "discount": 7.132,
+            "subtotal": 64.188,
+            "discount_percent": 10,
+            "weight": 0,
+            "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
+            "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
+            "image": {
+                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
             }
         }
     ]
@@ -236,10 +282,11 @@ https://api.shopk.it/v1/
                 "currency": "EUR",
                 "custom_css": null,
                 "custom_js": null,
-                "custom_html": null,
+                "head_html": null,
+                "footer_html": null,
                 "footer_info": "Os produtos listados são apenas de apresentação e não se encontram á venda.",
                 "page_title": "Parallax",
-                "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simples e rápido. Em 5 minutos estás pronto para começar a vender os teus produtos on-line.",
+                "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simpl",
                 "meta_tags": null,
                 "navigation": {
                     "primary": [
@@ -306,10 +353,14 @@ https://api.shopk.it/v1/
                 "payments": {
                     "paypal": {
                         "active": true,
-                        "email": "email@example.com",
-                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "email": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "message": "",
                         "min_value": null,
-                        "max_value": null
+                        "max_value": null,
+                        "default": false,
+                        "alias": "paypal",
+                        "title": "Paypal",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal.png"
                     },
                     "multibanco": {
                         "active": true,
@@ -318,26 +369,42 @@ https://api.shopk.it/v1/
                         "cin": 888,
                         "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         "min_value": 1,
-                        "max_value": null
+                        "max_value": null,
+                        "default": false,
+                        "alias": "multibanco",
+                        "title": "Multibanco",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco.png"
                     },
                     "bank_transfer": {
                         "active": true,
                         "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         "min_value": null,
-                        "max_value": null
+                        "max_value": null,
+                        "default": false,
+                        "alias": "bank_transfer",
+                        "title": "Bank transfer",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/transferencia-bancaria.png"
                     },
                     "on_delivery": {
                         "active": false,
                         "value": 0,
                         "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         "min_value": null,
-                        "max_value": null
+                        "max_value": null,
+                        "default": false,
+                        "alias": "on_delivery",
+                        "title": "On Delivery",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/contra-reembolso.png"
                     },
                     "pick_up": {
                         "active": true,
                         "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                         "min_value": null,
-                        "max_value": null
+                        "max_value": null,
+                        "default": false,
+                        "alias": "pick_up",
+                        "title": "Facility pick up",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/levantamento.png"
                     }
                 },
                 "category_default_order": null,
@@ -438,19 +505,25 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "video_url": "",
                 "file": null,
                 "tax": 0,
-                "meta_description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln",
+                "meta_description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fir",
                 "meta_tags": "",
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
                 "hits": 104,
+                "sales": 0,
+                "variants_same_values": false,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
                 "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
-                "sales": 0,
+                "image": {
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                },
                 "images": {
                     "1": {
                         "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
@@ -468,17 +541,12 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
                     }
                 },
-                "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                },
                 "options": [
                     {
-                        "id": "192867",
+                        "id": 192867,
                         "id_variant_1": "45896",
                         "id_variant_2": "90261",
-                        "id_variant_3": "",
+                        "id_variant_3": null,
                         "title": "Small bowl / White",
                         "price": "40.73",
                         "promo": false,
@@ -519,42 +587,41 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         }
                     },
                     {
-                        "id": "192869",
-                        "id_variant_1": "45897",
-                        "id_variant_2": "90261",
-                        "id_variant_3": "",
+                        "id": 192869,
+                        "id_variant_1": 45897,
+                        "id_variant_2": 90261,
+                        "id_variant_3": null,
                         "title": "Big bowl / White",
-                        "price": "45.73",
+                        "price": 45.73,
                         "promo": false,
-                        "price_promo": "0",
-                        "price_on_request": "",
-                        "stock": "100",
-                        "shipping": "0",
-                        "weight": "0",
-                        "active": "1",
-                        "reference": "RSBS003",
+                        "price_promo": 0,
+                        "price_on_request": false,
+                        "stock": 100,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": null,
+                        "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                         }
-                    },
-                    {
-                        "id": "192870",
-                        "id_variant_1": "45897",
-                        "id_variant_2": "90262",
-                        "id_variant_3": "",
+                    }, {
+                        "id": 192870,
+                        "id_variant_1": 45897,
+                        "id_variant_2": 90262,
+                        "id_variant_3": null,
                         "title": "Big bowl / Dark turquoise",
-                        "price": "45.73",
+                        "price": 45.73,
                         "promo": false,
-                        "price_promo": "0",
-                        "price_on_request": "",
-                        "stock": "100",
-                        "shipping": "0",
-                        "weight": "0",
-                        "active": "1",
-                        "reference": "RSBS004",
+                        "price_promo": 0,
+                        "price_on_request": false,
+                        "stock": 100,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": null,
+                        "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
@@ -565,7 +632,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 ],
                 "categories": [
                     {
-                        "id": 1337,
+                        "id": 15942,
                         "parent": 0,
                         "title": "Cozinha",
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
@@ -656,8 +723,6 @@ https://api.shopk.it/v1/category/1337
     + id (required, integer, `1337`) ... Category identifier
     + handle (required, string, `rustic-bowl`) ... Category handle
 
-
-
 + Response 200
 
     + Headers
@@ -674,7 +739,7 @@ https://api.shopk.it/v1/category/1337
                 "parent": 0,
                 "handle": "cozinha",
                 "page_title": "Cozinha",
-                "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
+                "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis e",
                 "meta_tags": "",
                 "url": "https://parallax.shopk.it/category/cozinha",
                 "total_products": 2
@@ -755,28 +820,28 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
     + Headers
 
-            Content-Length: 2577
+            Content-Length: 3319
             Content-Type: application/json
 
     + Body
 
             {
                 "id": 1337,
-                "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
+                "hash": "a77e38d0b16ba62f32361331774324904278edcf",
                 "total": 157.03,
                 "subtotal": 148.64,
-                "product_tax": 16.01,
-                "total_tax": 16.01,
-                "discount": 14.86,
+                "product_tax": 16.0052,
+                "total_tax": 16.0052,
+                "discount": 14.864,
                 "shipping": {
                     "value": 7.25,
                     "tax": 0,
-                    "tax_percent": 0,
+                    "tax_percent": null,
                     "discount": 0,
                     "discount_percent": 0
                 },
-                "created_at": "2014-11-19T00:44:19+00:00",
-                "update_at": "2014-11-26T15:30:00+00:00",
+                "created_at": "2017-05-17T10:45:05+01:00",
+                "update_at": "2017-05-17T10:54:38+01:00",
                 "sent_at": null,
                 "paid_at": null,
                 "currency": "EUR",
@@ -786,34 +851,60 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "entity": 88888,
                         "reference": 888888888,
                         "value": 157.03
-                    }
+                    },
+                    "description": "Multibanco"
                 },
                 "status": 5,
                 "status_alias": "waiting_confirmation",
+                "status_description": "Waiting Confirmation",
                 "paid": false,
                 "is_new": false,
                 "invoice_url": null,
                 "weight": 0,
-                "observations": "",
-                "note": "",
-                "client_note": "",
-                "custom_field": "",
+                "observations": null,
+                "note": null,
+                "client_note": null,
+                "custom_field": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
+                "tracking_url": null,
+                "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
                 "client": {
                     "name": "Shopkit",
                     "email": "info@shopk.it",
-                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
-                    "postcode": "6000-767 ",
+                    "fiscal_id": null,
+                    "company": null,
+                    "is_registered": false,
+                    "delivery": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": "",
+                        "country": "Portugal - Continental",
+                        "country_code": "PRT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco"
+                    },
+                    "billing": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": "",
+                        "country": "Portugal - Continental",
+                        "country_code": "PRT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco"
+                    },
+                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
+                    "postcode": "6000-767",
                     "town": "Castelo Branco",
                     "country": "Portugal - Continental",
                     "country_code": "PRT",
-                    "phone": "969057993",
-                    "fiscal_id": ""
+                    "phone": "969057993"
                 },
                 "products": [
                     {
@@ -830,7 +921,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "weight": 0,
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
-                        "image":{
+                        "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
@@ -839,7 +930,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
-                        "option": "",
+                        "option": null,
                         "reference": "",
                         "price": 71.32,
                         "tax": 0,
@@ -850,7 +941,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "weight": 0,
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
-                        "image":{
+                        "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
@@ -932,30 +1023,30 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 2606
+            Content-Length: 3332
             Content-Type: application/json
 
     + Body
 
             {
                 "id": 1337,
-                "hash": "2e59759fb542d880ed58175d0626b34cf079b1f5",
+                "hash": "a77e38d0b16ba62f32361331774324904278edcf",
                 "total": 157.03,
                 "subtotal": 148.64,
-                "product_tax": 16.01,
-                "total_tax": 16.01,
-                "discount": 14.86,
+                "product_tax": 16.0052,
+                "total_tax": 16.0052,
+                "discount": 14.864,
                 "shipping": {
                     "value": 7.25,
                     "tax": 0,
-                    "tax_percent": 0,
+                    "tax_percent": null,
                     "discount": 0,
                     "discount_percent": 0
                 },
-                "created_at": "2014-11-19T00:44:19+00:00",
-                "update_at": "2014-11-26T15:30:00+00:00",
-                "sent_at": "2014-11-25T15:00:20+00:00",
-                "paid_at": "2014-11-25T25:00:20+00:00",
+                "created_at": "2017-05-17T10:45:05+01:00",
+                "update_at": "2017-05-17T10:54:38+01:00",
+                "sent_at": "2017-05-17T11:00:49+01:00",
+                "paid_at": "2017-05-17T11:16:35+01:00",
                 "currency": "EUR",
                 "payment": {
                     "type": "multibanco",
@@ -963,34 +1054,60 @@ Attributes | Type | Choices | Description
                         "entity": 88888,
                         "reference": 888888888,
                         "value": 157.03
-                    }
+                    },
+                    "description": "Multibanco"
                 },
                 "status": 3,
                 "status_alias": "sent",
+                "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
                 "invoice_url": null,
                 "weight": 0,
-                "observations": "",
-                "note": "",
-                "client_note": "",
-                "custom_field": "",
+                "observations": null,
+                "note": null,
+                "client_note": null,
+                "custom_field": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
+                "tracking_url": null,
+                "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
                 "client": {
                     "name": "Shopkit",
                     "email": "info@shopk.it",
-                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08\n",
-                    "postcode": "6000-767 ",
+                    "fiscal_id": null,
+                    "company": null,
+                    "is_registered": false,
+                    "delivery": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": "",
+                        "country": "Portugal - Continental",
+                        "country_code": "PRT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco"
+                    },
+                    "billing": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": "",
+                        "country": "Portugal - Continental",
+                        "country_code": "PRT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco"
+                    },
+                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
+                    "postcode": "6000-767",
                     "town": "Castelo Branco",
                     "country": "Portugal - Continental",
                     "country_code": "PRT",
-                    "phone": "969057993",
-                    "fiscal_id": ""
+                    "phone": "969057993"
                 },
                 "products": [
                     {
@@ -1007,7 +1124,7 @@ Attributes | Type | Choices | Description
                         "weight": 0,
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
-                        "image":{
+                        "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
@@ -1016,7 +1133,7 @@ Attributes | Type | Choices | Description
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
-                        "option": "",
+                        "option": null,
                         "reference": "",
                         "price": 71.32,
                         "tax": 0,
@@ -1027,7 +1144,7 @@ Attributes | Type | Choices | Description
                         "weight": 0,
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
-                        "image":{
+                        "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
@@ -1128,7 +1245,7 @@ https://api.shopk.it/v1/shipping?country_code=prt
 
    + Headers
 
-            Content-Length: 180
+            Content-Length: 236
             Content-Type: application/json
 
     + Body
@@ -1199,7 +1316,7 @@ https://api.shopk.it/v1/coupon/bajevolp
 
    + Headers
 
-            Content-Length: 239
+            Content-Length: 287
             Content-Type: application/json
 
     + Body
@@ -1217,9 +1334,9 @@ https://api.shopk.it/v1/coupon/bajevolp
                 "product": null,
                 "date_from": null,
                 "date_to": null,
-                "created_at": "2014-07-18T23:41:43+00:00",
-                "orders_total": 158.81,
-                "orders_discount": 14.86
+                "created_at": "2014-11-18T23:41:32+00:00",
+                "orders_total": 157.03,
+                "orders_discount": 14.864
             }
 
 + Response 404
@@ -1270,7 +1387,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 221
+            Content-Length: 279
             Content-Type: application/json
 
     + Body

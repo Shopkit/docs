@@ -16,6 +16,11 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-05-17
+* Update `store` payload
+* Update `product` payload
+* Update `order` payload
+
 ##### 2017-03-29
 * Fix `product`, `order` duplicated entries
 
