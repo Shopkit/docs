@@ -1,7 +1,7 @@
 # Shopkit Webhooks
 Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores.
 
-The webhooks can be used to integrate with third-party services, for example invoicing systems, CRM services or even create notifications and alerts. **[You're only limited by your imagination](https://www.youtube.com/watch?v=B1Kb0WAZ43M)**.
+The webhooks can be used to integrate with third-party services, for example invoicing systems, CRM services or even create notifications and alerts. **[You're only limited by your imagination](https://www.youtube.com/watch?v=1LAAzzXl5Y8)**.
 
 If you find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
