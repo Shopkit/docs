@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2017-08-14
+* Add `order_delivered` event
+
 ##### 2017-06-06
 * Add `X-Webhook-Signature` header
 * Update payload

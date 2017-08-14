@@ -40,6 +40,7 @@ When configuring a webhook, you can choose which events you would like to receiv
 | `order_sent`          | When an order status is changed to `sent`                   |
 | `order_change_status` | When an order status is changed                             |
 | `order_invoice`       | When an order invoice is requested                          |
+| `order_delivered`     | When an order status is changed to `delivered`              |
 
 ### Payloads
 
@@ -199,4 +200,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2017-06-05T12:41:25+01:00</small>
+<small class="last-modified">Last Modified 2017-08-14T11:35:06+01:00</small>
