@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-05-17T12:15:31+01:00</small>
+<small class="last-modified">Last Modified 2017-08-14T11:23:39+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -789,6 +789,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `5`
             + `6`
             + `7`
+            + `8`
     + status_alias (optional, string, `all`) ... Order status as a string
         + Values
             + `all`
@@ -799,6 +800,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `waiting_confirmation`
             + `waiting_payment`
             + `waiting_stock`
+            + `delivered`
     + paid (optional, string, `true`) ... Order paid field
         + Values
             + `true`
@@ -993,8 +995,8 @@ https://api.shopk.it/v1/order/1337
 
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
-**status** | integer | `1` `2` `3` `4` `5` `6` `7` | Order status as an integer
-**status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` | Order status as a string
+**status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` | Order status as an integer
+**status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
 **note** | string | | Order note
@@ -1493,7 +1495,7 @@ curl -i -X POST \
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **url** | string | | Webhook url
-**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` | Available webhooks
+**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_delivered` | Available webhooks
 
 </div>
 

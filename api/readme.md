@@ -16,6 +16,13 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-08-14
+* Add `order` stattus `delivered`
+* Add event `order_delivered`
+
+##### 2017-06-13
+* Add `order.tracking`
+
 ##### 2017-05-17
 * Update `store` payload
 * Update `product` payload
