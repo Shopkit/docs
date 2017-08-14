@@ -21,7 +21,7 @@ To generate documentation use: `aglio -i api.md -o index.html`
 * Add event `order_delivered`
 
 ##### 2017-06-13
-* Add `order.tracking`
+* Add `order.tracking_url`
 
 ##### 2017-05-17
 * Update `store` payload
