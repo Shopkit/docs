@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-08-14T11:23:39+01:00</small>
+<small class="last-modified">Last Modified 2017-09-15T12:28:55+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -720,8 +720,8 @@ https://api.shopk.it/v1/category/1337
 
 + Parameters
 
-    + id (required, integer, `1337`) ... Category identifier
-    + handle (required, string, `rustic-bowl`) ... Category handle
+    + id (optional, integer, `1337`) ... Category identifier
+    + handle (optional, string, `rustic-bowl`) ... Category handle
 
 + Response 200
 

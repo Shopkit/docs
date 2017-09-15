@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2017-09-15
+* Get `category` parameters are optional
+
 ##### 2017-08-14
 * Add `order` stattus `delivered`
 * Add event `order_delivered`
