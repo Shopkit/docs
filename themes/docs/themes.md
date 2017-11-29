@@ -738,16 +738,16 @@ This data is only available on the `product.tpl` template
 | `product.price`                             | Product price                                                              |
 | `product.price_promo`                       | Product promotion price                                                    |
 | `product.price_on_request`                  | Product has price on request                                               |
+| `product.promo`                             | Product is on promotion                                                    |
 | `product.created_at`                        | Product creation date                                                      |
 | `product.status`                            | Product status as an integer                                               |
 | `product.status_alias`                      | Product status as a string                                                 |
 | `product.position`                          | Product order position                                                     |
-| `product.sales`                             | Product number of sales                                                    |
 | `product.shipping`                          | Product shipping cost                                                      |
 | `product.shipping_alone`                    | Product ships alone                                                        |
-| `product.featured`                          | Product is featured                                                        |
-| `product.new`                               | Product is new                                                             |
-| `product.is_promotion`                      | Product is promotion                                                       |
+| `product.featured`                          | Product is featured attribute                                              |
+| `product.new`                               | Product is new attribute                                                   |
+| `product.is_promotion`                      | Product is promotion attribute                                             |
 | `product.description`                       | Product description                                                        |
 | `product.description_short`                 | Product short description                                                  |
 | `product.video_url`                         | Product video URL                                                          |
@@ -756,6 +756,11 @@ This data is only available on the `product.tpl` template
 | `product.tax`                               | Product tax cost                                                           |
 | `product.weight`                            | Product weight                                                             |
 | `product.hits`                              | Product hits                                                               |
+| `product.sales`                             | Product number of sales                                                    |
+| `product.meta_description`                  | Product meta description                                                   |
+| `product.meta_tags`                         | Product meta tags                                                          |
+| `product.handle`                            | Product handle                                                             |
+| `product.page_title`                        | Product page title                                                         |
 | `product.url`                               | Product URL                                                                |
 | `product.permalink`                         | Product permalink                                                          |
 | `product.add_cart_url`                      | Product add to cart URL                                                    |
@@ -765,10 +770,7 @@ This data is only available on the `product.tpl` template
 | `product.option_groups`                     | Array with product option groups (variants)                                |
 | `product.options`                           | Lists all option groups (variants) combined. Example: `XL / Blue / Cotton` |
 | `product.stock`                             | Array with stock settings                                                  |
-| `product.meta_description`                  | Product meta description                                                   |
-| `product.meta_tags`                         | Product meta tags                                                          |
-| `product.handle`                            | Product handle                                                             |
-| `product.page_title`                        | Product page title                                                         |
+| `product.wishlist`                          | Array with wishlist URL                                                    |
 
 `product.categories`
 
@@ -796,24 +798,38 @@ This data is only available on the `product.tpl` template
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `product.options.id`                        | Product option identifier                                           |
+| `product.options.id_variant_1`              | Product option variant 1 identifier                                 |
+| `product.options.id_variant_2`              | Product option variant 2 identifier                                 |
+| `product.options.id_variant_3`              | Product option variant 3 identifier                                 |
 | `product.options.title`                     | Product option title                                                |
 | `product.options.price`                     | Product option price                                                |
-| `product.options.promo`                     | Product option is promotion                                         |
+| `product.options.promo`                     | Product option is on promotion                                      |
 | `product.options.price_promo`               | Product option promotion price                                      |
 | `product.options.price_on_request`          | Product option has price on request                                 |
 | `product.options.stock`                     | Product option stock quantity                                       |
 | `product.options.shipping`                  | Product option shipping cost                                        |
 | `product.options.weight`                    | Product option weight                                               |
 | `product.options.reference`                 | Product option reference                                            |
+| `product.options.active`                    | Product option is enabled                                           |
+| `product.options.url`                       | Product option URL                                                  |
 | `product.options.image`                     | Product option image array in 3 sizes: `thumb`, `square`, `full`    |
+| `product.options.wishlist`                  | Product option wishlist links: `add_url`, `remove_url`              |
 
 `product.option_groups`
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `product.option_groups.title`               | Product option group title                                          |
-| `product.option_groups.options.id`          | Product option identifier                                           |
-| `product.option_groups.options.title`       | Product option title                                                |
+| `product.option_groups.options`             | Array with `product.options`                                        |
+
+
+`product.wishlist`
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `product.wishlist.add_url`                  | Product add to wishlist URL                                         |
+| `product.wishlist.remove_url`               | Product remove from wishlist URL                                    |
+| `product.wishlist.status`                   | Product is on wishlist status                                       |
 
 
 #### Search
@@ -1057,4 +1073,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2017-04-10T18:01:21+01:00</small>
+<small class="last-modified">Last Modified 2017-11-29T13:02:19+00:00</small>
