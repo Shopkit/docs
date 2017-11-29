@@ -16,6 +16,7 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ##### 2017-11-29
 * Update `product` object
+* `notices` are now `events`
 
 ##### 2017-04-10
 * Update `blog_post.image` to array
