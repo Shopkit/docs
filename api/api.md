@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-09-15T12:28:55+01:00</small>
+<small class="last-modified">Last Modified 2017-12-06T19:13:54+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -125,9 +125,9 @@ Response: `200 OK`
         "discount_percent": 0
     },
     "created_at": "2017-05-17T10:45:05+01:00",
-    "update_at": "2017-05-17T10:54:38+01:00",
-    "sent_at": "2017-05-17T11:00:49+01:00",
-    "paid_at": "2017-05-17T11:16:35+01:00",
+    "update_at": "2017-12-06T17:18:41+00:00",
+    "sent_at": "2017-05-17T11:23:21+01:00",
+    "paid_at": "2017-05-17T11:23:21+01:00",
     "currency": "EUR",
     "payment": {
         "type": "multibanco",
@@ -143,31 +143,33 @@ Response: `200 OK`
     "status_description": "Sent",
     "paid": true,
     "is_new": false,
-    "invoice_url": null,
+    "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
     "weight": 0,
     "observations": null,
     "note": null,
     "client_note": null,
     "custom_field": null,
+    "tracking_code": null,
+    "tracking_url": "",
+    "shipping_url": null,
     "coupon": {
         "code": "bajevolp",
         "type": "percent",
         "value": 10
     },
     "shipment_method": "Transportadora",
-    "tracking_url": null,
     "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
     "client": {
         "name": "Shopkit",
         "email": "info@shopk.it",
         "fiscal_id": null,
-        "company": null,
+        "company": "Shopkit",
         "is_registered": false,
         "delivery": {
             "name": "Shopkit",
             "phone": "969057993",
-            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-            "address_extra": "",
+            "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+            "address_extra": "1, S1.08",
             "country": "Portugal - Continental",
             "country_code": "PRT",
             "zip_code": "6000-767",
@@ -176,19 +178,13 @@ Response: `200 OK`
         "billing": {
             "name": "Shopkit",
             "phone": "969057993",
-            "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-            "address_extra": "",
+            "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+            "address_extra": "1, S1.08",
             "country": "Portugal - Continental",
             "country_code": "PRT",
             "zip_code": "6000-767",
             "city": "Castelo Branco"
         },
-        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
-        "postcode": "6000-767",
-        "town": "Castelo Branco",
-        "country": "Portugal - Continental",
-        "country_code": "PRT",
-        "phone": "969057993"
     },
     "products": [
         {
@@ -255,7 +251,7 @@ https://api.shopk.it/v1/
 
     + Headers
 
-            Content-Length: 4284
+            Content-Length: 5997
             Content-Type: application/json
 
     + Body
@@ -271,6 +267,7 @@ https://api.shopk.it/v1/
                 "instagram": "https://www.instagram.com/shopk.it/",
                 "pinterest": null,
                 "show_email": false,
+                "enable_shipping_methods": true,
                 "email": "info@shopk.it",
                 "phone": null,
                 "cellphone": "(+351) 969 057 993",
@@ -288,6 +285,28 @@ https://api.shopk.it/v1/
                 "page_title": "Parallax",
                 "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simpl",
                 "meta_tags": null,
+                "settings": {
+                    "cart": {
+                        "users_registration": "optional",
+                        "field_company": "optional",
+                        "field_fiscal_id": "optional",
+                        "field_delivery_phone": "optional",
+                        "field_billing_phone": "optional",
+                        "page_terms": {
+                            "id": "10713",
+                            "title": "Termos e condições",
+                            "url": "https://parallax.shopk.it/page/termos-e-condicoes",
+                            "handle": "termos-e-condicoes"
+                        },
+                        "page_privacy": {
+                            "id": "10714",
+                            "title": "Politica de Privacidade",
+                            "url": "https://parallax.shopk.it/page/politica-de-privacidade",
+                            "handle": "politica-de-privacidade"
+                        }
+                    }
+                },
+                "url": "https://parallax.shopk.it/",
                 "navigation": {
                     "primary": [
                         {
@@ -351,10 +370,23 @@ https://api.shopk.it/v1/
                     ]
                 },
                 "payments": {
+                    "multibanco": {
+                        "active": true,
+                        "entity": "88888",
+                        "user": "USER88888",
+                        "cin": "888",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Multibanco.",
+                        "min_value": 1,
+                        "max_value": null,
+                        "default": true,
+                        "alias": "multibanco",
+                        "title": "Multibanco",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco.png"
+                    },
                     "paypal": {
                         "active": true,
-                        "email": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "message": "",
+                        "email": "info@shopk.it",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Paypal.",
                         "min_value": null,
                         "max_value": null,
                         "default": false,
@@ -362,58 +394,47 @@ https://api.shopk.it/v1/
                         "title": "Paypal",
                         "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal.png"
                     },
-                    "multibanco": {
-                        "active": true,
-                        "entity": 88888,
-                        "user": "USER88888",
-                        "cin": 888,
-                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "min_value": 1,
-                        "max_value": null,
-                        "default": false,
-                        "alias": "multibanco",
-                        "title": "Multibanco",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco.png"
-                    },
                     "bank_transfer": {
                         "active": true,
-                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Transferência Bancária.",
                         "min_value": null,
                         "max_value": null,
                         "default": false,
                         "alias": "bank_transfer",
-                        "title": "Bank transfer",
+                        "title": "Transferência Bancária",
                         "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/transferencia-bancaria.png"
-                    },
-                    "on_delivery": {
-                        "active": false,
-                        "value": 0,
-                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                        "min_value": null,
-                        "max_value": null,
-                        "default": false,
-                        "alias": "on_delivery",
-                        "title": "On Delivery",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/contra-reembolso.png"
                     },
                     "pick_up": {
                         "active": true,
-                        "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Levantamento nas instalações.",
                         "min_value": null,
                         "max_value": null,
                         "default": false,
                         "alias": "pick_up",
-                        "title": "Facility pick up",
+                        "title": "Levantamento nas instalações",
                         "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/levantamento.png"
+                    },
+                    "on_delivery": {
+                        "active": true,
+                        "value": 0,
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento À Cobrança.",
+                        "min_value": null,
+                        "max_value": null,
+                        "default": false,
+                        "alias": "on_delivery",
+                        "title": "À Cobrança",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/contra-reembolso.png"
                     }
                 },
                 "category_default_order": null,
+                "categories_sorting": null,
+                "domain": "parallax.shopk.it",
                 "assets": {
                     "url": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax",
                     "images": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/img",
-                    "css": "https://drwfxyu78e9uq.cloudfront.net/css/store/parallax/style.css?template=shopkit/parallax&amp;last_modified=1479844384",
-                    "plugins": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/plugins.js?template=shopkit/parallax&amp;last_modified=1479844384",
-                    "scripts": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/script.js?template=shopkit/parallax&amp;last_modified=1479844384"
+                    "css": "https://drwfxyu78e9uq.cloudfront.net/css/store/parallax/style.css?template=shopkit/parallax&amp;last_modified=1504786507",
+                    "plugins": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/plugins.js?template=shopkit/parallax&amp;last_modified=1504786507",
+                    "scripts": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/script.js?template=shopkit/parallax&amp;last_modified=1504786507"
                 },
                 "images_header": [
                     "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/14bb24a112fafccdd36680be2b03f4ce.jpg",
@@ -480,7 +501,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 6625
+            Content-Length: 8097
             Content-Type: application/json
 
     + Body
@@ -490,14 +511,14 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "title": "Rustic Spice Bowl Set",
                 "reference": "",
                 "price": 40.73,
-                "price_promo": 0,
+                "price_promo": null,
                 "price_on_request": false,
                 "created_at": "2014-11-30T01:04:40+00:00",
                 "status": 1,
                 "status_alias": "active",
                 "position": 0,
                 "shipping": 0,
-                "shipping_alone" : false,
+                "shipping_alone": false,
                 "featured": false,
                 "new": true,
                 "is_promotion": false,
@@ -510,13 +531,17 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 104,
+                "hits": 849,
                 "sales": 0,
                 "variants_same_values": false,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                "wishlist": {
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set"
+                },
                 "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "image": {
@@ -524,66 +549,74 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                     "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
                 },
-                "images": {
-                    "1": {
+                "images": [
+                    {
                         "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
                         "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/17d23f7b534bf365580989363da328d2.jpg",
                         "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/17d23f7b534bf365580989363da328d2.jpg"
                     },
-                    "2": {
+                    {
                         "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/7d2fe8d66dd9925ac72a3112d691f352.jpg",
                         "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
                         "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/7d2fe8d66dd9925ac72a3112d691f352.jpg"
                     },
-                    "3": {
+                    {
                         "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/ff2216454ebbf8ca2727335ecacbc472.jpg",
                         "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
                         "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
                     }
-                },
+                ],
                 "options": [
                     {
                         "id": 192867,
-                        "id_variant_1": "45896",
-                        "id_variant_2": "90261",
+                        "id_variant_1": 45896,
+                        "id_variant_2": 90261,
                         "id_variant_3": null,
                         "title": "Small bowl / White",
-                        "price": "40.73",
+                        "price": 40.73,
                         "promo": false,
-                        "price_promo": "0",
-                        "price_on_request": "",
-                        "stock": "99",
-                        "shipping": "0",
-                        "weight": "0",
-                        "active": "1",
-                        "reference": "RSBS001",
+                        "price_promo": null,
+                        "price_on_request": false,
+                        "stock": 88,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": null,
+                        "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192867",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192867"
                         }
                     },
                     {
-                        "id": "192868",
-                        "id_variant_1": "45896",
-                        "id_variant_2": "90262",
-                        "id_variant_3": "",
+                        "id": 192868,
+                        "id_variant_1": 45896,
+                        "id_variant_2": 90262,
+                        "id_variant_3": null,
                         "title": "Small bowl / Dark turquoise",
-                        "price": "40.73",
+                        "price": 40.73,
                         "promo": false,
-                        "price_promo": "0",
-                        "price_on_request": "",
-                        "stock": "95",
-                        "shipping": "0",
-                        "weight": "0",
-                        "active": "1",
-                        "reference": "RSBS002",
+                        "price_promo": null,
+                        "price_on_request": false,
+                        "stock": 94,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": null,
+                        "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
                         "image": {
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192868",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192868"
                         }
                     },
                     {
@@ -594,7 +627,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "title": "Big bowl / White",
                         "price": 45.73,
                         "promo": false,
-                        "price_promo": 0,
+                        "price_promo": null,
                         "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
@@ -606,8 +639,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192869",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192869"
                         }
-                    }, {
+                    },
+                    {
                         "id": 192870,
                         "id_variant_1": 45897,
                         "id_variant_2": 90262,
@@ -615,7 +653,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "title": "Big bowl / Dark turquoise",
                         "price": 45.73,
                         "promo": false,
-                        "price_promo": 0,
+                        "price_promo": null,
                         "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
@@ -627,6 +665,10 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                             "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
                             "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192870",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192870"
                         }
                     }
                 ],
@@ -645,11 +687,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "title": "Size",
                         "options": [
                             {
-                                "id": "45896",
+                                "id": 45896,
                                 "title": "Small bowl"
                             },
                             {
-                                "id": "45897",
+                                "id": 45897,
                                 "title": "Big bowl"
                             }
                         ]
@@ -658,11 +700,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "title": "Color",
                         "options": [
                             {
-                                "id": "90261",
+                                "id": 90261,
                                 "title": "White"
                             },
                             {
-                                "id": "90262",
+                                "id": 90262,
                                 "title": "Dark turquoise"
                             }
                         ]
@@ -670,11 +712,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 ],
                 "stock": {
                     "stock_enabled": true,
-                    "stock_qty": 100,
+                    "stock_qty": 88,
                     "stock_backorder": true,
                     "stock_show": true,
                     "stock_sold_single": true,
-                    "stock_notify": "5"
+                    "stock_notify": 10
                 }
             }
 
@@ -822,7 +864,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 
     + Headers
 
-            Content-Length: 3319
+            Content-Length: 3224
             Content-Type: application/json
 
     + Body
@@ -843,9 +885,9 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "discount_percent": 0
                 },
                 "created_at": "2017-05-17T10:45:05+01:00",
-                "update_at": "2017-05-17T10:54:38+01:00",
-                "sent_at": null,
-                "paid_at": null,
+                "update_at": "2017-12-06T17:18:41+00:00",
+                "sent_at": "2017-05-17T11:23:21+01:00",
+                "paid_at": "2017-05-17T11:23:21+01:00",
                 "currency": "EUR",
                 "payment": {
                     "type": "multibanco",
@@ -856,36 +898,38 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     },
                     "description": "Multibanco"
                 },
-                "status": 5,
-                "status_alias": "waiting_confirmation",
-                "status_description": "Waiting Confirmation",
-                "paid": false,
+                "status": 3,
+                "status_alias": "sent",
+                "status_description": "Sent",
+                "paid": true,
                 "is_new": false,
-                "invoice_url": null,
+                "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
                 "observations": null,
                 "note": null,
                 "client_note": null,
                 "custom_field": null,
+                "tracking_code": null,
+                "tracking_url": "",
+                "shipping_url": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
-                "tracking_url": null,
                 "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
                 "client": {
                     "name": "Shopkit",
                     "email": "info@shopk.it",
                     "fiscal_id": null,
-                    "company": null,
+                    "company": "Shopkit",
                     "is_registered": false,
                     "delivery": {
                         "name": "Shopkit",
                         "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-                        "address_extra": "",
+                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+                        "address_extra": "1, S1.08",
                         "country": "Portugal - Continental",
                         "country_code": "PRT",
                         "zip_code": "6000-767",
@@ -894,19 +938,13 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                     "billing": {
                         "name": "Shopkit",
                         "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-                        "address_extra": "",
+                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+                        "address_extra": "1, S1.08",
                         "country": "Portugal - Continental",
                         "country_code": "PRT",
                         "zip_code": "6000-767",
                         "city": "Castelo Branco"
                     },
-                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
-                    "postcode": "6000-767",
-                    "town": "Castelo Branco",
-                    "country": "Portugal - Continental",
-                    "country_code": "PRT",
-                    "phone": "969057993"
                 },
                 "products": [
                     {
@@ -999,6 +1037,10 @@ Attributes | Type | Choices | Description
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
+**tracking_url** | string | | Tracking URL
+**tracking_code** | string | | Tracking code
+**shipping_url** | string | | Shipping URL
+**pickup_code** | string | | Pickup code
 **note** | string | | Order note
 **client_note** | string | | Order note from client
 
@@ -1025,7 +1067,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 3332
+            Content-Length: 3224
             Content-Type: application/json
 
     + Body
@@ -1046,9 +1088,9 @@ Attributes | Type | Choices | Description
                     "discount_percent": 0
                 },
                 "created_at": "2017-05-17T10:45:05+01:00",
-                "update_at": "2017-05-17T10:54:38+01:00",
-                "sent_at": "2017-05-17T11:00:49+01:00",
-                "paid_at": "2017-05-17T11:16:35+01:00",
+                "update_at": "2017-12-06T17:18:41+00:00",
+                "sent_at": "2017-05-17T11:23:21+01:00",
+                "paid_at": "2017-05-17T11:23:21+01:00",
                 "currency": "EUR",
                 "payment": {
                     "type": "multibanco",
@@ -1064,31 +1106,33 @@ Attributes | Type | Choices | Description
                 "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
-                "invoice_url": null,
+                "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
                 "observations": null,
                 "note": null,
                 "client_note": null,
                 "custom_field": null,
+                "tracking_code": null,
+                "tracking_url": "",
+                "shipping_url": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
-                "tracking_url": null,
                 "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
                 "client": {
                     "name": "Shopkit",
                     "email": "info@shopk.it",
                     "fiscal_id": null,
-                    "company": null,
+                    "company": "Shopkit",
                     "is_registered": false,
                     "delivery": {
                         "name": "Shopkit",
                         "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-                        "address_extra": "",
+                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+                        "address_extra": "1, S1.08",
                         "country": "Portugal - Continental",
                         "country_code": "PRT",
                         "zip_code": "6000-767",
@@ -1097,19 +1141,13 @@ Attributes | Type | Choices | Description
                     "billing": {
                         "name": "Shopkit",
                         "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
-                        "address_extra": "",
+                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
+                        "address_extra": "1, S1.08",
                         "country": "Portugal - Continental",
                         "country_code": "PRT",
                         "zip_code": "6000-767",
                         "city": "Castelo Branco"
                     },
-                    "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08 ",
-                    "postcode": "6000-767",
-                    "town": "Castelo Branco",
-                    "country": "Portugal - Continental",
-                    "country_code": "PRT",
-                    "phone": "969057993"
                 },
                 "products": [
                     {
@@ -1247,27 +1285,25 @@ https://api.shopk.it/v1/shipping?country_code=prt
 
    + Headers
 
-            Content-Length: 236
+            Content-Length: 234
             Content-Type: application/json
 
     + Body
 
-            {
-                [
-                    {
-                        "title": "CTT",
-                        "description": "Via CTT Expresso. Entrega em 24 horas.",
-                        "price": 6.76,
-                        "price_formatted": "6,76 €"
-                    },
-                    {
-                        "title": "Transportadora",
-                        "description": "Envio via Nacex no próprio dia",
-                        "price": 7.25,
-                        "price_formatted": "7,25 €"
-                    }
-                ]
-            }
+            [
+                {
+                    "title": "CTT",
+                    "description": "Via CTT Expresso. Entrega em 24 horas.",
+                    "price": 6.76,
+                    "price_formatted": "6,76 €"
+                },
+                {
+                    "title": "Transportadora",
+                    "description": "Envio via Nacex no próprio dia",
+                    "price": 7.25,
+                    "price_formatted": "7,25 €"
+                }
+            ]
 
 + Response 400
 
@@ -1318,28 +1354,30 @@ https://api.shopk.it/v1/coupon/bajevolp
 
    + Headers
 
-            Content-Length: 287
+            Content-Length: 289
             Content-Type: application/json
 
     + Body
 
-            {
-                "id": 1337,
-                "code": "bajevolp",
-                "limit": 5,
-                "used": 1,
-                "value": 10,
-                "type": "percent",
-                "applies_to": "all_orders",
-                "orders_over": null,
-                "category": null,
-                "product": null,
-                "date_from": null,
-                "date_to": null,
-                "created_at": "2014-11-18T23:41:32+00:00",
-                "orders_total": 157.03,
-                "orders_discount": 14.864
-            }
+            [
+                {
+                    "id": 1337,
+                    "code": "bajevolp",
+                    "limit": 5,
+                    "used": 2,
+                    "value": 10,
+                    "type": "percent",
+                    "applies_to": "all_orders",
+                    "orders_over": null,
+                    "category": null,
+                    "product": null,
+                    "date_from": null,
+                    "date_to": null,
+                    "created_at": "2014-11-18T23:41:32+00:00",
+                    "orders_total": 157.03,
+                    "orders_discount": 14.864
+                }
+            ]
 
 + Response 404
 
@@ -1389,7 +1427,7 @@ Attributes | Type | Choices | Description
 
     + Headers
 
-            Content-Length: 279
+            Content-Length: 289
             Content-Type: application/json
 
     + Body
@@ -1399,7 +1437,7 @@ Attributes | Type | Choices | Description
                     "id": 1337,
                     "code": "bajevolp",
                     "limit": 5,
-                    "used": 0,
+                    "used": 2,
                     "value": 10,
                     "type": "percent",
                     "applies_to": "all_orders",
@@ -1408,9 +1446,9 @@ Attributes | Type | Choices | Description
                     "product": null,
                     "date_from": null,
                     "date_to": null,
-                    "created_at": "2017-03-09T17:18:03+00:00",
-                    "orders_total": 0,
-                    "orders_discount": 0
+                    "created_at": "2014-11-18T23:41:32+00:00",
+                    "orders_total": 157.03,
+                    "orders_discount": 14.864
                 }
             ]
 
