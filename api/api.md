@@ -279,8 +279,6 @@ https://api.shopk.it/v1/
                 "currency": "EUR",
                 "custom_css": null,
                 "custom_js": null,
-                "head_html": null,
-                "footer_html": null,
                 "footer_info": "Os produtos listados são apenas de apresentação e não se encontram á venda.",
                 "page_title": "Parallax",
                 "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simpl",
