@@ -14,6 +14,10 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2017-12-06
+* Add `order_shipping` event
+* Update payload
+
 ##### 2017-08-14
 * Add `order_delivered` event
 
