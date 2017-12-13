@@ -600,6 +600,9 @@ Contains data about each product in the shopping cart.
 | `cart.items.remove_link`                    | Cart remove product URL                                             |
 | `cart.items.qty`                            | Cart product quantity                                               |
 | `cart.items.price`                          | Cart product price                                                  |
+| `cart.items.price_without_tax`              | Cart product price before taxes                                     |
+| `cart.items.discount`                       | Cart product discount value                                         |
+| `cart.items.discount_percent`               | Cart product discount percent                                       |
 | `cart.items.tax_percent`                    | Cart product tax percentage                                         |
 | `cart.items.tax`                            | Cart product tax value                                              |
 | `cart.items.taxes_total`                    | Cart product total taxes                                            |
@@ -607,11 +610,12 @@ Contains data about each product in the shopping cart.
 | `cart.items.title`                          | Cart product title                                                  |
 | `cart.items.reference`                      | Cart product reference                                              |
 | `cart.items.stock_sold_single`              | Cart stock sold single option                                       |
-| `cart.items.stock_qty`                      | Cart product stock quantity                                         |
+| `cart.items.metadata`                       | Cart product metadata                                               |
 | `cart.items.image`                          | Cart product image URL                                              |
 | `cart.items.shipping_alone`                 | Cart shipping alone option                                          |
 | `cart.items.shipping`                       | Cart shipping                                                       |
 | `cart.items.subtotal`                       | Cart product subtotal                                               |
+| `cart.items.subtotal_without_tax`           | Cart product subtotal before taxes                                  |
 | `cart.items.total`                          | Cart product total                                                  |
 
 
@@ -621,7 +625,7 @@ Contains data about available shipping methods.
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
-| `cart.shipping_methods.item_id`             | Cart shipping method identifier                                     |
+| `cart.shipping_methods.id`                  | Cart shipping method identifier                                     |
 | `cart.shipping_methods.title`               | Cart shipping method title                                          |
 | `cart.shipping_methods.description`         | Cart shipping method description                                    |
 | `cart.shipping_methods.price`               | Cart shipping method price                                          |
@@ -1073,4 +1077,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2017-11-29T13:02:19+00:00</small>
+<small class="last-modified">Last Modified 2017-12-13T18:14:48+00:00</small>
