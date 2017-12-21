@@ -670,6 +670,7 @@ Used for retrieving store pages information, other then special pages.
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
+| `pages.id`                                  | Page identifier                                                     |
 | `pages.title`                               | Page title                                                          |
 | `pages.content`                             | Page content                                                        |
 | `pages.url`                                 | Page url                                                            |
@@ -703,6 +704,7 @@ This data is only available on the `page.tpl` template
 
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
+| `page.id`                                   | Page identifier                                                     |
 | `page.title`                                | Page title                                                          |
 | `page.content`                              | Page content                                                        |
 | `page.url`                                  | Page url                                                            |
@@ -1077,4 +1079,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2017-12-13T18:14:48+00:00</small>
+<small class="last-modified">Last Modified 2017-12-20T19:02:21+00:00</small>
