@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2018-01-03
+* Update product payload
+
 ##### 2017-12-06
 * Add `order.tracking_url`, `order.tracking_code`, `order.shipping_url`, `order.pickup_code`
 * Update payloads

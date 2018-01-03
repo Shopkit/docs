@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2017-12-06T19:13:54+00:00</small>
+<small class="last-modified">Last Modified 2018-01-03T19:05:58+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -510,6 +510,8 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "reference": "",
                 "price": 40.73,
                 "price_promo": null,
+                "promo_show_percentage": true,
+                "price_promo_percentage": null,
                 "price_on_request": false,
                 "created_at": "2014-11-30T01:04:40+00:00",
                 "status": 1,
