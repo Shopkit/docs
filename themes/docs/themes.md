@@ -35,8 +35,8 @@ A Shopkit theme consists of 17 pages:
 | Payment    | `payment.tpl`    | Payment template                                    |
 | Post       | `post.tpl`       | Blog post template                                  |
 | Product    | `product.tpl`    | Product template                                    |
-| Promotions | `promotions.tpl` | Promotion products template                         |
-| Recent     | `recent.tpl`     | Recent products template                            |
+| Sales      | `sales.tpl`      | Sales products template                             |
+| New        | `new.tpl`        | New products template                               |
 | Search     | `search.tpl`     | Search Results template                             |
 
 The base template is the most important, where all other templates are included.
@@ -743,6 +743,7 @@ This data is only available on the `product.tpl` template
 | `product.reference`                         | Product reference                                                          |
 | `product.price`                             | Product price                                                              |
 | `product.price_promo`                       | Product promotion price                                                    |
+| `product.promo_show_percentage`             | Product show price promotion percentage                                    |
 | `product.price_on_request`                  | Product has price on request                                               |
 | `product.promo`                             | Product is on promotion                                                    |
 | `product.created_at`                        | Product creation date                                                      |
@@ -1079,4 +1080,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2017-12-20T19:02:21+00:00</small>
+<small class="last-modified">Last Modified 2018-01-03T19:01:01+00:00</small>
