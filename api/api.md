@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2018-01-03T19:05:58+00:00</small>
+<small class="last-modified">Last Modified 2018-05-29T19:39:31+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -499,7 +499,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 
     + Headers
 
-            Content-Length: 8097
+            Content-Length: 8578
             Content-Type: application/json
 
     + Body
@@ -509,8 +509,10 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "title": "Rustic Spice Bowl Set",
                 "reference": "",
                 "price": 40.73,
+                "price_formatted": "40,73 €",
                 "price_promo": null,
-                "promo_show_percentage": true,
+                "price_promo_formatted": null,
+                "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
                 "created_at": "2014-11-30T01:04:40+00:00",
@@ -574,8 +576,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "id_variant_3": null,
                         "title": "Small bowl / White",
                         "price": 40.73,
-                        "promo": false,
+                        "price_formatted": "40,73 €",
                         "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
                         "price_on_request": false,
                         "stock": 88,
                         "shipping": 0,
@@ -600,8 +605,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "id_variant_3": null,
                         "title": "Small bowl / Dark turquoise",
                         "price": 40.73,
-                        "promo": false,
+                        "price_formatted": "40,73 €",
                         "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
                         "price_on_request": false,
                         "stock": 94,
                         "shipping": 0,
@@ -626,8 +634,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "id_variant_3": null,
                         "title": "Big bowl / White",
                         "price": 45.73,
-                        "promo": false,
+                        "price_formatted": "45,73 €",
                         "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
                         "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
@@ -652,8 +663,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "id_variant_3": null,
                         "title": "Big bowl / Dark turquoise",
                         "price": 45.73,
-                        "promo": false,
+                        "price_formatted": "45,73 €",
                         "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
                         "price_on_request": false,
                         "stock": 100,
                         "shipping": 0,
@@ -803,7 +817,7 @@ https://api.shopk.it/v1/category/1337
 
 # Group Orders
 
-## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,page,limit,coupon_code}]
+## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
 
 ### Get Order [GET]
 Get a list of orders or single order by id
@@ -856,6 +870,12 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `last_month`
     + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
     + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + date_type (optional, string, `created_at`) ... Affects all date parameters
+        + Values
+            + `created_at`
+            + `update_at`
+            + `sent_at`
+            + `paid_at`
     + page (optional, integer, `1`) ... Page number
     + limit = `25` (optional, integer, `10`) ... Orders per page
     + coupon_code (optional, integer, `1337`) ... Coupon code

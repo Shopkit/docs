@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2018-05-29
+* Add `product.price_formatted`, `product.price_promo_formatted`, `product.shipping_url`
+* Add `order` `GET` parameter `date_type`
+
 ##### 2018-01-03
 * Update product payload
 
@@ -27,7 +31,7 @@ To generate documentation use: `aglio -i api.md -o index.html`
 * Get `category` parameters are optional
 
 ##### 2017-08-14
-* Add `order` stattus `delivered`
+* Add `order` status `delivered`
 * Add event `order_delivered`
 
 ##### 2017-06-13
