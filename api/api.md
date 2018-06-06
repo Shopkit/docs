@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2018-05-29T19:39:31+01:00</small>
+<small class="last-modified">Last Modified 2018-06-06T15:18:57+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -870,7 +870,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `last_month`
     + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
     + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
-    + date_type (optional, string, `created_at`) ... Affects all date parameters
+    + date_type = `created_at` (optional, string, `created_at`) ... Affects all date parameters
         + Values
             + `created_at`
             + `update_at`
