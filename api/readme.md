@@ -16,8 +16,11 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2018-06-20
+* Add `product` `GET` parameter `q`
+
 ##### 2018-06-06
-* Update `GET` `order` parameter `date_type` default value
+* Update `order` `GET` parameter `date_type` default value
 
 ##### 2018-05-29
 * Add `product.price_formatted`, `product.price_promo_formatted`, `product.shipping_url`

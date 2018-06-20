@@ -445,7 +445,7 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-## Get Product [/product{?id,handle,category,status,status_alias,reference,featured,new,page,limit}]
+## Get Product [/product{?id,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
 
 ### Get Product [GET]
 Get a list of products or single product by id or handle
@@ -491,7 +491,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
         + Values
             + `true`
             + `false`
-
+    + q (optional, string, `bowl`) ... Search for products
     + page (optional, integer, `1`) ... page number
     + limit = `25` (optional, integer, `10`) ... products per page
 
