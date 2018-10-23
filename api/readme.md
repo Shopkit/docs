@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2018-10-23
+* Add `category.image`
+
 ##### 2018-06-20
 * Add `product` `GET` parameter `q`
 

@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2018-06-06T15:18:57+01:00</small>
+<small class="last-modified">Last Modified 2018-10-23T19:28:59+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -693,7 +693,12 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "title": "Cozinha",
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
                         "handle": "cozinha",
-                        "url": "https://parallax.shopk.it/category/cozinha"
+                        "url": "https://parallax.shopk.it/category/cozinha",
+                        "image": {
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        }
                     }
                 ],
                 "option_groups": [
@@ -797,6 +802,11 @@ https://api.shopk.it/v1/category/1337
                 "page_title": "Cozinha",
                 "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis e",
                 "meta_tags": "",
+                "image": {
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                }
                 "url": "https://parallax.shopk.it/category/cozinha",
                 "total_products": 2
             }
@@ -817,7 +827,7 @@ https://api.shopk.it/v1/category/1337
 
 # Group Orders
 
-## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
+## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,datetype,page,limit,coupon_code}]
 
 ### Get Order [GET]
 Get a list of orders or single order by id
@@ -870,7 +880,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `last_month`
     + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
     + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
-    + date_type = `created_at` (optional, string, `created_at`) ... Affects all date parameters
+    + datetype = `created_at` (optional, string, `created_at`) ... Affects all date parameters
         + Values
             + `created_at`
             + `update_at`
