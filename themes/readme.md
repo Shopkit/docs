@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2018-10-23
+* Add `category.image`
+
 ##### 2018-01-03
 * Rename `promotions.tpl` to `sales.tpl`
 * Rename `recent.tpl` to `new.tpl`

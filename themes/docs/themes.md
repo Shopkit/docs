@@ -564,6 +564,7 @@ Used for retrieving product categories data. The global `categories` object is a
 | `categories.page_title`                     | Category page title                                                 |
 | `categories.meta_description`               | Category meta description                                           |
 | `categories.meta_tags`                      | Category meta tags                                                  |
+| `categories.image`                          | Category array with images in 3 sizes: thumb, square, full          |
 | `categories.url`                            | Category url                                                        |
 | `categories.total_products`                 | Category total products                                             |
 | `categories.children`                       | Category array of children categories                               |
@@ -693,6 +694,7 @@ This data is only available on the `category.tpl` template
 | `category.page_title`                       | Category page title                                                 |
 | `category.meta_description`                 | Category meta description                                           |
 | `category.meta_tags`                        | Category meta tags                                                  |
+| `category.image`                            | Category array with images in 3 sizes: thumb, square, full          |
 | `category.url`                              | Category url                                                        |
 | `category.total_products`                   | Category total products                                             |
 | `category.children`                         | Category array of children categories                               |
@@ -789,6 +791,7 @@ This data is only available on the `product.tpl` template
 | `product.categories.description`            | Product category description                                        |
 | `product.categories.handle`                 | Product category handle                                             |
 | `product.categories.url`                    | Product category URL                                                |
+| `product.categories.image`                  | Product category array with images in 3 sizes: thumb, square, full  |
 
 `product.stock`
 
@@ -1080,4 +1083,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2018-01-03T19:01:01+00:00</small>
+<small class="last-modified">Last Modified 2018-10-23T19:15:11+01:00</small>
