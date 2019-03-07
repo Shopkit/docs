@@ -6,7 +6,7 @@ If you want to build a theme from scratch or just want to customize your current
 Get to know how is the basic anatomy of a theme, our language syntax, functions, filters and tags. We also have some code samples to get you started.
 
 <div class="callout callout-info">
-  <strong>Not a developer?</strong> <a href="https://shopk.it/shopkit-pros">Contact us</a> for a free quote.
+  <strong>Not a developer?</strong> <a href="https://shopk.it/get-quote">Contact us</a> for a free quote.
 </div>
 
 ### Getting Started
