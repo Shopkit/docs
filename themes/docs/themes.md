@@ -297,6 +297,22 @@ Returns the category and all children categories, a category identifier is manda
 {% set my_category = category(1337) %}
 ```
 
+###### `pages`
+
+Returns a list of all pages.
+
+```twig
+{% set my_pages = pages() %}
+```
+
+###### `page`
+
+Returns a single page by id.
+
+```twig
+{% set my_page = page(1337) %}
+```
+
 ###### `blog_posts`
 
 Returns a list of blog posts. Optionally you can limit the number of posts. Default: `9`
@@ -1013,8 +1029,8 @@ Every time an action occurs, an event is available for the current request. If t
 
 #### Cart events
 
-| Name                                        | Description                                                                                    |
-|---------------------------------------------|------------------------------------------------------------------------------------------------|
+| Name                                       | Description                                                                                    |
+|--------------------------------------------|------------------------------------------------------------------------------------------------|
 | `events.cart.added`                        | A product was added to the shopping cart                                                       |
 | `events.cart.error`                        | An error occurred while performing an action to the shopping cart                              |
 | `events.cart.updated`                      | A product in the shopping cart was updated                                                     |
@@ -1027,8 +1043,8 @@ Every time an action occurs, an event is available for the current request. If t
 
 #### Misc events
 
-| Name                                        | Description                                                                                    |
-|---------------------------------------------|------------------------------------------------------------------------------------------------|
+| Name                                       | Description                                                                                    |
+|--------------------------------------------|------------------------------------------------------------------------------------------------|
 | `events.paypal_success`                    | A payment through Paypal was successful                                                        |
 | `events.contact_form_success`              | The contact form was sent with success                                                         |
 | `events.contact_form_errors`               | Contains erros if the contact form was not sent                                                |
@@ -1083,4 +1099,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2018-10-23T19:15:11+01:00</small>
+<small class="last-modified">Last Modified 2019-03-07T16:10:08+00:00</small>
