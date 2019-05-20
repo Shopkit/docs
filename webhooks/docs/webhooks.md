@@ -30,18 +30,25 @@ We expect a `2xx` status code when requesting your URL.
 
 When configuring a webhook, you can choose which events you would like to receive payloads for:
 
-| Name                  | Description                                                 |
-|-----------------------|-------------------------------------------------------------|
-| `order_canceled`      | When an order status is changed to `canceled`               |
-| `order_change_status` | When an order status is changed                             |
-| `order_created`       | When an order is created                                    |
-| `order_deleted`       | When an order is deleted                                    |
-| `order_delivered`     | When an order status is changed to `delivered`              |
-| `order_invoice`       | When an order invoice is requested                          |
-| `order_paid`          | When an order is set to `paid`                              |
-| `order_sent`          | When an order status is changed to `sent`                   |
-| `order_shipping`      | When an order shipping is requested                         |
-| `order_updated`       | When an order is updated *(any change is made to an order)* |
+| Name                     | Description                                                 |
+|--------------------------|-------------------------------------------------------------|
+| `order_canceled`         | When an order status is changed to `canceled`               |
+| `order_payment_canceled` | When an order payment expires or is canceled                |
+| `order_change_payment`   | When an order payment method is changed                     |
+| `order_delivered`        | When an order status is changed to `delivered`              |
+| `order_shipping`         | When an order shipping is requested                         |
+| `order_returned`         | When an order status is changed to `returned`               |
+| `order_invoice`          | When an order invoice is requested                          |
+| `order_change_status`    | When an order status is changed                             |
+| `order_sent`             | When an order status is changed to `sent`                   |
+| `order_paid`             | When an order is set to `paid`                              |
+| `order_updated`          | When an order is updated *(any change is made to an order)* |
+| `order_created`          | When an order is created                                    |
+| `order_deleted`          | When an order is deleted                                    |
+| `client_updated`         | When an client is updated                                   |
+| `client_deleted`         | When an client is deleted                                   |
+| `client_created`         | When an client is created                                   |
+
 
 ### Payloads
 
@@ -79,24 +86,15 @@ Content-Length: 3484
         "shipping": {
             "value": 7.25,
             "tax": 0,
-            "tax_percent": null,
+            "tax_percent": "",
             "discount": 0,
             "discount_percent": 0
         },
         "created_at": "2017-05-17T10:45:05+01:00",
-        "update_at": "2017-05-23T16:55:38+01:00",
+        "update_at": "2017-12-06T17:18:41+00:00",
         "sent_at": "2017-05-17T11:23:21+01:00",
         "paid_at": "2017-05-17T11:23:21+01:00",
         "currency": "EUR",
-        "payment": {
-            "type": "multibanco",
-            "data": {
-                "entity": 88888,
-                "reference": 888888888,
-                "value": 157.03
-            },
-            "description": "Multibanco"
-        },
         "status": 3,
         "status_alias": "sent",
         "status_description": "Sent",
@@ -104,43 +102,56 @@ Content-Length: 3484
         "is_new": false,
         "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
         "weight": 0,
-        "observations": null,
-        "note": null,
-        "client_note": null,
-        "custom_field": null,
-        "tracking_code": null,
+        "observations": "",
+        "note": "",
+        "client_note": "",
+        "custom_field": "",
+        "tracking_code": "",
         "tracking_url": "",
-        "shipping_url": null,
+        "shipping_url": "",
         "coupon": {
             "code": "bajevolp",
             "type": "percent",
             "value": 10
+        },
+        "payment": {
+            "data": {
+                "entity": 88888,
+                "reference": 888888888,
+                "value": 157.03
+            },
+            "title": "Multibanco",
+            "method": "multibanco",
+            "type": "multibanco",
+            "gateway": "gateway"
         },
         "shipment_method": "Transportadora",
         "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
         "client": {
             "name": "Shopkit",
             "email": "info@shopk.it",
-            "fiscal_id": "",
-            "company": "",
+            "fiscal_id": "999999990",
+            "company": "Shopkit",
             "is_registered": false,
             "delivery": {
                 "name": "Shopkit",
                 "phone": "969057993",
-                "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1",
-                "address_extra": "S1.08",
+                "address": "Centro de Empresas Inovadoras\nAvª do Empresário",
+                "address_extra": "1, S1.08",
                 "country": "Portugal - Continental",
                 "country_code": "PRT",
+                "country_code_alpha_2": "PT",
                 "zip_code": "6000-767",
                 "city": "Castelo Branco"
             },
             "billing": {
                 "name": "Shopkit",
                 "phone": "969057993",
-                "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1",
-                "address_extra": ", S1.08",
+                "address": "Centro de Empresas Inovadoras\nAvª do Empresário",
+                "address_extra": "1, S1.08",
                 "country": "Portugal - Continental",
                 "country_code": "PRT",
+                "country_code_alpha_2": "PT",
                 "zip_code": "6000-767",
                 "city": "Castelo Branco"
             },
@@ -206,4 +217,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2017-12-06T17:34:30+00:00</small>
+<small class="last-modified">Last Modified 2019-05-20T16:03:41+01:00</small>
