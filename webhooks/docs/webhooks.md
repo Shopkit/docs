@@ -33,7 +33,7 @@ When configuring a webhook, you can choose which events you would like to receiv
 | Name                     | Description                                                 |
 |--------------------------|-------------------------------------------------------------|
 | `order_canceled`         | When an order status is changed to `canceled`               |
-| `order_payment_canceled` | When an order payment expires or is canceled                |
+| `order_payment_failed`   | When an order payment failes (expired, canceled, other)     |
 | `order_change_payment`   | When an order payment method is changed                     |
 | `order_delivered`        | When an order status is changed to `delivered`              |
 | `order_shipping`         | When an order shipping is requested                         |
@@ -217,4 +217,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2019-05-20T16:03:41+01:00</small>
+<small class="last-modified">Last Modified 2019-07-12T10:38:11+01:00</small>
