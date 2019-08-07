@@ -196,6 +196,16 @@ Returns a value formatted with the currency set in user account settings.
 
 Prints <samp>122,95 €</samp>
 
+###### `e_attr`
+
+Returns an escaped string for safe insertion into the HTML attributes.
+
+```twig
+{{ product.title|e_attr }}
+```
+
+Prints <samp>Bed-linen&#x20;&quot;End&#x20;of&#x20;the&#x20;day&quot;</samp>
+
 ##### Functions
 
 ###### `form_open`
@@ -1099,4 +1109,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2019-03-07T16:10:08+00:00</small>
+<small class="last-modified">Last Modified 2019-08-07T12:08:46+01:00</small>

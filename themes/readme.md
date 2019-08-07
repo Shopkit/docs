@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2019-08-07
+* Add filter  `e_attr`
+
 ##### 2019-03-07
 * Add functions `pages` and `page`
 
