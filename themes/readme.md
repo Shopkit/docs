@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2019-09-19
+* Add attributes `exclude` and `search` to products function
+
 ##### 2019-08-07
 * Add filter  `e_attr`
 

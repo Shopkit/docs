@@ -234,7 +234,7 @@ These are special Shopkit form actions:
 | `cart/post/confirm`   | Action to the confirmation step of checkout |
 
 
-###### `form_open_cart`  
+###### `form_open_cart`
 
 Creates an opening form tag with the url to add a product to the cart. It will optionally let you add form attributes, and will always add the attribute accept-charset.
 This is different from `form_open` because you pass the product id, instead of the URL.
@@ -281,15 +281,30 @@ You can list products from different pools:
 {# Returns products from the current category, ordered by a get parameter (?order_by) with a limit of 25 items per page #}
 ```
 
+```twig
+{% for product in products('exclude:categories[123,456]') %}
+{# Returns all products except products from categories with the id 123 and 456 #}
+
+{% for product in products('exclude:products[123,456]') %}
+{# Returns all products except products with the id 123 and 456 #}
+```
+
+```twig
+{% for product in products('search %query% %}
+{# Returns all products matching query #}
+```
+
 ###### Parameters
 
-| Attributes   | Type    | Choices                                                                                          | Description                                    |
-|--------------|---------|--------------------------------------------------------------------------------------------------|------------------------------------------------|
-| `order`      | string  | `title`, `newest`, `sales`, `views`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below         |
-| `category`   | integer |                                                                                                  | Product category identifier                    |
-| `paginate`   | string  | `true`, `false`                                                                                  | Enable or disable pagination. Default: `true`  |
-| `limit`      | integer |                                                                                                  | The number of products to return. Default: `9` |
-| `offset`     | integer |                                                                                                  | The product starting from. Default: `0`        |
+| Attributes   | Type    | Choices                                                                                          | Description                                       |
+|--------------|---------|--------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| `order`      | string  | `title`, `newest`, `sales`, `views`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below            |
+| `category`   | integer |                                                                                                  | Product category identifier                       |
+| `paginate`   | string  | `true`, `false`                                                                                  | Enable or disable pagination. Default: `true`     |
+| `limit`      | integer |                                                                                                  | The number of products to return. Default: `9`    |
+| `offset`     | integer |                                                                                                  | The product starting from. Default: `0`           |
+| `exclude`    | array   | `categories`, `products`                                                                         | The id of categories or products to exclude       |
+| `search`     | string  |                                                                                                  | Product search term. Default: `%#{search.query}%` |
 
 ###### `product`
 
@@ -1109,4 +1124,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2019-08-07T12:08:46+01:00</small>
+<small class="last-modified">Last Modified 2019-09-19T14:48:15+01:00</small>
