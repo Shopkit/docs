@@ -290,9 +290,23 @@ You can list products from different pools:
 ```
 
 ```twig
-{% for product in products('search %query% %}
+{% for product in products('search %query%').results %}
 {# Returns all products matching query #}
+
+{% for product in products('search %query%').total_results %}
+{# Returns the number of products matching query #}
+
+{% for product in products('search %query%').query %}
+{# Returns the search query #}
 ```
+
+When calling `products` function with the filter `search` it's returned an array with search result information.
+
+| Name                     | Description                        |
+|--------------------------|------------------------------------|
+| `search.results`         | Products returned                  |
+| `search.total_results`   | Number of products returned        |
+| `search.query`           | Search query                       |
 
 ###### Parameters
 
@@ -1124,4 +1138,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2019-09-19T14:48:15+01:00</small>
+<small class="last-modified">Last Modified 2019-10-15T18:32:06+01:00</small>
