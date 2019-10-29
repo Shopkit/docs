@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2019-10-29T12:33:50+00:00</small>
+<small class="last-modified">Last Modified 2019-10-29T12:47:32+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -1068,7 +1068,7 @@ https://api.shopk.it/v1/order/1337
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` `9` `10` | Order status as an integer
-**status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` pickup_available` | Order status as a string
+**status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` | Order status as a string
 **paid** | string | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
