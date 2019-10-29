@@ -14,6 +14,11 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2019-10-29
+* Add `order_pickup_available` event
+* Add `newsletter_subscribed` event
+* Add `newsletter_unsubscribed` event
+
 ##### 2019-05-20
 * Add `order_returned` event
 

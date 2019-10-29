@@ -45,9 +45,12 @@ When configuring a webhook, you can choose which events you would like to receiv
 | `order_updated`          | When an order is updated *(any change is made to an order)* |
 | `order_created`          | When an order is created                                    |
 | `order_deleted`          | When an order is deleted                                    |
-| `client_updated`         | When an client is updated                                   |
-| `client_deleted`         | When an client is deleted                                   |
-| `client_created`         | When an client is created                                   |
+| `order_pickup_available` | When an order status is changed to `pickup_available`       |
+| `client_updated`         | When a client is updated                                    |
+| `client_deleted`         | When a client is deleted                                    |
+| `client_created`         | When a client is created                                    |
+| `newsletter_subscribed`  | When a client subscribe the newsletter                      |
+| `newsletter_unsubscribed`| When a client unsubscribe the newsletter                    |
 
 
 ### Payloads
@@ -60,7 +63,8 @@ The HTTP requests to your webhook's URL will contain a special header `X-Shopkit
 
 We also send the `User-Agent` for all requests as `Shopkit-Webhook`.
 
-#### Example
+
+#### Orders
 
 ```bash
 POST /payload HTTP/1.1
@@ -203,6 +207,78 @@ Content-Length: 3484
 ```
 
 
+#### Client
+
+```bash
+POST /payload HTTP/1.1
+
+Host: localhost
+User-Agent: Shopkit-Webhook
+Content-Type: application/json
+X-Shopkit-Event: client_updated
+X-Webhook-Signature: 6d5a75b42956154a7da8843f56c272428fd43967be1a5474821940b377d061fe
+Content-Length: 681
+```
+
+```json
+{
+    "client": {
+        "name": "Shopkit",
+        "email": "info@shopk.it",
+        "fiscal_id": "999999990",
+        "company": "Shopkit",
+        "is_registered": false,
+        "delivery": {
+            "name": "Shopkit",
+            "phone": "969057993",
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário",
+            "address_extra": "1, S1.08",
+            "country": "Portugal - Continental",
+            "country_code": "PRT",
+            "country_code_alpha_2": "PT",
+            "zip_code": "6000-767",
+            "city": "Castelo Branco"
+        },
+        "billing": {
+            "name": "Shopkit",
+            "phone": "969057993",
+            "address": "Centro de Empresas Inovadoras\nAvª do Empresário",
+            "address_extra": "1, S1.08",
+            "country": "Portugal - Continental",
+            "country_code": "PRT",
+            "country_code_alpha_2": "PT",
+            "zip_code": "6000-767",
+            "city": "Castelo Branco"
+        },
+    }
+}
+```
+
+
+#### Newsletter
+
+```bash
+POST /payload HTTP/1.1
+
+Host: localhost
+User-Agent: Shopkit-Webhook
+Content-Type: application/json
+X-Shopkit-Event: newsletter_subscribed
+X-Webhook-Signature: 6d5a75b42956154a7da8843f56c272428fd43967be1a5474821940b377d061fe
+Content-Length: 107
+```
+
+```json
+{
+    "client": {
+        "name": "Shopkit",
+        "email": "info@shopk.it",
+        "hash": "a77e38d0b16ba62f32361331774324904278edcf"
+    }
+}
+```
+
+
 ### Verifying webhooks
 
 In order to ensure the webhook you received is legit, we suggest you verify its signature. To do that, create an HMAC signed using the SHA256 hash algorithm, using your application’s client_secret and the body of the webhook request as keys, and make sure it matches the webhook’s X-Webhook-Signature header.
@@ -217,4 +293,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2019-07-12T10:38:11+01:00</small>
+<small class="last-modified">Last Modified 2019-10-29T12:05:33+00:00</small>
