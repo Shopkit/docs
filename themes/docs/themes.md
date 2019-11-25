@@ -476,9 +476,13 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.page_title`                          | Store page title                                                    |
 | `store.meta_description`                    | Store meta description                                              |
 | `store.meta_tags`                           | Store meta tags                                                     |
+| `store.settings`                            | Store settings array                                                |
+| `store.theme`                               | Store theme                                                         |
+| `store.theme_origin`                        | Store origin theme                                                  |
 | `store.navigation`                          | Store navigation array                                              |
 | `store.payments`                            | Store payments array                                                |
 | `store.category_default_order`              | Store category default order                                        |
+| `store.categories_sorting`                  | Store category default sorting                                      |
 | `store.domain`                              | Store current domain                                                |
 | `store.assets`                              | Store assets array                                                  |
 | `store.taxes_included`                      | Store taxes included option                                         |
@@ -533,31 +537,96 @@ Used for retrieving store payments options information.
 
 | Name                                          | Description                                                         |
 |-----------------------------------------------|---------------------------------------------------------------------|
-| `store.payments.paypal.active`                | Payment Paypal option is enabled                                    |
+| `store.payments.credit_card.active`           | Payment credit card option is enabled. `true`, `false`              |
+| `store.payments.credit_card.message`          | Payment credit card message                                         |
+| `store.payments.credit_card.description`      | Payment credit card description                                     |
+| `store.payments.credit_card.default`          | Payment credit card is default. `true`, `false`                     |
+| `store.payments.credit_card.gateway`          | Payment credit card gateway                                         |
+| `store.payments.credit_card.method`           | Payment credit card method                                          |
+| `store.payments.credit_card.title`            | Payment credit card title                                           |
+| `store.payments.credit_card.image`            | Payment credit card image link                                      |
+| `store.payments.credit_card.logo`             | Payment credit card logo link                                       |
+| `store.payments.multibanco.active`            | Payment multibanco option is enabled. `true`, `false`               |
+| `store.payments.multibanco.message`           | Payment multibanco message                                          |
+| `store.payments.multibanco.description`       | Payment multibanco description                                      |
+| `store.payments.multibanco.default`           | Payment multibanco is default. `true`, `false`                      |
+| `store.payments.multibanco.gateway`           | Payment multibanco gateway                                          |
+| `store.payments.multibanco.method`            | Payment multibanco method                                           |
+| `store.payments.multibanco.title`             | Payment multibanco title                                            |
+| `store.payments.multibanco.image`             | Payment multibanco image link                                       |
+| `store.payments.multibanco.logo`              | Payment multibanco logo link                                        |
+| `store.payments.mbway.active`                 | Payment mbway option is enabled. `true`, `false`                    |
+| `store.payments.mbway.message`                | Payment mbway message                                               |
+| `store.payments.mbway.description`            | Payment mbway description                                           |
+| `store.payments.mbway.default`                | Payment mbway is default. `true`, `false`                           |
+| `store.payments.mbway.gateway`                | Payment mbway gateway                                               |
+| `store.payments.mbway.method`                 | Payment mbway method                                                |
+| `store.payments.mbway.title`                  | Payment mbway title                                                 |
+| `store.payments.mbway.image`                  | Payment mbway image link                                            |
+| `store.payments.mbway.logo`                   | Payment mbway logo link                                             |
+| `store.payments.paypal.active`                | Payment Paypal option is enabled. `true`, `false`                   |
 | `store.payments.paypal.email`                 | Payment Paypal email                                                |
 | `store.payments.paypal.message`               | Payment Paypal message                                              |
-| `store.payments.paypal.min_value`             | Payment Paypal order minimum value                                  |
-| `store.payments.paypal.max_value`             | Payment Paypal order maximum value                                  |
-| `store.payments.multibanco.active`            | Payment multibanco option is enabled                                |
-| `store.payments.multibanco.entity`            | Payment multibanco entity                                           |
-| `store.payments.multibanco.user`              | Payment multibanco user                                             |
-| `store.payments.multibanco.cin`               | Payment multibanco cin                                              |
-| `store.payments.multibanco.message`           | Payment multibanco message                                          |
-| `store.payments.multibanco.min_value`         | Payment multibanco order minimum value                              |
-| `store.payments.multibanco.max_value`         | Payment multibanco order maximum value                              |
-| `store.payments.bank_transfer.active`         | Payment bank transfer option is enabled                             |
+| `store.payments.paypal.description`           | Payment Paypal description                                          |
+| `store.payments.paypal.default`               | Payment Paypal is default. `true`, `false`                          |
+| `store.payments.paypal.gateway`               | Payment Paypal gateway                                              |
+| `store.payments.paypal.method`                | Payment Paypal method                                               |
+| `store.payments.paypal.title`                 | Payment Paypal title                                                |
+| `store.payments.paypal.image`                 | Payment Paypal image link                                           |
+| `store.payments.paypal.logo`                  | Payment Paypal logo link                                            |
+| `store.payments.bank_transfer.active`         | Payment bank transfer option is enabled  `true`, `false`            |
 | `store.payments.bank_transfer.message`        | Payment bank transfer message                                       |
-| `store.payments.bank_transfer.min_value`      | Payment bank transfer minimum value                                 |
-| `store.payments.bank_transfer.max_value`      | Payment bank transfer maximum value                                 |
-| `store.payments.on_delivery.active`           | Payment on delivery option is enabled                               |
+| `store.payments.bank_transfer.description`    | Payment bank transfer description                                   |
+| `store.payments.bank_transfer.default`        | Payment bank transfer is default. `true`, `false`                   |
+| `store.payments.bank_transfer.gateway`        | Payment bank transfer gateway                                       |
+| `store.payments.bank_transfer.method`         | Payment bank transfer method                                        |
+| `store.payments.bank_transfer.title`          | Payment bank transfer title                                         |
+| `store.payments.bank_transfer.image`          | Payment bank transfer image link                                    |
+| `store.payments.on_delivery.active`           | Payment on delivery option is enabled. `true`, `false`              |
 | `store.payments.on_delivery.value`            | Payment on delivery value                                           |
 | `store.payments.on_delivery.message`          | Payment on delivery message                                         |
-| `store.payments.on_delivery.min_value`        | Payment on delivery minimum value                                   |
-| `store.payments.on_delivery.max_value`        | Payment on delivery maximum value                                   |
-| `store.payments.pick_up.active`               | Payment facilities pick up option is enabled                        |
+| `store.payments.on_delivery.description`      | Payment on delivery description                                     |
+| `store.payments.on_delivery.default`          | Payment on delivery is default. `true`, `false`                     |
+| `store.payments.on_delivery.gateway`          | Payment on delivery gateway                                         |
+| `store.payments.on_delivery.method`           | Payment on delivery method                                          |
+| `store.payments.on_delivery.title`            | Payment on delivery title                                           |
+| `store.payments.on_delivery.image`            | Payment on delivery image link                                      |
+| `store.payments.pick_up.active`               | Payment facilities pick up option is enabled. `true`, `false`       |
 | `store.payments.pick_up.message`              | Payment facilities pick up message                                  |
-| `store.payments.pick_up.min_value`            | Payment facilities pick up minimum value                            |
-| `store.payments.pick_up.max_value`            | Payment facilities pick up maximum value                            |
+| `store.payments.pick_up.description`          | Payment facilities pick up description                              |
+| `store.payments.pick_up.default`              | Payment facilities pick up is default. `true`, `false`              |
+| `store.payments.pick_up.gateway`              | Payment facilities pick up gateway                                  |
+| `store.payments.pick_up.method`               | Payment facilities pick up method                                   |
+| `store.payments.pick_up.title`                | Payment facilities pick up title                                    |
+| `store.payments.pick_up.image`                | Payment facilities pick up image link                               |
+| `store.payments.custom.active`                | Payment custom option is enabled. `true`, `false`                   |
+| `store.payments.custom.message`               | Payment custom message                                              |
+| `store.payments.custom.description`           | Payment custom description                                          |
+| `store.payments.custom.default`               | Payment custom is default. `true`, `false`                          |
+| `store.payments.custom.gateway`               | Payment custom gateway                                              |
+| `store.payments.custom.method`                | Payment custom method                                               |
+| `store.payments.custom.title`                 | Payment custom title                                                |
+
+
+##### Payments
+
+Used for retrieving store settings.
+
+| Name                                          | Description                                                                   |
+|-----------------------------------------------|-------------------------------------------------------------------------------|
+| `store.settings.cart.users_registration`      | Store checkout registration option. `hidden`, `optional`, `required`          |
+| `store.settings.cart.field_company`           | Store checkout field company option. `hidden`, `optional`, `required`         |
+| `store.settings.cart.field_fiscal_id`         | Store checkout field fiscal id option. `hidden`, `optional`, `required`       |
+| `store.settings.cart.field_delivery_phone`    | Store checkout field delivery phone option. `hidden`, `optional`, `required`  |
+| `store.settings.cart.field_billing_phone`     | Store checkout field billing phone option. `hidden`, `optional`, `required`   |
+| `store.settings.cart.page_terms.id`           | Store page terms and conditions id                                            |
+| `store.settings.cart.page_terms.title`        | Store page terms and conditions title                                         |
+| `store.settings.cart.page_terms.url`          | Store page terms and conditions url                                           |
+| `store.settings.cart.page_terms.handle`       | Store page terms and conditions handle                                        |
+| `store.settings.cart.page_privacy.id`         | Store page privacy policie id                                                 |
+| `store.settings.cart.page_privacy.title`      | Store page privacy policie title                                              |
+| `store.settings.cart.page_privacy.url`        | Store page privacy policie url                                                |
+| `store.settings.cart.page_privacy.handle`     | Store page privacy policie handle                                             |
 
 
 ##### Apps
@@ -1138,4 +1207,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2019-10-15T18:32:06+01:00</small>
+<small class="last-modified">Last Modified 2019-11-25T16:45:24+00:00</small>

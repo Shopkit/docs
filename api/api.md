@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2019-10-29T12:47:32+00:00</small>
+<small class="last-modified">Last Modified 2019-11-25T16:45:14+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -305,6 +305,8 @@ https://api.shopk.it/v1/
                     }
                 },
                 "url": "https://parallax.shopk.it/",
+                "theme": "shopkit-parallax",
+                "theme_origin": "shopkit-parallax",
                 "navigation": {
                     "primary": [
                         {
@@ -368,65 +370,104 @@ https://api.shopk.it/v1/
                     ]
                 },
                 "payments": {
+                    "credit_card": {
+                        "active": true,
+                        "message": "Instruções método de pagamento Cartão de Crédito.",
+                        "description": "Pague de forma segura com cartão de crédito ou débito.",
+                        "default": false,
+                        "gateway": "stripe",
+                        "method": "credit_card",
+                        "alias": "credit_card",
+                        "title": "Cartão de Crédito",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/credit_card-pt.png",
+                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/credit-card-brands.png"
+                    },
                     "multibanco": {
                         "active": true,
-                        "entity": "88888",
-                        "user": "USER88888",
-                        "cin": "888",
-                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Multibanco.",
-                        "min_value": 1,
-                        "max_value": null,
+                        "message": "EInstruções método de pagamento Multibanco.",
+                        "description": "O método de pagamento mais utilizado pelos portugueses para pagamentos online.",
                         "default": true,
+                        "gateway": "stripe",
+                        "method": "multibanco",
                         "alias": "multibanco",
                         "title": "Multibanco",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco.png"
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco-pt.png",
+                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco-color.png"
+                    },
+                    "mbway": {
+                        "active": true,
+                        "message": "Instruções método de pagamento MB WAY.",
+                        "description": "Pague de forma rápida e segura usando o seu telemóvel.",
+                        "default": false,
+                        "gateway": "easypay",
+                        "method": "mbway",
+                        "alias": "mbway",
+                        "title": "MB WAY",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/mbway-pt.png",
+                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/mbway-color.png"
                     },
                     "paypal": {
                         "active": true,
                         "email": "info@shopk.it",
-                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Paypal.",
-                        "min_value": null,
-                        "max_value": null,
+                        "message": "Instruções método de pagamento Paypal.",
+                        "description": "Pague de forma rápida e segura usando a sua conta Paypal.",
                         "default": false,
+                        "gateway": "paypal",
+                        "method": "paypal",
                         "alias": "paypal",
                         "title": "Paypal",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal.png"
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal-pt.png",
+                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal-color.png"
                     },
                     "bank_transfer": {
                         "active": true,
-                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Transferência Bancária.",
-                        "min_value": null,
-                        "max_value": null,
-                        "default": false,
+                        "message": "Instruções método de pagamento Transferência Bancária.",
+                        "description": "Pague por transferência bancária ou interbancária.",
+                        "default": true,
+                        "gateway": "manual",
+                        "method": "bank_transfer",
                         "alias": "bank_transfer",
                         "title": "Transferência Bancária",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/transferencia-bancaria.png"
-                    },
-                    "pick_up": {
-                        "active": true,
-                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Levantamento nas instalações.",
-                        "min_value": null,
-                        "max_value": null,
-                        "default": false,
-                        "alias": "pick_up",
-                        "title": "Levantamento nas instalações",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/levantamento.png"
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/bank_transfer-pt.png"
                     },
                     "on_delivery": {
                         "active": true,
                         "value": 0,
-                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento À Cobrança.",
-                        "min_value": null,
-                        "max_value": null,
+                        "message": "Instruções método de pagamento À Cobrança",
+                        "description": "Pagamento contra reembolso. Acresce aos portes de envio.",
                         "default": false,
+                        "gateway": "manual",
+                        "method": "on_delivery",
                         "alias": "on_delivery",
                         "title": "À Cobrança",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/contra-reembolso.png"
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/on_delivery-pt.png"
+                    },
+                    "pick_up": {
+                        "active": true,
+                        "message": "Instruções método de pagamento Levantamento nas instalações",
+                        "description": "Levante a sua encomenda nas nossas instalações. Não paga portes de envio.",
+                        "default": false,
+                        "gateway": "manual",
+                        "method": "pick_up",
+                        "alias": "pick_up",
+                        "title": "Levantamento nas instalações",
+                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/pick_up-pt.png"
+                    },
+                    "custom": {
+                        "active": true,
+                        "title": "Instruções metodo de Ppagamento personalizado",
+                        "message": "Instruções método de pagamento Pagamento personalizado",
+                        "description": "Define um método de pagamento personalizado por ti",
+                        "default": false,
+                        "gateway": "manual",
+                        "method": "custom",
+                        "alias": "custom", 
                     }
                 },
                 "category_default_order": null,
                 "categories_sorting": null,
                 "domain": "parallax.shopk.it",
+                "is_ssl": true,
                 "assets": {
                     "url": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax",
                     "images": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/img",
@@ -1253,7 +1294,7 @@ Attributes | Type | Choices | Description
                 "message":"Not found."
             }
 
-## Delete Order [/order/{id}]
+## Delete Order [/order/{id}/]
 
 ### Delete Order [DELETE]
 Delete an order

@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2019-11-25
+* Update `store` payload
+
 ##### 2019-10-29
 * Add orders status `returned`, `pickup_available`
 

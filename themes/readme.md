@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2019-11-25
+* Update `store` object
+
 ##### 2019-10-15
 * Update `products` function with parameter `search`
 
