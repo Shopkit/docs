@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2019-11-25T16:45:14+00:00</small>
+<small class="last-modified">Last Modified 2020-01-14T11:30:58+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -835,21 +835,53 @@ https://api.shopk.it/v1/category/1337
     + Body
 
             {
-                "id": 1337,
-                "title": "Cozinha",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
+                "id": 14535,
+                "title": "Decoração",
+                "is_parent": true,
+                "is_child": false,
                 "parent": 0,
-                "handle": "cozinha",
-                "page_title": "Cozinha",
-                "meta_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis e",
-                "meta_tags": "",
+                "parent_title": null,
+                "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi posuere sodales tellus, sit amet tincidunt mi aliquam porta.",
+                "position": 0,
+                "active": true,
+                "handle": "decoracao",
+                "page_title": "Decoração",
+                "meta_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi posuere sodales tellus, sit amet tincidunt mi al",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/category/decoracao",
+                "permalink": "https://parallax.shopk.it/category/decoracao",
                 "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
-                }
-                "url": "https://parallax.shopk.it/category/cozinha",
-                "total_products": 2
+                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                },
+                "parents": null,
+                "children": [
+                    {
+                        "id": 105283,
+                        "title": "Sala",
+                        "is_parent": true,
+                        "is_child": true,
+                        "parent": 14535,
+                        "description": "",
+                        "position": 0,
+                        "active": true,
+                        "handle": "decoracao-sala",
+                        "page_title": "Sala",
+                        "meta_description": "",
+                        "meta_tags": null,
+                        "num_products": 4,
+                        "url": "https://parallax.shopk.it/category/decoracao-sala",
+                        "permalink": "https://parallax.shopk.it/category/decoracao-sala",
+                        "image": {
+                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/276f8c112c887d830a8e3c585da5d93d.jpg",
+                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/276f8c112c887d830a8e3c585da5d93d.jpg",
+                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/276f8c112c887d830a8e3c585da5d93d.jpg"
+                        },
+                        "children": null
+                    }
+                ]
             }
 
 + Response 404
