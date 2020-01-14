@@ -682,6 +682,8 @@ Used for retrieving product categories data. The global `categories` object is a
 |---------------------------------------------|---------------------------------------------------------------------|
 | `categories.id`                             | Category identifier                                                 |
 | `categories.title`                          | Category title                                                      |
+| `categories.is_parent`                      | Category is a parent category                                       |
+| `categories.is_child`                       | Category is a child category                                        |
 | `categories.description`                    | Category description                                                |
 | `categories.parent`                         | Category parent identifier                                          |
 | `categories.handle`                         | Category handle                                                     |
@@ -691,6 +693,7 @@ Used for retrieving product categories data. The global `categories` object is a
 | `categories.image`                          | Category array with images in 3 sizes: thumb, square, full          |
 | `categories.url`                            | Category url                                                        |
 | `categories.total_products`                 | Category total products                                             |
+| `categories.parents`                        | Category array of parent category                                   |
 | `categories.children`                       | Category array of children categories                               |
 
 
@@ -812,6 +815,8 @@ This data is only available on the `category.tpl` template
 |---------------------------------------------|---------------------------------------------------------------------|
 | `category.id`                               | Category identifier                                                 |
 | `category.title`                            | Category title                                                      |
+| `category.is_parent`                        | Category is a parent category                                       |
+| `category.is_child`                         | Category is a child category                                        |
 | `category.description`                      | Category description                                                |
 | `category.parent`                           | Category parent identifier                                          |
 | `category.handle`                           | Category handle                                                     |
@@ -821,6 +826,7 @@ This data is only available on the `category.tpl` template
 | `category.image`                            | Category array with images in 3 sizes: thumb, square, full          |
 | `category.url`                              | Category url                                                        |
 | `category.total_products`                   | Category total products                                             |
+| `category.parents`                          | Category array of parent category                                   |
 | `category.children`                         | Category array of children categories                               |
 
 
