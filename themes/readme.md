@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2020-03-12
+* Update `user.custom_field`
+
 ##### 2020-01-14
 * Update `category` object
 

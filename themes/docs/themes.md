@@ -1008,8 +1008,19 @@ This data is only available on the `payment.tpl`, `data.tpl`, `confirm.tpl` and 
 You can create custom fields with custom data in the checkout process. This data will be passed to the order.
 `custom_field` is an array field containing a json, with the following structure:
 
+###### Simple custom data:
 ```json
 {"title":"The title of your custom field","key":"the key","value":"the value"}
+```
+###### Multiple custom data:
+```json
+{
+  "title":"The title of your custom field",
+  "data":[
+    {"key":"the key 1","value":"the value 1"},
+    {"key":"the key 2","value":"the value 2"}
+  ]
+}
 ```
 
 You can have as many custom fields as you want/need.
@@ -1019,14 +1030,15 @@ Usually you register the custom field with an html input:
 <input type="text" name="custom_field[field_name_1]" value='{{ user.custom_field.field_name_1 }}'>
 ```
 
-| Name                                        | Description                                                         |
-|---------------------------------------------|---------------------------------------------------------------------|
-| `user.custom_field.field_name_1.title`      | Title of the custom field named `field_name_1`                      |
-| `user.custom_field.field_name_1.key`        | Key of the custom field named `field_name_1`                        |
-| `user.custom_field.field_name_1.value`      | Value of the custom field named `field_name_1`                      |
+| Name                                        | Description                                                               |
+|---------------------------------------------|---------------------------------------------------------------------------|
+| `user.custom_field.field_name_1.title`      | Title of the custom field named `field_name_1`                            |
+| `user.custom_field.field_name_1.key`        | Key of the custom field named `field_name_1`                              |
+| `user.custom_field.field_name_1.value`      | Value of the custom field named `field_name_1`                            |
+| `user.custom_field.field_name_1.data`       | Array with multiple custom data of the custom field named `field_name_1`  |
 
 <div class="callout callout-info">
-  You can use our helper function to generate the json strucuture: <code>custom_field_encode('Your title', 'your_key', 'Your value')</code>
+  You can use our helper function to generate the json strucuture: <code>custom_field_encode('Your title', 'your_key', 'Your value')</code>, or in the case of multiple custom data: <code>custom_field_encode('Your title', [['your_key_1', 'Your value 1'], ['your_key_2', 'Your value 2']])</code>
 </div>
 
 #### Order
@@ -1213,4 +1225,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2019-11-25T16:45:24+00:00</small>
+<small class="last-modified">Last Modified 2020-03-12T18:23:21+00:00</small>
