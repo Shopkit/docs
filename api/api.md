@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2020-01-14T11:30:58+00:00</small>
+<small class="last-modified">Last Modified 2020-05-19T10:59:55+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -900,7 +900,7 @@ https://api.shopk.it/v1/category/1337
 
 # Group Orders
 
-## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,datetype,page,limit,coupon_code}]
+## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
 
 ### Get Order [GET]
 Get a list of orders or single order by id
@@ -948,7 +948,6 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
         + Values
             + `true`
             + `false`
-
     + date_filter (optional, string, `yesterday`) ... Date filter
         + Values
             + `today`
@@ -957,7 +956,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `last_month`
     + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
     + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
-    + datetype = `created_at` (optional, string, `created_at`) ... Affects all date parameters
+    + date_type (optional, string) ... Affects all date parameters
         + Values
             + `created_at`
             + `update_at`
