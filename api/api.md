@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2020-05-19T10:59:55+01:00</small>
+<small class="last-modified">Last Modified 2020-05-26T18:31:52+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -1573,6 +1573,19 @@ Attributes | Type | Choices | Description
 
 + Response 409
 
+    + Headers
+
+            Content-Length: 30
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Already exists."
+            }
+
++ Response 409
+
 
 ## Delete Coupon [/coupon/{id}]
 
@@ -1639,7 +1652,7 @@ curl -i -X POST \
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **url** | string | | Webhook url
-**event** | string |`order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_delivered` | Available webhooks
+**event** | string | `order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_shipping` `order_delivered` `order_change_payment` `order_payment_failed` `order_returned` `order_pickup_available` `client_created` `client_updated` `client_deleted` `newsletter_subscribed` `newsletter_unsubscribed` | Available webhooks
 
 </div>
 
@@ -1671,6 +1684,19 @@ Attributes | Type | Choices | Description
 
             {
                 "message": "Bad request."
+            }
+
++ Response 409
+
+    + Headers
+
+            Content-Length: 30
+            Content-Type: application/json
+
+    + Body
+
+            {
+                "message": "Already exists."
             }
 
 + Response 409

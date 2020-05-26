@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2020-05-26
+* Add `Already exists.` messages
+* Update available webhooks list
+
 ##### 2020-05-19
 * Fix typo
 
