@@ -279,6 +279,9 @@ You can list products from different pools:
 ```twig
 {% for product in products('order:#{get.order_by} category:#{category.id} limit:25') %}
 {# Returns products from the current category, ordered by a get parameter (?order_by) with a limit of 25 items per page #}
+
+{% for product in products('order:#{get.order_by} category:[123,456] limit:25') %}
+{# Returns products from categories with the id 123 and 456, ordered by a get parameter (?order_by) with a limit of 25 items per page #}
 ```
 
 ```twig
@@ -310,15 +313,15 @@ When calling `products` function with the filter `search` it's returned an array
 
 ###### Parameters
 
-| Attributes   | Type    | Choices                                                                                          | Description                                       |
-|--------------|---------|--------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| `order`      | string  | `title`, `newest`, `sales`, `views`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below            |
-| `category`   | integer |                                                                                                  | Product category identifier                       |
-| `paginate`   | string  | `true`, `false`                                                                                  | Enable or disable pagination. Default: `true`     |
-| `limit`      | integer |                                                                                                  | The number of products to return. Default: `9`    |
-| `offset`     | integer |                                                                                                  | The product starting from. Default: `0`           |
-| `exclude`    | array   | `categories`, `products`                                                                         | The id of categories or products to exclude       |
-| `search`     | string  |                                                                                                  | Product search term. Default: `%#{search.query}%` |
+| Attributes   | Type    | Choices                                                                                          | Description                                                       |
+|--------------|---------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| `order`      | string  | `title`, `newest`, `sales`, `views`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below                            |
+| `category`   | mixed   |                                                                                                  | Product category identifier or an array of categories identifiers |
+| `paginate`   | string  | `true`, `false`                                                                                  | Enable or disable pagination. Default: `true`                     |
+| `limit`      | integer |                                                                                                  | The number of products to return. Default: `9`                    |
+| `offset`     | integer |                                                                                                  | The product starting from. Default: `0`                           |
+| `exclude`    | array   | `categories`, `products`                                                                         | Product categories array of identifiers to exclude                |
+| `search`     | string  |                                                                                                  | Product search term. Default: `%#{search.query}%`                 |
 
 ###### `product`
 
@@ -1225,4 +1228,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2020-03-12T18:23:21+00:00</small>
+<small class="last-modified">Last Modified 2020-06-16T20:13:47+01:00</small>
