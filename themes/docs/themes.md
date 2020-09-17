@@ -490,6 +490,7 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.assets`                              | Store assets array                                                  |
 | `store.taxes_included`                      | Store taxes included option                                         |
 | `store.images_header`                       | Store header images array                                           |
+| `store.featured_blocks`                     | Store featured blocks                                               |
 
 
 ##### Special pages
@@ -630,6 +631,17 @@ Used for retrieving store settings.
 | `store.settings.cart.page_privacy.title`      | Store page privacy policie title                                              |
 | `store.settings.cart.page_privacy.url`        | Store page privacy policie url                                                |
 | `store.settings.cart.page_privacy.handle`     | Store page privacy policie handle                                             |
+
+
+`store.featured_blocks`
+
+Contains data about featured blocks.
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `store.featured_blocks.title`               | Featured block title                                                |
+| `store.featured_blocks.icon`                | Featured block icon                                                 |
+| `store.featured_blocks.description`         | Featured block description                                          |
 
 
 ##### Apps
@@ -1228,4 +1240,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2020-06-16T20:13:47+01:00</small>
+<small class="last-modified">Last Modified 2020-09-17T12:00:00+01:00</small>

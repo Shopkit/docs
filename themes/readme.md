@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2020-09-17
+* Add `store.featured_blocks`
+
 ##### 2020-06-16
 * Update `products` function `category` parameter now accepts an array
 
