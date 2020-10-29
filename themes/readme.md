@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2020-10-29
+* Add `store.products_per_page_home` and `store.products_per_page_catalog`
+
 ##### 2020-09-17
 * Add `store.featured_blocks`
 

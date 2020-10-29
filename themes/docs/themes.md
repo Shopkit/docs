@@ -491,6 +491,8 @@ Used for retrieving store information, set on the Account Settings page of your 
 | `store.taxes_included`                      | Store taxes included option                                         |
 | `store.images_header`                       | Store header images array                                           |
 | `store.featured_blocks`                     | Store featured blocks                                               |
+| `store.products_per_page_home`              | Store number of products in homepage                                |
+| `store.products_per_page_catalog`           | Store number of products per page                                   |
 
 
 ##### Special pages
@@ -1240,4 +1242,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2020-09-17T12:00:00+01:00</small>
+<small class="last-modified">Last Modified 2020-10-29T15:24:34+00:00</small>
