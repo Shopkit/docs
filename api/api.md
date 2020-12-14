@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2020-05-26T18:31:52+01:00</small>
+<small class="last-modified">Last Modified 2020-12-03T18:29:02+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -30,13 +30,13 @@ All requests to the API must be authenticated with an API key in one of two ways
 1. In the URL as the `X-API-KEY` parameter:
 
 ```http
-https://api.shopk.it/v1/?X-API-KEY=0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
+https://api.shopk.it/v1/?X-API-KEY=f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c
 ```
 
 2. In the HTTP Authorization header:
 
 ```http
-X-API-KEY: 0bb18b34ba33cb2d7c55d568353fdc6f345b8d78
+X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c
 ```
 
 ### Endpoints
@@ -100,7 +100,7 @@ This is a simple example on how to update an order:
 
 ```bash
 curl -i -X PUT \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type:application/json' \
 -d '{"paid":true, "status_alias":"sent"}' \
 https://api.shopk.it/v1/order/1337
@@ -202,9 +202,9 @@ Response: `200 OK`
             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
             "image": {
-                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
             }
         },
         {
@@ -222,9 +222,9 @@ Response: `200 OK`
             "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
             "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
             "image": {
-                "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
-                "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
-                "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
+                "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
             }
         }
     ]
@@ -243,7 +243,7 @@ Get Store info. **No parameters**
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/
 ```
 
@@ -379,8 +379,8 @@ https://api.shopk.it/v1/
                         "method": "credit_card",
                         "alias": "credit_card",
                         "title": "Cartão de Crédito",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/credit_card-pt.png",
-                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/credit-card-brands.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/credit_card-pt.png",
+                        "logo": "https://cdn.shopk.it/templates/assets/common/icons/payments/credit-card-brands.png"
                     },
                     "multibanco": {
                         "active": true,
@@ -391,8 +391,8 @@ https://api.shopk.it/v1/
                         "method": "multibanco",
                         "alias": "multibanco",
                         "title": "Multibanco",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco-pt.png",
-                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/multibanco-color.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/multibanco-pt.png",
+                        "logo": "https://cdn.shopk.it/templates/assets/common/icons/payments/multibanco-color.png"
                     },
                     "mbway": {
                         "active": true,
@@ -403,8 +403,8 @@ https://api.shopk.it/v1/
                         "method": "mbway",
                         "alias": "mbway",
                         "title": "MB WAY",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/mbway-pt.png",
-                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/mbway-color.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/mbway-pt.png",
+                        "logo": "https://cdn.shopk.it/templates/assets/common/icons/payments/mbway-color.png"
                     },
                     "paypal": {
                         "active": true,
@@ -416,8 +416,8 @@ https://api.shopk.it/v1/
                         "method": "paypal",
                         "alias": "paypal",
                         "title": "Paypal",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal-pt.png",
-                        "logo": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/paypal-color.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/paypal-pt.png",
+                        "logo": "https://cdn.shopk.it/templates/assets/common/icons/payments/paypal-color.png"
                     },
                     "bank_transfer": {
                         "active": true,
@@ -428,7 +428,7 @@ https://api.shopk.it/v1/
                         "method": "bank_transfer",
                         "alias": "bank_transfer",
                         "title": "Transferência Bancária",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/bank_transfer-pt.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/bank_transfer-pt.png"
                     },
                     "on_delivery": {
                         "active": true,
@@ -440,7 +440,7 @@ https://api.shopk.it/v1/
                         "method": "on_delivery",
                         "alias": "on_delivery",
                         "title": "À Cobrança",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/on_delivery-pt.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/on_delivery-pt.png"
                     },
                     "pick_up": {
                         "active": true,
@@ -451,7 +451,7 @@ https://api.shopk.it/v1/
                         "method": "pick_up",
                         "alias": "pick_up",
                         "title": "Levantamento nas instalações",
-                        "image": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/common/icons/payments/pick_up-pt.png"
+                        "image": "https://cdn.shopk.it/templates/assets/common/icons/payments/pick_up-pt.png"
                     },
                     "custom": {
                         "active": true,
@@ -461,7 +461,7 @@ https://api.shopk.it/v1/
                         "default": false,
                         "gateway": "manual",
                         "method": "custom",
-                        "alias": "custom", 
+                        "alias": "custom",
                     }
                 },
                 "category_default_order": null,
@@ -469,16 +469,16 @@ https://api.shopk.it/v1/
                 "domain": "parallax.shopk.it",
                 "is_ssl": true,
                 "assets": {
-                    "url": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax",
-                    "images": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/img",
-                    "css": "https://drwfxyu78e9uq.cloudfront.net/css/store/parallax/style.css?template=shopkit/parallax&amp;last_modified=1504786507",
-                    "plugins": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/plugins.js?template=shopkit/parallax&amp;last_modified=1504786507",
-                    "scripts": "https://drwfxyu78e9uq.cloudfront.net/templates/assets/shopkit/parallax/js/script.js?template=shopkit/parallax&amp;last_modified=1504786507"
+                    "url": "https://cdn.shopk.it/templates/assets/shopkit/parallax",
+                    "images": "https://cdn.shopk.it/templates/assets/shopkit/parallax/img",
+                    "css": "https://cdn.shopk.it/css/store/parallax/style.css?template=shopkit/parallax&amp;last_modified=1504786507",
+                    "plugins": "https://cdn.shopk.it/templates/assets/shopkit/parallax/js/plugins.js?template=shopkit/parallax&amp;last_modified=1504786507",
+                    "scripts": "https://cdn.shopk.it/templates/assets/shopkit/parallax/js/script.js?template=shopkit/parallax&amp;last_modified=1504786507"
                 },
                 "images_header": [
-                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/14bb24a112fafccdd36680be2b03f4ce.jpg",
-                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/c788681a62eff02c640765d3c215c920.jpg",
-                    "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/f669d550743b2e27a81c22812b270101.jpg"
+                    "https://cdn.shopk.it/usercontent/parallax/media/images/14bb24a112fafccdd36680be2b03f4ce.jpg",
+                    "https://cdn.shopk.it/usercontent/parallax/media/images/c788681a62eff02c640765d3c215c920.jpg",
+                    "https://cdn.shopk.it/usercontent/parallax/media/images/f669d550743b2e27a81c22812b270101.jpg"
                 ],
                 "taxes_included": true
             }
@@ -486,18 +486,18 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-## Get Product [/product{?id,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
+## GET Product [/product{?id,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
 
-### Get Product [GET]
+### GET Product [GET]
 Get a list of products or single product by id or handle
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/product/1337
 
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/product/?category=1337&limit=5
 ```
 
@@ -523,12 +523,12 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
             + `soon`
 
     + reference (optional, string, `bowl-001`) ... Product reference
-    + featured (optional, string, `true`) ... Product featured field
+    + featured (optional, boolean, `true`) ... Product featured field
         + Values
             + `true`
             + `false`
 
-    + new (optional, string, `true`) ... Product new field
+    + new (optional, boolean, `true`) ... Product new field
         + Values
             + `true`
             + `false`
@@ -546,7 +546,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
     + Body
 
             {
-                "id": 1337,
+                "id": 212322,
                 "title": "Rustic Spice Bowl Set",
                 "reference": "",
                 "price": 40.73,
@@ -556,7 +556,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
-                "created_at": "2014-11-30T01:04:40+00:00",
+                "created_at": "2020-11-27T15:36:57+00:00",
                 "status": 1,
                 "status_alias": "active",
                 "position": 0,
@@ -566,6 +566,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "new": true,
                 "is_promotion": false,
                 "description": "<p>This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln and were high fired, giving them strength and durability. These bowls are ideal for spices, dukkah, oil, chopped chilli or garlic.&nbsp;<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece.<br /><br />Larger size (x2) - 8cm (3\") across, 5cm (2\") deep<br />Mid size - 7cm (2.5\") across, 5cm (2\") deep<br />Small size - 5cm (2\") across, 4cm (1.5\") deep<br /><br />Please Note : These items are MADE TO ORDER and may vary slightly from the image shown. Current make time is 2-3 weeks.&nbsp;<br /><br />*food, oven and dishwasher safe<br />*not suitable for microwave</p>",
+                "excerpt": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
                 "video_url": "",
                 "file": null,
                 "tax": 0,
@@ -574,10 +575,11 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 849,
+                "hits": 0,
                 "sales": 0,
                 "variants_same_values": false,
-                "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
+                "updated_at": "2020-11-27T15:36:57+00:00",
+                "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
@@ -588,32 +590,44 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                 },
                 "images": [
                     {
-                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/17d23f7b534bf365580989363da328d2.jpg",
-                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/17d23f7b534bf365580989363da328d2.jpg",
-                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/17d23f7b534bf365580989363da328d2.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/f519f86-17d23f7b534bf365580989363da328d2.jpg"
                     },
                     {
-                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/7d2fe8d66dd9925ac72a3112d691f352.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg"
                     },
                     {
-                        "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/ff2216454ebbf8ca2727335ecacbc472.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg"
+                    }
+                ],
+                "categories": [
+                    {
+                        "id": 44355,
+                        "parent": 0,
+                        "active": true,
+                        "title": "Cozinha",
+                        "description": "",
+                        "handle": "cozinha",
+                        "url": "https://parallax.shopk.it/category/cozinha",
+                        "image": []
                     }
                 ],
                 "options": [
                     {
-                        "id": 192867,
-                        "id_variant_1": 45896,
-                        "id_variant_2": 90261,
+                        "id": 363364,
+                        "id_variant_1": 206585,
+                        "id_variant_2": 206587,
                         "id_variant_3": null,
                         "title": "Small bowl / White",
                         "price": 40.73,
@@ -626,23 +640,23 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock": 88,
                         "shipping": 0,
                         "weight": 0,
-                        "reference": null,
+                        "reference": "",
                         "active": true,
-                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192867",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
-                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192867",
-                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192867"
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363364"
                         }
                     },
                     {
-                        "id": 192868,
-                        "id_variant_1": 45896,
-                        "id_variant_2": 90262,
+                        "id": 363365,
+                        "id_variant_1": 206585,
+                        "id_variant_2": 206588,
                         "id_variant_3": null,
                         "title": "Small bowl / Dark turquoise",
                         "price": 40.73,
@@ -655,23 +669,23 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock": 94,
                         "shipping": 0,
                         "weight": 0,
-                        "reference": null,
+                        "reference": "",
                         "active": true,
-                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192868",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363365",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
-                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192868",
-                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192868"
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363365",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363365"
                         }
                     },
                     {
-                        "id": 192869,
-                        "id_variant_1": 45897,
-                        "id_variant_2": 90261,
+                        "id": 363366,
+                        "id_variant_1": 206586,
+                        "id_variant_2": 206587,
                         "id_variant_3": null,
                         "title": "Big bowl / White",
                         "price": 45.73,
@@ -684,23 +698,23 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock": 100,
                         "shipping": 0,
                         "weight": 0,
-                        "reference": null,
+                        "reference": "",
                         "active": true,
-                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192869",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363366",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
-                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192869",
-                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192869"
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363366",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363366"
                         }
                     },
                     {
-                        "id": 192870,
-                        "id_variant_1": 45897,
-                        "id_variant_2": 90262,
+                        "id": 363367,
+                        "id_variant_1": 206586,
+                        "id_variant_2": 206588,
                         "id_variant_3": null,
                         "title": "Big bowl / Dark turquoise",
                         "price": 45.73,
@@ -713,58 +727,45 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "stock": 100,
                         "shipping": 0,
                         "weight": 0,
-                        "reference": null,
+                        "reference": "",
                         "active": true,
-                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=192870",
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363367",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
-                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=192870",
-                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=192870"
-                        }
-                    }
-                ],
-                "categories": [
-                    {
-                        "id": 15942,
-                        "parent": 0,
-                        "title": "Cozinha",
-                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus neque, dapibus eu volutpat a, consectetur elementum purus. Nam quis eros eu nunc mollis venenatis.",
-                        "handle": "cozinha",
-                        "url": "https://parallax.shopk.it/category/cozinha",
-                        "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363367",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363367"
                         }
                     }
                 ],
                 "option_groups": [
                     {
+                        "id": 62775,
                         "title": "Size",
                         "options": [
                             {
-                                "id": 45896,
+                                "id": 206585,
                                 "title": "Small bowl"
                             },
                             {
-                                "id": 45897,
+                                "id": 206586,
                                 "title": "Big bowl"
                             }
                         ]
                     },
                     {
+                        "id": 62776,
                         "title": "Color",
                         "options": [
                             {
-                                "id": 90261,
+                                "id": 206587,
                                 "title": "White"
                             },
                             {
-                                "id": 90262,
+                                "id": 206588,
                                 "title": "Dark turquoise"
                             }
                         ]
@@ -777,15 +778,16 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "stock_show": true,
                     "stock_sold_single": true,
                     "stock_notify": 10
+                },
+                "rating": {
+                    "total_reviews": 0,
+                    "average_rating": 0,
+                    "max_rating": 0,
+                    "min_rating": 0
                 }
             }
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -793,12 +795,946 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "message": "Bad request."
             }
 
-+ Response 404
++ Response 404 (application/json)
 
-    + Headers
+    + Body
 
-            Content-Length: 24
-            Content-Type: application/json
+            {
+                "message":"Not found."
+            }
+
+## POST Product [/product]
+
+### POST Product [POST]
+Create a product
+
+```bash
+curl -i -X POST 'https://api.shopk.it/v1/product/' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{
+  "title": "Rustic Spice Bowl Set",
+  "price": 17.45,
+  "categories": [
+    44373
+  ]
+}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Title
+**price**<br>(required) | float | | Price **Required** if not `price_on_request`
+**categories**<br>(required) | array[integer] | | Array with categories identifier
+**handle** | string | | Handle
+**reference** | string | | SKU
+**price_promo** | float | | Promotion price (must be lower than price)
+**promo_show_percentage** | boolean | `true` `false` | Show discount in percent
+**price_on_request** | boolean | `true` `false` | Price is on request
+**status** | integer | `1` `2` `3` `4` | Status: `1` (active) `2` (hidden) `3` (out of stock) `4` (soon)
+**shipping** | float | | Shipping cost
+**shipping_alone** | boolean | `true` `false` | Shipping alone option
+**featured** | boolean | `true` `false` | Product is featured option
+**new** | boolean | `true` `false` | Product is new option
+**is_promotion** | boolean | `true` `false` | Product is in promotion option
+**description** | string | | Description
+**excerpt** | string | | Excerpt (short description)
+**video_url** | string | | Video url, youtube or vimeo url
+**file** | string | | File url
+**tax** | float | | Tax
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Product page title
+**weight** | integer | | Weight (in grams)
+**images** | array[string] | | Array with images url, max 10
+**stock_enabled** | boolean | `true` `false` | Enables Product stock
+**stock_qty** | integer | | Units in stock (requires product stock enabled)
+**stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
+**stock_show** | boolean | `true` `false` | Show product stock units (requires stock enabled)
+**stock_sold_single** | boolean | `true` `false` | Only allow to sell 1 unit per order (requires stock enabled)
+**stock_notify** | integer | | Product minium stock units (requires stock enabled)
+
+</div>
+
++ Request (application/json)
+
+        {
+            "title": "Rustic Spice Bowl Set",
+            "price": 17.45,
+            "categories": [
+                44373
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 212314,
+                "title": "Rustic Spice Bowl Set",
+                "reference": null,
+                "price": 17.45,
+                "price_formatted": "17,45 €",
+                "price_promo": null,
+                "price_promo_formatted": null,
+                "promo_show_percentage": false,
+                "price_promo_percentage": null,
+                "price_on_request": false,
+                "created_at": "2020-11-27T14:07:10+00:00",
+                "status": 1,
+                "status_alias": "active",
+                "position": 0,
+                "shipping": 0,
+                "shipping_alone": false,
+                "featured": false,
+                "new": false,
+                "is_promotion": false,
+                "description": null,
+                "excerpt": "",
+                "video_url": null,
+                "file": null,
+                "tax": 0,
+                "meta_description": null,
+                "meta_tags": null,
+                "handle": "rustic-spice-bowl-set-2",
+                "page_title": "Rustic Spice Bowl Set",
+                "weight": 0,
+                "hits": 0,
+                "sales": 0,
+                "variants_same_values": true,
+                "updated_at": "2020-11-27T14:07:10+00:00",
+                "description_short": "",
+                "promo": false,
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set-2",
+                "wishlist": {
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set-2",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set-2"
+                },
+                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
+                "video_embed_url": false,
+                "image": {
+                    "thumb": "https://cdn.shopk.it/assets/store/img/no-img.jpg",
+                    "square": "https://cdn.shopk.it/assets/store/img/no-img.jpg",
+                    "full": "https://cdn.shopk.it/assets/store/img/no-img.jpg"
+                },
+                "images": [],
+                "categories": [
+                    {
+                        "id": 44373,
+                        "parent": 0,
+                        "active": true,
+                        "title": "API",
+                        "description": "",
+                        "handle": "api",
+                        "url": "https://parallax.shopk.it/category/api",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg"
+                        }
+                    }
+                ],
+                "options": [],
+                "option_groups": [],
+                "stock": {
+                    "stock_enabled": false
+                },
+                "rating": {
+                    "total_reviews": 0,
+                    "average_rating": 0,
+                    "max_rating": 0,
+                    "min_rating": 0
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT Product [/product/{id}]
+
+### PUT Product [PUT]
+Update a product
+
+```bash
+curl -i -X POST 'https://api.shopk.it/v1/product/' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d'{
+  "reference": "SWB-001",
+  "featured": true
+}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title** | string | | Title
+**price** | float | | Price
+**categories** | array[integer] | | Array with categories identifier
+**handle** | string | | Handle
+**reference** | string | | SKU
+**price_promo** | float | | Promotion price (must be lower than price)
+**promo_show_percentage** | boolean | `true` `false` | Show discount in percent
+**price_on_request** | boolean | `true` `false` | Price is on request
+**status** | integer | `1` `2` `3` `4` | Status: `1` (active) `2` (hidden) `3` (out of stock) `4` (soon)
+**shipping** | float | | Shipping cost
+**shipping_alone** | boolean | `true` `false` | Shipping alone option
+**featured** | boolean | `true` `false` | Product is featured option
+**new** | boolean | `true` `false` | Product is new option
+**is_promotion** | boolean | `true` `false` | Product is in promotion option
+**description** | string | | Description
+**excerpt** | string | | Excerpt (short description)
+**video_url** | string | | Video url, youtube or vimeo url
+**file** | string | | File url
+**tax** | float | | Tax
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Product page title
+**weight** | integer | | Weight (in grams)
+**images** | array[string] | | Array with images url, max 10
+**stock_enabled** | boolean | `true` `false` | Enables Product stock
+**stock_qty** | integer | | Units in stock (requires product stock enabled)
+**stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
+**stock_show** | boolean | `true` `false` | Show product stock units (requires stock enabled)
+**stock_sold_single** | boolean | `true` `false` | Only allow to sell 1 unit per order (requires stock enabled)
+**stock_notify** | integer | | Product minium stock units (requires stock enabled)
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+
++ Request (application/json)
+
+        {
+          "reference": "SWB-001",
+          "featured": true
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 212314,
+                "title": "Rustic Spice Bowl Set",
+                "reference": "bowl-001",
+                "price": 17.45,
+                "price_formatted": "17,45 €",
+                "price_promo": null,
+                "price_promo_formatted": null,
+                "promo_show_percentage": false,
+                "price_promo_percentage": null,
+                "price_on_request": false,
+                "created_at": "2020-11-27T14:07:10+00:00",
+                "status": 1,
+                "status_alias": "active",
+                "position": 0,
+                "shipping": 0,
+                "shipping_alone": false,
+                "featured": false,
+                "new": false,
+                "is_promotion": false,
+                "description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay",
+                "excerpt": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
+                "video_url": null,
+                "file": null,
+                "tax": 0,
+                "meta_description": null,
+                "meta_tags": null,
+                "handle": "rustic-spice-bowl-set-2",
+                "page_title": "Rustic Spice Bowl Set",
+                "weight": 0,
+                "hits": 0,
+                "sales": 0,
+                "variants_same_values": true,
+                "updated_at": "2020-11-27T15:15:12+00:00",
+                "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
+                "promo": false,
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set-2",
+                "wishlist": {
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set-2",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set-2"
+                },
+                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
+                "video_embed_url": false,
+                "image": {
+                    "thumb": "https://cdn.shopk.it/assets/store/img/no-img.jpg",
+                    "square": "https://cdn.shopk.it/assets/store/img/no-img.jpg",
+                    "full": "https://cdn.shopk.it/assets/store/img/no-img.jpg"
+                },
+                "images": [],
+                "categories": [
+                    {
+                        "id": 44373,
+                        "parent": 0,
+                        "active": true,
+                        "title": "API",
+                        "description": "",
+                        "handle": "api",
+                        "url": "https://parallax.shopk.it/category/api",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg"
+                        }
+                    }
+                ],
+                "options": [],
+                "option_groups": [],
+                "stock": {
+                    "stock_enabled": false
+                },
+                "rating": {
+                    "total_reviews": 0,
+                    "average_rating": 0,
+                    "max_rating": 0,
+                    "min_rating": 0
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## DELETE Product [/product/{id}]
+
+### DELETE Product [DELETE]
+Delete a Product
+
+```bash
+curl -i -X DELETE 'https://api.shopk.it/v1/product/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Product identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Products Options Group
+
+## GET Product Options Group [/product/{id}/option_group/{id_option_group}]
+
+### GET Product Options Group [GET]
+Get a list of a product options group or a single product option group by id
+
+```bash
+curl -i -X GET \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+https://api.shopk.it/v1/product/212322/option_group
+
+curl -i -X GET \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+https://api.shopk.it/v1/product/212322/option_group/62775
+```
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option_group (optional, integer) ... Product option group identifier
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 62775,
+                    "title": "Size",
+                    "options": [
+                        {
+                            "id": 206585,
+                            "title": "Small bowl"
+                        },
+                        {
+                            "id": 206586,
+                            "title": "Big bowl"
+                        }
+                    ]
+                },
+                {
+                    "id": 62776,
+                    "title": "Color",
+                    "options": [
+                        {
+                            "id": 206587,
+                            "title": "White"
+                        },
+                        {
+                            "id": 206588,
+                            "title": "Dark turquoise"
+                        }
+                    ]
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST Product Option Group [/product/{id}/option_group]
+
+### POST Product Option Group [POST]
+Create a product option group
+
+```bash
+curl -i -X POST 'https://api.shopk.it/v1/product/212322/option_group' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "title": "Color",
+    "options": [
+        "White",
+        "Dark turquoise"
+    ]
+}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**title**<br>(required) | string | Product option group title
+**options**<br>(required) | array[string] | Array with product option group values
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+
++ Request (application/json)
+
+        {
+            "title": "Color",
+            "options": [
+                "White",
+                "Dark turquoise"
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 62775,
+                    "title": "Size",
+                    "options": [
+                        {
+                            "id": 206585,
+                            "title": "Small bowl"
+                        },
+                        {
+                            "id": 206586,
+                            "title": "Big bowl"
+                        }
+                    ]
+                },
+                {
+                    "id": 62776,
+                    "title": "Color",
+                    "options": [
+                        {
+                            "id": 206587,
+                            "title": "White"
+                        },
+                        {
+                            "id": 206588,
+                            "title": "Dark turquoise"
+                        }
+                    ]
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT Product Option Group [/product/{id}/option_group/{id_option_group}]
+
+### PUT Product Option Group [PUT]
+Update a product option group
+
+```bash
+curl -i -X PUT 'https://api.shopk.it/v1/product/212322/option_group/62779' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "title": "Color",
+    "options": [
+        "White",
+        "Dark turquoise"
+    ]
+}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**title**<br>(required) | string | Product option group title
+**options**<br>(required) | array[string] | Array with product option group values
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option_group (required, integer) ... Product option group identifier
+
++ Request (application/json)
+
+        {
+            "title": "Color",
+            "options": [
+                "White",
+                "Dark turquoise"
+            ]
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 62775,
+                    "title": "Size",
+                    "options": [
+                        {
+                            "id": 206585,
+                            "title": "Small bowl"
+                        },
+                        {
+                            "id": 206586,
+                            "title": "Big bowl"
+                        }
+                    ]
+                },
+                {
+                    "id": 62776,
+                    "title": "Color",
+                    "options": [
+                        {
+                            "id": 206587,
+                            "title": "White"
+                        },
+                        {
+                            "id": 206588,
+                            "title": "Dark turquoise"
+                        }
+                    ]
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+## DELETE Product Option Group [/product/{id}/option_group/{id_option_group}]
+
+### DELETE Product Option Group [DELETE]
+Delete a product options group
+
+```bash
+curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option_group (required, integer) ... Product option group identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Products Options
+
+
+## GET Product Options [/product/{id}/option/{id_option}]
+
+### GET Product Option [GET]
+Get a list of a product options or a single product option by id
+
+```bash
+curl -i -X GET \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+https://api.shopk.it/v1/product/212322/option
+
+curl -i -X GET \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+https://api.shopk.it/v1/product/212322/option/363364
+```
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option (optional, integer) ... Product option identifier
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 363364,
+                    "id_variant_1": 206585,
+                    "id_variant_2": 206587,
+                    "id_variant_3": null,
+                    "title": "Small bowl / White",
+                    "price": 40.73,
+                    "price_formatted": "40,73 €",
+                    "price_promo": null,
+                    "price_promo_formatted": null,
+                    "promo": false,
+                    "price_promo_percentage": null,
+                    "price_on_request": false,
+                    "stock": 88,
+                    "shipping": 0,
+                    "weight": 0,
+                    "reference": "",
+                    "active": true,
+                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
+                    "image": {
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    },
+                    "wishlist": {
+                        "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
+                        "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363364"
+                    }
+                },
+                {
+                    "id": 363365,
+                    "id_variant_1": 206585,
+                    "id_variant_2": 206588,
+                    "id_variant_3": null,
+                    "title": "Small bowl / Dark turquoise",
+                    "price": 40.73,
+                    "price_formatted": "40,73 €",
+                    "price_promo": null,
+                    "price_promo_formatted": null,
+                    "promo": false,
+                    "price_promo_percentage": null,
+                    "price_on_request": false,
+                    "stock": 94,
+                    "shipping": 0,
+                    "weight": 0,
+                    "reference": "",
+                    "active": true,
+                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363365",
+                    "image": {
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    },
+                    "wishlist": {
+                        "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363365",
+                        "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363365"
+                    }
+                },
+                {
+                    "id": 363366,
+                    "id_variant_1": 206586,
+                    "id_variant_2": 206587,
+                    "id_variant_3": null,
+                    "title": "Big bowl / White",
+                    "price": 45.73,
+                    "price_formatted": "45,73 €",
+                    "price_promo": null,
+                    "price_promo_formatted": null,
+                    "promo": false,
+                    "price_promo_percentage": null,
+                    "price_on_request": false,
+                    "stock": 100,
+                    "shipping": 0,
+                    "weight": 0,
+                    "reference": "",
+                    "active": true,
+                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363366",
+                    "image": {
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    },
+                    "wishlist": {
+                        "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363366",
+                        "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363366"
+                    }
+                },
+                {
+                    "id": 363367,
+                    "id_variant_1": 206586,
+                    "id_variant_2": 206588,
+                    "id_variant_3": null,
+                    "title": "Big bowl / Dark turquoise",
+                    "price": 45.73,
+                    "price_formatted": "45,73 €",
+                    "price_promo": null,
+                    "price_promo_formatted": null,
+                    "promo": false,
+                    "price_promo_percentage": null,
+                    "price_on_request": false,
+                    "stock": 100,
+                    "shipping": 0,
+                    "weight": 0,
+                    "reference": "",
+                    "active": true,
+                    "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363367",
+                    "image": {
+                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    },
+                    "wishlist": {
+                        "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363367",
+                        "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363367"
+                    }
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT Product Option [/product/{id}/option/{id_option}]
+
+### PUT Product Option [PUT]
+Update a product option
+
+```bash
+curl -i -X PUT 'https://api.shopk.it/v1/product/212322/option/363364' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{
+    "reference": "SWB-001"
+}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**price** | float | Price
+**price_promo** | float | | Promotion price (must be lower than price)
+**price_on_request** | boolean | `true` `false` | Price is on request
+**stock** | integer | | Units in stock (requires product stock enabled)
+**shipping** | float | | Shipping cost
+**weight** | integer | | Weight (in grams)
+**reference** | string | | SKU
+**image** | string | | Option image url
+**active** | boolean | `true` `false` | Option is active
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option (optional, integer) ... Product option identifier
+
++ Request (application/json)
+
+        {
+            "reference": "SWB-001"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 363364,
+                "id_variant_1": 206585,
+                "id_variant_2": 206587,
+                "id_variant_3": null,
+                "title": "Small bowl / White",
+                "price": 40.73,
+                "price_formatted": "40,73 €",
+                "price_promo": null,
+                "price_promo_formatted": null,
+                "promo": false,
+                "price_promo_percentage": null,
+                "price_on_request": false,
+                "stock": 88,
+                "shipping": 0,
+                "weight": 0,
+                "reference": "SWB-001",
+                "active": true,
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                },
+                "wishlist": {
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363364"
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+## DELETE Product Option [/product/{id}/option/{id_option}]
+
+### DELETE Product Option [DELETE]
+Delete a product options
+
+```bash
+curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer) ... Product identifier
+    + id_option (required, integer) ... Product option identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
 
     + Body
 
@@ -816,7 +1752,7 @@ Get products categories by id or handle. **Only one parameter is required.**
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/category/1337
 ```
 
@@ -852,9 +1788,9 @@ https://api.shopk.it/v1/category/1337
                 "url": "https://parallax.shopk.it/category/decoracao",
                 "permalink": "https://parallax.shopk.it/category/decoracao",
                 "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                 },
                 "parents": null,
                 "children": [
@@ -875,9 +1811,9 @@ https://api.shopk.it/v1/category/1337
                         "url": "https://parallax.shopk.it/category/decoracao-sala",
                         "permalink": "https://parallax.shopk.it/category/decoracao-sala",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/276f8c112c887d830a8e3c585da5d93d.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/276f8c112c887d830a8e3c585da5d93d.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/276f8c112c887d830a8e3c585da5d93d.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/276f8c112c887d830a8e3c585da5d93d.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/276f8c112c887d830a8e3c585da5d93d.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/276f8c112c887d830a8e3c585da5d93d.jpg"
                         },
                         "children": null
                     }
@@ -907,11 +1843,11 @@ Get a list of orders or single order by id
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/order/1337
 
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/order?status=3&date_filter=last_month
 ```
 
@@ -944,7 +1880,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
             + `delivered`
             + `returned`
             + `pickup_available`
-    + paid (optional, string, `true`) ... Order paid field
+    + paid (optional, boolean, `true`) ... Order paid field
         + Values
             + `true`
             + `false`
@@ -1068,9 +2004,9 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
                     },
                     {
@@ -1088,9 +2024,9 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
                     }
                 ]
@@ -1129,7 +2065,7 @@ Update an order
 
 ```bash
 curl -i -X PUT \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type:application/json' \
 -d '{"paid":true, "status_alias":"sent"}' \
 https://api.shopk.it/v1/order/1337
@@ -1141,7 +2077,7 @@ Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` `9` `10` | Order status as an integer
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` | Order status as a string
-**paid** | string | `true` `false` | Order paid field
+**paid** | boolean | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
@@ -1271,9 +2207,9 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                         }
                     },
                     {
@@ -1291,9 +2227,9 @@ Attributes | Type | Choices | Description
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image": {
-                            "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
-                            "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
-                            "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                         }
                     }
                 ]
@@ -1332,7 +2268,7 @@ Delete an order
 
 ```bash
 curl -i -X DELETE \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/order/1337
 ```
 
@@ -1377,7 +2313,7 @@ Get a list of shipping methods available for a country
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/shipping?country_code=prt
 ```
 
@@ -1447,7 +2383,7 @@ Get a coupon by id or code. **Only one parameter is required.**
 
 ```bash
 curl -i -X GET \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/coupon/bajevolp
 ```
 
@@ -1506,7 +2442,7 @@ Create a coupon
 
 ```bash
 curl -i -X POST \
--H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
+-H "X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
 -H 'Content-Type:application/json' \
 -d '{"code":"bajevolp", "limit":"5", "value":"10", "type":"percent", "applies_to":"all_orders"}' \
 'https://api.shopk.it/v1/coupon'
@@ -1594,7 +2530,7 @@ Delete a coupon
 
 ```bash
 curl -i -X DELETE \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/coupon/1337
 ```
 
