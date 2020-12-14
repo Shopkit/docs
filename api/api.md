@@ -2568,7 +2568,46 @@ https://api.shopk.it/v1/coupon/1337
 
 
 # Group Webhooks
-Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores. For more information visit [webhooks documentation](https://shopk.it/developers/webhooks).
+Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores. For more information visit [webhooks documentation](https://shopk.it/developers/webhooks).<br><br>Available webhook events: `order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_shipping` `order_delivered` `order_change_payment` `order_payment_failed` `order_returned` `order_pickup_available` `client_created` `client_updated` `client_deleted` `newsletter_subscribed` `newsletter_unsubscribed`<br>
+
+## Get Webhook [/Webhook{id}{?active,event}]
+
+### Get Webhook [GET]
+Get a list of webhook or single webhook by id
+
+```bash
+curl -i -X GET \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+https://api.shopk.it/v1/webhook/1337
+```
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Webhook identifier
+    + active (optional, boolean, `true`) ... Webhook active status
+        + Values
+            + `true`
+            + `false`
+    + event (optional, string, `order_created`) ... Webhook event, see list above
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 1337,
+                "event": "order_created",
+                "url": "https://www.example.com/url",
+                "active": true
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
 
 ## Post Webhook [/webhook/]
 
@@ -2577,44 +2616,33 @@ Create a webhook
 
 ```bash
 curl -i -X POST \
--H "X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78" \
+-H "X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
 -H 'Content-Type:application/json' \
--d '{"url":"https://www.mysite.com/mywebhook_url", "event":"order_created"}' \
+-d '{"url":"https://www.example.com/url", "event":"order_created"}' \
 'https://api.shopk.it/v1/webhook'
 ```
 
 <div class="well">
 
-Attributes | Type | Choices | Description
----------- | ---- | ------- | -----------
-**url** | string | | Webhook url
-**event** | string | `order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_shipping` `order_delivered` `order_change_payment` `order_payment_failed` `order_returned` `order_pickup_available` `client_created` `client_updated` `client_deleted` `newsletter_subscribed` `newsletter_unsubscribed` | Available webhooks
+Attributes | Type | Description
+---------- | ---- | -----------
+**url** | string | Webhook url
+**event** | string | Webhook event, see list above
 
 </div>
 
-
-+ Response 201
-
-    + Headers
-
-            Content-Length: 98
-            Content-Type: application/json
++ Response 201 (application/json)
 
     + Body
 
             {
                 "id": 1337,
                 "event": "order_created",
-                "url": "https://www.mysite.com/mywebhook_url",
+                "url": "https://www.example.com/url",
                 "active": true
             }
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2622,20 +2650,13 @@ Attributes | Type | Choices | Description
                 "message": "Bad request."
             }
 
-+ Response 409
-
-    + Headers
-
-            Content-Length: 30
-            Content-Type: application/json
++ Response 409 (application/json)
 
     + Body
 
             {
                 "message": "Already exists."
             }
-
-+ Response 409
 
 
 ## Delete Webhook [/webhook/{id}]
@@ -2645,7 +2666,7 @@ Delete a webhook
 
 ```bash
 curl -i -X DELETE \
--H 'X-API-KEY:0bb18b34ba33cb2d7c55d568353fdc6f345b8d78' \
+-H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 https://api.shopk.it/v1/webhook/1337
 ```
 
@@ -2653,14 +2674,9 @@ https://api.shopk.it/v1/webhook/1337
 
     + id (required, integer, `1337`) ... Webhook identifier
 
-+ Response 204
++ Response 204 (application/json)
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2668,12 +2684,7 @@ https://api.shopk.it/v1/webhook/1337
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
