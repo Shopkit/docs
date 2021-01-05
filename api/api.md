@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2020-12-03T18:29:02+00:00</small>
+<small class="last-modified">Last Modified 2020-12-17T11:52:57+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -549,6 +549,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "id": 212322,
                 "title": "Rustic Spice Bowl Set",
                 "reference": "",
+                "barcode": null,
                 "price": 40.73,
                 "price_formatted": "40,73 €",
                 "price_promo": null,
@@ -590,25 +591,25 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                 "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "image": {
-                    "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                 },
                 "images": [
                     {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/f519f86-17d23f7b534bf365580989363da328d2.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/f519f86-17d23f7b534bf365580989363da328d2.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/f519f86-17d23f7b534bf365580989363da328d2.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/f519f86-17d23f7b534bf365580989363da328d2.jpg"
                     },
                     {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg"
                     },
                     {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg"
                     }
                 ],
                 "categories": [
@@ -623,6 +624,8 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "image": []
                     }
                 ],
+                "brand": null,
+                "tags": [],
                 "options": [
                     {
                         "id": 363364,
@@ -641,12 +644,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "shipping": 0,
                         "weight": 0,
                         "reference": "",
+                        "barcode": null,
                         "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
                             "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
@@ -670,12 +674,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "shipping": 0,
                         "weight": 0,
                         "reference": "",
+                        "barcode": null,
                         "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363365",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
                             "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363365",
@@ -699,12 +704,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "shipping": 0,
                         "weight": 0,
                         "reference": "",
+                        "barcode": null,
                         "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363366",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
                             "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363366",
@@ -728,12 +734,13 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                         "shipping": 0,
                         "weight": 0,
                         "reference": "",
+                        "barcode": null,
                         "active": true,
                         "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363367",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                         },
                         "wishlist": {
                             "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363367",
@@ -784,7 +791,9 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
                     "average_rating": 0,
                     "max_rating": 0,
                     "min_rating": 0
-                }
+                },
+                "custom_fields": null,
+                "tabs": null
             }
 
 + Response 400 (application/json)
@@ -828,8 +837,10 @@ Attributes | Type | Choices | Description
 **title**<br>(required) | string | | Title
 **price**<br>(required) | float | | Price **Required** if not `price_on_request`
 **categories**<br>(required) | array[integer] | | Array with categories identifier
+**brand** | integer | | Brand identifier
 **handle** | string | | Handle
 **reference** | string | | SKU
+**barcode** | string | | EAN, ISBN, UPC, GTIN, etc.
 **price_promo** | float | | Promotion price (must be lower than price)
 **promo_show_percentage** | boolean | `true` `false` | Show discount in percent
 **price_on_request** | boolean | `true` `false` | Price is on request
@@ -849,6 +860,7 @@ Attributes | Type | Choices | Description
 **page_title** | string | | Product page title
 **weight** | integer | | Weight (in grams)
 **images** | array[string] | | Array with images url, max 10
+**tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
 **stock_qty** | integer | | Units in stock (requires product stock enabled)
 **stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
@@ -876,6 +888,7 @@ Attributes | Type | Choices | Description
                 "id": 212314,
                 "title": "Rustic Spice Bowl Set",
                 "reference": null,
+                "barcode": null,
                 "price": 17.45,
                 "price_formatted": "17,45 €",
                 "price_promo": null,
@@ -883,7 +896,7 @@ Attributes | Type | Choices | Description
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
-                "created_at": "2020-11-27T14:07:10+00:00",
+                "created_at": "2020-11-27T14:07:10+00:0",
                 "status": 1,
                 "status_alias": "active",
                 "position": 0,
@@ -899,7 +912,7 @@ Attributes | Type | Choices | Description
                 "tax": 0,
                 "meta_description": null,
                 "meta_tags": null,
-                "handle": "rustic-spice-bowl-set-2",
+                "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
                 "hits": 0,
@@ -908,13 +921,13 @@ Attributes | Type | Choices | Description
                 "updated_at": "2020-11-27T14:07:10+00:00",
                 "description_short": "",
                 "promo": false,
-                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
-                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set-2",
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
                 "wishlist": {
-                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set-2",
-                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set-2"
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set"
                 },
-                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
+                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
                 "video_embed_url": false,
                 "image": {
                     "thumb": "https://cdn.shopk.it/assets/store/img/no-img.jpg",
@@ -927,17 +940,15 @@ Attributes | Type | Choices | Description
                         "id": 44373,
                         "parent": 0,
                         "active": true,
-                        "title": "API",
+                        "title": "Cozinha",
                         "description": "",
-                        "handle": "api",
-                        "url": "https://parallax.shopk.it/category/api",
-                        "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg"
-                        }
+                        "handle": "cozinha",
+                        "url": "https://parallax.shopk.it/category/cozinha",
+                        "image": []
                     }
                 ],
+                "brand": null,
+                "tags": [],
                 "options": [],
                 "option_groups": [],
                 "stock": {
@@ -948,7 +959,9 @@ Attributes | Type | Choices | Description
                     "average_rating": 0,
                     "max_rating": 0,
                     "min_rating": 0
-                }
+                },
+                "custom_fields": null,
+                "tabs": null
             }
 
 + Response 400 (application/json)
@@ -989,8 +1002,10 @@ Attributes | Type | Choices | Description
 **title** | string | | Title
 **price** | float | | Price
 **categories** | array[integer] | | Array with categories identifier
+**brand** | integer | | Brand identifier
 **handle** | string | | Handle
 **reference** | string | | SKU
+**barcode** | string | | EAN, ISBN, UPC, GTIN, etc.
 **price_promo** | float | | Promotion price (must be lower than price)
 **promo_show_percentage** | boolean | `true` `false` | Show discount in percent
 **price_on_request** | boolean | `true` `false` | Price is on request
@@ -1010,6 +1025,7 @@ Attributes | Type | Choices | Description
 **page_title** | string | | Product page title
 **weight** | integer | | Weight (in grams)
 **images** | array[string] | | Array with images url, max 10
+**tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
 **stock_qty** | integer | | Units in stock (requires product stock enabled)
 **stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
@@ -1094,9 +1110,9 @@ Attributes | Type | Choices | Description
                         "handle": "api",
                         "url": "https://parallax.shopk.it/category/api",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/teste/media/images/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg"
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/c61c5bd-c61c5bd-c61c5bd-sylwia-pietruszka-218363-unsplash.jpg"
                         }
                     }
                 ],
@@ -1500,12 +1516,13 @@ https://api.shopk.it/v1/product/212322/option/363364
                     "shipping": 0,
                     "weight": 0,
                     "reference": "",
+                    "barcode": "",
                     "active": true,
                     "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
                     "image": {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                     },
                     "wishlist": {
                         "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
@@ -1529,12 +1546,13 @@ https://api.shopk.it/v1/product/212322/option/363364
                     "shipping": 0,
                     "weight": 0,
                     "reference": "",
+                    "barcode": "",
                     "active": true,
                     "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363365",
                     "image": {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                     },
                     "wishlist": {
                         "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363365",
@@ -1558,12 +1576,13 @@ https://api.shopk.it/v1/product/212322/option/363364
                     "shipping": 0,
                     "weight": 0,
                     "reference": "",
+                    "barcode": "",
                     "active": true,
                     "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363366",
                     "image": {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                     },
                     "wishlist": {
                         "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363366",
@@ -1587,12 +1606,13 @@ https://api.shopk.it/v1/product/212322/option/363364
                     "shipping": 0,
                     "weight": 0,
                     "reference": "",
+                    "barcode": "",
                     "active": true,
                     "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363367",
                     "image": {
-                        "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                        "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                     },
                     "wishlist": {
                         "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363367",
@@ -1642,6 +1662,7 @@ Attributes | Type | Choices | Description
 **shipping** | float | | Shipping cost
 **weight** | integer | | Weight (in grams)
 **reference** | string | | SKU
+**barcode** | string | | EAN, ISBN, UPC, GTIN, etc.
 **image** | string | | Option image url
 **active** | boolean | `true` `false` | Option is active
 
@@ -1679,12 +1700,13 @@ Attributes | Type | Choices | Description
                 "shipping": 0,
                 "weight": 0,
                 "reference": "SWB-001",
+                "barcode": "SWB-001",
                 "active": true,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
                 "image": {
-                    "thumb": "https://cdn.shopk.it/usercontent/teste/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "square": "https://cdn.shopk.it/usercontent/teste/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
-                    "full": "https://cdn.shopk.it/usercontent/teste/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
                 },
                 "wishlist": {
                     "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",

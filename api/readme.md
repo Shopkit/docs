@@ -16,6 +16,15 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-01-05
+* Update products with `barcode`, `brand`, `tags`
+
+##### 2020-12-14
+* Add `product` methods `POST`, `DELETE`
+* Add `product_option_group` methods `GET`, `POST`, `PUT`, `DELETE`
+* Add `product_option` methods `GET`, `PUT`, `DELETE`
+* Add `webhook` methods `GET`
+
 ##### 2020-05-26
 * Add `Already exists.` messages
 * Update available webhooks list
