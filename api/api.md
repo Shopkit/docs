@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2020-12-17T11:52:57+00:00</small>
+<small class="last-modified">Last Modified 2021-01-27T12:50:12+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -486,7 +486,7 @@ https://api.shopk.it/v1/
 
 # Group Products
 
-## GET Product [/product{?id,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
+## GET Product [/product{?id,ids,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
 
 ### GET Product [GET]
 Get a list of products or single product by id or handle
@@ -504,6 +504,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 + Parameters
 
     + id (optional, integer, `1337`) ... Product identifier
+    + ids (optional, integer, `1337,7331`) ... Products identifier, comma separated
     + handle (optional, string, `rustic-bowl`) ... Product handle
     + category (optional, integer, `1337`) ... Product category identifier
     + status (optional, integer, `0`) ... Product status as an integer
@@ -536,12 +537,7 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
     + page (optional, integer, `1`) ... page number
     + limit = `25` (optional, integer, `10`) ... products per page
 
-+ Response 200
-
-    + Headers
-
-            Content-Length: 8578
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 

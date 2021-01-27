@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-01-27
+* Add `product` `GET` parameter `ids`
+
 ##### 2021-01-05
 * Update products with `barcode`, `brand`, `tags`
 
