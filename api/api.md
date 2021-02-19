@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-01-27T12:50:12+00:00</small>
+<small class="last-modified">Last Modified 2021-02-19T00:20:30+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -99,11 +99,10 @@ If you are sending data to the API, you need to make sure you correctly set the 
 This is a simple example on how to update an order:
 
 ```bash
-curl -i -X PUT \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
--H 'Content-Type:application/json' \
--d '{"paid":true, "status_alias":"sent"}' \
-https://api.shopk.it/v1/order/1337
+curl -X PUT 'https://api.shopk.it/v1/order/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"paid":true, "status_alias":"sent"}'
 ```
 
 Response: `200 OK`
@@ -242,17 +241,11 @@ Response: `200 OK`
 Get Store info. **No parameters**
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/
+curl -X GET 'https://api.shopk.it/v1/' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
-+ Response 200
-
-    + Headers
-
-            Content-Length: 5997
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -492,13 +485,11 @@ https://api.shopk.it/v1/
 Get a list of products or single product by id or handle
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/1337
+curl -X GET 'https://api.shopk.it/v1/product/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/?category=1337&limit=5
+curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -814,16 +805,10 @@ https://api.shopk.it/v1/product/?category=1337&limit=5
 Create a product
 
 ```bash
-curl -i -X POST 'https://api.shopk.it/v1/product/' \
+curl -X POST 'https://api.shopk.it/v1/product/' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d '{
-  "title": "Rustic Spice Bowl Set",
-  "price": 17.45,
-  "categories": [
-    44373
-  ]
-}'
+-d '{"title": "Rustic Spice Bowl Set", "price": 17.45, "categories": [44373]}'
 ```
 
 <div class="well">
@@ -876,7 +861,7 @@ Attributes | Type | Choices | Description
             ]
         }
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
     + Body
 
@@ -982,13 +967,10 @@ Attributes | Type | Choices | Description
 Update a product
 
 ```bash
-curl -i -X POST 'https://api.shopk.it/v1/product/' \
+curl -X POST 'https://api.shopk.it/v1/product/' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d'{
-  "reference": "SWB-001",
-  "featured": true
-}'
+-d'{"reference": "SWB-001", "featured": true}'
 ```
 
 <div class="well">
@@ -1147,7 +1129,7 @@ Attributes | Type | Choices | Description
 Delete a Product
 
 ```bash
-curl -i -X DELETE 'https://api.shopk.it/v1/product/1337' \
+curl -X DELETE 'https://api.shopk.it/v1/product/1337' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
@@ -1182,13 +1164,11 @@ curl -i -X DELETE 'https://api.shopk.it/v1/product/1337' \
 Get a list of a product options group or a single product option group by id
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/212322/option_group
+curl -X GET 'https://api.shopk.it/v1/product/212322/option_group' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/212322/option_group/62775
+curl -X GET 'https://api.shopk.it/v1/product/212322/option_group/62775' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -1253,16 +1233,10 @@ https://api.shopk.it/v1/product/212322/option_group/62775
 Create a product option group
 
 ```bash
-curl -i -X POST 'https://api.shopk.it/v1/product/212322/option_group' \
+curl -X POST 'https://api.shopk.it/v1/product/212322/option_group' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d '{
-    "title": "Color",
-    "options": [
-        "White",
-        "Dark turquoise"
-    ]
-}'
+-d '{"title": "Color", "options": ["White", "Dark turquoise"]}'
 ```
 
 <div class="well">
@@ -1288,7 +1262,7 @@ Attributes | Type | Description
             ]
         }
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
     + Body
 
@@ -1345,16 +1319,10 @@ Attributes | Type | Description
 Update a product option group
 
 ```bash
-curl -i -X PUT 'https://api.shopk.it/v1/product/212322/option_group/62779' \
+curl -X PUT 'https://api.shopk.it/v1/product/212322/option_group/62779' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d '{
-    "title": "Color",
-    "options": [
-        "White",
-        "Dark turquoise"
-    ]
-}'
+-d '{"title": "Color", "options": ["White", "Dark turquoise"]}'
 ```
 
 <div class="well">
@@ -1439,7 +1407,7 @@ Attributes | Type | Description
 Delete a product options group
 
 ```bash
-curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
+curl -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
@@ -1476,13 +1444,11 @@ curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
 Get a list of a product options or a single product option by id
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/212322/option
+curl -X GET 'https://api.shopk.it/v1/product/212322/option' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/product/212322/option/363364
+curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -1639,12 +1605,10 @@ https://api.shopk.it/v1/product/212322/option/363364
 Update a product option
 
 ```bash
-curl -i -X PUT 'https://api.shopk.it/v1/product/212322/option/363364' \
+curl -X PUT 'https://api.shopk.it/v1/product/212322/option/363364' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d '{
-    "reference": "SWB-001"
-}'
+-d '{"reference": "SWB-001"}'
 ```
 
 <div class="well">
@@ -1733,7 +1697,7 @@ Attributes | Type | Choices | Description
 Delete a product options
 
 ```bash
-curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
+curl -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
@@ -1769,22 +1733,26 @@ curl -i -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
 Get products categories by id or handle. **Only one parameter is required.**
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/category/1337
+curl -X GET 'https://api.shopk.it/v1/category/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
 
     + id (optional, integer, `1337`) ... Category identifier
     + handle (optional, string, `rustic-bowl`) ... Category handle
+    + active (optional, boolean) ... Category is active
+        + Values
+            + `true`
+            + `false`
+    + is_parent (optional, boolean) ... Category parent only
+        + Values
+            + `true`
+            + `false`
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `10`) ... Categories per page
 
-+ Response 200
-
-    + Headers
-
-            Content-Length: 543
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -1795,8 +1763,8 @@ https://api.shopk.it/v1/category/1337
                 "is_child": false,
                 "parent": 0,
                 "parent_title": null,
-                "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi posuere sodales tellus, sit amet tincidunt mi aliquam porta.",
-                "position": 0,
+                "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                "position": 7,
                 "active": true,
                 "handle": "decoracao",
                 "page_title": "Decoração",
@@ -1813,19 +1781,19 @@ https://api.shopk.it/v1/category/1337
                 "parents": null,
                 "children": [
                     {
-                        "id": 105283,
+                        "id": 167757,
                         "title": "Sala",
-                        "is_parent": true,
+                        "is_parent": false,
                         "is_child": true,
                         "parent": 14535,
-                        "description": "",
+                        "description": "Morbi posuere sodales tellus, sit amet tincidunt mi aliquam porta.",
                         "position": 0,
                         "active": true,
                         "handle": "decoracao-sala",
                         "page_title": "Sala",
-                        "meta_description": "",
+                        "meta_description": null,
                         "meta_tags": null,
-                        "num_products": 4,
+                        "num_products": 9,
                         "url": "https://parallax.shopk.it/category/decoracao-sala",
                         "permalink": "https://parallax.shopk.it/category/decoracao-sala",
                         "image": {
@@ -1834,16 +1802,13 @@ https://api.shopk.it/v1/category/1337
                             "full": "https://cdn.shopk.it/usercontent/parallax/media/images/276f8c112c887d830a8e3c585da5d93d.jpg"
                         },
                         "children": null
-                    }
-                ]
+                    },
+                ],
+                "created_at": "2019-10-02T17:03:56+01:00",
+                "updated_at": "2019-10-02T17:11:08+01:00"
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -1851,6 +1816,208 @@ https://api.shopk.it/v1/category/1337
                 "message":"Not found."
             }
 
+## POST Category [/category]
+
+### POST Category [POST]
+Create a category
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/category/' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title": "Rustic Spice Bowl Set", "price": 17.45, "categories": [44373]}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Title
+**active** | boolean | `true` `false` | Category is active
+**parent_id** | integer | | Category parent identifier
+**description** | string | | Description
+**handle** | string | | Handle
+**image** | string | | Image url
+**position** | integer | | Position
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Page title
+
+</div>
+
++ Request (application/json)
+
+        {
+          "title": "Prints"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 14534,
+                "title": "Prints",
+                "is_parent": false,
+                "is_child": false,
+                "parent": 0,
+                "parent_title": null,
+                "description": "",
+                "position": 0,
+                "active": true,
+                "handle": "prints",
+                "page_title": "Prints",
+                "meta_description": "",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/category/prints",
+                "permalink": "https://parallax.shopk.it/category/prints",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/assets/store/img/no-img.png",
+                    "square": "https://cdn.shopk.it/assets/store/img/no-img.png",
+                    "full": "https://cdn.shopk.it/assets/store/img/no-img.png"
+                },
+                "parents": null,
+                "children": null,
+                "created_at": "2019-10-02T17:11:07+01:00",
+                "updated_at": "2019-10-02T17:11:08+01:00"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT Category [/category/{id}]
+
+### PUT Category [PUT]
+Update a category
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/category/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d'{"reference": "SWB-001", "featured": true}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Title
+**active** | boolean | `true` `false` | Category is active
+**parent_id** | integer | | Category parent identifier
+**description** | string | | Description
+**handle** | string | | Handle
+**image** | string | | Image url
+**position** | integer | | Position
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Page title
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Category identifier
+
++ Request (application/json)
+
+        {
+            "description": "Mauris ut ex iaculis, rhoncus nisl sit amet, posuere nisl."
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 14534,
+                "title": "Prints",
+                "is_parent": false,
+                "is_child": false,
+                "parent": 0,
+                "parent_title": null,
+                "description": "Mauris ut ex iaculis, rhoncus nisl sit amet, posuere nisl.",
+                "position": 0,
+                "active": true,
+                "handle": "prints",
+                "page_title": "Prints",
+                "meta_description": "",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/category/prints",
+                "permalink": "https://parallax.shopk.it/category/prints",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/assets/store/img/no-img.png",
+                    "square": "https://cdn.shopk.it/assets/store/img/no-img.png",
+                    "full": "https://cdn.shopk.it/assets/store/img/no-img.png"
+                },
+                "parents": null,
+                "children": null,
+                "created_at": "2019-10-02T17:11:07+01:00",
+                "updated_at": "2019-10-02T17:11:09+01:00"
+            }
+
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## DELETE Category [/category/{id}]
+
+### DELETE Category [DELETE]
+Delete a category
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/category/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Category identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
 
 # Group Orders
 
@@ -1860,13 +2027,11 @@ https://api.shopk.it/v1/category/1337
 Get a list of orders or single order by id
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/order/1337
+curl -X GET 'https://api.shopk.it/v1/order/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/order?status=3&date_filter=last_month
+curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -1920,12 +2085,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
     + limit = `25` (optional, integer, `10`) ... Orders per page
     + coupon_code (optional, integer, `1337`) ... Coupon code
 
-+ Response 200
-
-    + Headers
-
-            Content-Length: 3224
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -2050,12 +2210,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                 ]
             }
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2063,12 +2218,7 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2082,11 +2232,10 @@ https://api.shopk.it/v1/order?status=3&date_filter=last_month
 Update an order
 
 ```bash
-curl -i -X PUT \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+curl -X PUT 'https://api.shopk.it/v1/order/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type:application/json' \
--d '{"paid":true, "status_alias":"sent"}' \
-https://api.shopk.it/v1/order/1337
+-d '{"paid":true, "status_alias":"sent"}'
 ```
 
 <div class="well">
@@ -2110,11 +2259,7 @@ Attributes | Type | Choices | Description
 
     + id (optional, integer, `1337`) ... Order identifier
 
-+ Request
-
-    + Headers
-
-            Content-Type: application/json
++ Request (application/json)
 
     + Body
 
@@ -2123,12 +2268,7 @@ Attributes | Type | Choices | Description
                 "status_alias": "sent"
             }
 
-+ Response 200
-
-    + Headers
-
-            Content-Length: 3224
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -2253,12 +2393,7 @@ Attributes | Type | Choices | Description
                 ]
             }
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2266,12 +2401,7 @@ Attributes | Type | Choices | Description
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2285,23 +2415,17 @@ Attributes | Type | Choices | Description
 Delete an order
 
 ```bash
-curl -i -X DELETE \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/order/1337
+curl -X DELETE 'https://api.shopk.it/v1/order/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
 
     + id (required, integer, `1337`) ... Order identifier
 
-+ Response 204
++ Response 204 (application/json)
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2309,12 +2433,7 @@ https://api.shopk.it/v1/order/1337
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2330,9 +2449,8 @@ https://api.shopk.it/v1/order/1337
 Get a list of shipping methods available for a country
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/shipping?country_code=prt
+curl -X GET 'https://api.shopk.it/v1/shipping?country_code=prt' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -2341,12 +2459,7 @@ https://api.shopk.it/v1/shipping?country_code=prt
     + weight (optional, integer, `100`) ... Order weight
     + value (optional, integer, `10`) ... Orders value
 
-+ Response 200
-
-   + Headers
-
-            Content-Length: 234
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -2365,12 +2478,7 @@ https://api.shopk.it/v1/shipping?country_code=prt
                 }
             ]
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2378,12 +2486,7 @@ https://api.shopk.it/v1/shipping?country_code=prt
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2400,9 +2503,8 @@ https://api.shopk.it/v1/shipping?country_code=prt
 Get a coupon by id or code. **Only one parameter is required.**
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/coupon/bajevolp
+curl -X GET 'https://api.shopk.it/v1/coupon/bajevolp' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -2410,12 +2512,7 @@ https://api.shopk.it/v1/coupon/bajevolp
     + id (optional, integer, `1337`) ... Coupon identifier
     + code (optional, string, `bajevolp`) ... Coupon code
 
-+ Response 200
-
-   + Headers
-
-            Content-Length: 289
-            Content-Type: application/json
++ Response 200 (application/json)
 
     + Body
 
@@ -2439,12 +2536,7 @@ https://api.shopk.it/v1/coupon/bajevolp
                 }
             ]
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2459,11 +2551,10 @@ https://api.shopk.it/v1/coupon/bajevolp
 Create a coupon
 
 ```bash
-curl -i -X POST \
--H "X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
+curl -X POST 'https://api.shopk.it/v1/coupon' \
+-H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
 -H 'Content-Type:application/json' \
--d '{"code":"bajevolp", "limit":"5", "value":"10", "type":"percent", "applies_to":"all_orders"}' \
-'https://api.shopk.it/v1/coupon'
+-d '{"code":"bajevolp", "limit":"5", "value":"10", "type":"percent", "applies_to":"all_orders"}'
 ```
 
 <div class="well">
@@ -2483,12 +2574,7 @@ Attributes | Type | Choices | Description
 
 </div>
 
-+ Response 201
-
-    + Headers
-
-            Content-Length: 289
-            Content-Type: application/json
++ Response 201 (application/json)
 
     + Body
 
@@ -2512,12 +2598,7 @@ Attributes | Type | Choices | Description
                 }
             ]
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2525,12 +2606,7 @@ Attributes | Type | Choices | Description
                 "message": "Bad request."
             }
 
-+ Response 409
-
-    + Headers
-
-            Content-Length: 30
-            Content-Type: application/json
++ Response 409 (application/json)
 
     + Body
 
@@ -2547,23 +2623,17 @@ Attributes | Type | Choices | Description
 Delete a coupon
 
 ```bash
-curl -i -X DELETE \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/coupon/1337
+curl -X DELETE 'https://api.shopk.it/v1/coupon/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
 
     + id (required, integer, `1337`) ... Coupon identifier
 
-+ Response 204
++ Response 204 (application/json)
 
-+ Response 400
-
-    + Headers
-
-            Content-Length: 26
-            Content-Type: application/json
++ Response 400 (application/json)
 
     + Body
 
@@ -2571,12 +2641,7 @@ https://api.shopk.it/v1/coupon/1337
                 "message": "Bad request."
             }
 
-+ Response 404
-
-    + Headers
-
-            Content-Length: 24
-            Content-Type: application/json
++ Response 404 (application/json)
 
     + Body
 
@@ -2594,9 +2659,8 @@ Webhooks allow you to build or set up integrations which subscribe to certain ev
 Get a list of webhook or single webhook by id
 
 ```bash
-curl -i -X GET \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/webhook/1337
+curl -X GET 'https://api.shopk.it/v1/webhook/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
@@ -2633,11 +2697,10 @@ https://api.shopk.it/v1/webhook/1337
 Create a webhook
 
 ```bash
-curl -i -X POST \
--H "X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
+curl -X POST 'https://api.shopk.it/v1/webhook' \
+-H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
 -H 'Content-Type:application/json' \
--d '{"url":"https://www.example.com/url", "event":"order_created"}' \
-'https://api.shopk.it/v1/webhook'
+-d '{"url":"https://www.example.com/url", "event":"order_created"}'
 ```
 
 <div class="well">
@@ -2683,9 +2746,8 @@ Attributes | Type | Description
 Delete a webhook
 
 ```bash
-curl -i -X DELETE \
--H 'X-API-KEY:f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
-https://api.shopk.it/v1/webhook/1337
+curl -X DELETE 'https://api.shopk.it/v1/webhook/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters

@@ -16,6 +16,10 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-02-19
+* Add `category` methods `POST`, `PUT`, `DELETE`
+* Update `category` `GET` `active`, `active`, `is_parent`, `page`, `limit`
+
 ##### 2021-01-27
 * Add `product` `GET` parameter `ids`
 
