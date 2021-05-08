@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-02-19T00:20:30+00:00</small>
+<small class="last-modified">Last Modified 2021-05-08T23:47:33+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -1437,7 +1437,6 @@ curl -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
 
 # Group Products Options
 
-
 ## GET Product Options [/product/{id}/option/{id_option}]
 
 ### GET Product Option [GET]
@@ -1727,7 +1726,7 @@ curl -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
 
 # Group Categories
 
-## Get Category [/category/{id,handle}]
+## Get Category [/category/{id,handle,active,is_parent,page,limit}]
 
 ### Get Category [GET]
 Get products categories by id or handle. **Only one parameter is required.**
@@ -2653,7 +2652,7 @@ curl -X DELETE 'https://api.shopk.it/v1/coupon/1337' \
 # Group Webhooks
 Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores. For more information visit [webhooks documentation](https://shopk.it/developers/webhooks).<br><br>Available webhook events: `order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_shipping` `order_delivered` `order_change_payment` `order_payment_failed` `order_returned` `order_pickup_available` `client_created` `client_updated` `client_deleted` `newsletter_subscribed` `newsletter_unsubscribed`<br>
 
-## Get Webhook [/Webhook{id}{?active,event}]
+## Get Webhook [/webhook/{id}{?active,event}]
 
 ### Get Webhook [GET]
 Get a list of webhook or single webhook by id
@@ -2753,6 +2752,126 @@ curl -X DELETE 'https://api.shopk.it/v1/webhook/1337' \
 + Parameters
 
     + id (required, integer, `1337`) ... Webhook identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+# Group Media
+
+## Get Media [/media/{?id,checksum,type,q,page,limit}]
+
+### Get Media [GET]
+Get a list of media files or single media file by id or hash.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/media/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Media identifier
+    + checksum (optional, string, `6afb72c3074212b171f472a1ade4c0f5`) ... Media md5 checksum
+    + type (optional, string, `all`)) ... Media type
+        + Values
+            + `all`
+            + `image`
+            + `file`
+    
+    + q (optional, string, `bowl`) ... Search for media
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `25`) ... Media per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 725,
+                "checksum": "3df623e086a7d6cd606c4b1043bd7150",
+                "file_name": "3df623e-010547-4778681bb73229d7d038c077c741b7bd.jpg",
+                "file_type": "image/jpeg",
+                "file_ext": ".jpg",
+                "file_size": 60.82,
+                "image_width": 600,
+                "image_height": 674,
+                "created_at": "2021-05-07 01:05:51",
+                "url": {
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/3df623e-010547-4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/3df623e-010547-4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/3df623e-010547-4778681bb73229d7d038c077c741b7bd.jpg"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## Post Media [/media/]
+
+### Post Media [POST]
+Upload a file to media, via url or base64 encoded.<br><br>Files are processed asynchronous, there is no body response.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/media/images' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"url": "https://cdn.shopk.it/usercontent/parallax/media/images/3df623e-010547-4778681bb73229d7d038c077c741b7bd.jpg"}'
+
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**url** | string | Media url
+**file** | string | Media base64 encoded
+
+</div>
+
++ Response 201 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
+## Delete Media [/media/{id,checksum}]
+
+### Delete Media [DELETE]
+Delete a media file by id or hash. **Only one parameter is required.**
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/media/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Media identifier
+    + checksum (optional, string, `6afb72c3074212b171f472a1ade4c0f5`) ... Media md5 checksum
 
 + Response 204 (application/json)
 
