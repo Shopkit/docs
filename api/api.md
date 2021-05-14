@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-05-08T23:47:33+01:00</small>
+<small class="last-modified">Last Modified 2021-05-14T00:40:07+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -235,13 +235,13 @@ Response: `200 OK`
 
 # Group Store
 
-## Get Store [/]
+## Get Store [/store]
 
 ### Get Store [GET]
 Get Store info. **No parameters**
 
 ```bash
-curl -X GET 'https://api.shopk.it/v1/' \
+curl -X GET 'https://api.shopk.it/v1/store' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
@@ -253,7 +253,7 @@ curl -X GET 'https://api.shopk.it/v1/' \
                 "username": "parallax",
                 "name": "Parallax",
                 "logo": null,
-                "description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simples e rápido. Em 5 minutos estás pronto para começar a vender os teus produtos on-line.",
+                "description": "A Shopkit é um serviço que te permite criar a tua loja online de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simples e rápido. Em 5 minutos estás pronto para começar a vender os teus produtos online.",
                 "notice": "Portes grátis para encomendas superiores a 59€",
                 "facebook": "https://www.facebook.com/shopkit",
                 "twitter": "https://twitter.com/shopkit_pt",
@@ -270,12 +270,13 @@ curl -X GET 'https://api.shopk.it/v1/' \
                 "latitude": "39.818466068593935",
                 "longitude": "-7.491968556808545",
                 "currency": "EUR",
-                "custom_css": null,
-                "custom_js": null,
-                "footer_info": "Os produtos listados são apenas de apresentação e não se encontram á venda.",
+                "footer_info": "Os produtos listados são apenas de apresentação e não se encontram à venda.",
                 "page_title": "Parallax",
                 "meta_description": "A Shopkit é um serviço que te permite criar a tua loja on-line de forma fácil, prática e adequada ao teu tipo de negócio. O processo é simpl",
                 "meta_tags": null,
+                "basecolor_contrast": "#FFFFFF",
+                "secondarycolor": null,
+                "secondarycolor_contrast": "#FFFFFF",
                 "settings": {
                     "cart": {
                         "users_registration": "optional",
@@ -295,6 +296,32 @@ curl -X GET 'https://api.shopk.it/v1/' \
                             "url": "https://parallax.shopk.it/page/politica-de-privacidade",
                             "handle": "politica-de-privacidade"
                         }
+                    },
+                    "order": {
+                        "status_cancel": null
+                    },
+                    "category": {
+                        "default_order": "position"
+                    },
+                    "categories": {
+                        "sorting": "position",
+                        "per_page": null
+                    },
+                    "abandoned": {
+                        "carts_automatic_notifications": false,
+                        "carts_client_notification": null,
+                        "carts_notification_type": null,
+                        "carts_send_after": null,
+                        "carts_coupon": null,
+                        "carts_email_subject": "{{ cart.client_name|first_word }}, deixou produtos no seu carrinho",
+                        "carts_email_lead": "Reparámos que deixou produtos no seu carrinho de compras. Finalize a encomenda para garantir os seus produtos."
+                    },
+                    "products": {
+                        "per_page_home": null,
+                        "per_page_catalog": null
+                    },
+                    "brands": {
+                        "per_page": null
                     }
                 },
                 "url": "https://parallax.shopk.it/",
@@ -312,8 +339,8 @@ curl -X GET 'https://api.shopk.it/v1/' \
                         {
                             "menu_text": "Sobre nós",
                             "menu_type": "menu_page",
-                            "menu_url": "https://parallax.shopk.it/sobre-nos",
-                            "menu_item": "sobre-nos",
+                            "menu_url": "https://parallax.shopk.it/about",
+                            "menu_item": "about",
                             "target_blank": false
                         },
                         {
@@ -326,22 +353,22 @@ curl -X GET 'https://api.shopk.it/v1/' \
                         {
                             "menu_text": "Promoções",
                             "menu_type": "menu_page",
-                            "menu_url": "https://parallax.shopk.it/promocoes",
-                            "menu_item": "promocoes",
+                            "menu_url": "https://parallax.shopk.it/sales",
+                            "menu_item": "sales",
                             "target_blank": false
                         },
                         {
                             "menu_text": "Novidades",
                             "menu_type": "menu_page",
-                            "menu_url": "https://parallax.shopk.it/novidades",
-                            "menu_item": "novidades",
+                            "menu_url": "https://parallax.shopk.it/new",
+                            "menu_item": "new",
                             "target_blank": false
                         },
                         {
                             "menu_text": "Contactos",
                             "menu_type": "menu_page",
-                            "menu_url": "https://parallax.shopk.it/contatos",
-                            "menu_item": "contatos",
+                            "menu_url": "https://parallax.shopk.it/contact",
+                            "menu_item": "contact",
                             "target_blank": false
                         }
                     ],
@@ -377,7 +404,7 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     },
                     "multibanco": {
                         "active": true,
-                        "message": "EInstruções método de pagamento Multibanco.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Multibanco.",
                         "description": "O método de pagamento mais utilizado pelos portugueses para pagamentos online.",
                         "default": true,
                         "gateway": "stripe",
@@ -402,7 +429,7 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     "paypal": {
                         "active": true,
                         "email": "info@shopk.it",
-                        "message": "Instruções método de pagamento Paypal.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Paypal.",
                         "description": "Pague de forma rápida e segura usando a sua conta Paypal.",
                         "default": false,
                         "gateway": "paypal",
@@ -414,9 +441,9 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     },
                     "bank_transfer": {
                         "active": true,
-                        "message": "Instruções método de pagamento Transferência Bancária.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Transferência Bancária.",
                         "description": "Pague por transferência bancária ou interbancária.",
-                        "default": true,
+                        "default": false,
                         "gateway": "manual",
                         "method": "bank_transfer",
                         "alias": "bank_transfer",
@@ -426,8 +453,8 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     "on_delivery": {
                         "active": true,
                         "value": 0,
-                        "message": "Instruções método de pagamento À Cobrança",
-                        "description": "Pagamento contra reembolso. Acresce aos portes de envio.",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento À Cobrança.",
+                        "description": "Pagamento contra reembolso.",
                         "default": false,
                         "gateway": "manual",
                         "method": "on_delivery",
@@ -437,7 +464,7 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     },
                     "pick_up": {
                         "active": true,
-                        "message": "Instruções método de pagamento Levantamento nas instalações",
+                        "message": "Este texto é personalizável e apenas aparecerá aos clientes que seleccionarem o método de pagamento Levantamento nas instalações.",
                         "description": "Levante a sua encomenda nas nossas instalações. Não paga portes de envio.",
                         "default": false,
                         "gateway": "manual",
@@ -457,8 +484,20 @@ curl -X GET 'https://api.shopk.it/v1/' \
                         "alias": "custom",
                     }
                 },
-                "category_default_order": null,
-                "categories_sorting": null,
+                "locations": [
+                    {
+                        "id": "469",
+                        "title": "Morada Principal",
+                        "name": "Shopkit",
+                        "address": "Avenida do Empresário, 1",
+                        "address_extra": "S1.19",
+                        "city": "Castelo Branco",
+                        "zip_code": "6000-767",
+                        "country": "Portugal - Continental",
+                        "country_code": "PRT",
+                        "phone": "+351919873646"
+                    }
+                ],
                 "domain": "parallax.shopk.it",
                 "is_ssl": true,
                 "assets": {
@@ -473,6 +512,8 @@ curl -X GET 'https://api.shopk.it/v1/' \
                     "https://cdn.shopk.it/usercontent/parallax/media/images/c788681a62eff02c640765d3c215c920.jpg",
                     "https://cdn.shopk.it/usercontent/parallax/media/images/f669d550743b2e27a81c22812b270101.jpg"
                 ],
+                "featured_blocks": null,
+                "dark_mode": null,
                 "taxes_included": true
             }
 

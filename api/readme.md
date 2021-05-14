@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-05-14
+* Add `GET /store` to replace deprecated `GET /`
+
 ##### 2021-05-09
 * Add `media` methods `GET`, `POST`, `DELETE`
 
