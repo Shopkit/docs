@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-05-25
+* Add header `X-Total-Count`
+
 ##### 2021-05-14
 * Add `GET /store` to replace deprecated `GET /`
 

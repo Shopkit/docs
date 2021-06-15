@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-05-14T00:40:07+01:00</small>
+<small class="last-modified">Last Modified 2021-05-25T01:20:50+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -81,6 +81,14 @@ You can specify further pages with the `page` parameter. For some resources, you
 Note that omitting the `page` parameter will return the first page.
 
 Note that for technical reasons not all endpoints respect the `limit` parameter.
+
+#### Total count
+All resources with pagination have the total count of items added as an header `X-Total-Count`.
+
+```http
+X-Total-Count: 1000
+```
+
 
 ### Errors
 There are 3 possible types of client errors on API calls: **400**, **401** and **404**.
