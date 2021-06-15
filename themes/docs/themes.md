@@ -315,7 +315,7 @@ When calling `products` function with the filter `search` it's returned an array
 
 | Attributes   | Type    | Choices                                                                                          | Description                                                       |
 |--------------|---------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| `order`      | string  | `title`, `newest`, `sales`, `views`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below                            |
+| `order`      | string  | `title`, `newest`, `sales`, `price_asc`, `price_desc`, `featured`, `position`, `random` | Product order options, see table below                            |
 | `category`   | mixed   |                                                                                                  | Product category identifier or an array of categories identifiers |
 | `paginate`   | string  | `true`, `false`                                                                                  | Enable or disable pagination. Default: `true`                     |
 | `limit`      | integer |                                                                                                  | The number of products to return. Default: `9`                    |
@@ -1242,4 +1242,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2020-10-29T15:24:34+00:00</small>
+<small class="last-modified">Last Modified 2021-06-07T10:42:15+01:00</small>

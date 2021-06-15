@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2021-06-07
+* Remove product `order:views`
+
 ##### 2020-10-29
 * Add `store.products_per_page_home` and `store.products_per_page_catalog`
 
