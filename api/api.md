@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-05-25T01:20:50+01:00</small>
+<small class="last-modified">Last Modified 2021-07-07T16:59:16+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -607,6 +607,8 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                 "video_url": "",
                 "file": null,
                 "tax": 0,
+                "taxable": false,
+                "reduced_rate": null,
                 "meta_description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fir",
                 "meta_tags": "",
                 "handle": "rustic-spice-bowl-set",
@@ -884,7 +886,9 @@ Attributes | Type | Choices | Description
 **excerpt** | string | | Excerpt (short description)
 **video_url** | string | | Video url, youtube or vimeo url
 **file** | string | | File url
-**tax** | float | | Tax
+**tax** | float | | Tax (**deprecated** in favor of taxable)
+**taxable** | boolean | | Product is taxable
+**reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
@@ -940,6 +944,8 @@ Attributes | Type | Choices | Description
                 "video_url": null,
                 "file": null,
                 "tax": 0,
+                "taxable": false,
+                "reduced_rate": null,
                 "meta_description": null,
                 "meta_tags": null,
                 "handle": "rustic-spice-bowl-set",
@@ -1046,7 +1052,9 @@ Attributes | Type | Choices | Description
 **excerpt** | string | | Excerpt (short description)
 **video_url** | string | | Video url, youtube or vimeo url
 **file** | string | | File url
-**tax** | float | | Tax
+**tax** | float | | Tax (**deprecated** in favor of taxable)
+**taxable** | boolean | | Product is taxable
+**reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
@@ -1102,6 +1110,8 @@ Attributes | Type | Choices | Description
                 "video_url": null,
                 "file": null,
                 "tax": 0,
+                "taxable": false,
+                "reduced_rate": null,
                 "meta_description": null,
                 "meta_tags": null,
                 "handle": "rustic-spice-bowl-set-2",
