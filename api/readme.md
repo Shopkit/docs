@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-07-16
+* Add `product/search`
+
 ##### 2021-07-07
 * Add product `product.taxable`, `product.reduced_rate`
  

@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-07-07T16:59:16+01:00</small>
+<small class="last-modified">Last Modified 2021-07-16T17:38:55+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -43,9 +43,9 @@ X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c
 All API requests are made to https://api.shopk.it/ and all requests are served over **HTTPS**. The current version is **v1**.
 
 ### Schema
-The API only supports JSON. <small class="text-light">(2005 called and wants its XML back)</small>
+The API only supports JSON. <small class="text-light">(2005 called and wants its XML back)</small>.
 
-All timestamps are returned in ISO 8601 format: `YYYY-MM-DDTHH:MM:SS±HH:MM`
+All timestamps are returned in ISO 8601 format: `YYYY-MM-DDTHH:MM:SS±HH:MM`.
 
 ### HTTP Verbs
 Where possible, the API strives to use appropriate HTTP verbs for each action.
@@ -243,10 +243,10 @@ Response: `200 OK`
 
 # Group Store
 
-## Get Store [/store]
+## GET store [/store]
 
-### Get Store [GET]
-Get Store info. **No parameters**
+### GET store [GET]
+Get store info. **No parameters**
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/store' \
@@ -528,10 +528,10 @@ curl -X GET 'https://api.shopk.it/v1/store' \
 
 # Group Products
 
-## GET Product [/product{?id,ids,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
+## GET product [/product{?id,ids,handle,category,status,status_alias,reference,featured,new,q,page,limit}]
 
-### GET Product [GET]
-Get a list of products or single product by id or handle
+### GET product [GET]
+Get a list of products or single product by id or handle.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/product/1337' \
@@ -850,10 +850,10 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                 "message":"Not found."
             }
 
-## POST Product [/product]
+## POST product [/product]
 
-### POST Product [POST]
-Create a product
+### POST product [POST]
+Create a product.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/product/' \
@@ -1016,10 +1016,10 @@ Attributes | Type | Choices | Description
                 "message":"Not found."
             }
 
-## PUT Product [/product/{id}]
+## PUT product [/product/{id}]
 
-### PUT Product [PUT]
-Update a product
+### PUT product [PUT]
+Update a product.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/product/' \
@@ -1182,10 +1182,10 @@ Attributes | Type | Choices | Description
                 "message":"Not found."
             }
 
-## DELETE Product [/product/{id}]
+## DELETE product [/product/{id}]
 
-### DELETE Product [DELETE]
-Delete a Product
+### DELETE product [DELETE]
+Delete a product.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/product/1337' \
@@ -1214,13 +1214,314 @@ curl -X DELETE 'https://api.shopk.it/v1/product/1337' \
                 "message":"Not found."
             }
 
+## GET product search [/product/search{?query,fields,page,limit}]
 
-# Group Products Options Group
+### GET product search [GET]
+Get a list of products from a search query and filtering fields.
 
-## GET Product Options Group [/product/{id}/option_group/{id_option_group}]
+```bash
+curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
 
-### GET Product Options Group [GET]
-Get a list of a product options group or a single product option group by id
++ Parameters
+
+    + query (required, string, `Rustic`) ... search query
+    + fields (optional, string, `title,description`) ... product fields to search, comma separated
+        + Values
+            + `title`
+            + `description`
+            + `handle`
+            + `brand`
+            + `options`
+            + `categories`
+            + `tags`
+            + `reference`
+            + `barcode`
+
+    + page (optional, integer, `1`) ... page number
+    + limit = `25` (optional, integer, `10`) ... products per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 212322,
+                "title": "Rustic Spice Bowl Set",
+                "reference": "",
+                "barcode": null,
+                "price": 40.73,
+                "price_formatted": "40,73 €",
+                "price_promo": null,
+                "price_promo_formatted": null,
+                "promo_show_percentage": false,
+                "price_promo_percentage": null,
+                "price_on_request": false,
+                "created_at": "2020-11-27T15:36:57+00:00",
+                "status": 1,
+                "status_alias": "active",
+                "position": 0,
+                "shipping": 0,
+                "shipping_alone": false,
+                "featured": false,
+                "new": true,
+                "is_promotion": false,
+                "description": "<p>This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fired them and then glazed them in contrasting shades of white and dark turquoise. Pieces then went back into the kiln and were high fired, giving them strength and durability. These bowls are ideal for spices, dukkah, oil, chopped chilli or garlic.&nbsp;<br /><br />In many of my ceramic pieces you will find slight imperfections and marks left by the handmade process. These contribute to the uniqueness and beauty of the forms and are simply part of the character of the individual piece.<br /><br />Larger size (x2) - 8cm (3\") across, 5cm (2\") deep<br />Mid size - 7cm (2.5\") across, 5cm (2\") deep<br />Small size - 5cm (2\") across, 4cm (1.5\") deep<br /><br />Please Note : These items are MADE TO ORDER and may vary slightly from the image shown. Current make time is 2-3 weeks.&nbsp;<br /><br />*food, oven and dishwasher safe<br />*not suitable for microwave</p>",
+                "excerpt": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
+                "video_url": "",
+                "file": null,
+                "tax": 0,
+                "taxable": false,
+                "reduced_rate": null,
+                "meta_description": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy stoneware clay. After shaping and drying, I bisque fir",
+                "meta_tags": "",
+                "handle": "rustic-spice-bowl-set",
+                "page_title": "Rustic Spice Bowl Set",
+                "weight": 0,
+                "hits": 0,
+                "sales": 0,
+                "variants_same_values": false,
+                "updated_at": "2020-11-27T15:36:57+00:00",
+                "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
+                "promo": false,
+                "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "add_cart_url": "https://parallax.shopk.it/cart/add/rustic-spice-bowl-set",
+                "wishlist": {
+                    "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set",
+                    "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set"
+                },
+                "permalink": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
+                "video_embed_url": false,
+                "image": {
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                },
+                "images": [
+                    {
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/f519f86-17d23f7b534bf365580989363da328d2.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/f519f86-17d23f7b534bf365580989363da328d2.jpg"
+                    },
+                    {
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/0bb2c71-7d2fe8d66dd9925ac72a3112d691f352.jpg"
+                    },
+                    {
+                        "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg",
+                        "full": "https://cdn.shopk.it/usercontent/parallax/media/images/717897d-ff2216454ebbf8ca2727335ecacbc472.jpg"
+                    }
+                ],
+                "categories": [
+                    {
+                        "id": 44355,
+                        "parent": 0,
+                        "active": true,
+                        "title": "Cozinha",
+                        "description": "",
+                        "handle": "cozinha",
+                        "url": "https://parallax.shopk.it/category/cozinha",
+                        "image": []
+                    }
+                ],
+                "brand": null,
+                "tags": [],
+                "options": [
+                    {
+                        "id": 363364,
+                        "id_variant_1": 206585,
+                        "id_variant_2": 206587,
+                        "id_variant_3": null,
+                        "title": "Small bowl / White",
+                        "price": 40.73,
+                        "price_formatted": "40,73 €",
+                        "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
+                        "price_on_request": false,
+                        "stock": 88,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": "",
+                        "barcode": null,
+                        "active": true,
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363364",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363364",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363364"
+                        }
+                    },
+                    {
+                        "id": 363365,
+                        "id_variant_1": 206585,
+                        "id_variant_2": 206588,
+                        "id_variant_3": null,
+                        "title": "Small bowl / Dark turquoise",
+                        "price": 40.73,
+                        "price_formatted": "40,73 €",
+                        "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
+                        "price_on_request": false,
+                        "stock": 94,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": "",
+                        "barcode": null,
+                        "active": true,
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363365",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363365",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363365"
+                        }
+                    },
+                    {
+                        "id": 363366,
+                        "id_variant_1": 206586,
+                        "id_variant_2": 206587,
+                        "id_variant_3": null,
+                        "title": "Big bowl / White",
+                        "price": 45.73,
+                        "price_formatted": "45,73 €",
+                        "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
+                        "price_on_request": false,
+                        "stock": 100,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": "",
+                        "barcode": null,
+                        "active": true,
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363366",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363366",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363366"
+                        }
+                    },
+                    {
+                        "id": 363367,
+                        "id_variant_1": 206586,
+                        "id_variant_2": 206588,
+                        "id_variant_3": null,
+                        "title": "Big bowl / Dark turquoise",
+                        "price": 45.73,
+                        "price_formatted": "45,73 €",
+                        "price_promo": null,
+                        "price_promo_formatted": null,
+                        "promo": false,
+                        "price_promo_percentage": null,
+                        "price_on_request": false,
+                        "stock": 100,
+                        "shipping": 0,
+                        "weight": 0,
+                        "reference": "",
+                        "barcode": null,
+                        "active": true,
+                        "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set?option=363367",
+                        "image": {
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/da84db6-472c46da6a786edb5b67cf338c2b9c58.jpg"
+                        },
+                        "wishlist": {
+                            "add_url": "https://parallax.shopk.it/wishlist/add/rustic-spice-bowl-set?option=363367",
+                            "remove_url": "https://parallax.shopk.it/wishlist/remove/rustic-spice-bowl-set?option=363367"
+                        }
+                    }
+                ],
+                "option_groups": [
+                    {
+                        "id": 62775,
+                        "title": "Size",
+                        "options": [
+                            {
+                                "id": 206585,
+                                "title": "Small bowl"
+                            },
+                            {
+                                "id": 206586,
+                                "title": "Big bowl"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 62776,
+                        "title": "Color",
+                        "options": [
+                            {
+                                "id": 206587,
+                                "title": "White"
+                            },
+                            {
+                                "id": 206588,
+                                "title": "Dark turquoise"
+                            }
+                        ]
+                    }
+                ],
+                "stock": {
+                    "stock_enabled": true,
+                    "stock_qty": 88,
+                    "stock_backorder": true,
+                    "stock_show": true,
+                    "stock_sold_single": true,
+                    "stock_notify": 10
+                },
+                "rating": {
+                    "total_reviews": 0,
+                    "average_rating": 0,
+                    "max_rating": 0,
+                    "min_rating": 0
+                },
+                "custom_fields": null,
+                "tabs": null
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Product Option Groups
+
+## GET product option group [/product/{id}/option_group/{id_option_group}]
+
+### GET product option group [GET]
+Get a list of a product option groups or a single product option group by id.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/product/212322/option_group' \
@@ -1286,10 +1587,10 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option_group/62775' \
                 "message":"Not found."
             }
 
-## POST Product Option Group [/product/{id}/option_group]
+## POST product option group [/product/{id}/option_group]
 
-### POST Product Option Group [POST]
-Create a product option group
+### POST product option group [POST]
+Create a product option group.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/product/212322/option_group' \
@@ -1372,10 +1673,10 @@ Attributes | Type | Description
                 "message":"Not found."
             }
 
-## PUT Product Option Group [/product/{id}/option_group/{id_option_group}]
+## PUT product option group [/product/{id}/option_group/{id_option_group}]
 
-### PUT Product Option Group [PUT]
-Update a product option group
+### PUT product option group [PUT]
+Update a product option group.
 
 ```bash
 curl -X PUT 'https://api.shopk.it/v1/product/212322/option_group/62779' \
@@ -1460,10 +1761,10 @@ Attributes | Type | Description
             }
 
 
-## DELETE Product Option Group [/product/{id}/option_group/{id_option_group}]
+## DELETE product option group [/product/{id}/option_group/{id_option_group}]
 
-### DELETE Product Option Group [DELETE]
-Delete a product options group
+### DELETE product option group [DELETE]
+Delete a product option group.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
@@ -1494,12 +1795,12 @@ curl -X DELETE 'https://api.shopk.it/v1/product/212322/option_group/62779' \
             }
 
 
-# Group Products Options
+# Group Product Options
 
-## GET Product Options [/product/{id}/option/{id_option}]
+## GET Product Option [/product/{id}/option/{id_option}]
 
 ### GET Product Option [GET]
-Get a list of a product options or a single product option by id
+Get a list of a product options or a single product option by id.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/product/212322/option' \
@@ -1660,7 +1961,7 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
 ## PUT Product Option [/product/{id}/option/{id_option}]
 
 ### PUT Product Option [PUT]
-Update a product option
+Update a product option.
 
 ```bash
 curl -X PUT 'https://api.shopk.it/v1/product/212322/option/363364' \
@@ -1752,7 +2053,7 @@ Attributes | Type | Choices | Description
 ## DELETE Product Option [/product/{id}/option/{id_option}]
 
 ### DELETE Product Option [DELETE]
-Delete a product options
+Delete a product option.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
@@ -1785,9 +2086,9 @@ curl -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
 
 # Group Categories
 
-## Get Category [/category/{id,handle,active,is_parent,page,limit}]
+## GET Category [/category/{id,handle,active,is_parent,page,limit}]
 
-### Get Category [GET]
+### GET Category [GET]
 Get products categories by id or handle. **Only one parameter is required.**
 
 ```bash
@@ -1877,7 +2178,7 @@ curl -X GET 'https://api.shopk.it/v1/category/1337' \
 ## POST Category [/category]
 
 ### POST Category [POST]
-Create a category
+Create a category.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/category/' \
@@ -1960,7 +2261,7 @@ Attributes | Type | Choices | Description
 ## PUT Category [/category/{id}]
 
 ### PUT Category [PUT]
-Update a category
+Update a category.
 
 ```bash
 curl -X PUT 'https://api.shopk.it/v1/category/1337' \
@@ -2048,7 +2349,7 @@ Attributes | Type | Choices | Description
 ## DELETE Category [/category/{id}]
 
 ### DELETE Category [DELETE]
-Delete a category
+Delete a category.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/category/1337' \
@@ -2077,12 +2378,13 @@ curl -X DELETE 'https://api.shopk.it/v1/category/1337' \
                 "message":"Not found."
             }
 
+
 # Group Orders
 
-## Get Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
+## GET Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
 
-### Get Order [GET]
-Get a list of orders or single order by id
+### GET Order [GET]
+Get a list of orders or single order by id.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/order/1337' \
@@ -2284,10 +2586,10 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "message":"Not found."
             }
 
-## Put Order [/order/{id}]
+## PUT Order [/order/{id}]
 
-### Put Order [PUT]
-Update an order
+### PUT Order [PUT]
+Update an order.
 
 ```bash
 curl -X PUT 'https://api.shopk.it/v1/order/1337' \
@@ -2467,10 +2769,10 @@ Attributes | Type | Choices | Description
                 "message":"Not found."
             }
 
-## Delete Order [/order/{id}/]
+## DELETE Order [/order/{id}/]
 
-### Delete Order [DELETE]
-Delete an order
+### DELETE Order [DELETE]
+Delete an order.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/order/1337' \
@@ -2499,12 +2801,13 @@ curl -X DELETE 'https://api.shopk.it/v1/order/1337' \
                 "message":"Not found."
             }
 
+
 # Group Shipping
 
-## Get Shipping [/shipping{?country_code,weight,value}]
+## GET Shipping [/shipping{?country_code,weight,value}]
 
-### Get Shipping [GET]
-Get a list of shipping methods available for a country
+### GET Shipping [GET]
+Get a list of shipping methods available for a country.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/shipping?country_code=prt' \
@@ -2553,11 +2856,11 @@ curl -X GET 'https://api.shopk.it/v1/shipping?country_code=prt' \
             }
 
 
-# Group Coupon
+# Group Coupons
 
-## Get Coupon [/coupon{?id,code}]
+## GET Coupon [/coupon{?id,code}]
 
-### Get Coupon [GET]
+### GET Coupon [GET]
 Get a coupon by id or code. **Only one parameter is required.**
 
 ```bash
@@ -2603,10 +2906,10 @@ curl -X GET 'https://api.shopk.it/v1/coupon/bajevolp' \
             }
 
 
-## Post Coupon [/coupon/]
+## POST Coupon [/coupon/]
 
-### Post Coupon [POST]
-Create a coupon
+### POST Coupon [POST]
+Create a coupon.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/coupon' \
@@ -2675,10 +2978,10 @@ Attributes | Type | Choices | Description
 + Response 409
 
 
-## Delete Coupon [/coupon/{id}]
+## DELETE Coupon [/coupon/{id}]
 
-### Delete Coupon [DELETE]
-Delete a coupon
+### DELETE Coupon [DELETE]
+Delete a coupon.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/coupon/1337' \
@@ -2711,10 +3014,10 @@ curl -X DELETE 'https://api.shopk.it/v1/coupon/1337' \
 # Group Webhooks
 Webhooks allow you to build or set up integrations which subscribe to certain events on Shopkit stores. For more information visit [webhooks documentation](https://shopk.it/developers/webhooks).<br><br>Available webhook events: `order_canceled` `order_deleted` `order_created` `order_updated` `order_paid` `order_sent` `order_change_status` `order_invoice` `order_shipping` `order_delivered` `order_change_payment` `order_payment_failed` `order_returned` `order_pickup_available` `client_created` `client_updated` `client_deleted` `newsletter_subscribed` `newsletter_unsubscribed`<br>
 
-## Get Webhook [/webhook/{id}{?active,event}]
+## GET Webhook [/webhook/{id}{?active,event}]
 
-### Get Webhook [GET]
-Get a list of webhook or single webhook by id
+### GET Webhook [GET]
+Get a list of webhooks or single webhook by id.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/webhook/1337' \
@@ -2749,10 +3052,10 @@ curl -X GET 'https://api.shopk.it/v1/webhook/1337' \
                 "message":"Not found."
             }
 
-## Post Webhook [/webhook/]
+## POST Webhook [/webhook/]
 
-### Post Webhook [POST]
-Create a webhook
+### POST Webhook [POST]
+Create a webhook.
 
 ```bash
 curl -X POST 'https://api.shopk.it/v1/webhook' \
@@ -2798,10 +3101,10 @@ Attributes | Type | Description
             }
 
 
-## Delete Webhook [/webhook/{id}]
+## DELETE Webhook [/webhook/{id}]
 
-### Delete Webhook [DELETE]
-Delete a webhook
+### DELETE Webhook [DELETE]
+Delete a webhook.
 
 ```bash
 curl -X DELETE 'https://api.shopk.it/v1/webhook/1337' \
@@ -2830,11 +3133,12 @@ curl -X DELETE 'https://api.shopk.it/v1/webhook/1337' \
                 "message":"Not found."
             }
 
+
 # Group Media
 
-## Get Media [/media/{?id,checksum,type,q,page,limit}]
+## GET Media [/media/{?id,checksum,type,q,page,limit}]
 
-### Get Media [GET]
+### GET Media [GET]
 Get a list of media files or single media file by id or hash.
 
 ```bash
@@ -2885,9 +3189,9 @@ curl -X GET 'https://api.shopk.it/v1/media/1337' \
                 "message":"Not found."
             }
 
-## Post Media [/media/]
+## POST Media [/media/]
 
-### Post Media [POST]
+### POST Media [POST]
 Upload a file to media, via url or base64 encoded.<br><br>Files are processed asynchronous, there is no body response.
 
 ```bash
