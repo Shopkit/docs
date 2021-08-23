@@ -59,10 +59,27 @@ All webhooks deliver the payload in `application/json` as the body of the HTTP P
 
 #### Headers
 
-The HTTP requests to your webhook's URL will contain a special header `X-Shopkit-Event`, with the name of the event that was triggered.
+The HTTP requests to your webhook's URL will contain a special headers.
 
 We also send the `User-Agent` for all requests as `Shopkit-Webhook`.
 
+| Name                        | Description                              |
+|-----------------------------|------------------------------------------|
+| `X-Platform`                | Plaform identifier. `Shopkit`            |
+| `X-Shopkit-Environment`     | Plaform Environment. `Production`        |
+| `X-Shopkit-Event`           | The name of the event that was triggered |
+| `X-Webhook-Resource-Origin` | The origin that triggered the event      |
+
+The header `X-Webhook-Resource-Origin`, possible values are:
+
+| Name         | Description                                                      |
+|--------------|------------------------------------------------------------------|
+| `api`        | When origin is the api                                           |
+| `import`     | When origin is an import (ex: product csv import)                |
+| `backoffice` | When origin is the backoffice                                    |
+| `storefront` | When origin is the store front                                   |
+| `duplicate`  | When origin is a duplicate action (ex: product duplicate)        |
+| `process`    | When origin is processed by a background action (ex: a callback) |
 
 #### Orders
 
@@ -176,9 +193,9 @@ Content-Length: 3484
                 "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                 "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                 "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
                 }
             },
             {
@@ -196,9 +213,9 @@ Content-Length: 3484
                 "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                 "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                 "image": {
-                    "thumb": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
-                    "square": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
-                    "full": "https://drwfxyu78e9uq.cloudfront.net/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
+                    "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
+                    "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
+                    "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
                 }
             }
         ]
@@ -293,4 +310,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2019-10-29T12:05:33+00:00</small>
+<small class="last-modified">Last Modified 2021-08-23T18:20:01+01:00</small>
