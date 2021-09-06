@@ -46,6 +46,7 @@ When configuring a webhook, you can choose which events you would like to receiv
 | `order_created`          | When an order is created                                    |
 | `order_deleted`          | When an order is deleted                                    |
 | `order_pickup_available` | When an order status is changed to `pickup_available`       |
+| `order_waiting_shipment` | When an order status is changed to `waiting_shipment`       |
 | `client_updated`         | When a client is updated                                    |
 | `client_deleted`         | When a client is deleted                                    |
 | `client_created`         | When a client is created                                    |
@@ -310,4 +311,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2021-08-23T18:20:01+01:00</small>
+<small class="last-modified">Last Modified 2021-09-06T09:16:32+01:00</small>

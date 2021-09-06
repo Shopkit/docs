@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2021-09-06
+* Add `order_waiting_shipment` event
+
 ##### 2021-08-23
 * Add `X-Webhook-Resource-Origin` header
 
