@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2021-09-06
+* Add orders status `waiting_shipment`
+
 ##### 2021-07-16
 * Add `product/search`
 
