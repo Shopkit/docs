@@ -911,7 +911,6 @@ This data is only available on the `product.tpl` template
 | `product.file`                              | Product file attachment URL                                                |
 | `product.tax`                               | Product tax cost                                                           |
 | `product.weight`                            | Product weight                                                             |
-| `product.hits`                              | Product hits                                                               |
 | `product.sales`                             | Product number of sales                                                    |
 | `product.meta_description`                  | Product meta description                                                   |
 | `product.meta_tags`                         | Product meta tags                                                          |
@@ -1248,4 +1247,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2021-06-07T10:42:15+01:00</small>
+<small class="last-modified">Last Modified 2021-11-03T18:39:11+00:00</small>
