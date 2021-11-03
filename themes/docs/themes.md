@@ -977,8 +977,14 @@ This data is only available on the `product.tpl` template
 | Name                                        | Description                                                         |
 |---------------------------------------------|---------------------------------------------------------------------|
 | `product.option_groups.title`               | Product option group title                                          |
-| `product.option_groups.options`             | Array with `product.options`                                        |
+| `product.option_groups.options`             | Array with product option groups (variants)                         |
 
+`product.option_groups.options`
+
+| Name                                        | Description                                                         |
+|---------------------------------------------|---------------------------------------------------------------------|
+| `product.option_groups.options.id`          | Product option group variant id                                     |
+| `product.option_groups.options.title`       | Product option group variant title                                  |
 
 `product.wishlist`
 
