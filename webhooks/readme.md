@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2022-01-31
+* Add events `product_created`, `product_updated`, `product_deleted`, `product_updated_stock`
+
 ##### 2021-09-06
 * Add `order_waiting_shipment` event
 
