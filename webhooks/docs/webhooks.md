@@ -133,7 +133,23 @@ Content-Length: 3484
         "custom_field": "",
         "tracking_code": "",
         "tracking_url": "",
+        "expected_arrival_from":null,
+        "expected_arrival_until":null,
         "shipping_url": "",
+        "tax_exemption":null,
+        "tax_settings": {
+            "location":"73",
+            "included":"1",
+            "validate_vies":null,
+            "customer_country":"1",
+            "use_billing_address":null,
+            "geolocation":null,
+            "automate_eu":null,
+            "legacy":null,
+            "location_country_code":"PRT",
+            "location_country_code_alpha2":"pt"
+        },
+        "wholesale":true,
         "coupon": {
             "code": "bajevolp",
             "type": "percent",
@@ -181,6 +197,15 @@ Content-Length: 3484
                 "city": "Castelo Branco"
             },
         },
+        "tags":[
+            {
+                "id":16461,
+                "title":"Revenda",
+                "handle":"revenda",
+                "total_items":1,
+                "created_at":"2021-10-21T13:24:01+01:00"
+            }
+        ],
         "products": [
             {
                 "id": 44753,
@@ -246,9 +271,20 @@ Content-Length: 681
     "client": {
         "name": "Shopkit",
         "email": "info@shopk.it",
-        "fiscal_id": "999999990",
-        "company": "Shopkit",
-        "is_registered": false,
+        "company": null,
+        "fiscal_id": null,
+        "locale": "pt_PT",
+        "gender": null,
+        "birthday": null,
+        "picture": null,
+        "subscribe_newsletter": false,
+        "wholesale":false,
+        "created_at": 1572289289,
+        "last_seen_at": 1572289289,
+        "ip_address": null,
+        "is_banned": false,
+        "internal_notes": null,
+        "tags": [],
         "delivery": {
             "name": "Shopkit",
             "phone": "969057993",
@@ -314,4 +350,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2022-01-31T11:40:45+00:00</small>
+<small class="last-modified">Last Modified 2022-03-08T17:39:04+00:00</small>
