@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2021-09-06T09:15:58+01:00</small>
+<small class="last-modified">Last Modified 2022-03-08T17:45:56+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -274,6 +274,7 @@ curl -X GET 'https://api.shopk.it/v1/store' \
                 "cellphone": "(+351) 969 057 993",
                 "address": "Avª do Empresário, 1, S1.08\n6000-767 Castelo Branco",
                 "basecolor": "#db0a5b",
+                "basecolor_contrast": "#FFFFFF",
                 "favicon": null,
                 "latitude": "39.818466068593935",
                 "longitude": "-7.491968556808545",
@@ -329,8 +330,16 @@ curl -X GET 'https://api.shopk.it/v1/store' \
                         "per_page_catalog": null
                     },
                     "brands": {
-                        "per_page": null
-                    }
+                        "per_page": null,
+                        "sorting": "position"
+                    },
+                    "wholesale": {
+                        "show_regular_price": false,
+                        "taxes_included": false,
+                        "client_signup": true,
+                        "checkbox_label": "Quero fazer inscrição para Revenda / B2B",
+                        "show_exclusive_only": false
+                    },
                 },
                 "url": "https://parallax.shopk.it/",
                 "theme": "shopkit-parallax",
@@ -506,6 +515,13 @@ curl -X GET 'https://api.shopk.it/v1/store' \
                         "phone": "+351919873646"
                     }
                 ],
+                "category_default_order": "position",
+                "categories_sorting": "position",
+                "brands_sorting": "position",
+                "products_per_page_home": 20,
+                "products_per_page_catalog": null,
+                "categories_per_page": null,
+                "brands_per_page": null,
                 "domain": "parallax.shopk.it",
                 "is_ssl": true,
                 "assets": {
@@ -573,6 +589,7 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
         + Values
             + `true`
             + `false`
+
     + q (optional, string, `bowl`) ... Search for products
     + page (optional, integer, `1`) ... page number
     + limit = `25` (optional, integer, `10`) ... products per page
@@ -590,9 +607,12 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                 "price_formatted": "40,73 €",
                 "price_promo": null,
                 "price_promo_formatted": null,
+                "price_wholesale": null,
+                "price_wholesale_formatted": null,
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
+                "price_without_tax": 40.73,
                 "created_at": "2020-11-27T15:36:57+00:00",
                 "status": 1,
                 "status_alias": "active",
@@ -614,10 +634,11 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 0,
                 "sales": 0,
                 "variants_same_values": false,
                 "updated_at": "2020-11-27T15:36:57+00:00",
+                "wholesale": false,
+                "wholesale_exclusive": false,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
@@ -675,6 +696,9 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                         "price_formatted": "40,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 40.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -705,6 +729,9 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                         "price_formatted": "40,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 40.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -735,6 +762,9 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                         "price_formatted": "45,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 45.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -765,6 +795,9 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
                         "price_formatted": "45,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 45.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -876,6 +909,9 @@ Attributes | Type | Choices | Description
 **price_promo** | float | | Promotion price (must be lower than price)
 **promo_show_percentage** | boolean | `true` `false` | Show discount in percent
 **price_on_request** | boolean | `true` `false` | Price is on request
+**wholesale** | boolean | `true` `false` | Product has wholesale price
+**price_wholesale** | float | | Product wholesale price (requires wholesale enabled)
+**wholesale_exclusive** | boolean | `true` `false` | Product is wholesale exclusive
 **status** | integer | `1` `2` `3` `4` | Status: `1` (active) `2` (hidden) `3` (out of stock) `4` (soon)
 **shipping** | float | | Shipping cost
 **shipping_alone** | boolean | `true` `false` | Shipping alone option
@@ -927,9 +963,12 @@ Attributes | Type | Choices | Description
                 "price_formatted": "17,45 €",
                 "price_promo": null,
                 "price_promo_formatted": null,
+                "price_wholesale": null,
+                "price_wholesale_formatted": null,
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
+                "price_without_tax": 17.45,
                 "created_at": "2020-11-27T14:07:10+00:0",
                 "status": 1,
                 "status_alias": "active",
@@ -951,10 +990,11 @@ Attributes | Type | Choices | Description
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 0,
                 "sales": 0,
                 "variants_same_values": true,
                 "updated_at": "2020-11-27T14:07:10+00:00",
+                "wholesale": false,
+                "wholesale_exclusive": false,
                 "description_short": "",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
@@ -1042,6 +1082,9 @@ Attributes | Type | Choices | Description
 **price_promo** | float | | Promotion price (must be lower than price)
 **promo_show_percentage** | boolean | `true` `false` | Show discount in percent
 **price_on_request** | boolean | `true` `false` | Price is on request
+**wholesale** | boolean | `true` `false` | Product has wholesale price
+**price_wholesale** | float | | Product wholesale price (requires wholesale enabled)
+**wholesale_exclusive** | boolean | `true` `false` | Product is wholesale exclusive
 **status** | integer | `1` `2` `3` `4` | Status: `1` (active) `2` (hidden) `3` (out of stock) `4` (soon)
 **shipping** | float | | Shipping cost
 **shipping_alone** | boolean | `true` `false` | Shipping alone option
@@ -1093,9 +1136,12 @@ Attributes | Type | Choices | Description
                 "price_formatted": "17,45 €",
                 "price_promo": null,
                 "price_promo_formatted": null,
+                "price_wholesale": null,
+                "price_wholesale_formatted": null,
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
+                "price_without_tax": 17.45,
                 "created_at": "2020-11-27T14:07:10+00:00",
                 "status": 1,
                 "status_alias": "active",
@@ -1117,10 +1163,11 @@ Attributes | Type | Choices | Description
                 "handle": "rustic-spice-bowl-set-2",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 0,
                 "sales": 0,
                 "variants_same_values": true,
                 "updated_at": "2020-11-27T15:15:12+00:00",
+                "wholesale": false,
+                "wholesale_exclusive": false,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy&#8230;",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set-2",
@@ -1255,9 +1302,12 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                 "price_formatted": "40,73 €",
                 "price_promo": null,
                 "price_promo_formatted": null,
+                "price_wholesale": null,
+                "price_wholesale_formatted": null,
                 "promo_show_percentage": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
+                "price_without_tax": 40.73,
                 "created_at": "2020-11-27T15:36:57+00:00",
                 "status": 1,
                 "status_alias": "active",
@@ -1279,10 +1329,11 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                 "handle": "rustic-spice-bowl-set",
                 "page_title": "Rustic Spice Bowl Set",
                 "weight": 0,
-                "hits": 0,
                 "sales": 0,
                 "variants_same_values": false,
                 "updated_at": "2020-11-27T15:36:57+00:00",
+                "wholesale": false,
+                "wholesale_exclusive": false,
                 "description_short": "This set of four rustic, pinch pots have been hand formed by me from textured, earthy",
                 "promo": false,
                 "url": "https://parallax.shopk.it/product/rustic-spice-bowl-set",
@@ -1340,6 +1391,9 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                         "price_formatted": "40,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 40.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -1370,6 +1424,9 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                         "price_formatted": "40,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 40.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -1400,6 +1457,9 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                         "price_formatted": "45,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 45.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -1430,6 +1490,9 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
                         "price_formatted": "45,73 €",
                         "price_promo": null,
                         "price_promo_formatted": null,
+                        "price_wholesale": null,
+                        "price_wholesale_formatted": null,
+                        "price_without_tax": 45.73,
                         "promo": false,
                         "price_promo_percentage": null,
                         "price_on_request": false,
@@ -1830,6 +1893,9 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
                     "price_formatted": "40,73 €",
                     "price_promo": null,
                     "price_promo_formatted": null,
+                    "price_wholesale": null,
+                    "price_wholesale_formatted": null,
+                    "price_without_tax": 40.73,
                     "promo": false,
                     "price_promo_percentage": null,
                     "price_on_request": false,
@@ -1860,6 +1926,9 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
                     "price_formatted": "40,73 €",
                     "price_promo": null,
                     "price_promo_formatted": null,
+                    "price_wholesale": null,
+                    "price_wholesale_formatted": null,
+                    "price_without_tax": 40.73,
                     "promo": false,
                     "price_promo_percentage": null,
                     "price_on_request": false,
@@ -1890,6 +1959,9 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
                     "price_formatted": "45,73 €",
                     "price_promo": null,
                     "price_promo_formatted": null,
+                    "price_wholesale": null,
+                    "price_wholesale_formatted": null,
+                    "price_without_tax": 45.73,
                     "promo": false,
                     "price_promo_percentage": null,
                     "price_on_request": false,
@@ -1920,6 +1992,9 @@ curl -X GET 'https://api.shopk.it/v1/product/212322/option/363364' \
                     "price_formatted": "45,73 €",
                     "price_promo": null,
                     "price_promo_formatted": null,
+                    "price_wholesale": null,
+                    "price_wholesale_formatted": null,
+                    "price_without_tax": 45.73,
                     "promo": false,
                     "price_promo_percentage": null,
                     "price_on_request": false,
@@ -1977,6 +2052,7 @@ Attributes | Type | Choices | Description
 **price** | float | Price
 **price_promo** | float | | Promotion price (must be lower than price)
 **price_on_request** | boolean | `true` `false` | Price is on request
+**price_wholesale** | float | | Wholesale price (requires product wholesale enabled)
 **stock** | integer | | Units in stock (requires product stock enabled)
 **shipping** | float | | Shipping cost
 **weight** | integer | | Weight (in grams)
@@ -2012,6 +2088,9 @@ Attributes | Type | Choices | Description
                 "price_formatted": "40,73 €",
                 "price_promo": null,
                 "price_promo_formatted": null,
+                "price_wholesale": null,
+                "price_wholesale_formatted": null,
+                "price_without_tax": 40.73,
                 "promo": false,
                 "price_promo_percentage": null,
                 "price_on_request": false,
@@ -2485,6 +2564,7 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
+                "wholesale": true,
                 "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
                 "observations": null,
@@ -2494,6 +2574,8 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "tracking_code": null,
                 "tracking_url": "",
                 "shipping_url": null,
+                "expected_arrival_from": null,
+                "expected_arrival_until": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
@@ -2528,12 +2610,22 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                         "city": "Castelo Branco"
                     },
                 },
+                "tags": [
+                    {
+                        "id": 16461,
+                        "title": "Revenda",
+                        "handle": "revenda",
+                        "total_items": 1,
+                        "created_at": "2021-10-21T13:24:01+01:00"
+                    }
+                ],
                 "products": [
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
                         "option": "Azul / Small",
                         "reference": "STHFBF7574",
+                        "barcode": "",
                         "price": 77.32,
                         "tax": 23,
                         "quantity": 1,
@@ -2554,6 +2646,7 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                         "title": "Hanging Succulent Planter",
                         "option": null,
                         "reference": "",
+                        "barcode": "",
                         "price": 71.32,
                         "tax": 0,
                         "quantity": 1,
@@ -2668,6 +2761,7 @@ Attributes | Type | Choices | Description
                 "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
+                "wholesale": true,
                 "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
                 "observations": null,
@@ -2677,6 +2771,8 @@ Attributes | Type | Choices | Description
                 "tracking_code": null,
                 "tracking_url": "",
                 "shipping_url": null,
+                "expected_arrival_from": null,
+                "expected_arrival_until": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
@@ -2711,12 +2807,22 @@ Attributes | Type | Choices | Description
                         "city": "Castelo Branco"
                     },
                 },
+                "tags": [
+                    {
+                        "id": 16461,
+                        "title": "Revenda",
+                        "handle": "revenda",
+                        "total_items": 1,
+                        "created_at": "2021-10-21T13:24:01+01:00"
+                    }
+                ],
                 "products": [
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
                         "option": "Azul / Small",
                         "reference": "STHFBF7574",
+                        "barcode": "",
                         "price": 77.32,
                         "tax": 23,
                         "quantity": 1,
@@ -2737,6 +2843,7 @@ Attributes | Type | Choices | Description
                         "title": "Hanging Succulent Planter",
                         "option": null,
                         "reference": "",
+                        "barcode": "",
                         "price": 71.32,
                         "tax": 0,
                         "quantity": 1,
