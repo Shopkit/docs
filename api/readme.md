@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2022-04-08
+* Add `brand` methods `GET`, `POST`, `PUT`, `DELETE`
+
 ##### 2022-03-08
 * Add products wholesale
 
@@ -27,7 +30,7 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ##### 2021-07-07
 * Add product `product.taxable`, `product.reduced_rate`
- 
+
 ##### 2021-05-25
 * Add header `X-Total-Count`
 

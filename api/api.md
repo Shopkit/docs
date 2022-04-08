@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2022-03-08T17:45:56+00:00</small>
+<small class="last-modified">Last Modified 2022-04-08T01:00:23+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -2263,7 +2263,7 @@ Create a category.
 curl -X POST 'https://api.shopk.it/v1/category/' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d '{"title": "Rustic Spice Bowl Set", "price": 17.45, "categories": [44373]}'
+-d '{"title": "Prints", "categories": [44373]}'
 ```
 
 <div class="well">
@@ -2346,7 +2346,7 @@ Update a category.
 curl -X PUT 'https://api.shopk.it/v1/category/1337' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
 -H 'Content-Type: application/json' \
--d'{"reference": "SWB-001", "featured": true}'
+-d'{"active": "true", "page_title": "prints"}'
 ```
 
 <div class="well">
@@ -2438,6 +2438,253 @@ curl -X DELETE 'https://api.shopk.it/v1/category/1337' \
 + Parameters
 
     + id (required, integer, `1337`) ... Category identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Brands
+
+## GET Brand [/brand/{id,handle,active,page,limit}]
+
+### GET Brand [GET]
+Get products brands by id or handle. **Only one parameter is required.**
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/brand/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Brand identifier
+    + handle (optional, string, `pure-you`) ... Brand handle
+    + active (optional, boolean) ... Brand is active
+        + Values
+            + `true`
+            + `false`
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `10`) ... Bramds per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 43,
+                "title": "Pure You",
+                "description": "",
+                "position": 0,
+                "active": true,
+                "handle": "pure-you",
+                "page_title": "Pure You",
+                "meta_description": "",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/brand/pure-you",
+                "permalink": "https://parallax.shopk.it/brand/pure-you",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/usercontent/boxie/media/images/thumb/d65c706-logo-3.png",
+                    "square": "https://cdn.shopk.it/usercontent/boxie/media/images/square/d65c706-logo-3.png",
+                    "full": "https://cdn.shopk.it/usercontent/boxie/media/images/d65c706-logo-3.png"
+                },
+                "created_at": "2022-04-08T00:39:02+01:00",
+                "updated_at": "2022-04-08T00:44:21+01:00"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST Brand [/brand]
+
+### POST Brand [POST]
+Create a brand.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/brand/' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title": "Pure You"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Title
+**active** | boolean | `true` `false` | Brand is active
+**description** | string | | Description
+**handle** | string | | Handle
+**image** | string | | Image url
+**position** | integer | | Position
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Page title
+
+</div>
+
++ Request (application/json)
+
+        {
+          "title": "Prints"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 43,
+                "title": "Pure You",
+                "description": "",
+                "position": 0,
+                "active": true,
+                "handle": "pure-you",
+                "page_title": "Pure You",
+                "meta_description": "",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/brand/pure-you",
+                "permalink": "https://parallax.shopk.it/brand/pure-you",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/usercontent/boxie/media/images/thumb/d65c706-logo-3.png",
+                    "square": "https://cdn.shopk.it/usercontent/boxie/media/images/square/d65c706-logo-3.png",
+                    "full": "https://cdn.shopk.it/usercontent/boxie/media/images/d65c706-logo-3.png"
+                },
+                "created_at": "2022-04-08T00:39:02+01:00",
+                "updated_at": "2022-04-08T00:44:21+01:00"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT Brand [/brand/{id}]
+
+### PUT Brand [PUT]
+Update a brand.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/brand/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d'{"title": "Pure You", "active": true}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Title
+**active** | boolean | `true` `false` | Brand is active
+**description** | string | | Description
+**handle** | string | | Handle
+**image** | string | | Image url
+**position** | integer | | Position
+**meta_description** | string | | Meta description
+**meta_tags** | string | | Meta tags
+**page_title** | string | | Page title
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Brand identifier
+
++ Request (application/json)
+
+        {
+            "description": "Mauris ut ex iaculis, rhoncus nisl sit amet, posuere nisl."
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 43,
+                "title": "Pure You",
+                "description": "",
+                "position": 0,
+                "active": true,
+                "handle": "pure-you",
+                "page_title": "Pure You",
+                "meta_description": "",
+                "meta_tags": null,
+                "num_products": 0,
+                "url": "https://parallax.shopk.it/brand/pure-you",
+                "permalink": "https://parallax.shopk.it/brand/pure-you",
+                "image": {
+                    "thumb": "https://cdn.shopk.it/usercontent/boxie/media/images/thumb/d65c706-logo-3.png",
+                    "square": "https://cdn.shopk.it/usercontent/boxie/media/images/square/d65c706-logo-3.png",
+                    "full": "https://cdn.shopk.it/usercontent/boxie/media/images/d65c706-logo-3.png"
+                },
+                "created_at": "2022-04-08T00:39:02+01:00",
+                "updated_at": "2022-04-08T00:44:21+01:00"
+            }
+
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## DELETE Brand [/brand/{id}]
+
+### DELETE Brand [DELETE]
+Delete a brand.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/brand/1337' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Brand identifier
 
 + Response 204 (application/json)
 
