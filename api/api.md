@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2022-04-08T01:00:23+01:00</small>
+<small class="last-modified">Last Modified 2022-05-26T00:39:11+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -563,7 +563,7 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
     + ids (optional, integer, `1337,7331`) ... Products identifier, comma separated
     + handle (optional, string, `rustic-bowl`) ... Product handle
     + category (optional, integer, `1337`) ... Product category identifier
-    + status (optional, integer, `0`) ... Product status as an integer
+    + status (optional, integer, `0`) ... Product status as an integer or combined comma separated
         + Values
             + `0`
             + `1`
@@ -571,7 +571,7 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
             + `3`
             + `4`
 
-    + status_alias (optional, string, `all`) ... Product status as a string
+    + status_alias (optional, string, `all`) ... Product status alias as a string or combined comma separated
         + Values
             + `all`
             + `active`
@@ -1274,7 +1274,7 @@ curl -X GET 'https://api.shopk.it/v1/product/search/?query=Rustic&fields=title' 
 + Parameters
 
     + query (required, string, `Rustic`) ... search query
-    + fields (optional, string, `title,description`) ... product fields to search, comma separated
+    + fields (optional, string, `title`) ... product fields to search, comma separated
         + Values
             + `title`
             + `description`
@@ -2707,7 +2707,7 @@ curl -X DELETE 'https://api.shopk.it/v1/brand/1337' \
 
 # Group Orders
 
-## GET Orders [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
+## GET Order [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
 
 ### GET Order [GET]
 Get a list of orders or single order by id.
@@ -2723,7 +2723,7 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
 + Parameters
 
     + id (optional, integer, `1337`) ... Order identifier
-    + status (optional, integer, `0`) ... Order status as an integer
+    + status (optional, integer, `0`) ... Order status as an integer or combined comma separated
         + Values
             + `0`
             + `1`
@@ -2737,7 +2737,7 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
             + `9`
             + `10`
             + `11`
-    + status_alias (optional, string, `all`) ... Order status as a string
+    + status_alias (optional, string, `all`) ... Order status alias as a string or combined comma separated
         + Values
             + `all`
             + `pending`
@@ -3577,9 +3577,9 @@ Attributes | Type | Description
                 "message": "Bad request."
             }
 
-## Delete Media [/media/{id,checksum}]
+## DELETE Media [/media/{id,checksum}]
 
-### Delete Media [DELETE]
+### DELETE Media [DELETE]
 Delete a media file by id or hash. **Only one parameter is required.**
 
 ```bash

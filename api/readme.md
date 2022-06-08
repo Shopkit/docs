@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2022-05-26
+* Add GET `product` and GET `order` can now combine `status`
+
 ##### 2022-04-08
 * Add `brand` methods `GET`, `POST`, `PUT`, `DELETE`
 
