@@ -535,6 +535,12 @@ Contains data about store navigation
 | `store.navigation.secondary.menu_item`        | Secondary navigation item                                                           |
 | `store.navigation.secondary.menu_item_handle` | Secondary navigation item handle                                                    |
 | `store.navigation.secondary.target_blank`     | Secondary navigation option open link in new window. `true`, `false`                |
+| `store.navigation.catalogs_menus.menu_text`        | Catalogs navigation text to display                                            |
+| `store.navigation.catalogs_menus.menu_type`        | Catalogs navigation type. `menu_catalog`, `menu_categories`, `menu_brands`     |
+| `store.navigation.catalogs_menus.menu_url`         | Catalogs navigation url. `catalog`, `categories`, `brands`                     |
+| `store.navigation.catalogs_menus.menu_item`        | Catalogs navigation item                                                       |
+| `store.navigation.catalogs_menus.menu_item_handle` | Catalogs navigation item handle                                                |
+| `store.navigation.catalogs_menus.target_blank`     | Catalogs navigation option open link in new window. `false`                    |
 
 
 ##### Payments
