@@ -136,6 +136,7 @@ Content-Length: 3484
         "expected_arrival_from":null,
         "expected_arrival_until":null,
         "shipping_url": "",
+        "at_code": "",
         "tax_exemption":null,
         "tax_settings": {
             "location":"73",
@@ -350,4 +351,4 @@ We provide a tool for testing payloads. It's located in the Webhooks section (un
 
 This will post a dummy payload to your URL, so you don't need to simulate order events in your store to develop, test and debug.
 
-<small class="last-modified">Last Modified 2022-03-08T17:39:04+00:00</small>
+<small class="last-modified">Last Modified 2022-10-27T16:44:13+01:00</small>
