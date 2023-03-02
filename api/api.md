@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2022-10-27T16:41:49+01:00</small>
+<small class="last-modified">Last Modified 2023-02-16T18:24:40+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -152,14 +152,19 @@ Response: `200 OK`
     "is_new": false,
     "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
     "weight": 0,
-    "observations": null,
-    "note": null,
-    "client_note": null,
-    "custom_field": null,
-    "tracking_code": null,
+    "observations": "",
+    "note": "",
+    "client_note": "",
+    "custom_field": "",
+    "tracking_code": "",
+    "tracking_carrier": "",
+    "tracking_created_at": "",
     "tracking_url": "",
-    "shipping_url": null,
-    "at_code": null,
+    "expected_arrival_from": null,
+    "expected_arrival_until": null,
+    "shipping_url": "",
+    "at_code": "",
+    "tax_exemption": null,
     "coupon": {
         "code": "bajevolp",
         "type": "percent",
@@ -561,7 +566,7 @@ curl -X GET 'https://api.shopk.it/v1/product/?category=1337&limit=5' \
 + Parameters
 
     + id (optional, integer, `1337`) ... Product identifier
-    + ids (optional, integer, `1337,7331`) ... Products identifier, comma separated
+    + ids (optional, integer, `1337,7331`) ... Product identifier, comma separated
     + handle (optional, string, `rustic-bowl`) ... Product handle
     + category (optional, integer, `1337`) ... Product category identifier
     + status (optional, integer, `0`) ... Product status as an integer or combined comma separated
@@ -2708,7 +2713,7 @@ curl -X DELETE 'https://api.shopk.it/v1/brand/1337' \
 
 # Group Orders
 
-## GET Order [/order{?id,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
+## GET Order [/order{?id,ids,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
 
 ### GET Order [GET]
 Get a list of orders or single order by id.
@@ -2724,6 +2729,7 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
 + Parameters
 
     + id (optional, integer, `1337`) ... Order identifier
+    + ids (optional, integer, `1337,7331`) ... Order identifier, comma separated
     + status (optional, integer, `0`) ... Order status as an integer or combined comma separated
         + Values
             + `0`
@@ -2815,16 +2821,19 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "wholesale": true,
                 "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
-                "observations": null,
-                "note": null,
-                "client_note": null,
-                "custom_field": null,
-                "tracking_code": null,
+                "observations": "",
+                "note": "",
+                "client_note": "",
+                "custom_field": "",
+                "tracking_code": "",
+                "tracking_carrier": "",
+                "tracking_created_at": "",
                 "tracking_url": "",
-                "shipping_url": null,
-                "at_code": null,
                 "expected_arrival_from": null,
                 "expected_arrival_until": null,
+                "shipping_url": "",
+                "at_code": "",
+                "tax_exemption": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
@@ -2952,6 +2961,7 @@ Attributes | Type | Choices | Description
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
+**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `other` | Tracking carrier
 **shipping_url** | string | | Shipping URL
 **at_code** | string | | AT code
 **pickup_code** | string | | Pickup code
@@ -3014,16 +3024,19 @@ Attributes | Type | Choices | Description
                 "wholesale": true,
                 "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
                 "weight": 0,
-                "observations": null,
-                "note": null,
-                "client_note": null,
-                "custom_field": null,
-                "tracking_code": null,
+                "observations": "",
+                "note": "",
+                "client_note": "",
+                "custom_field": "",
+                "tracking_code": "",
+                "tracking_carrier": "",
+                "tracking_created_at": "",
                 "tracking_url": "",
-                "shipping_url": null,
-                "at_code": null,
                 "expected_arrival_from": null,
                 "expected_arrival_until": null,
+                "shipping_url": "",
+                "at_code": "",
+                "tax_exemption": null,
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",

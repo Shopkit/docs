@@ -16,8 +16,12 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2023-02-16
+* Add `order` `GET` parameter `ids`
+* Add `order` `PUT` parameter `tracking_carrier`
+
 ##### 2022-10-27
-* Add `orders` field `at_code`
+* Add `order` field `at_code`
 
 ##### 2022-05-26
 * Add GET `product` and GET `order` can now combine `status`
