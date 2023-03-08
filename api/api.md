@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2023-02-16T18:24:40+00:00</small>
+<small class="last-modified">Last Modified 2023-03-08T12:32:27+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -91,7 +91,7 @@ X-Total-Count: 1000
 
 
 ### Errors
-There are 3 possible types of client errors on API calls: **400**, **401** and **404**.
+These are the possible types of client errors on API calls: **400**, **401**, **404**, **409** and **413**.
 
 An error will return JSON in the following format:
 
@@ -1267,9 +1267,9 @@ curl -X DELETE 'https://api.shopk.it/v1/product/1337' \
                 "message":"Not found."
             }
 
-## GET product search [/product/search{?query,fields,page,limit}]
+## GET product/search [/product/search{?query,fields,page,limit}]
 
-### GET product search [GET]
+### GET product/search [GET]
 Get a list of products from a search query and filtering fields.
 
 ```bash
@@ -3140,6 +3140,95 @@ Attributes | Type | Choices | Description
 
             {
                 "message":"Not found."
+            }
+
+## PUT Order/bulk [/order/bulk]
+
+### PUT Order/bulk [PUT]
+Update up to 50 orders.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/order/bulk' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type:application/json' \
+-d '{"paid":true, "status_alias":"sent"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**id** (required) | integer | | Order identifier
+**status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` `9` `10` `11` | Order status as an integer
+**status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` `waiting_shipment` | Order status as a string
+**paid** | boolean | `true` `false` | Order paid field
+**invoice_url** | string | | Invoice permalink
+**tracking_url** | string | | Tracking URL
+**tracking_code** | string | | Tracking code
+**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `other` | Tracking carrier
+**shipping_url** | string | | Shipping URL
+**at_code** | string | | AT code
+**pickup_code** | string | | Pickup code
+**note** | string | | Order note
+**client_note** | string | | Order note from client
+
+</div>
+
++ Request (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1337,
+                    "paid": true,
+                    "status_alias": "sent"
+                },
+                {
+                    "id": 7331,
+                    "status_alias": "delivered"
+                }
+            ]
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "code": 200,
+                    "message": "OK",
+                    "id": 1337
+                },
+                {
+                    "code": 404,
+                    "message": "Not found",
+                    "id": 7331
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 413 (application/json)
+
+    + Body
+
+            {
+                "message":"Content Too Large"
             }
 
 ## DELETE Order [/order/{id}/]

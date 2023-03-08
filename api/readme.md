@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2023-03-08
+* Add `PUT` `order/bulk`
+
 ##### 2023-02-16
 * Add `order` `GET` parameter `ids`
 * Add `order` `PUT` parameter `tracking_carrier`
