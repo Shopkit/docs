@@ -2961,7 +2961,7 @@ Attributes | Type | Choices | Description
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
-**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `other` | Tracking carrier
+**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `vasp`, `other` | Tracking carrier
 **shipping_url** | string | | Shipping URL
 **at_code** | string | | AT code
 **pickup_code** | string | | Pickup code
@@ -3165,7 +3165,7 @@ Attributes | Type | Choices | Description
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
-**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `other` | Tracking carrier
+**tracking_carrier** | string | `ctt`, `dpd`, `correos-express`, `dhl-express`, `dhl-global-mail`, `dhl-parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `vasp`, `other` | Tracking carrier
 **shipping_url** | string | | Shipping URL
 **at_code** | string | | AT code
 **pickup_code** | string | | Pickup code
