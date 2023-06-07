@@ -678,7 +678,6 @@ Used for retrieving data about enabled apps. The global `apps` object is availab
 | `apps.facebook_page.facebook_url`               | App Facebook Page, Facebook URL                                                  |
 | `apps.facebook_pixel.track`                     | App Facebook Pixel track code                                                    |
 | `apps.facebook_store`                           | App Facebook Store is enabled. `true`                                            |
-| `apps.followprice.store_key`                    | App Followprice Store key                                                        |
 | `apps.getsocial.id`                             | App GetSocial id                                                                 |
 | `apps.google_analytics.tracking_id`             | App Google Analytics tracking id                                                 |
 | `apps.google_analytics_ec`                      | App Google Analytics Ecommerce is enabled. `true`                                |
@@ -687,7 +686,6 @@ Used for retrieving data about enabled apps. The global `apps` object is availab
 | `apps.google_webmaster_tools.site_verification` | App Google Webmasters HTML tag                                                   |
 | `apps.hello_bar.embed`                          | App Hello Bar embed code                                                         |
 | `apps.invoicexpress`                            | App InvoiceXpress is enabled. `true`                                             |
-| `apps.kuantokusta.trackk`                       | App KuantoKusta tracking code                                                    |
 | `apps.localizejs.project_key`                   | App Localize project key                                                         |
 | `apps.mailchimp`                                | App Newsletter is enabled. `true`                                                |
 | `apps.moloni`                                   | App Moloni is enabled. `true`                                                    |
@@ -1253,4 +1251,4 @@ Because of aggressive Shopkit caching, you might not be able to achieve randomne
 {% endfor %}
 ```
 
-<small class="last-modified">Last Modified 2021-11-03T18:39:11+00:00</small>
+<small class="last-modified">Last Modified 2023-06-07T12:41:45+01:00</small>

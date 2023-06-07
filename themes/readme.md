@@ -14,6 +14,9 @@ To generate documentation use: `mkdocs build --clean`, this creates a new direct
 
 ### Changelog
 
+##### 2023-06-07
+* Cleanup `apps`
+
 ##### 2021-06-07
 * Remove product `order:views`
 
