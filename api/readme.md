@@ -16,6 +16,15 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2024-09-23
+* Add `client` method `GET`
+* Add `shipment` method `GET`
+* Add `shipment/carrier` method `GET`
+* Add `stats` method `GET`
+* Add `order/invoice` method `GET`
+* Update`order` methods `GET`, `PUT`
+* Update`product` methods `POST`, `PUT`
+
 ##### 2023-03-08
 * Add `PUT` `order/bulk`
 

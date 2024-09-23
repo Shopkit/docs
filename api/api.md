@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2023-03-08T12:32:27+00:00</small>
+<small class="last-modified">Last Modified 2024-09-23T17:40:11+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -127,30 +127,19 @@ Response: `200 OK`
     "shipping": {
         "value": 7.25,
         "tax": 0,
-        "tax_percent": null,
+        "tax_percent": "",
         "discount": 0,
         "discount_percent": 0
     },
     "created_at": "2017-05-17T10:45:05+01:00",
-    "update_at": "2017-12-06T17:18:41+00:00",
+    "update_at": "2024-09-20T16:31:02+01:00",
     "sent_at": "2017-05-17T11:23:21+01:00",
     "paid_at": "2017-05-17T11:23:21+01:00",
     "currency": "EUR",
-    "payment": {
-        "type": "multibanco",
-        "data": {
-            "entity": 88888,
-            "reference": 888888888,
-            "value": 157.03
-        },
-        "description": "Multibanco"
-    },
     "status": 3,
-    "status_alias": "sent",
-    "status_description": "Sent",
     "paid": true,
     "is_new": false,
-    "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
+    "invoice_url": "https://www.app.invoicexpress.com/documents/permalink",
     "weight": 0,
     "observations": "",
     "note": "",
@@ -165,80 +154,152 @@ Response: `200 OK`
     "shipping_url": "",
     "at_code": "",
     "tax_exemption": null,
+    "tax_settings": null,
+    "wholesale": false,
+    "billing_info_same_delivery": "1",
+    "is_digital": false,
+    "payment": {
+        "data": {
+            "entity": 10611,
+            "reference": 909000077,
+            "value": 157.03
+        },
+        "value": 0,
+        "tax": 0,
+        "tax_percent": "",
+        "title": "Multibanco",
+        "method": "multibanco",
+        "type": "multibanco",
+        "gateway": "easypay"
+    },
+    "status_alias": "sent",
+    "status_description": "Sent",
     "coupon": {
         "code": "bajevolp",
         "type": "percent",
         "value": 10
     },
     "shipment_method": "Transportadora",
+    "shipment_type": null,
+    "tracking_status": {
+        "event_alias": null,
+        "event_description": null
+    },
     "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
+    "shipment_method_id": "492",
     "client": {
         "name": "Shopkit",
-        "email": "info@shopk.it",
-        "fiscal_id": null,
+        "hash": "cfc1c614870f7033bb0a033b6e7cd18e",
+        "email": "support@shopk.it",
         "company": "Shopkit",
+        "fiscal_id": "999999990",
         "is_registered": false,
+        "picture": null,
         "delivery": {
             "name": "Shopkit",
-            "phone": "969057993",
-            "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-            "address_extra": "1, S1.08",
-            "country": "Portugal - Continental",
+            "phone": "+351969057993",
+            "address": "Avenida do Empresário, 1",
+            "address_extra": "Centro de Empresas Inovadoras",
             "country_code": "PRT",
+            "country_code_alpha_2": "PT",
             "zip_code": "6000-767",
-            "city": "Castelo Branco"
+            "city": "Castelo Branco",
+            "country": "Portugal - Continental"
         },
         "billing": {
+            "same_as_delivery": true,
             "name": "Shopkit",
-            "phone": "969057993",
-            "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-            "address_extra": "1, S1.08",
-            "country": "Portugal - Continental",
+            "phone": "+351969057993",
+            "address": "Avenida do Empresário, 1",
+            "address_extra": "Centro de Empresas Inovadoras",
             "country_code": "PRT",
+            "country_code_alpha_2": "PT",
             "zip_code": "6000-767",
-            "city": "Castelo Branco"
+            "city": "Castelo Branco",
+            "country": "Portugal - Continental"
         },
+        "address": "Avenida do Empresário, 1 Centro de Empresas Inovadoras",
+        "postcode": "6000-767",
+        "town": "Castelo Branco",
+        "country": "Portugal - Continental",
+        "country_code": "PRT",
+        "phone": "+351969057993"
     },
+    "tags": [
+        {
+            "id": 2800420,
+            "title": "shopkit",
+            "handle": "shopkit",
+            "total_items": 1,
+            "created_at": "2024-09-20T16:31:02+01:00"
+        }
+    ],
+    "l10n": {
+        "tax_id_abbr": "NIF/NIPC/VAT ID",
+        "tax_name": "IVA"
+    },
+    "products_count": 2,
+    "products_quantity": 2,
     "products": [
         {
             "id": 44753,
             "title": "Shelving Tree with Birds",
             "option": "Azul / Small",
             "reference": "STHFBF7574",
+            "barcode": null,
             "price": 77.32,
+            "price_with_tax": 95.1036,
+            "price_without_tax": 77.32,
             "tax": 23,
             "quantity": 1,
-            "discount": 7.732,
-            "subtotal": 85.59324,
+            "discount": 7.731999999999999,
+            "subtotal": 85.5932,
+            "subtotal_with_tax": 85.5932,
+            "subtotal_without_tax": 77.32,
             "discount_percent": 10,
             "weight": 0,
+            "origin_country": null,
+            "origin_country_alpha_2": null,
+            "harmonized_code": null,
+            "type": "physical",
             "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
             "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
             "image": {
-                "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
-            }
+                "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                "full": "https://cdn.shopk.it/usercontent/parallax/media/images/0c0014c3ddd01f19933ce97e2041acd3.jpg"
+            },
+            "is_product": true
         },
         {
             "id": 44752,
             "title": "Hanging Succulent Planter",
             "option": null,
             "reference": "",
+            "barcode": null,
             "price": 71.32,
+            "price_with_tax": 71.32,
+            "price_without_tax": 71.32,
             "tax": 0,
             "quantity": 1,
             "discount": 7.132,
             "subtotal": 64.188,
+            "subtotal_with_tax": 64.188,
+            "subtotal_without_tax": 71.32,
             "discount_percent": 10,
             "weight": 0,
+            "origin_country": null,
+            "origin_country_alpha_2": null,
+            "harmonized_code": null,
+            "type": "physical",
             "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
             "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
             "image": {
                 "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                 "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                 "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
-            }
+            },
+            "is_product": true
         }
     ]
 }
@@ -935,6 +996,8 @@ Attributes | Type | Choices | Description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
 **weight** | integer | | Weight (in grams)
+**origin_country** | string | | Country code three-letter (ISO 3166-1 Alfa-3)
+**harmonized_code** | string | | harmonized code
 **images** | array[string] | | Array with images url, max 10
 **tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
@@ -1108,6 +1171,8 @@ Attributes | Type | Choices | Description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
 **weight** | integer | | Weight (in grams)
+**origin_country** | string | | Country code three-letter (ISO 3166-1 Alfa-3)
+**harmonized_code** | string | | harmonized code
 **images** | array[string] | | Array with images url, max 10
 **tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
@@ -2713,7 +2778,7 @@ curl -X DELETE 'https://api.shopk.it/v1/brand/1337' \
 
 # Group Orders
 
-## GET Order [/order{?id,ids,status,status_alias,paid,date_filter,date_from,date_to,date_type,page,limit,coupon_code}]
+## GET Order [/order{?id,ids,status_alias,paid,date_filter,date_from,date_to,date_type,coupon_code,q,page,limit}]
 
 ### GET Order [GET]
 Get a list of orders or single order by id.
@@ -2722,7 +2787,7 @@ Get a list of orders or single order by id.
 curl -X GET 'https://api.shopk.it/v1/order/1337' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 
-curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
+curl -X GET 'https://api.shopk.it/v1/order?status_alias=sent&date_filter=last_month' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
@@ -2730,20 +2795,6 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
 
     + id (optional, integer, `1337`) ... Order identifier
     + ids (optional, integer, `1337,7331`) ... Order identifier, comma separated
-    + status (optional, integer, `0`) ... Order status as an integer or combined comma separated
-        + Values
-            + `0`
-            + `1`
-            + `2`
-            + `3`
-            + `4`
-            + `5`
-            + `6`
-            + `7`
-            + `8`
-            + `9`
-            + `10`
-            + `11`
     + status_alias (optional, string, `all`) ... Order status alias as a string or combined comma separated
         + Values
             + `all`
@@ -2762,6 +2813,10 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
         + Values
             + `true`
             + `false`
+    + is_new (optional, boolean, `true`) ... Order is new
+        + Values
+            + `true`
+            + `false`
     + date_filter (optional, string, `yesterday`) ... Date filter
         + Values
             + `today`
@@ -2776,9 +2831,12 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
             + `update_at`
             + `sent_at`
             + `paid_at`
+    + client_email (optional, string, `info@shopk.it`) ... Client e-mail
+    + client_hash (optional, string, `858b9f6902f34443ef5d19ebb77baed5`) ... Client e-mail hash
+    + coupon_code (optional, integer, `1337`) ... Orders with this coupon code
+    + q (optional, string, `bowl`) ... Search in orders
     + page (optional, integer, `1`) ... Page number
     + limit = `25` (optional, integer, `10`) ... Orders per page
-    + coupon_code (optional, integer, `1337`) ... Coupon code
 
 + Response 200 (application/json)
 
@@ -2795,31 +2853,19 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "shipping": {
                     "value": 7.25,
                     "tax": 0,
-                    "tax_percent": null,
+                    "tax_percent": "",
                     "discount": 0,
                     "discount_percent": 0
                 },
                 "created_at": "2017-05-17T10:45:05+01:00",
-                "update_at": "2017-12-06T17:18:41+00:00",
+                "update_at": "2024-09-20T16:31:02+01:00",
                 "sent_at": "2017-05-17T11:23:21+01:00",
                 "paid_at": "2017-05-17T11:23:21+01:00",
                 "currency": "EUR",
-                "payment": {
-                    "type": "multibanco",
-                    "data": {
-                        "entity": 88888,
-                        "reference": 888888888,
-                        "value": 157.03
-                    },
-                    "description": "Multibanco"
-                },
                 "status": 3,
-                "status_alias": "sent",
-                "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
-                "wholesale": true,
-                "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
+                "invoice_url": "https://www.app.invoicexpress.com/documents/permalink",
                 "weight": 0,
                 "observations": "",
                 "note": "",
@@ -2834,91 +2880,152 @@ curl -X GET 'https://api.shopk.it/v1/order?status=3&date_filter=last_month' \
                 "shipping_url": "",
                 "at_code": "",
                 "tax_exemption": null,
+                "tax_settings": null,
+                "wholesale": false,
+                "billing_info_same_delivery": "1",
+                "is_digital": false,
+                "payment": {
+                    "data": {
+                        "entity": 10611,
+                        "reference": 909000077,
+                        "value": 157.03
+                    },
+                    "value": 0,
+                    "tax": 0,
+                    "tax_percent": "",
+                    "title": "Multibanco",
+                    "method": "multibanco",
+                    "type": "multibanco",
+                    "gateway": "easypay"
+                },
+                "status_alias": "sent",
+                "status_description": "Sent",
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
+                "shipment_type": null,
+                "tracking_status": {
+                    "event_alias": null,
+                    "event_description": null
+                },
                 "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
+                "shipment_method_id": "492",
                 "client": {
                     "name": "Shopkit",
-                    "email": "info@shopk.it",
-                    "fiscal_id": null,
+                    "hash": "cfc1c614870f7033bb0a033b6e7cd18e",
+                    "email": "support@shopk.it",
                     "company": "Shopkit",
+                    "fiscal_id": "999999990",
                     "is_registered": false,
+                    "picture": null,
                     "delivery": {
                         "name": "Shopkit",
-                        "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-                        "address_extra": "1, S1.08",
-                        "country": "Portugal - Continental",
+                        "phone": "+351969057993",
+                        "address": "Avenida do Empresário, 1",
+                        "address_extra": "Centro de Empresas Inovadoras",
                         "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
                         "zip_code": "6000-767",
-                        "city": "Castelo Branco"
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
                     },
                     "billing": {
+                        "same_as_delivery": true,
                         "name": "Shopkit",
-                        "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-                        "address_extra": "1, S1.08",
-                        "country": "Portugal - Continental",
+                        "phone": "+351969057993",
+                        "address": "Avenida do Empresário, 1",
+                        "address_extra": "Centro de Empresas Inovadoras",
                         "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
                         "zip_code": "6000-767",
-                        "city": "Castelo Branco"
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
                     },
+                    "address": "Avenida do Empresário, 1 Centro de Empresas Inovadoras",
+                    "postcode": "6000-767",
+                    "town": "Castelo Branco",
+                    "country": "Portugal - Continental",
+                    "country_code": "PRT",
+                    "phone": "+351969057993"
                 },
                 "tags": [
                     {
-                        "id": 16461,
-                        "title": "Revenda",
-                        "handle": "revenda",
+                        "id": 2800420,
+                        "title": "shopkit",
+                        "handle": "shopkit",
                         "total_items": 1,
-                        "created_at": "2021-10-21T13:24:01+01:00"
+                        "created_at": "2024-09-20T16:31:02+01:00"
                     }
                 ],
+                "l10n": {
+                    "tax_id_abbr": "NIF/NIPC/VAT ID",
+                    "tax_name": "IVA"
+                },
+                "products_count": 2,
+                "products_quantity": 2,
                 "products": [
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
                         "option": "Azul / Small",
                         "reference": "STHFBF7574",
-                        "barcode": "",
+                        "barcode": null,
                         "price": 77.32,
+                        "price_with_tax": 95.1036,
+                        "price_without_tax": 77.32,
                         "tax": 23,
                         "quantity": 1,
-                        "discount": 7.732,
-                        "subtotal": 85.59324,
+                        "discount": 7.731999999999999,
+                        "subtotal": 85.5932,
+                        "subtotal_with_tax": 85.5932,
+                        "subtotal_without_tax": 77.32,
                         "discount_percent": 10,
                         "weight": 0,
+                        "origin_country": null,
+                        "origin_country_alpha_2": null,
+                        "harmonized_code": null,
+                        "type": "physical",
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
-                        }
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/0c0014c3ddd01f19933ce97e2041acd3.jpg"
+                        },
+                        "is_product": true
                     },
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
                         "option": null,
                         "reference": "",
-                        "barcode": "",
+                        "barcode": null,
                         "price": 71.32,
+                        "price_with_tax": 71.32,
+                        "price_without_tax": 71.32,
                         "tax": 0,
                         "quantity": 1,
                         "discount": 7.132,
                         "subtotal": 64.188,
+                        "subtotal_with_tax": 64.188,
+                        "subtotal_without_tax": 71.32,
                         "discount_percent": 10,
                         "weight": 0,
+                        "origin_country": null,
+                        "origin_country_alpha_2": null,
+                        "harmonized_code": null,
+                        "type": "physical",
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image": {
                             "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
-                        }
+                        },
+                        "is_product": true
                     }
                 ]
             }
@@ -2955,9 +3062,9 @@ curl -X PUT 'https://api.shopk.it/v1/order/1337' \
 
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
-**status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` `9` `10` `11` | Order status as an integer
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` `waiting_shipment` | Order status as a string
 **paid** | boolean | `true` `false` | Order paid field
+**is_new** | boolean | `true` `false` | Order is new
 **invoice_url** | string | | Invoice permalink
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
@@ -2965,8 +3072,10 @@ Attributes | Type | Choices | Description
 **shipping_url** | string | | Shipping URL
 **at_code** | string | | AT code
 **pickup_code** | string | | Pickup code
+**tags** | array[string] | | Array with tags
 **note** | string | | Order note
-**client_note** | string | | Order note from client
+**client_note** | string | | Order note to client
+**notify_client** | boolean | `true` `false` | Notify client after order update
 
 </div>
 
@@ -2998,31 +3107,19 @@ Attributes | Type | Choices | Description
                 "shipping": {
                     "value": 7.25,
                     "tax": 0,
-                    "tax_percent": null,
+                    "tax_percent": "",
                     "discount": 0,
                     "discount_percent": 0
                 },
                 "created_at": "2017-05-17T10:45:05+01:00",
-                "update_at": "2017-12-06T17:18:41+00:00",
+                "update_at": "2024-09-20T16:31:02+01:00",
                 "sent_at": "2017-05-17T11:23:21+01:00",
                 "paid_at": "2017-05-17T11:23:21+01:00",
                 "currency": "EUR",
-                "payment": {
-                    "type": "multibanco",
-                    "data": {
-                        "entity": 88888,
-                        "reference": 888888888,
-                        "value": 157.03
-                    },
-                    "description": "Multibanco"
-                },
                 "status": 3,
-                "status_alias": "sent",
-                "status_description": "Sent",
                 "paid": true,
                 "is_new": false,
-                "wholesale": true,
-                "invoice_url": "https://www.invoiceservice.com/invoice_permalink/",
+                "invoice_url": "https://www.app.invoicexpress.com/documents/permalink",
                 "weight": 0,
                 "observations": "",
                 "note": "",
@@ -3037,94 +3134,156 @@ Attributes | Type | Choices | Description
                 "shipping_url": "",
                 "at_code": "",
                 "tax_exemption": null,
+                "tax_settings": null,
+                "wholesale": false,
+                "billing_info_same_delivery": "1",
+                "is_digital": false,
+                "payment": {
+                    "data": {
+                        "entity": 10611,
+                        "reference": 909000077,
+                        "value": 157.03
+                    },
+                    "value": 0,
+                    "tax": 0,
+                    "tax_percent": "",
+                    "title": "Multibanco",
+                    "method": "multibanco",
+                    "type": "multibanco",
+                    "gateway": "easypay"
+                },
+                "status_alias": "sent",
+                "status_description": "Sent",
                 "coupon": {
                     "code": "bajevolp",
                     "type": "percent",
                     "value": 10
                 },
                 "shipment_method": "Transportadora",
+                "shipment_type": null,
+                "tracking_status": {
+                    "event_alias": null,
+                    "event_description": null
+                },
                 "permalink": "https://parallax.shopk.it/order/a77e38d0b16ba62f32361331774324904278edcf",
+                "shipment_method_id": "492",
                 "client": {
                     "name": "Shopkit",
-                    "email": "info@shopk.it",
-                    "fiscal_id": null,
+                    "hash": "cfc1c614870f7033bb0a033b6e7cd18e",
+                    "email": "support@shopk.it",
                     "company": "Shopkit",
+                    "fiscal_id": "999999990",
                     "is_registered": false,
+                    "picture": null,
                     "delivery": {
                         "name": "Shopkit",
-                        "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-                        "address_extra": "1, S1.08",
-                        "country": "Portugal - Continental",
+                        "phone": "+351969057993",
+                        "address": "Avenida do Empresário, 1",
+                        "address_extra": "Centro de Empresas Inovadoras",
                         "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
                         "zip_code": "6000-767",
-                        "city": "Castelo Branco"
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
                     },
                     "billing": {
+                        "same_as_delivery": true,
                         "name": "Shopkit",
-                        "phone": "969057993",
-                        "address": "Centro de Empresas Inovadoras\\nAvª do Empresário",
-                        "address_extra": "1, S1.08",
-                        "country": "Portugal - Continental",
+                        "phone": "+351969057993",
+                        "address": "Avenida do Empresário, 1",
+                        "address_extra": "Centro de Empresas Inovadoras",
                         "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
                         "zip_code": "6000-767",
-                        "city": "Castelo Branco"
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
                     },
+                    "address": "Avenida do Empresário, 1 Centro de Empresas Inovadoras",
+                    "postcode": "6000-767",
+                    "town": "Castelo Branco",
+                    "country": "Portugal - Continental",
+                    "country_code": "PRT",
+                    "phone": "+351969057993"
                 },
                 "tags": [
                     {
-                        "id": 16461,
-                        "title": "Revenda",
-                        "handle": "revenda",
+                        "id": 2800420,
+                        "title": "shopkit",
+                        "handle": "shopkit",
                         "total_items": 1,
-                        "created_at": "2021-10-21T13:24:01+01:00"
+                        "created_at": "2024-09-20T16:31:02+01:00"
                     }
                 ],
+                "l10n": {
+                    "tax_id_abbr": "NIF/NIPC/VAT ID",
+                    "tax_name": "IVA"
+                },
+                "products_count": 2,
+                "products_quantity": 2,
                 "products": [
                     {
                         "id": 44753,
                         "title": "Shelving Tree with Birds",
                         "option": "Azul / Small",
                         "reference": "STHFBF7574",
-                        "barcode": "",
+                        "barcode": null,
                         "price": 77.32,
+                        "price_with_tax": 95.1036,
+                        "price_without_tax": 77.32,
                         "tax": 23,
                         "quantity": 1,
-                        "discount": 7.732,
-                        "subtotal": 85.59324,
+                        "discount": 7.731999999999999,
+                        "subtotal": 85.5932,
+                        "subtotal_with_tax": 85.5932,
+                        "subtotal_without_tax": 77.32,
                         "discount_percent": 10,
                         "weight": 0,
+                        "origin_country": null,
+                        "origin_country_alpha_2": null,
+                        "harmonized_code": null,
+                        "type": "physical",
                         "url": "https://parallax.shopk.it/product/shelving-tree-with-birds",
                         "description_short": "This is a tree decal that is created to work with standard 24\" wall shelves that you&#8230;",
                         "image": {
-                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/4778681bb73229d7d038c077c741b7bd.jpg",
-                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/4778681bb73229d7d038c077c741b7bd.jpg"
-                        }
+                            "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                            "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/0c0014c3ddd01f19933ce97e2041acd3.jpg",
+                            "full": "https://cdn.shopk.it/usercontent/parallax/media/images/0c0014c3ddd01f19933ce97e2041acd3.jpg"
+                        },
+                        "is_product": true
                     },
                     {
                         "id": 44752,
                         "title": "Hanging Succulent Planter",
                         "option": null,
                         "reference": "",
-                        "barcode": "",
+                        "barcode": null,
                         "price": 71.32,
+                        "price_with_tax": 71.32,
+                        "price_without_tax": 71.32,
                         "tax": 0,
                         "quantity": 1,
                         "discount": 7.132,
                         "subtotal": 64.188,
+                        "subtotal_with_tax": 64.188,
+                        "subtotal_without_tax": 71.32,
                         "discount_percent": 10,
                         "weight": 0,
+                        "origin_country": null,
+                        "origin_country_alpha_2": null,
+                        "harmonized_code": null,
+                        "type": "physical",
                         "url": "https://parallax.shopk.it/product/hanging-succulent-planter",
                         "description_short": "This stoneware planter/pot has been hand made by me from earthy textured, speckled clay&#8230;",
                         "image": {
                             "thumb": "https://cdn.shopk.it/usercontent/parallax/media/images/thumb/eacc633fe509af083776db911a5f02b9.jpg",
                             "square": "https://cdn.shopk.it/usercontent/parallax/media/images/square/eacc633fe509af083776db911a5f02b9.jpg",
                             "full": "https://cdn.shopk.it/usercontent/parallax/media/images/eacc633fe509af083776db911a5f02b9.jpg"
-                        }
+                        },
+                        "is_product": true
                     }
                 ]
             }
+
 
 + Response 400 (application/json)
 
@@ -3159,7 +3318,6 @@ curl -X PUT 'https://api.shopk.it/v1/order/bulk' \
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
 **id** (required) | integer | | Order identifier
-**status** | integer | `1` `2` `3` `4` `5` `6` `7` `8` `9` `10` `11` | Order status as an integer
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` `waiting_shipment` | Order status as a string
 **paid** | boolean | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
@@ -3170,7 +3328,7 @@ Attributes | Type | Choices | Description
 **at_code** | string | | AT code
 **pickup_code** | string | | Pickup code
 **note** | string | | Order note
-**client_note** | string | | Order note from client
+**client_note** | string | | Order note to client
 
 </div>
 
@@ -3231,6 +3389,147 @@ Attributes | Type | Choices | Description
                 "message":"Content Too Large"
             }
 
+## POST Order/invoice [/order/{id}/invoice]
+
+### POST Order/invoice [PUT]
+Create order invoice. **Store must have an invoice app active**
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/product/1337/invoice' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `1337`) ... Order identifier
+
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "message": "The invoice was issued successfully"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "No invoice app active"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "message": "Already exists."
+            }
+
++ Response 409
+
++ Response 413 (application/json)
+
+    + Body
+
+            {
+                "message":"Content Too Large"
+            }
+
+
+## PUT Order/bulk/invoice [/order/bulk/invoice]
+
+### PUT Order/bulk/invoice [PUT]
+Update up to 50 orders.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/order/bulk/invoice' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type:application/json' \
+-d '[{"id": 3005936}, {"id": 3005938}]'
+```
+
+<div class="well">
+
+Attributes | Type |  Description
+---------- | ---- | -----------
+**id** (required) | integer | Order identifier
+
+</div>
+
++ Request (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1337,
+                },
+                {
+                    "id": 7331,
+                }
+            ]
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "code": 201,
+                    "message": "The invoice was issued successfully"
+                    "id": 3005936
+                },
+                {
+                    "code": 201,
+                    "message": "The invoice was issued successfully"
+                    "id": 3005938
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "No invoice app active"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "message": "Already exists."
+            }
+
++ Response 413 (application/json)
+
+    + Body
+
+            {
+                "message":"Content Too Large"
+            }
+
+
 ## DELETE Order [/order/{id}/]
 
 ### DELETE Order [DELETE]
@@ -3246,6 +3545,132 @@ curl -X DELETE 'https://api.shopk.it/v1/order/1337' \
     + id (required, integer, `1337`) ... Order identifier
 
 + Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Client
+
+## GET Client [/client{?country_code,weight,value}]
+
+### GET Client [GET]
+Get a list of clients guest and registred.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + hash (optional, string, `info@shopk.it`) ... Client e-mail hash
+    + registered (optional, boolean, `true`) ... Client is registered or guest
+        + Values
+            + `true`
+            + `false`
+    + cart (optional, boolean, `true`) ... Client has products in cart
+        + Values
+            + `true`
+            + `false`
+    + wishlist (optional, boolean, `true`) ... Client has products in wishlist
+        + Values
+            + `true`
+            + `false`
+    + accepts_marketing (optional, boolean, `true`) ... Client consent to accept marketing
+        + Values
+            + `true`
+            + `false`
+    + banned (optional, boolean, `true`) ... Client is banned
+        + Values
+            + `true`
+            + `false`
+    + wholesale (optional, string, `true`) ... Client is wholesale
+        + Values
+            + `true`
+            + `false`
+            + `pending`s
+    + tags (optional, string, `shopkit`) ... Client tags, comma separated
+    + q (optional, string, `Shopkit`) ... Search for a client
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `10`) ... Clients per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "hash": "858b9f6902f34443ef5d19ebb77baed5",
+                    "name": "Shopkit",
+                    "email": "info@shopk.it",
+                    "company": null,
+                    "initials": "S",
+                    "fiscal_id": null,
+                    "locale": null,
+                    "gender": null,
+                    "birthday": null,
+                    "picture": null,
+                    "accepts_marketing": false,
+                    "wholesale": false,
+                    "created_at": null,
+                    "last_seen_at": null,
+                    "is_banned": null,
+                    "is_registered": false,
+                    "internal_notes": null,
+                    "tags": null,
+                    "delivery": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": null,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
+                    },
+                    "billing": {
+                        "same_as_delivery": true,
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": null,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Continental"
+                    },
+                    "l10n": {
+                        "tax_id_abbr": "NIF/NIPC/VAT ID",
+                        "tax_name": "IVA"
+                    },
+                    "cart": null,
+                    "wishlist": null,
+                    "orders_summary": {
+                        "paid_count": 2,
+                        "unpaid_count": 25,
+                        "paid_value": 112.62,
+                        "unpaid_value": 3093.72,
+                        "total_count": 27,
+                        "total_value": 3206.34
+                    }
+                }
+            ]
 
 + Response 400 (application/json)
 
@@ -3316,6 +3741,192 @@ curl -X GET 'https://api.shopk.it/v1/shipping?country_code=prt' \
             {
                 "message":"Not found."
             }
+
+
+# Group Shipment
+
+## GET shipment [/shipment{?country_code,weight,value}]
+
+### GET Shipment [GET]
+Get a list of shipments or filter by tracking code.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/shipment?country_code=prt' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + tracking_code (optional, string, `PT1333337`) ... Tracking code
+    + carrier (optional, string) ... Shipment carrier alias
+        + Values
+            + `correos_express`
+            + `ctt`
+            + `dhl_express`
+            + `dhl_globalmail`
+            + `dhl_parcel`
+            + `dpd`
+            + `fedex`
+            + `gls`
+            + `mrw`
+            + `nacex`
+            + `rangel`
+            + `seur`
+            + `tnt`
+            + `ups`
+            + `asp`
+            + `other`
+    + paid (optional, boolean) ... Shipment is paid
+        + Values
+            + `true`
+            + `false`
+    + status (optional, string) ... Shipment carrier alias
+        + Values
+            + `expedited`
+            + `accepted`
+            + `out_for_delivery`
+            + `pickup_available`
+            + `delivery_unsuccessful`
+            + `returned`
+            + `delivered`
+
+    + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + q (optional, string, `PT1333337`) ... Search in orders
+    + page (optional, integer, `1`) ... Page number
+    + limit = `25` (optional, integer, `10`) ... Orders per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "tracking_code": "PT1333337",
+                "carrier": "other",
+                "carrier_description": "Other",
+                "tracking_url": "https://track.aftership.com/PT1333337",
+                "order_id": "1337",
+                "type": "manual",
+                "created_at": "2024-01-11T17:45:31+00:00",
+                "updated_at": null,
+                "expected_arrival_from": null,
+                "expected_arrival_until": null,
+                "from": {
+                    "zip_code": null,
+                    "country_code": null,
+                    "country_code_alpha_2": null,
+                    "country": null
+                },
+                "to": {
+                    "zip_code": "6000-767",
+                    "country_code": "PRT",
+                    "country_code_alpha_2": "PT",
+                    "country": "Portugal - Continental"
+                },
+                "last_event": null,
+                "last_event_description": null,
+                "events": null,
+                "automatic_shipping": null
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+
+## GET shipment/carrier [/shipment/carrier]
+
+### GET Shipment/carrier [GET]
+Get a list of shipment carriers available. **No parameters**
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/shipment/carrier' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "alias": "correos_express",
+                    "title": "Correos Express"
+                },
+                {
+                    "alias": "ctt",
+                    "title": "CTT"
+                },
+                {
+                    "alias": "dhl_express",
+                    "title": "DHL Express"
+                },
+                {
+                    "alias": "dhl_globalmail",
+                    "title": "DHL Global Mail"
+                },
+                {
+                    "alias": "dhl_parcel",
+                    "title": "DHL Parcel"
+                },
+                {
+                    "alias": "dpd",
+                    "title": "DPD"
+                },
+                {
+                    "alias": "fedex",
+                    "title": "FedEx"
+                },
+                {
+                    "alias": "gls",
+                    "title": "GLS"
+                },
+                {
+                    "alias": "mrw",
+                    "title": "MRW"
+                },
+                {
+                    "alias": "nacex",
+                    "title": "Nacex"
+                },
+                {
+                    "alias": "rangel",
+                    "title": "Rangel"
+                },
+                {
+                    "alias": "seur",
+                    "title": "SEUR"
+                },
+                {
+                    "alias": "tnt",
+                    "title": "TNT"
+                },
+                {
+                    "alias": "ups",
+                    "title": "UPS"
+                },
+                {
+                    "alias": "vasp",
+                    "title": "VASP Expresso"
+                },
+                {
+                    "alias": "other",
+                    "title": "Other"
+                }
+            ]
 
 
 # Group Coupons
@@ -3617,10 +4228,10 @@ curl -X GET 'https://api.shopk.it/v1/media/1337' \
             + `all`
             + `image`
             + `file`
-    
+
     + q (optional, string, `bowl`) ... Search for media
     + page (optional, integer, `1`) ... Page number
-    + limit = `25` (optional, integer, `25`) ... Media per page
+    + limit = `25` (optional, integer, `10`) ... Media per page
 
 + Response 200 (application/json)
 
@@ -3714,4 +4325,65 @@ curl -X DELETE 'https://api.shopk.it/v1/media/1337' \
 
             {
                 "message":"Not found."
+            }
+
+
+# Group Stats
+
+## GET Stats [/stats/{?metric,date_from,date_to}]
+
+### GET Stats [GET]
+Get store stats, for orders or visitor.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/stats/resume' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + metric (required, string`) ... Stats metric
+        + Values
+            + `live`
+            + `visitors`
+            + `orders`
+            + `resume`
+    + date_from (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+    + date_to (optional, string, `2015-01-01`) ... Date format yyyy-mm-dd
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "date_start": " 2 de set.",
+                "date_end": " 8 de set.",
+                "date_start_raw": "2024-09-02",
+                "date_end_raw": "2024-09-08",
+                "sessions": 12,
+                "orders_revenue": 0,
+                "orders_count": 0,
+                "conversion_rate": 8.33,
+                "abandon_rate": 0.08333333333333333,
+                "direct_traffic": 11,
+                "referral_traffic": 0,
+                "search_traffic": 0,
+                "percentage_direct_traffic": 91.66666666666667,
+                "percentage_referral_traffic": 0,
+                "percentage_search_traffic": 0,
+                "websites_referral": [],
+                "products_sold": 0,
+                "order_avg_value": 0,
+                "search_keywords": [],
+                "abandoned_total_carts": 0,
+                "abandoned_total_items": 0,
+                "abandoned_cart_total": 0
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
             }
