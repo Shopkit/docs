@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2024-09-23T17:40:11+01:00</small>
+<small class="last-modified">Last Modified 2024-10-22T18:58:28+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -2809,11 +2809,19 @@ curl -X GET 'https://api.shopk.it/v1/order?status_alias=sent&date_filter=last_mo
             + `returned`
             + `pickup_available`
             + `waiting_shipment`
-    + paid (optional, boolean, `true`) ... Order paid field
+    + paid (optional, boolean, `true`) ... Order is paid
         + Values
             + `true`
             + `false`
     + is_new (optional, boolean, `true`) ... Order is new
+        + Values
+            + `true`
+            + `false`
+    + shipped (optional, boolean, `true`) ... Order is shipped
+        + Values
+            + `true`
+            + `false`
+    + invoice (optional, boolean, `true`) ... Order has invoice
         + Values
             + `true`
             + `false`
@@ -3066,6 +3074,7 @@ Attributes | Type | Choices | Description
 **paid** | boolean | `true` `false` | Order paid field
 **is_new** | boolean | `true` `false` | Order is new
 **invoice_url** | string | | Invoice permalink
+**invoice_file** | string | Invoice base64 encoded (instead of **invoice_url**)
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
 **tracking_carrier** | string | `ctt`, `dpd`, `correos_express`, `dhl_express`, `dhl_globalmail`, `dhl_parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `vasp`, `other` | Tracking carrier
