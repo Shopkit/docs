@@ -3074,7 +3074,7 @@ Attributes | Type | Choices | Description
 **paid** | boolean | `true` `false` | Order paid field
 **is_new** | boolean | `true` `false` | Order is new
 **invoice_url** | string | | Invoice permalink
-**invoice_file** | string | Invoice base64 encoded (instead of **invoice_url**)
+**invoice_file** | string | | Invoice base64 encoded (instead of **invoice_url**)
 **tracking_url** | string | | Tracking URL
 **tracking_code** | string | | Tracking code
 **tracking_carrier** | string | `ctt`, `dpd`, `correos_express`, `dhl_express`, `dhl_globalmail`, `dhl_parcel`, `fedex`, `gls`, `mrw`, `rangel`, `nacex`, `seur`, `tnt`, `ups`, `vasp`, `other` | Tracking carrier
