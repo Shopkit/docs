@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2024-10-22T18:58:28+01:00</small>
+<small class="last-modified">Last Modified 2025-04-08T17:24:09+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -3326,7 +3326,7 @@ curl -X PUT 'https://api.shopk.it/v1/order/bulk' \
 
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
-**id** (required) | integer | | Order identifier
+**id**<br>(required) | integer | | Order identifier
 **status_alias** | string | `pending` `processing` `sent` `canceled` `waiting_confirmation` `waiting_payment` `waiting_stock` `delivered` `returned` `pickup_available` `waiting_shipment` | Order status as a string
 **paid** | boolean | `true` `false` | Order paid field
 **invoice_url** | string | | Invoice permalink
@@ -3472,7 +3472,7 @@ curl -X PUT 'https://api.shopk.it/v1/order/bulk/invoice' \
 
 Attributes | Type |  Description
 ---------- | ---- | -----------
-**id** (required) | integer | Order identifier
+**id**<br>(required) | integer | Order identifier
 
 </div>
 
@@ -3574,10 +3574,10 @@ curl -X DELETE 'https://api.shopk.it/v1/order/1337' \
 
 # Group Client
 
-## GET Client [/client{?country_code,weight,value}]
+## GET Client [/client/{hash}]
 
 ### GET Client [GET]
-Get a list of clients guest and registred.
+Get a list of clients guest and registered.
 
 ```bash
 curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
@@ -3586,7 +3586,7 @@ curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
 
 + Parameters
 
-    + hash (optional, string, `info@shopk.it`) ... Client e-mail hash
+    + hash (optional, string, `858b9f6902f34443ef5d19ebb77baed5`) ... Client e-mail hash
     + registered (optional, boolean, `true`) ... Client is registered or guest
         + Values
             + `true`
@@ -3623,22 +3623,25 @@ curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
 
             [
                 {
+                    "id": 731046,
                     "hash": "858b9f6902f34443ef5d19ebb77baed5",
                     "name": "Shopkit",
                     "email": "info@shopk.it",
                     "company": null,
                     "initials": "S",
-                    "fiscal_id": null,
-                    "locale": null,
+                    "fiscal_id": "",
+                    "locale": "0",
                     "gender": null,
                     "birthday": null,
                     "picture": null,
                     "accepts_marketing": false,
                     "wholesale": false,
-                    "created_at": null,
-                    "last_seen_at": null,
-                    "is_banned": null,
+                    "created_at": 1416357859,
+                    "last_seen_at": 1416357859,
+                    "type": "guest",
+                    "is_banned": false,
                     "is_registered": false,
+                    "is_deleted": false,
                     "internal_notes": null,
                     "tags": null,
                     "delivery": {
@@ -3648,9 +3651,9 @@ curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
                         "address_extra": null,
                         "country_code": "PRT",
                         "country_code_alpha_2": "PT",
-                        "zip_code": "6000-767",
+                        "zip_code": "6000-767 ",
                         "city": "Castelo Branco",
-                        "country": "Portugal - Continental"
+                        "country": "Portugal - Mainland"
                     },
                     "billing": {
                         "same_as_delivery": true,
@@ -3662,7 +3665,7 @@ curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
                         "country_code_alpha_2": "PT",
                         "zip_code": "6000-767",
                         "city": "Castelo Branco",
-                        "country": "Portugal - Continental"
+                        "country": "Portugal - Mainland"
                     },
                     "l10n": {
                         "tax_id_abbr": "NIF/NIPC/VAT ID",
@@ -3697,6 +3700,299 @@ curl -X GET 'https://api.shopk.it/v1/client?registered=true' \
                 "message":"Not found."
             }
 
+
+## POST Client [/client/]
+
+### POST Client [POST]
+Create a registered client.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/client' \
+-H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
+-H 'Content-Type:application/json' \
+-d '{"name":"Shopkit", "email":"info@shopk.it"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**name**<br>(required) | string | | Client name
+**email**<br>(required) | string | | Client email
+**password** | string | | Client password (if not provided, one is generated)
+**company** | string | | Client company
+**accepts_marketing** | boolean | `true` `false` | Client consent to accept marketing
+**wholesale** | boolean | `true` `false` | Client is wholesale
+**internal_notes** | string | | Client note
+**delivery** | address object | | client delivery address
+**billing** | address object | | client billing address
+
+<h5>Address object</h5>
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**name**<br>(required) | string | Name
+**address**<br>(required) | string | Address
+**address_extra** | string | Address extra information
+**zip_code**<br>(required) | string | Zip code
+**city**<br>(required) | string | City
+**country_code**<br>(required) | string | Country code three-letter (ISO 3166-1 Alfa-3)
+**phone** | string | Address phone
+
+</div>
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 731046,
+                    "hash": "858b9f6902f34443ef5d19ebb77baed5",
+                    "name": "Shopkit",
+                    "email": "info@shopk.it",
+                    "company": null,
+                    "initials": "S",
+                    "fiscal_id": "",
+                    "locale": "0",
+                    "gender": null,
+                    "birthday": null,
+                    "picture": null,
+                    "accepts_marketing": false,
+                    "wholesale": false,
+                    "created_at": 1744128878,
+                    "last_seen_at": 1744128878,
+                    "type": "registered",
+                    "is_banned": false,
+                    "is_registered": true,
+                    "is_deleted": false,
+                    "internal_notes": null,
+                    "tags": null,
+                    "delivery": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "AV do Empresário",
+                        "address_extra": 1,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767 ",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Mainland"
+                    },
+                    "billing": {
+                        "same_as_delivery": true,
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Av do Empresário",
+                        "address_extra": 1,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Mainland"
+                    },
+                    "l10n": {
+                        "tax_id_abbr": "NIF/NIPC/VAT ID",
+                        "tax_name": "IVA"
+                    },
+                    "cart": null,
+                    "wishlist": null,
+                    "orders_summary": {
+                        "paid_count": 0,
+                        "unpaid_count": 0,
+                        "paid_value": 0,
+                        "unpaid_value": 0,
+                        "total_count": 0,
+                        "total_value": 0
+                    }
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "message": "Already exists."
+            }
+
++ Response 409
+
+
+## PUT Client [/client/]
+
+### PUT Client [PUT]
+Update a client.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/client' \
+-H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
+-H 'Content-Type:application/json' \
+-d '{"company":"Shopkit"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**name** | string | | Client name
+**email** | string | | Client email
+**password** | string | | Client password
+**company** | string | | Client company
+**accepts_marketing** | boolean | `true` `false` | Client consent to accept marketing
+**wholesale** | boolean | `true` `false` | Client is wholesale
+**internal_notes** | string | | Client note
+**delivery** | address object | | client delivery address
+**billing** | address object | | client billing address
+
+<h5>Address object</h5>
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**name**<br>(required) | string | Name
+**address**<br>(required) | string | Address
+**address_extra** | string | Address extra information
+**zip_code**<br>(required) | string | Zip code
+**city**<br>(required) | string | City
+**country_code**<br>(required) | string | Country code three-letter (ISO 3166-1 Alfa-3)
+**phone** | string | Address phone
+
+</div>
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 731046,
+                    "hash": "858b9f6902f34443ef5d19ebb77baed5",
+                    "name": "Shopkit",
+                    "email": "info@shopk.it",
+                    "company": "Shopkit",
+                    "initials": "S",
+                    "fiscal_id": "",
+                    "locale": "0",
+                    "gender": null,
+                    "birthday": null,
+                    "picture": null,
+                    "accepts_marketing": false,
+                    "wholesale": false,
+                    "created_at": 1416357859,
+                    "last_seen_at": 1416357859,
+                    "type": "guest",
+                    "is_banned": false,
+                    "is_registered": false,
+                    "is_deleted": false,
+                    "internal_notes": null,
+                    "tags": null,
+                    "delivery": {
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": null,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767 ",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Mainland"
+                    },
+                    "billing": {
+                        "same_as_delivery": true,
+                        "name": "Shopkit",
+                        "phone": "969057993",
+                        "address": "Centro de Empresas Inovadoras\nAvª do Empresário, 1, S1.08",
+                        "address_extra": null,
+                        "country_code": "PRT",
+                        "country_code_alpha_2": "PT",
+                        "zip_code": "6000-767",
+                        "city": "Castelo Branco",
+                        "country": "Portugal - Mainland"
+                    },
+                    "l10n": {
+                        "tax_id_abbr": "NIF/NIPC/VAT ID",
+                        "tax_name": "IVA"
+                    },
+                    "cart": null,
+                    "wishlist": null,
+                    "orders_summary": {
+                        "paid_count": 2,
+                        "unpaid_count": 25,
+                        "paid_value": 112.62,
+                        "unpaid_value": 3093.72,
+                        "total_count": 27,
+                        "total_value": 3206.34
+                    }
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "message": "Already exists."
+            }
+
++ Response 409
+
+
+## DELETE client [/client/{hash}]
+
+### DELETE client [DELETE]
+Delete a client.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/client/858b9f6902f34443ef5d19ebb77baed5' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + hash (optional, string, `858b9f6902f34443ef5d19ebb77baed5`) ... Client e-mail hash
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
 
 # Group Shipping
 
@@ -4004,11 +4300,11 @@ curl -X POST 'https://api.shopk.it/v1/coupon' \
 
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
-**code** (required) | string | | Coupon code
-**limit** (required) | int | | Coupon usage limit. Set `0` for unlimited
-**value** (required) | float | | Coupon discount value
-**type** (required) | string | `money` `percent` `shipping` | Coupon allowed types
-**applies_to** (required) | string |  `all_orders` `orders_over` `category` `product` | Coupon applies to...
+**code**<br>(required) | string | | Coupon code
+**limit**<br>(required) | int | | Coupon usage limit. Set `0` for unlimited
+**value**<br>(required) | float | | Coupon discount value
+**type**<br>(required) | string | `money` `percent` `shipping` | Coupon allowed types
+**applies_to**<br>(required) | string |  `all_orders` `orders_over` `category` `product` | Coupon applies to...
 **orders_over** | float | | Order minimum value to apply discount.<br>**Required** when `applies_to` is `orders_over`
 **category** | mixed | | Category to apply discount.<br>**Required** when `applies_to` is `category`, valid category `id` or `handle`
 **product** | mixed | | Product to apply discount.<br>**Required** when `applies_to` is `product`, valid product `id` or `handle`
