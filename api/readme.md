@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2025-04-12
+* update `client` methods `POST`, `PUT`
+
 ##### 2025-04-08
 * Add `client` methods `POST`, `PUT`, `DELETE`
 

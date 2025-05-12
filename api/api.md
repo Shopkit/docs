@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2025-04-08T17:24:09+01:00</small>
+<small class="last-modified">Last Modified 2025-05-12T18:48:27+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -988,7 +988,7 @@ Attributes | Type | Choices | Description
 **description** | string | | Description
 **excerpt** | string | | Excerpt (short description)
 **video_url** | string | | Video url, youtube or vimeo url
-**file** | string | | File url
+**file** | string | | File URL
 **tax** | float | | Tax (**deprecated** in favor of taxable)
 **taxable** | boolean | | Product is taxable
 **reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
@@ -998,14 +998,14 @@ Attributes | Type | Choices | Description
 **weight** | integer | | Weight (in grams)
 **origin_country** | string | | Country code three-letter (ISO 3166-1 Alfa-3)
 **harmonized_code** | string | | harmonized code
-**images** | array[string] | | Array with images url, max 10
+**images** | array[string] | | Array with images URL, max 10
 **tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
 **stock_qty** | integer | | Units in stock (requires product stock enabled)
-**stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
+**stock_backorder** | boolean | `true` `false` | Allows to receive orders without units in stock (requires stock enabled)
 **stock_show** | boolean | `true` `false` | Show product stock units (requires stock enabled)
 **stock_sold_single** | boolean | `true` `false` | Only allow to sell 1 unit per order (requires stock enabled)
-**stock_notify** | integer | | Product minium stock units (requires stock enabled)
+**stock_notify** | integer | | Product minimum stock units (requires stock enabled)
 
 </div>
 
@@ -1163,7 +1163,7 @@ Attributes | Type | Choices | Description
 **description** | string | | Description
 **excerpt** | string | | Excerpt (short description)
 **video_url** | string | | Video url, youtube or vimeo url
-**file** | string | | File url
+**file** | string | | File URL
 **tax** | float | | Tax (**deprecated** in favor of taxable)
 **taxable** | boolean | | Product is taxable
 **reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
@@ -1173,14 +1173,14 @@ Attributes | Type | Choices | Description
 **weight** | integer | | Weight (in grams)
 **origin_country** | string | | Country code three-letter (ISO 3166-1 Alfa-3)
 **harmonized_code** | string | | harmonized code
-**images** | array[string] | | Array with images url, max 10
+**images** | array[string] | | Array with images URL, max 10
 **tags** | array[string] | | Array with tags
 **stock_enabled** | boolean | `true` `false` | Enables Product stock
 **stock_qty** | integer | | Units in stock (requires product stock enabled)
-**stock_backorder** | boolean | `true` `false` | Allows to receice orders without units in stock (requires stock enabled)
+**stock_backorder** | boolean | `true` `false` | Allows to receive orders without units in stock (requires stock enabled)
 **stock_show** | boolean | `true` `false` | Show product stock units (requires stock enabled)
 **stock_sold_single** | boolean | `true` `false` | Only allow to sell 1 unit per order (requires stock enabled)
-**stock_notify** | integer | | Product minium stock units (requires stock enabled)
+**stock_notify** | integer | | Product minimum stock units (requires stock enabled)
 
 </div>
 
@@ -2129,7 +2129,7 @@ Attributes | Type | Choices | Description
 **weight** | integer | | Weight (in grams)
 **reference** | string | | SKU
 **barcode** | string | | EAN, ISBN, UPC, GTIN, etc.
-**image** | string | | Option image url
+**image** | string | | Option image URL
 **active** | boolean | `true` `false` | Option is active
 
 </div>
@@ -2346,7 +2346,7 @@ Attributes | Type | Choices | Description
 **parent_id** | integer | | Category parent identifier
 **description** | string | | Description
 **handle** | string | | Handle
-**image** | string | | Image url
+**image** | string | | Image URL
 **position** | integer | | Position
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
@@ -2429,7 +2429,7 @@ Attributes | Type | Choices | Description
 **parent_id** | integer | | Category parent identifier
 **description** | string | | Description
 **handle** | string | | Handle
-**image** | string | | Image url
+**image** | string | | Image URL
 **position** | integer | | Position
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
@@ -2606,7 +2606,7 @@ Attributes | Type | Choices | Description
 **active** | boolean | `true` `false` | Brand is active
 **description** | string | | Description
 **handle** | string | | Handle
-**image** | string | | Image url
+**image** | string | | Image URL
 **position** | integer | | Position
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
@@ -2682,7 +2682,7 @@ Attributes | Type | Choices | Description
 **active** | boolean | `true` `false` | Brand is active
 **description** | string | | Description
 **handle** | string | | Handle
-**image** | string | | Image url
+**image** | string | | Image URL
 **position** | integer | | Position
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
@@ -3721,11 +3721,16 @@ Attributes | Type | Choices | Description
 **email**<br>(required) | string | | Client email
 **password** | string | | Client password (if not provided, one is generated)
 **company** | string | | Client company
+**fiscal_id** | string | | Client fiscal ID
 **accepts_marketing** | boolean | `true` `false` | Client consent to accept marketing
-**wholesale** | boolean | `true` `false` | Client is wholesale
 **internal_notes** | string | | Client note
+**birthday** | string | | Client birthday date. Date format yyyy-mm-dd
+**gender** | string | `female` `male` `other`| Client gender
+**wholesale** | boolean | `true` `false` | Client is wholesale
+**tags** | array[string] | | Array with tags
 **delivery** | address object | | client delivery address
 **billing** | address object | | client billing address
+**send_signup_email** | boolean | `true` `false` | Send the client a welcome e-mail. Default is true
 
 <h5>Address object</h5>
 
@@ -3827,13 +3832,13 @@ Attributes | Type | Description
 + Response 409
 
 
-## PUT Client [/client/]
+## PUT Client [/client/{id}]
 
 ### PUT Client [PUT]
 Update a client.
 
 ```bash
-curl -X POST 'https://api.shopk.it/v1/client' \
+curl -X POST 'https://api.shopk.it/v1/client/1337' \
 -H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
 -H 'Content-Type:application/json' \
 -d '{"company":"Shopkit"}'
@@ -3843,13 +3848,17 @@ curl -X POST 'https://api.shopk.it/v1/client' \
 
 Attributes | Type | Choices | Description
 ---------- | ---- | ------- | -----------
-**name** | string | | Client name
-**email** | string | | Client email
-**password** | string | | Client password
+**name**<br>(required) | string | | Client name
+**email**<br>(required) | string | | Client email
+**password** | string | | Client password (if not provided, one is generated)
 **company** | string | | Client company
+**fiscal_id** | string | | Client fiscal ID
 **accepts_marketing** | boolean | `true` `false` | Client consent to accept marketing
-**wholesale** | boolean | `true` `false` | Client is wholesale
 **internal_notes** | string | | Client note
+**birthday** | string | | Client birthday date. Date format yyyy-mm-dd
+**gender** | string | `female` `male` `other`| Client gender
+**wholesale** | boolean | `true` `false` | Client is wholesale
+**tags** | array[string] | | Array with tags
 **delivery** | address object | | client delivery address
 **billing** | address object | | client billing address
 
@@ -3866,6 +3875,11 @@ Attributes | Type | Description
 **phone** | string | Address phone
 
 </div>
+
++ Parameters
+
+    + id (optional, integer, `1337`) ... Client identifier
+    + hash (optional, string, `858b9f6902f34443ef5d19ebb77baed5`) ... Client e-mail hash
 
 + Response 200 (application/json)
 
@@ -3962,18 +3976,19 @@ Attributes | Type | Description
 + Response 409
 
 
-## DELETE client [/client/{hash}]
+## DELETE client [/client/{id}]
 
 ### DELETE client [DELETE]
 Delete a client.
 
 ```bash
-curl -X DELETE 'https://api.shopk.it/v1/client/858b9f6902f34443ef5d19ebb77baed5' \
+curl -X DELETE 'https://api.shopk.it/v1/client/1337' \
 -H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
 ```
 
 + Parameters
 
+    + id (optional, integer, `1337`) ... Client identifier
     + hash (optional, string, `858b9f6902f34443ef5d19ebb77baed5`) ... Client e-mail hash
 
 + Response 204 (application/json)
