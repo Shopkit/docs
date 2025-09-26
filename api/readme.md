@@ -16,6 +16,9 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2025-09-26
+* add `coupon` method `PUT`
+
 ##### 2025-04-12
 * update `client` methods `POST`, `PUT`
 

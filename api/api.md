@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2025-05-12T18:48:27+01:00</small>
+<small class="last-modified">Last Modified 2025-09-26T15:33:11+01:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -4274,17 +4274,26 @@ curl -X GET 'https://api.shopk.it/v1/coupon/bajevolp' \
                 {
                     "id": 1337,
                     "code": "bajevolp",
+                    "coupon": "bajevolp",
                     "limit": 5,
                     "used": 2,
                     "value": 10,
                     "type": "percent",
                     "applies_to": "all_orders",
-                    "orders_over": null,
+                    "applies_to_clients": "clients_all",
+                    "orders_over": 0,
+                    "orders_under": null,
                     "category": null,
                     "product": null,
+                    "brand": null,
+                    "tag": null,
+                    "countries": null,
                     "date_from": null,
                     "date_to": null,
+                    "shareable_url": "https://parallax.shopk.it/discount/f9d88dc58802838a0b2bca4a134c3e3c",
+                    "active": true,
                     "created_at": "2014-11-18T23:41:32+00:00",
+                    "updated_at": "2014-11-18T23:41:32+00:00",
                     "orders_total": 157.03,
                     "orders_discount": 14.864
                 }
@@ -4319,10 +4328,12 @@ Attributes | Type | Choices | Description
 **limit**<br>(required) | int | | Coupon usage limit. Set `0` for unlimited
 **value**<br>(required) | float | | Coupon discount value
 **type**<br>(required) | string | `money` `percent` `shipping` | Coupon allowed types
-**applies_to**<br>(required) | string |  `all_orders` `orders_over` `category` `product` | Coupon applies to...
+**applies_to**<br>(required) | string | `all_orders` `category` `product` `brand` `tag` | Coupon applies to...
 **orders_over** | float | | Order minimum value to apply discount.<br>**Required** when `applies_to` is `orders_over`
 **category** | mixed | | Category to apply discount.<br>**Required** when `applies_to` is `category`, valid category `id` or `handle`
 **product** | mixed | | Product to apply discount.<br>**Required** when `applies_to` is `product`, valid product `id` or `handle`
+**brand** | mixed | | Brand to apply discount.<br>**Required** when `applies_to` is `brand`, valid brand `id` or `handle`
+**tag** | mixed | | Tag to apply discount.<br>**Required** when `applies_to` is `tag`, valid tag `id` or `handle`
 **date_from** | string | | Coupon start date. Date format yyyy-mm-dd
 **date_to** | string | | Coupon expire date. Date format yyyy-mm-dd
 
@@ -4336,17 +4347,26 @@ Attributes | Type | Choices | Description
                 {
                     "id": 1337,
                     "code": "bajevolp",
+                    "coupon": "bajevolp",
                     "limit": 5,
                     "used": 2,
                     "value": 10,
                     "type": "percent",
                     "applies_to": "all_orders",
-                    "orders_over": null,
+                    "applies_to_clients": "clients_all",
+                    "orders_over": 0,
+                    "orders_under": null,
                     "category": null,
                     "product": null,
+                    "brand": null,
+                    "tag": null,
+                    "countries": null,
                     "date_from": null,
                     "date_to": null,
+                    "shareable_url": "https://parallax.shopk.it/discount/f9d88dc58802838a0b2bca4a134c3e3c",
+                    "active": true,
                     "created_at": "2014-11-18T23:41:32+00:00",
+                    "updated_at": "2014-11-18T23:41:32+00:00",
                     "orders_total": 157.03,
                     "orders_discount": 14.864
                 }
@@ -4366,6 +4386,92 @@ Attributes | Type | Choices | Description
 
             {
                 "message": "Already exists."
+            }
+
++ Response 409
+
+
+## PUT Coupon [/coupon/]
+
+### PUT Coupon [PUT]
+Update a coupon.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/coupon' \
+-H "X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c" \
+-H 'Content-Type:application/json' \
+-d '{"limit":"10"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**limit** | int | | Coupon usage limit. Set `0` for unlimited
+**value** | float | | Coupon discount value
+**type** | string | `money` `percent` `shipping` | Coupon allowed types
+**applies_to** | string | `all_orders` `category` `product` `brand` `tag` | Coupon applies to...
+**orders_over** | float | | Order minimum value to apply discount.<br>**Required** when `applies_to` is `orders_over`
+**category** | mixed | | Category to apply discount.<br>**Required** when `applies_to` is `category`, valid category `id` or `handle`
+**product** | mixed | | Product to apply discount.<br>**Required** when `applies_to` is `product`, valid product `id` or `handle`
+**brand** | mixed | | Brand to apply discount.<br>**Required** when `applies_to` is `brand`, valid brand `id` or `handle`
+**tag** | mixed | | Tag to apply discount.<br>**Required** when `applies_to` is `tag`, valid tag `id` or `handle`
+**date_from** | string | | Coupon start date. Date format yyyy-mm-dd
+**date_to** | string | | Coupon expire date. Date format yyyy-mm-dd
+
+</div>
+
++ Parameters
+
+    + id (required, integer) ... Coupon identifier
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1337,
+                    "code": "bajevolp",
+                    "coupon": "bajevolp",
+                    "limit": 10,
+                    "used": 2,
+                    "value": 10,
+                    "type": "percent",
+                    "applies_to": "all_orders",
+                    "applies_to_clients": "clients_all",
+                    "orders_over": 0,
+                    "orders_under": null,
+                    "category": null,
+                    "product": null,
+                    "brand": null,
+                    "tag": null,
+                    "countries": null,
+                    "date_from": null,
+                    "date_to": null,
+                    "shareable_url": "https://parallax.shopk.it/discount/f9d88dc58802838a0b2bca4a134c3e3c",
+                    "active": true,
+                    "created_at": "2014-11-18T23:41:32+00:00",
+                    "updated_at": "2014-11-18T23:41:32+00:00",
+                    "orders_total": 157.03,
+                    "orders_discount": 14.864
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
             }
 
 + Response 409
