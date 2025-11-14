@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2025-09-26T15:33:11+01:00</small>
+<small class="last-modified">Last Modified 2025-11-14T10:56:41+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -38,6 +38,11 @@ https://api.shopk.it/v1/?X-API-KEY=f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c
 ```http
 X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c
 ```
+
+<div class="callout callout-warning">
+All requests must include a valid <strong>User-Agent</strong> header.<br>
+Requests without a <strong>User-Agent</strong> will be rejected.
+</div>
 
 ### Endpoints
 All API requests are made to https://api.shopk.it/ and all requests are served over **HTTPS**. The current version is **v1**.
@@ -82,7 +87,7 @@ Note that omitting the `page` parameter will return the first page.
 
 Note that for technical reasons not all endpoints respect the `limit` parameter.
 
-#### Total count
+### Total count
 All resources with pagination have the total count of items added as an header `X-Total-Count`.
 
 ```http
