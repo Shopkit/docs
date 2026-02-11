@@ -996,7 +996,7 @@ Attributes | Type | Choices | Description
 **file** | string | | File URL
 **tax** | float | | Tax (**deprecated** in favor of taxable)
 **taxable** | boolean | | Product is taxable
-**reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
+**reduced_rate** | string | [choices](https://shopk.it/developers/vat-rates-eu?lang=en#reduced-rates) | VAT reduced rate
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
@@ -1171,7 +1171,7 @@ Attributes | Type | Choices | Description
 **file** | string | | File URL
 **tax** | float | | Tax (**deprecated** in favor of taxable)
 **taxable** | boolean | | Product is taxable
-**reduced_rate** | string | [choices](https://shopk.it/iva-vat-eu?lang=en#reduced-rates) | VAT reduced rate
+**reduced_rate** | string | [choices](https://shopk.it/developers/vat-rates-eu?lang=en#reduced-rates) | VAT reduced rate
 **meta_description** | string | | Meta description
 **meta_tags** | string | | Meta tags
 **page_title** | string | | Product page title
