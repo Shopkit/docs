@@ -8,7 +8,7 @@ For now there are only a few available methods. We will add more over time.
 
 If you have a suggestion, find a bug or something worth fixing, create an issue or a pull request on the **[Github repo](https://github.com/Shopkit/docs)**.
 
-<small class="last-modified">Last Modified 2025-11-14T10:56:41+00:00</small>
+<small class="last-modified">Last Modified 2026-03-17T14:48:59+00:00</small>
 
 ### API Status
 <div class="api-status" style="display:none;">
@@ -2219,6 +2219,1313 @@ curl -X DELETE 'https://api.shopk.it/v1/product/212322/option/363364' \
 
     + id (required, integer) ... Product identifier
     + id_option (required, integer) ... Product option identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Extra Options
+
+## GET extra_option [/extra_option{?id,type,page,limit}]
+
+### GET extra_option [GET]
+Get a list of extra options or a single extra option by id.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/extra_option?type=select&limit=5' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/extra_option/3' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `3`) ... Extra option identifier
+    + type (optional, string, `select`) ... Extra option type
+        + Values
+            + `input`
+            + `textarea`
+            + `select`
+            + `checkbox`
+            + `date`
+            + `color`
+
+    + page (optional, integer, `1`) ... page number
+    + limit = `25` (optional, integer, `10`) ... extra options per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 3,
+                    "title": "Gift Wrapping",
+                    "description": "Add gift wrapping to your order",
+                    "alias": "gift-wrapping",
+                    "type": "checkbox",
+                    "options": null,
+                    "required": false,
+                    "price": 2.5,
+                    "price_formatted": "2,50 €",
+                    "tax": "tax_base",
+                    "size": null,
+                    "active": true,
+                    "position": 0
+                },
+                {
+                    "id": 7,
+                    "title": "Size",
+                    "description": "Choose a size",
+                    "alias": "size",
+                    "type": "select",
+                    "options": [
+                        "S",
+                        "M",
+                        "L"
+                    ],
+                    "required": true,
+                    "price": 0,
+                    "price_formatted": null,
+                    "tax": null,
+                    "size": null,
+                    "active": true,
+                    "position": 1
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST extra_option [/extra_option]
+
+### POST extra_option [POST]
+Create an extra option.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/extra_option' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Gift Wrapping","description":"Add gift wrapping to your order","type":"checkbox","price":2.5,"tax":"tax_base"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Extra option title
+**description** | string | | Extra option description
+**type**<br>(required) | string | `input` `textarea` `select` `checkbox` `date` `color` | Extra option type
+**options** | array[string] | | Array with option values. Required for `select` and `color`
+**size** | integer | | Display width
+**required** | boolean | `true` `false` | Extra option is required
+**price** | float | | Extra option price
+**tax** | string | `tax_base` `tax_product` | Tax rule
+**active** | boolean | `true` `false` | Extra option is active
+
+</div>
+
++ Request (application/json)
+
+        {
+            "title": "Gift Wrapping",
+            "description": "Add gift wrapping to your order",
+            "type": "checkbox",
+            "price": 2.5,
+            "tax": "tax_base"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 3,
+                "title": "Gift Wrapping",
+                "description": "Add gift wrapping to your order",
+                "alias": "gift-wrapping",
+                "type": "checkbox",
+                "options": null,
+                "required": false,
+                "price": 2.5,
+                "price_formatted": "2,50 €",
+                "tax": "tax_base",
+                "size": null,
+                "active": true,
+                "position": 0
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 409
+
+## PUT extra_option [/extra_option/{id}]
+
+### PUT extra_option [PUT]
+Update an extra option.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/extra_option/3' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Premium Gift Wrapping","price":4,"position":2}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title** | string | | Extra option title
+**description** | string | | Extra option description
+**options** | array[string] | | Array with option values
+**size** | integer | | Display width
+**required** | boolean | `true` `false` | Extra option is required
+**price** | float | | Extra option price
+**tax** | string | `tax_base` `tax_product` | Tax rule
+**active** | boolean | `true` `false` | Extra option is active
+**position** | integer | | Extra option position
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `3`) ... Extra option identifier
+
++ Request (application/json)
+
+        {
+            "title": "Premium Gift Wrapping",
+            "price": 4,
+            "position": 2
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 3,
+                "title": "Premium Gift Wrapping",
+                "description": "Add gift wrapping to your order",
+                "alias": "premium-gift-wrapping",
+                "type": "checkbox",
+                "options": null,
+                "required": false,
+                "price": 4,
+                "price_formatted": "4,00 €",
+                "tax": "tax_base",
+                "size": null,
+                "active": true,
+                "position": 2
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## DELETE extra_option [/extra_option/{id}]
+
+### DELETE extra_option [DELETE]
+Delete an extra option.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/extra_option/3' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `3`) ... Extra option identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Extra Option Schemes
+
+## GET extra_option_scheme [/extra_option_scheme{?id,page,limit}]
+
+### GET extra_option_scheme [GET]
+Get a list of extra option schemes or a single scheme by id.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/extra_option_scheme?limit=5' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/extra_option_scheme/10' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `10`) ... Extra option scheme identifier
+    + page (optional, integer, `1`) ... page number
+    + limit = `25` (optional, integer, `10`) ... schemes per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 10,
+                    "title": "Crimson Red",
+                    "type": "color",
+                    "color": "#DC143C",
+                    "file": null,
+                    "active": true
+                },
+                {
+                    "id": 11,
+                    "title": "Floral Pattern",
+                    "type": "pattern",
+                    "color": null,
+                    "file": 12345,
+                    "active": true
+                }
+            ]
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST extra_option_scheme [/extra_option_scheme]
+
+### POST extra_option_scheme [POST]
+Create an extra option scheme. Use `color` for a color scheme or `file` for a pattern scheme.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/extra_option_scheme' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Crimson Red","color":"#DC143C"}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**title**<br>(required) | string | Scheme title
+**color** | string | Color hex value
+**file** | integer | Media file identifier
+**active** | boolean | Scheme is active
+
+</div>
+
++ Request (application/json)
+
+        {
+            "title": "Crimson Red",
+            "color": "#DC143C"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 10,
+                "title": "Crimson Red",
+                "type": "color",
+                "color": "#DC143C",
+                "file": null,
+                "active": true
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 409
+
+## PUT extra_option_scheme [/extra_option_scheme/{id}]
+
+### PUT extra_option_scheme [PUT]
+Update an extra option scheme.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/extra_option_scheme/10' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Deep Crimson","color":"#8B0000"}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**title** | string | Scheme title
+**color** | string | Color hex value
+**file** | integer | Media file identifier
+**active** | boolean | Scheme is active
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `10`) ... Extra option scheme identifier
+
++ Request (application/json)
+
+        {
+            "title": "Deep Crimson",
+            "color": "#8B0000"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 10,
+                "title": "Deep Crimson",
+                "type": "color",
+                "color": "#8B0000",
+                "file": null,
+                "active": true
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## DELETE extra_option_scheme [/extra_option_scheme/{id}]
+
+### DELETE extra_option_scheme [DELETE]
+Delete an extra option scheme.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/extra_option_scheme/10' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `10`) ... Extra option scheme identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+
+# Group Product Extra Options
+
+## GET product extra_option [/product/{id}/extra_option/{id_extra_option}]
+
+### GET product extra_option [GET]
+Get a list of product extra options or a single product extra option by id.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/product/212322/extra_option' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/product/212322/extra_option/3' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + id_extra_option (optional, integer, `3`) ... Extra option identifier
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "extra_option_id": 3,
+                    "alias": "gift-wrapping",
+                    "title": "Gift Wrapping",
+                    "description": "Add gift wrapping to your order",
+                    "type": "checkbox",
+                    "options": null,
+                    "required": false,
+                    "price": 2.5,
+                    "price_formatted": "2,50 €",
+                    "tax": "tax_base",
+                    "size": null
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST product extra_option [/product/{id}/extra_option]
+
+### POST product extra_option [POST]
+Assign an extra option to a product.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/product/212322/extra_option' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"extra_option_id":3}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**extra_option_id**<br>(required) | integer | Extra option identifier
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+
++ Request (application/json)
+
+        {
+            "extra_option_id": 3
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "extra_option_id": 3,
+                "alias": "gift-wrapping",
+                "title": "Gift Wrapping",
+                "description": "Add gift wrapping to your order",
+                "type": "checkbox",
+                "options": null,
+                "required": false,
+                "price": 2.5,
+                "price_formatted": "2,50 €",
+                "tax": "tax_base",
+                "size": null
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## DELETE product extra_option [/product/{id}/extra_option/{id_extra_option}]
+
+### DELETE product extra_option [DELETE]
+Delete a product extra option assignment.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/product/212322/extra_option/3' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + id_extra_option (required, integer, `3`) ... Extra option identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Custom Fields
+
+## GET custom_field [/custom_field{?id,type,page,limit}]
+
+### GET custom_field [GET]
+Get a list of custom fields or a single custom field by id.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/custom_field?type=select&limit=5' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (optional, integer, `15`) ... Custom field identifier
+    + type (optional, string, `select`) ... Custom field type
+        + Values
+            + `input`
+            + `textarea`
+            + `select`
+
+    + page (optional, integer, `1`) ... page number
+    + limit = `25` (optional, integer, `10`) ... custom fields per page
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 15,
+                    "title": "Material",
+                    "alias": "material_abc123",
+                    "type": "input",
+                    "options": null,
+                    "filter_enabled": false,
+                    "position": 0
+                },
+                {
+                    "id": 16,
+                    "title": "Color",
+                    "alias": "color_def456",
+                    "type": "select",
+                    "options": [
+                        "Red",
+                        "Blue",
+                        "Green"
+                    ],
+                    "filter_enabled": true,
+                    "position": 1
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST custom_field [/custom_field]
+
+### POST custom_field [POST]
+Create a custom field.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/custom_field' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Material","type":"input"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title**<br>(required) | string | | Custom field title
+**type**<br>(required) | string | `input` `textarea` `select` | Custom field type
+**options** | array[string] | | Array with option values. Required for `select`
+**filter_enabled** | boolean | `true` `false` | Enable custom field as filter
+
+</div>
+
++ Request (application/json)
+
+        {
+            "title": "Material",
+            "type": "input"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 15,
+                "title": "Material",
+                "alias": "material_abc123",
+                "type": "input",
+                "options": null,
+                "filter_enabled": false,
+                "position": 0
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 409
+
+## PUT custom_field [/custom_field/{id}]
+
+### PUT custom_field [PUT]
+Update a custom field.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Fabric","position":5}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**title** | string | | Custom field title
+**options** | array[string] | | Array with option values
+**filter_enabled** | boolean | `true` `false` | Enable custom field as filter
+**position** | integer | | Custom field position
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `15`) ... Custom field identifier
+
++ Request (application/json)
+
+        {
+            "title": "Fabric",
+            "position": 5
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 15,
+                "title": "Fabric",
+                "alias": "material_abc123",
+                "type": "input",
+                "options": null,
+                "filter_enabled": false,
+                "position": 5
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## DELETE custom_field [/custom_field/{id}]
+
+### DELETE custom_field [DELETE]
+Delete a custom field.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `15`) ... Custom field identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Product Custom Fields
+
+## GET product custom_field [/product/{id}/custom_field/{custom_field_id}]
+
+### GET product custom_field [GET]
+Get a list of product custom fields or a single product custom field by id.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/product/212322/custom_field' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/product/212322/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + custom_field_id (optional, integer, `15`) ... Custom field identifier
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 15,
+                    "alias": "material_abc123",
+                    "title": "Material",
+                    "type": "input",
+                    "options": null,
+                    "filter_enabled": false,
+                    "values": [
+                        "Cotton"
+                    ]
+                },
+                {
+                    "id": 16,
+                    "alias": "color_def456",
+                    "title": "Color",
+                    "type": "select",
+                    "options": [
+                        "Red",
+                        "Blue",
+                        "Green"
+                    ],
+                    "filter_enabled": true,
+                    "values": [
+                        "Red",
+                        "Blue"
+                    ]
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST product custom_field [/product/{id}/custom_field]
+
+### POST product custom_field [POST]
+Assign a custom field to a product.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/product/212322/custom_field' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"custom_field_id":15,"value":"Cotton"}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**custom_field_id**<br>(required) | integer | Custom field identifier
+**value**<br>(required) | mixed | String for `input` and `textarea`, array[string] for `select`
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+
++ Request (application/json)
+
+        {
+            "custom_field_id": 15,
+            "value": "Cotton"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 15,
+                "alias": "material_abc123",
+                "title": "Material",
+                "type": "input",
+                "options": null,
+                "filter_enabled": false,
+                "values": [
+                    "Cotton"
+                ]
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## PUT product custom_field [/product/{id}/custom_field/{custom_field_id}]
+
+### PUT product custom_field [PUT]
+Update a product custom field value.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/product/212322/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"value":"Silk"}'
+```
+
+<div class="well">
+
+Attributes | Type | Description
+---------- | ---- | -----------
+**value**<br>(required) | mixed | String for `input` and `textarea`, array[string] for `select`
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + custom_field_id (required, integer, `15`) ... Custom field identifier
+
++ Request (application/json)
+
+        {
+            "value": "Silk"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 15,
+                "alias": "material_abc123",
+                "title": "Material",
+                "type": "input",
+                "options": null,
+                "filter_enabled": false,
+                "values": [
+                    "Silk"
+                ]
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
++ Response 409
+
+## DELETE product custom_field [/product/{id}/custom_field/{custom_field_id}]
+
+### DELETE product custom_field [DELETE]
+Delete a product custom field assignment.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/product/212322/custom_field/15' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + custom_field_id (required, integer, `15`) ... Custom field identifier
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+
+# Group Product Tabs
+
+## GET product tab [/product/{id}/tab/{index}]
+
+### GET product tab [GET]
+Get a list of product tabs or a single product tab by index.
+
+```bash
+curl -X GET 'https://api.shopk.it/v1/product/212322/tab' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+
+curl -X GET 'https://api.shopk.it/v1/product/212322/tab/0' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + index (optional, integer, `0`) ... Product tab index
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "index": 0,
+                    "type": "text",
+                    "title": "Specifications",
+                    "slug": "specifications",
+                    "content": "<p>Product specifications content here.</p>"
+                },
+                {
+                    "index": 1,
+                    "type": "page",
+                    "title": "Size Guide",
+                    "slug": "size-guide",
+                    "content": "<p>Size guide content loaded from page.</p>",
+                    "id": 42
+                }
+            ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## POST product tab [/product/{id}/tab]
+
+### POST product tab [POST]
+Create a product tab. The API accepts `text` and `page` tabs.
+
+```bash
+curl -X POST 'https://api.shopk.it/v1/product/212322/tab' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"type":"text","title":"Care Instructions","content":"<p>Hand wash only.</p>"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**type**<br>(required) | string | `text` `page` | Product tab type
+**title** | string | | Product tab title. Required for `text`
+**content** | string | | Product tab content. Required for `text`
+**id** | integer | | Page identifier. Required for `page`
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+
++ Request (application/json)
+
+        {
+            "type": "text",
+            "title": "Care Instructions",
+            "content": "<p>Hand wash only.</p>"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "index": 2,
+                "type": "text",
+                "title": "Care Instructions",
+                "slug": "care-instructions",
+                "content": "<p>Hand wash only.</p>"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## PUT product tab [/product/{id}/tab/{index}]
+
+### PUT product tab [PUT]
+Update a product tab.
+
+```bash
+curl -X PUT 'https://api.shopk.it/v1/product/212322/tab/0' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c' \
+-H 'Content-Type: application/json' \
+-d '{"title":"Updated Care Instructions","content":"<p>Machine wash cold.</p>"}'
+```
+
+<div class="well">
+
+Attributes | Type | Choices | Description
+---------- | ---- | ------- | -----------
+**type** | string | `text` `page` | Product tab type
+**title** | string | | Product tab title
+**content** | string | | Product tab content
+**id** | integer | | Page identifier
+
+</div>
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + index (required, integer, `0`) ... Product tab index
+
++ Request (application/json)
+
+        {
+            "title": "Updated Care Instructions",
+            "content": "<p>Machine wash cold.</p>"
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "index": 0,
+                "type": "text",
+                "title": "Updated Care Instructions",
+                "slug": "updated-care-instructions",
+                "content": "<p>Machine wash cold.</p>"
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "message": "Bad request."
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message":"Not found."
+            }
+
+## DELETE product tab [/product/{id}/tab/{index}]
+
+### DELETE product tab [DELETE]
+Delete a product tab. Remaining tabs are reindexed after delete.
+
+```bash
+curl -X DELETE 'https://api.shopk.it/v1/product/212322/tab/0' \
+-H 'X-API-KEY: f4c3cfc9af72e01c60d8b5f0b47492b2ee467c0c'
+```
+
++ Parameters
+
+    + id (required, integer, `212322`) ... Product identifier
+    + index (required, integer, `0`) ... Product tab index
 
 + Response 204 (application/json)
 

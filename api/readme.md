@@ -16,6 +16,14 @@ To generate documentation use: `aglio -i api.md -o index.html`
 
 ### Changelog
 
+##### 2026-03-17
+* Add `extra_option` methods `GET`, `POST`, `PUT`, `DELETE`
+* Add `extra_option_scheme` methods `GET`, `POST`, `PUT`, `DELETE`
+* Add `product extra_option` methods `GET`, `POST`, `DELETE`
+* Add `custom_field` methods `GET`, `POST`, `PUT`, `DELETE`
+* Add `product custom_field` methods `GET`, `POST`, `PUT`, `DELETE`
+* Add `product tab` methods `GET`, `POST`, `PUT`, `DELETE`
+
 ##### 2025-11-14
 * add `User-Agent` required warning
 
